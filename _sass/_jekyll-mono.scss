@@ -7,10 +7,13 @@
     *Title
 */
 
+a {
+	text-decoration: underline;
+}
+
 .site-name {
     a {
       color: $white;
-      text-decoration: none;
     	cursor: pointer;
       &:hover{
         color: darken($navbar-hover-color,20);
