@@ -1,4 +1,8 @@
-# Jekyll-Mono
+# My personal Website
+
+Forked by Jekyll-Mono:
+
+## Jekyll-Mono
 
 **Jekyll-Mono** is a simple and elegant GitHub Profile cum Blog theme based on Barry Clark's [Jekyll-Now](https://github.com/barryclark/jekyll-now). It's a result of my attempt to learn **Jekyll** and create a minimalistic theme to put up my CV alongwith some blog posts.
 
