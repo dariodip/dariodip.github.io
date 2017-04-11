@@ -7,6 +7,18 @@
     *Title
 */
 
+
+
+#particles-js {
+	position: absolute;
+	width: 100%;
+	z-index: 0;
+}
+
+#main-container {
+	z-index: 1;
+}
+
 .entry a {
 	text-decoration: underline;
 }
@@ -39,6 +51,7 @@
 #central-avatar {
 	animation-name: opacity-on-image;
 	animation-duration: 0.7s;
+	z-index: 1;
 }
 
 .post {
