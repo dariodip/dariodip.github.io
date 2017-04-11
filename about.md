@@ -31,13 +31,12 @@ Web Developer, Freelance
 <!--
     TODO update skills
 -->
-* **Programming Languages** - `Python` / `Java` / `C#` / `C`
-* **Frontend Development** - `React` / `CSS` / `React Native`
-* **Backend Development** - `Nodejs` / `Django` / `MongoDb` / `MySQL`
-* **Academic Skills** - `LaTex` / `Computer Science`
-    
-    
-
+* **Programming Languages** - `Python` / `Java` / `JavaScript` / `C#` / `C` / `PHP`
+* **Frontend Development** - `React` / `React Native` / `CSS`  / `HTML5` / `jQuery` / `Jekyll`
+* **Backend Development** - `Node.js` / `Django` / `MongoDb` / `MySQL` / `Java EE`
+* **Academic Skills** - `LaTex` / `Computer Science` / `Graph Theory`
+* **Others** - `R` / `Matlab` / `Java RMI` / `Git` / `Maven`
+* **Soft skills** - `Watch TV series`
 
 ## Contact me
 
