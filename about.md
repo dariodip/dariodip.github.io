@@ -32,10 +32,10 @@ Web Developer, Freelance
     TODO update skills
 -->
 * **Programming Languages** - `Python` / `Java` / `JavaScript` / `C#` / `C` / `PHP`
-* **Frontend Development** - `React` / `React Native` / `CSS`  / `HTML5` / `jQuery` / `Jekyll`
-* **Backend Development** - `Node.js` / `Django` / `MongoDB` / `MySQL` / `Java EE`
+* **Frontend Development** - `React` / `React Native` / `CSS`  / `HTML5` / `jQuery` 
+* **Backend Development** - `Node.js` / `MongoDB` / `MySQL` / `Java EE` / `Django` / `Meteor`
 * **Academic Skills** - `LaTex` / `Computer Science` / `Graph Theory`
-* **Others** - `R` / `Matlab` / `Java RMI` / `Git` / `Maven`
+* **Others** - `R` / `Matlab` / `Java RMI` / `Git` / `Maven` / `Jekyll`
 * **Soft skills** - `Watch TV series`
 
 ## Contact me
