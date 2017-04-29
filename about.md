@@ -10,7 +10,7 @@ I'm having fun to learn new technologies, new web frameworks (both back-end and 
 
 I'm also spending time to learn other discipline like marketing, web design and human-computer interaction.
 
-I graduated cum laude in Computer Science at Università degli Studi di Salerno and actually I'm studing for my Master's Degree in Reti e Tecnologie Software (Networks and Software Technologies) at Università degli Studi di Salerno. <br />
+I graduated cum laude in Computer Science at Università degli Studi di Salerno and I'm actually studing for my Master's Degree in Reti e Tecnologie Software (Networks and Software Technologies) at Università degli Studi di Salerno. <br />
 I did my Bachelor's thesis on Streaming Graph Partitioning.
 
 « Computer Science is no more about computers than astronomy is about telescopes. »
