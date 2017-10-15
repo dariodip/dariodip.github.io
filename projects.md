@@ -4,7 +4,7 @@ title: Projects
 permalink: /projects/
 ---
 
-### [Data Aggregation Server for IOT (DASI)]
+### Data Aggregation Server for IOT (DASI)
 #### Jul 2017 - Sep 2017
 
 Designing and developing a dynamic data aggregation server using Python (Flask).
