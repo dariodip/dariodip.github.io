@@ -1,0 +1,48 @@
+
+
+.two {
+    margin: 0; padding: 0%;
+    width: 48%;
+    background: transparent;
+    cursor: default !important;
+    display: block;
+  }
+
+  .two:last-child:nth-child(odd){
+    clear: left;
+  }
+
+  .two:first-of-type {
+    clear: left;
+  }
+
+  #left { 
+    float: left; 
+  }
+  #right { 
+    float: right;
+  }
+  .progress {
+    background-color: #f2f2f2;
+    height: 1.5625em;
+    border: 1px solid #bbb;
+    padding: 0.125em;
+    margin-bottom: 0.625em;
+  }
+  .meter {
+    background: none repeat scroll 0% 0% #4ea351;
+    height: 100%;
+    display: block;
+  }
+  .hidecaption {
+    opacity: 0;
+    text-align: center;
+    z-align: 999;
+    display: block;
+    transition: opacity .3 ease-in-out;
+  }
+  .progress:hover .hidecaption {
+    text-align: center;
+    opacity: 1;
+    transition: opacity .3s ease-in-out;
+  }

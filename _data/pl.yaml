@@ -1,0 +1,28 @@
+-   name: C
+    level: 8
+    category: Programming Languages
+    image: c.png
+-   name: C#
+    level: 5
+    image: csharp.png
+    category: Programming Languages
+-   name: Java
+    level: 10
+    image: java.png
+    category: Programming Languages
+-   name: Python
+    level: 9
+    image: python.png
+    category: Programming Languages
+-   name: PHP
+    level: 4
+    image: php.png
+    category: Programming Languages
+-   name: JavaScript
+    level: 8
+    image: javascript.png
+    category: Programming Languages
+-   name: R
+    level: 6
+    category: Programming Languages
+

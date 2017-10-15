@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: about
 title: About
 permalink: /about/
 ---
@@ -27,17 +27,3 @@ Edsger Dijkstra
 
 Web Developer, Freelance
 
-## Skills
-<!--
-    TODO update skills
--->
-* **Programming Languages** - `Python` / `Java` / `JavaScript` / `C#` / `C` / `PHP`
-* **Frontend Development** - `React` / `React Native` / `Flux` / `CSS`  / `HTML5` / `jQuery` 
-* **Backend Development** - `Node.js` / `MongoDB` / `MySQL` / `Java EE` / `Django` / `Meteor` / `Express` / `Flask`
-* **Misc Skills** - `Computer Science` / `Graph Theory` / `Algorithms` / `Software engineering`
-* **Others** - `LaTex` / `R` / `Matlab` / `Java RMI` / `Git` / `Maven` / `Jekyll` / `OpenMPI` / `Docker`
-* **Soft skills and interest** - `Watch TV series` / `Travel` / `Read`
-
-## Contact me
-
-[darionovantadue@gmail.com](mailto:darionovantadue@gmail.com)
