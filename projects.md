@@ -54,6 +54,7 @@ For each programming language and framework, you can find:
 - jobs for it, obtained from AuthenticJobs and Indeed;
 - course for it, obtained from Coursera and Udacity;
 - trend for it in each region and time interval, based on GitHub repositories activity and Google Trends.
+
 Data are obtained from the following sources:
 - Wikipedia;
 - StackOverflow;
@@ -63,6 +64,7 @@ Data are obtained from the following sources:
 - Coursera;
 - Google Trends;
 - Udacity.
+
 The technology stack is the following:
 - Django as back-end, using Django Rest Framework for ReST api;
 - Plotly for showing graphs;
