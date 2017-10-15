@@ -1,7 +1,7 @@
 
 <details style="cursor:pointer">
  <summary>{{ include.category }}</summary>
- <div style="overflow: scroll;">
+ <div style="overflow: hidden;">
         
             {% for skill in include.proglang %}
                 {% assign loopindex = forloop.index | modulo: 2 %}
