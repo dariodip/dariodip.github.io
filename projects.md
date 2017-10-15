@@ -4,7 +4,7 @@ title: Projects
 permalink: /projects/
 ---
 
-### [Aggregation Server for IOT]
+### [Data Aggregation Server for IOT (DASI)]
 #### Jul 2017 - Sep 2017
 
 Designing and developing a dynamic data aggregation server using Python (Flask).
@@ -44,7 +44,7 @@ I designed and developed backend for NJOY Campania using MondoDB as database and
 
 ## University Projects
 
-### [WSIL](https://github.com/criticalerrors/WSIL) [Online on Heroku](http://wsilang.herokuapp.com/)
+### [WSIL](https://github.com/criticalerrors/WSIL) [(Online on Heroku)](http://wsilang.herokuapp.com/)
 #### Mar 2017 - Jun 2017
 
 WSIL is a web app giving the opportunity to check out trending of programming languages and frameworks. Using WSIL you can both see jobs for a given programming language or framework, with courses concern it.
