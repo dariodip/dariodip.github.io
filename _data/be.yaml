@@ -1,25 +1,25 @@
 -   name: Node.js
-    level: 9
+    level: nine
     category: Back End
 -   name: MongoDB
-    level: 6
+    level: six
     category: Back End
 -   name: MySQL
-    level: 8
+    level: eight
     category: Back End
 -   name: Java EE
-    level: 5
+    level: five
     category: Back End
 -   name: Django
-    level: 8
+    level: eight
     category: Back End    
 -   name: Meteor
-    level: 5
+    level: five
     category: Back End
 -   name: Express
-    level: 7
+    level: seven
     category: Back End
 -   name: Flask
-    level: 8
+    level: eight
     category: Back End
 

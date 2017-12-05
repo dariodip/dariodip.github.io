@@ -1,28 +1,28 @@
 -   name: C
-    level: 8
-    category: Programming Languages
+    level: eight
+    category: Prog. Language
     image: c.png
 -   name: C#
-    level: 5
+    level: five
     image: csharp.png
-    category: Programming Languages
+    category: Prog. Language
 -   name: Java
-    level: 10
+    level: nine
     image: java.png
-    category: Programming Languages
+    category: Prog. Language
 -   name: Python
-    level: 9
+    level: ten
     image: python.png
-    category: Programming Languages
+    category: Prog. Language
 -   name: PHP
-    level: 4
+    level: four
     image: php.png
-    category: Programming Languages
+    category: Prog. Language
 -   name: JavaScript
-    level: 8
+    level: eight
     image: javascript.png
-    category: Programming Languages
+    category: Prog. Language
 -   name: R
-    level: 6
-    category: Programming Languages
+    level: six
+    category: Prog. Language
 

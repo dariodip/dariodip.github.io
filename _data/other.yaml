@@ -1,25 +1,25 @@
 
 -   name: LaTex
-    level: 6
+    level: six
     category: Other
 -   name: Matlab
-    level: 3
+    level: three
     category: Other
 -   name: Java RMI
-    level: 7
+    level: seven
     category: Other
 -   name: Git
-    level: 8
+    level: eight
     category: Other
 -   name: Maven
-    level: 8
+    level: eight
     category: Other
 -   name: Jekyll
-    level: 9
+    level: nine
     category: Other
 -   name: OpenMPI
-    level: 6
+    level: six
     category: Other
 -   name: Docker
-    level: 6
+    level: six
     category: Other

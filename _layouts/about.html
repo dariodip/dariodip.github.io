@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
@@ -11,44 +12,63 @@
   <link rel="shortcut icon" type="image/png" href="{{ site.baseurl }}/images/favicon.png">
   <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml" />
+  <link rel="alternate" type="application/rss+xml" title="{{ site.name }} - {{ site.description }}" href="{{ site.baseurl }}/feed.xml"
+  />
   <link href='{{ site.baseurl }}/css/fonts.google.css' rel='stylesheet' type='text/css'>
   <link href='{{ site.baseurl }}/css/skills.css' rel='stylesheet' type='text/css'>
-  
+
 
 </head>
 
 <body>
 
-<div class="intro-header">
-  {% include head.html %}
-</div>
-
-
-<div id="main" role="main" class="container" style="overflow: visible;">
-  <h1>About</h1>
-  {{ content }}
-  <h2>Skills</h2>
-  <h4>Click to expand</h4>
-  {% include skills.html proglang=site.data.pl category="Programming languages" %}
-  {% include skills.html proglang=site.data.fe category="Front End" %}
-  {% include skills.html proglang=site.data.be category="Back End" %}
-  {% include skills.html proglang=site.data.misc category="Misc" %}
-  {% include skills.html proglang=site.data.other category="Other" %}
-  {% include skills.html proglang=site.data.ssi category="Interests" %}
-  
-</div>
-
-<div class="wrapper-footer">
-  <div class="container">
-    <footer class="footer">
-      <div class="svg-icon">
-        {% include svg-icons.html %}
-      </div>
-    </footer>
+  <div class="intro-header">
+    {% include head.html %}
   </div>
-</div>
 
-{% include analytics.html %}
+
+  <div id="main" role="main" class="container" style="overflow: visible;">
+    <h1>About</h1>
+    {{ content }}
+    <h2>Skills</h2>
+    <div class="row">
+      <div class="column">
+        {% include skills.html proglang=site.data.pl category="Programming languages" %}
+      </div>
+      <div class="column">
+        {% include skills.html proglang=site.data.fe category="Front End" %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        {% include skills.html proglang=site.data.be category="Back End" %}
+      </div>
+      <div class="column">
+        {% include skills.html proglang=site.data.misc category="Misc" %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        {% include skills.html proglang=site.data.other category="Other" %}
+      </div>
+      <div class="column">
+        {% include skills.html proglang=site.data.ssi category="Interests" %}
+      </div>
+    </div>
+
+  </div>
+
+  <div class="wrapper-footer">
+    <div class="container">
+      <footer class="footer">
+        <div class="svg-icon">
+          {% include svg-icons.html %}
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  {% include analytics.html %}
 </body>
+
 </html>

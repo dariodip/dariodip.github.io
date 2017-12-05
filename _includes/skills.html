@@ -1,20 +1,18 @@
 
-<details style="cursor:pointer">
- <summary>{{ include.category }}</summary>
  <div style="overflow: hidden;">
-        
+    <div class="container-skills">
+        <div class="col">
+          <h3>{{ include.proglang[0].category }}</h3>
+          <hr>
+          <ul class="skill">
             {% for skill in include.proglang %}
-                {% assign loopindex = forloop.index | modulo: 2 %}
-                {% assign level = skill.level | floor %}
-                {% assign last_check = loopindex | plus: 1 %}
-                <div class="two" id="{% if loopindex == 1 %}left{% else %}right{% endif %}">
-                    <h4>{{skill.name}}</h4>
-                    <div class="progress">
-                        <span class="meter" style="width:{{level}}0%">
-                            <span class="hidecaption">{{level}}/10</span>
-                        </span>
-                    </div>
-                </div>
+                    <li>
+                        <span class="expand {{ skill.level }}"></span>
+                        <em>{{ skill.name }}</em>
+                    </li>
             {% endfor %}
+        </ul>
+    </div>
+  </div>
         </div>
-</details>
+
