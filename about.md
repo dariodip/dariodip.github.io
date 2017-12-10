@@ -25,5 +25,5 @@ Edsger Dijkstra
 -->
 ## Roles
 
-Web Developer, Freelance
+Developer, Freelance
 
