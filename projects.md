@@ -87,7 +87,7 @@ We also built a simple page, using AngularJS as frontend and Flask as backend, i
 ### Healthy Weight
 #### Apr 2015 – Jul 2015
 
-  Project for the course in Human Computer Interaction at the University of Salerno, on a small app, developed with C#, for exercise and physical health, aimed at countering obesity. The application, related materials and prototyping activities, are mainly focused on keeping up the principle of usability, based on the main guidelines and heuristics.
+  This project was developed for the course in Human Computer Interaction at the University of Salerno. It consists of a small app, developed with C#, for tracking exercise and physical health, aimed at countering obesity. The application, related materials and prototyping activities, are mainly focused on keeping up the principle of usability, based on the main guidelines and heuristics.
 
 
 
