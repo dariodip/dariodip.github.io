@@ -1,28 +1,31 @@
 -   name: C
     level: eight
     category: Prog. Language
-    image: c.png
--   name: C#
-    level: three
-    image: csharp.png
+    icon: devicon-c-plain
+-   name: Go
+    level: six
+    icon: devicon-go-plain
     category: Prog. Language
 -   name: Java
     level: nine
-    image: java.png
     category: Prog. Language
+    icon: devicon-java-plain
 -   name: Python
     level: ten
     image: python.png
+    icon: devicon-python-plain
     category: Prog. Language
--   name: PHP
+-   name: Scala
     level: four
-    image: php.png
+    icon: devicons devicons-scala 
     category: Prog. Language
 -   name: JavaScript
     level: eight
     image: javascript.png
     category: Prog. Language
+    icon: devicon-javascript-plain
 -   name: R
     level: six
     category: Prog. Language
+    icon: fa fa-calculator
 

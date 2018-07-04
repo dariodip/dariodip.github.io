@@ -2,12 +2,16 @@
 -   name: Computer Science
     level: eight
     category: Misc
+    icon: fa fa-laptop
 -   name: Graph Theory
     level: seven
     category: Misc
+    icon: fa fa-code-fork
 -   name: Algorithms
     level: eight
     category: Misc
+    icon: fa fa-gear
 -   name: Software Engineering
     level: six
     category: Misc
+    icon: fa fa-book

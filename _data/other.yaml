@@ -2,24 +2,32 @@
 -   name: LaTex
     level: six
     category: Other
+    icon: fa fa-align-left
 -   name: Matlab
     level: three
     category: Other
+    icon: fa fa-calculator
 -   name: Java RMI
     level: seven
     category: Other
+    icon: devicon-java-plain
 -   name: Git
     level: eight
     category: Other
+    icon: devicon-git-plain
 -   name: Maven
     level: eight
     category: Other
+    icon: devicon-java-plain
 -   name: Jekyll
     level: nine
     category: Other
+    icon: devicons devicons-jekyll_small 
 -   name: OpenMPI
     level: six
     category: Other
+    icon: devicon-c-plain
 -   name: Docker
     level: six
     category: Other
+    icon: devicon-docker-plain

@@ -8,7 +8,8 @@
             {% for skill in include.proglang %}
                     <li>
                         <span class="expand {{ skill.level }}"></span>
-                        <em>{{ skill.name }}</em>
+                        <em><i class="{{ skill.icon }}"></i> {{ skill.name }}</em>
+                        
                     </li>
             {% endfor %}
         </ul>
