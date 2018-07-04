@@ -31,3 +31,7 @@
     level: six
     category: Other
     icon: devicon-docker-plain
+-   name: Vim
+    level: five
+    category: Interests
+    icon: devicons devicons-vim
