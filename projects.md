@@ -56,8 +56,9 @@ The project was developed together with [Mario Villani](https://github.com/Mario
 ### [prefix-search](https://github.com/dariodip/prefix-search)
 #### Apr 2018 - Jul 2018
 
- prefix-search is an implementation of the [paper](https://link.springer.com/chapter/10.1007/978-3-642-40450-4_40) *Compressed Cache-Oblivious String B-tree* of Paolo Ferragina and Rossano Venturini. We developed the proposed algorithm (LPRC) and a new one (PSRC), giving you the ability to deal with online dictionaries of strings in an unspecified order.
-The project was developed using [Go](https://golang.org/) for the core of the algorithm and Python for the random test generator and analyser. 
+prefix-search is an implementation of the algorithm introduced in the [paper](https://link.springer.com/chapter/10.1007/978-3-642-40450-4_40) *Compressed Cache-Oblivious String B-tree* of Paolo Ferragina and Rossano Venturini. 
+We developed the proposed algorithm (LPRC) and a new one (PSRC), giving you the ability to deal with online dictionaries of strings in an unspecified order.
+The project was developed using [Go](https://golang.org/) for the core of the algorithm and Python for the random test generator and the analysis of the results. 
 We also used [Travis CI](https://travis-ci.org/) for Continuous Integration, in order to test our project at each new commit and pull request.
 
 The project was developed together with [Mattia Tomeo](https://github.com/mattiatomeo).
@@ -65,7 +66,7 @@ The project was developed together with [Mattia Tomeo](https://github.com/mattia
 ***
 
 ### [gittogit](https://github.com/dariodip/gittogit)
-####
+#### Dec 2017 - Mar 2018
 
 gittogit is a simple implementation of the git protocol using a peer-to-peer network as a storage. The storage is, indeed, a Distributed Hash Table (DHT). We used Tomp2p as DHT library.
 Each client can:
