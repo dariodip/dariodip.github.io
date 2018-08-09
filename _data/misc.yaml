@@ -6,11 +6,11 @@
 -   name: Graph Theory
     level: seven
     category: Misc
-    icon: fa fa-code-fork
+    icon: fas fa-code-branch
 -   name: Algorithms
     level: eight
     category: Misc
-    icon: fa fa-gear
+    icon: fas fa-cogs
 -   name: Software Engineering
     level: six
     category: Misc
