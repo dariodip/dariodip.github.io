@@ -27,3 +27,7 @@
     level: nine
     category: Interests
     icon: fa fa-bicycle
+-   name: Tennis
+    level: five
+    category: Interests
+    icon: fa fa-tennis-ball
