@@ -16,15 +16,11 @@ Edsger Dijkstra
 
 ## Education
 
-* Master's degree, Networks and software technologies (Computer Science), *(active now)*. 
+* [Università degli Studi di Salerno](http://www.unisa.it). Master's degree, Networks and software technologies (Computer Science), *(active now)*. 
 
-[Università degli Studi di Salerno](http://www.unisa.it);
-
-* Bachelor's degree, Computer Science, 110 cum laude;
+* [Università degli Studi di Salerno](http://www.unisa.it). Bachelor's degree, Computer Science, 110 cum laude;
 
 Thesis on *Streaming Graph Partitioning* developed at [ISISLab](https://github.com/isislab-unisa/streaminggraphpartitioning/).
-
-[Università degli Studi di Salerno](http://www.unisa.it).
 
 
 <!--  
