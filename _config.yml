@@ -15,19 +15,11 @@ description: Developer from Salerno (Italy)
 
 # Includes an icon in the footer for each username you enter
 footer-links:
-  dribbble:
   email: darionovantadue@gmail.com
-  facebook:
-  flickr:
   github: dariodip
-  instagram:
   linkedin: dario-di-pasquale
-  pinterest:
-  rss: # just type anything here for a working RSS icon
   twitter: darioskal
   stackoverflow: users/4908652/darioska
-  youtube: # channel/<your_long_string> or user/<user-name>
-  googleplus: # anything in your profile username that comes after plus.google.com/
 
 
 # Enter your Disqus shortname (not your username) to enable commenting on posts
