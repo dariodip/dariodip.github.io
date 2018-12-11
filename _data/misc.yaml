@@ -3,6 +3,10 @@
     level: eight
     category: Misc
     icon: fa fa-laptop
+-   name: Blockchain   
+    level: seven
+    category: Misc
+    level: seven
 -   name: Graph Theory
     level: seven
     category: Misc
