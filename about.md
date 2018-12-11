@@ -4,15 +4,17 @@ title: About
 permalink: /about/
 ---
 
-I am a passionate freelance software developer from Salerno. <br/>
-I have worked as a back-end developer for two years, using both Javascript (Node.js) and Python as languages, and both NoSQL (MongoDB) and SQL databases. I have occasionally worked as a front-end or mobile developer, even though I prefer back-end. <br/>
-I enjoy learning new technologies, new frameworks (not only for web) and new programming languages, but my main passion is Computer Science. <br/>
-I am actually focusing on how to design and develop microservices using state-of-the-art technologies. <br/>
-I graduated cum laude in Computer Science at Università degli Studi di Salerno and I'm actually studing for my Master's Degree in Networks and Software Technologies. <br/>
-I did my Bachelor's thesis on Streaming Graph Partitioning.
+I am a passionate freelance developer from Salerno. </br> 
+I have worked as a back-end developer for three years, using both Javascript (Node.js) and Python as languages, and both NoSQL (MongoDB) and SQL databases. I have occasionally worked as a front-end or mobile developer, even though I prefer back-end. </br> 
+At present I am working as a Blockchain Engineer and Smart Contract Developer. </br> 
+I enjoy learning new technologies, new frameworks and new programming languages, but actually, my main passions are Computer Science and solving hard problems. </br> 
+I am currently focused on Blockchain Technologies, Smart Contract development and DSLs development. </br> 
+I graduated cum laude in Computer Science at Università degli Studi di Salerno and I'm currently studing for my Master's Degree in Networks and Software Technologies.</br> 
+I did my Bachelor's thesis on Streaming Graph Partitioning. </br> 
 
 « Computer Science is no more about computers than astronomy is about telescopes. »
-Edsger Dijkstra
+ Edsger Dijkstra
+
 
 ## Education
 
