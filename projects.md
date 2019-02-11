@@ -4,6 +4,17 @@ title: Projects
 permalink: /projects/
 ---
 
+### BlockID Authentication Service over Blockchain
+#### May 2018 - Present
+
+Designing Ethereum-based blockchain solutions aiming to address both privacy and scalability concerns.
+
+BlockID Authentication Service is an Authentication Service giving to the user the ability to get access to many systems compliant with the protocol we designed and developed, without providing personal information. 
+
+The project was developer with [Like A Coffee](http://likeacoffee.com).
+
+***
+
 ### Data Aggregation Server for IOT (DASI)
 #### Jul 2017 - Sep 2017
 
