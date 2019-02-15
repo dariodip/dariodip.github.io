@@ -16,7 +16,7 @@ The project was developer with [Like A Coffee](http://likeacoffee.com).
 ***
 
 ### Data Aggregation Server for IOT (DASI)
-#### Jul 2017 - Sep 2017
+#### May 2017 - Oct 2017
 
 Designing and developing a dynamic data aggregation server using Python (Flask).
 The server can gather data in different formats from many devices (e.g. sensors) and these informations can be accessed in a standard format through HTTP endpoints.
@@ -34,7 +34,7 @@ The project was developed together with [Mario Villani](https://github.com/Mario
 ***
 
 ### [Voto col Portafoglio](https://itunes.apple.com/it/app/voto-col-portafoglio/id1244405835?mt=8) 
-#### Apr 2017 - Aug 2017
+#### Apr 2017 - Oct 2017
 
 I developed front-end for Voto col Portafoglio app: a cross-platform mobile application developed with React Native, using Native Base as UI Framework.
 
@@ -54,7 +54,7 @@ The project was developed together with [Mario Villani](https://github.com/Mario
 ***
 
 ### [NJOY Campania](https://play.google.com/store/apps/details?id=it.njoy.campania)
-#### Feb 2016 - Apr 2016
+#### Feb 2016 - May 2016
 I designed and developed backend for NJOY Campania using MondoDB as database and Node.js (Express as framework) for the server.
 
 The project was developed together with [Mario Villani](https://github.com/MarioVillani).
