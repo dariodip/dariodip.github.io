@@ -67,11 +67,11 @@ The project was developed together with [Mario Villani](https://github.com/Mario
 ### [FLY](https://github.com/spagnuolocarmine/FLY-language/)
 #### Jul 2018 - Feb 2019
 
-FLY is an open source Domain Specific Language for scientific computing on the cloud exploiting Funtion-as-a-Service.
+FLY is an open source Domain Specific Language for scientific computing on the cloud exploiting Function-as-a-Service.
 
-FLY is designed as a scripting language that use as run-time environment, the local machine or a cloud infrastructure, the script automates the execution of tasks that could alternatively be executed one-by-one by a human operator. The goal of FLY is to provide a portable, scalable and easy-to-use programming environment for scientific computing. FLY perceives a cloud computing infrastructure as a parallel computing architecture on which it is possible to execute some parts of its execution flow in parallel. FLY enables users (domain experts with limited knowledge about complex parallel and distributed systems) to design their applications exploiting data and task parallelism on any FaaS architecture. This is achieved by a rich language that provides domain-specific constructs, that enables the users to easily interact, using an environment abstraction, with different FaaS backends.
+FLY is designed as a scripting language that uses the local machine or a cloud infrastructure as the run-time environment. The script automates the execution of tasks that could alternatively be executed one-by-one by a human operator. The goal of FLY is to provide a portable, scalable and easy-to-use programming environment for scientific computing. FLY perceives a cloud computing infrastructure as a parallel computing architecture on which it is possible to execute some parts of its execution flow in parallel. FLY enables users (domain experts with limited knowledge about complex parallel and distributed systems) to design their applications exploiting data and task parallelism on any FaaS architecture. This is achieved by a rich language that provides domain-specific constructs, that enables the users to easily interact, using an environment abstraction, with different FaaS backends.
 
-FLY is written using Xtext a framework for development of programming languages and domain-specific languages. FLY code is transformed in pure Java code that you can run on a Java Virtual Machine and/or in JavaScript (Node.js) and Python code that you can run on a FaaS backends.
+FLY is written using Xtext a framework for the development of programming languages and domain-specific languages. The FLY code is transformed in pure Java code that you can run on a Java Virtual Machine and/or in JavaScript (Node.js) and Python code that you can run on a FaaS backend.
 
 I developed the Python generator for my Master's thesis.
 
