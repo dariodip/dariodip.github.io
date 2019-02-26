@@ -9,8 +9,8 @@ I have been working as a back-end developer for three years, using both Javascri
 At present, I am working as a Backend Engineer and Smart Contract Developer. <br/>
 I enjoy learning new technologies, new frameworks and new programming languages, but actually, my main passions are Computer Science and solving hard problems. <br/>
 I am currently focused on Blockchain Technologies, Smart Contract development and DSLs development. <br/>
-I graduated cum laude in Computer Science at Università degli Studi di Salerno and I'm currently studying for my Master's Degree in Networks and Software Technologies.<br/>
-I did my Bachelor's thesis on Streaming Graph Partitioning. <br/>
+I got my Bachelor's degree cum laude in Computer Science at Università degli Studi di Salerno and in 2019 I gained cum laude a Master's Degree in Networks and Software Technologies. <br />
+I did my Bachelor's thesis on Streaming Graph Partitioning and my Master's thesis on DSL Development for Cloud Computing. <br />
 
 « Computer Science is no more about computers than astronomy is about telescopes. »
  Edsger Dijkstra
