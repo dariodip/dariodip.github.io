@@ -3,8 +3,6 @@ layout: page
 title: Go Workshop 2019 References
 ---
 
-## Go Workshop 2019 References
-
 ### Go Language Tutorial
 
 * https://golang.org    (official website)
