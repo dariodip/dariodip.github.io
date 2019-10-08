@@ -21,3 +21,10 @@ title: Go Workshop 2019 References
 * https://medium.com/a-journey-with-go  (tutorials for advanced users)
 * https://hub.packtpub.com/concurrency-and-parallelism-in-golang-tutorial/ (a detailed explanation about Go parallelism
 
+### Typing System
+
+* https://en.wikipedia.org/wiki/Structural_type_system
+* https://en.wikipedia.org/wiki/Type_inference
+* https://en.wikipedia.org/wiki/Strong_and_weak_typing
+* https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)
+* https://en.wikipedia.org/wiki/Type_system#STATIC
