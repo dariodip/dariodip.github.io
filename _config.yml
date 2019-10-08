@@ -6,7 +6,7 @@
 name: Dario Di Pasquale
 
 # Short bio or description (displayed in the header)
-description: Developer from Salerno (Italy)
+description: Software Developer from Italy
 
 
 #
@@ -44,6 +44,7 @@ baseurl: ""
 #
 
 permalink: /:title/
+include: ['_pages', '_pages/gows']
 
 # Jekyll 3 now only supports Kramdown for Markdown
 kramdown:
