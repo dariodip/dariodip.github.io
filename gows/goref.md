@@ -1,7 +1,6 @@
 ---
 layout: page
 title: Go Workshop 2019 References
-permalink: /gows/
 ---
 
 ## Go Workshop 2019 References
