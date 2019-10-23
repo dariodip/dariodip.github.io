@@ -21,7 +21,8 @@ tags: [go, golang, workshop, references]
 * <https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3>   (clear explanation about Go concurrency)
 * <https://awesome-go.com/>   (a list of Go frameworks and libraries)
 * <https://medium.com/a-journey-with-go>  (tutorials for advanced users)
-* <https://hub.packtpub.com/concurrency-and-parallelism-in-golang-tutorial/> (a detailed explanation about Go parallelism
+* <https://hub.packtpub.com/concurrency-and-parallelism-in-golang-tutorial/> (a detailed explanation about Go parallelism)
+* <https://www.airs.com/blog/archives/277> (Go Internals)
 
 ### Go Language Popularity
 
