@@ -61,3 +61,11 @@ tags: [go, golang, workshop, references]
 * <https://medium.com/rungo/error-handling-in-go-f0125de052f0>  (Error Handling in Go) 
 * <https://8thlight.com/blog/kyle-krull/2018/08/13/exploring-error-handling-patterns-in-go.html>  (Error Handling Patters in Go)
 
+### Programming languages concepts
+
+* <https://en.wikipedia.org/wiki/Zipf%27s_law> (Zipf's Law)
+* <https://en.wikipedia.org/wiki/Single_responsibility_principle> (Single Responsability Principle)
+* <https://medium.com/@rakyll/interface-pollution-in-go-7d58bccec275> (Interface Pollution in go)
+* <https://medium.com/@matryer/line-of-sight-in-code-186dd7cdea88> (Line of Sight Rule)
+* <https://eli.thegreenplace.net/2011/01/23/how-debuggers-work-part-1> (How debuggers work)
+
