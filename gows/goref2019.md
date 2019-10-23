@@ -68,4 +68,6 @@ tags: [go, golang, workshop, references]
 * <https://medium.com/@rakyll/interface-pollution-in-go-7d58bccec275> (Interface Pollution in go)
 * <https://medium.com/@matryer/line-of-sight-in-code-186dd7cdea88> (Line of Sight Rule)
 * <https://eli.thegreenplace.net/2011/01/23/how-debuggers-work-part-1> (How debuggers work)
+* <https://software.intel.com/en-us/articles/avoiding-and-identifying-false-sharing-among-threads> (False Sharing)
+* <https://medium.com/@genchilu/whats-false-sharing-and-how-to-solve-it-using-golang-as-example-ef978a305e10> (False Sharing in Go)
 
