@@ -55,6 +55,7 @@ tags: [go, golang, workshop, references]
   * <http://www.club.cc.cmu.edu/~cmccabe/blog_golang_type_system.html>  (Go type system detailed)
   * <http://asserttrue.blogspot.com/2009/02/inheritance-as-antipattern.html>  (Inheritance as Antipattern)
   * <https://www.javaworld.com/article/2073649/why-extends-is-evil.html#talkback> (Inheritance as Antipattern for Java Developers)
+  * <https://www.youtube.com/watch?v=5IKcPMJXkKs> (Closured as Generics)
 
 ### Go Language Error Handling
 
