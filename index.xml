@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dario Di Pasquale</title>
+    <link>/</link>
+    <description>Recent content on Dario Di Pasquale</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    
+	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/about/</guid>
+      <description>About me I am a passionate freelance software developer from Salerno currently living in Rome.
+I have worked as a back-end developer for two years, using both Javascript (Node.js) and Python as languages, and both NoSQL (e.g. MongoDB) and SQL databases. I have occasionally worked as a front-end or mobile developer, even though I prefer back-end and systems developing.
+I have also worked as a blockchain engineer since early 2019.</description>
+    </item>
+    
+    <item>
+      <title>Go Workshop 2019 References</title>
+      <link>/gows/goref2019/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/gows/goref2019/</guid>
+      <description>Go Language Tutorial  https://golang.org (official website) https://go-tour-ita.appspot.com/welcome/1 (an interactive tour through Go) http://www.golangbootcamp.com/ (comprehensive Go tutorial) https://blog.golang.org/ (official blog) https://golangcode.com/ (a library of useful Go snippets) https://golangbot.com/ (tutorials for beginners) https://appliedgo.net/ (tutorials and explanations for advanced users) https://changelog.com/gotime (Go podcast) https://dave.cheney.net/category/golang (another blog of Go) https://golang.ch/ (Go news, libraries and tutorials) https://www.golangprograms.com/ (Go blog and tutorials for mid-advanced users) https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3 (clear explanation about Go concurrency) https://awesome-go.com/ (a list of Go frameworks and libraries) https://medium.</description>
+    </item>
+    
+    <item>
+      <title>Portfolio</title>
+      <link>/portfolio/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/portfolio/</guid>
+      <description>Junior Solutions Architect @ Immobiliare.it Apr 2019 - Present Currently I am working as a Junior Solutions Architect for the R&amp;amp;D department of Immobiliare.it, helping Infrastructure Team in designing and developing systems spaning several fields.
+I am mainly using the following programming languages:
+ Golang C/C++ Python   Currently I am focusing on high-performance image processing, specialized backpressure routing algorithms and parallel/distributed computing.
+BlockID Authentication Service over Blockchain May 2018 - Mar 2019 Designing Ethereum-based blockchain solutions aiming to address both privacy and scalability concerns.</description>
+    </item>
+    
+  </channel>
+</rss>
