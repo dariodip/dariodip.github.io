@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on Dario Di Pasquale</title>
+    <link>/tags/python/</link>
+    <description>Recent content in python on Dario Di Pasquale</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 01 Dec 2019 17:05:35 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Binary Search with Go, Python and C</title>
+      <link>/posts/2019/12/binary-search-with-go-python-and-c/</link>
+      <pubDate>Sun, 01 Dec 2019 17:05:35 +0000</pubDate>
+      
+      <guid>/posts/2019/12/binary-search-with-go-python-and-c/</guid>
+      <description>The Binary Search Algorithm The Binary Search Algorithm is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).
+This algorithm is as efficient as easy to learn due to its simplicity.
+This algorithm does only O(log n) comparisons.</description>
+    </item>
+    
+  </channel>
+</rss>

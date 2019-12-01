@@ -1,0 +1,131 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Dario Di Pasquale</title>
+        <link>/posts/</link>
+        <description>Recent content in Posts on Dario Di Pasquale</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+        <lastBuildDate>Sun, 01 Dec 2019 17:05:35 +0000</lastBuildDate>
+        <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Binary Search with Go, Python and C</title>
+            <link>/posts/2019/12/binary-search-with-go-python-and-c/</link>
+            <pubDate>Sun, 01 Dec 2019 17:05:35 +0000</pubDate>
+            
+            <guid>/posts/2019/12/binary-search-with-go-python-and-c/</guid>
+            <description>The Binary Search Algorithm The Binary Search Algorithm is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).
+This algorithm is as efficient as easy to learn due to its simplicity.
+This algorithm does only O(log n) comparisons.</description>
+            <content type="html"><![CDATA[
+
+<h2 id="the-binary-search-algorithm">The Binary Search Algorithm</h2>
+
+<p>The <em>Binary Search Algorithm</em> is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).</p>
+
+<p>This algorithm is as efficient as easy to learn due to its simplicity.</p>
+
+<p>This algorithm does only <em>O(log n)</em> comparisons.</p>
+
+<p>On the other hand, it only works for sorted collections, making it restricted to some specific cases.</p>
+
+<h3 id="pseudocode">Pseudocode</h3>
+
+<p>The pseudocode for the algorithm is the following:</p>
+
+<pre><code>    function BSA(A, n, T):
+        L := 0
+        R := n − 1
+        while L &lt;= R:
+            m := floor((L + R) / 2)
+            if A[m] &lt; T:
+                L := m + 1
+            else if A[m] &gt; T:
+                R := m - 1
+            else:
+                return m
+        return unsuccessful
+</code></pre>
+
+<p>Let&rsquo;s explain this pseudocode:</p>
+
+<ul>
+<li>The algorithm takes as input an array <code>A</code>, the length of the array <code>n</code> and the element to search <code>T</code>;</li>
+<li>We initialize two variables: <code>L</code> to <code>0</code> and <code>R</code> to <code>n-1</code>, namely the index to the first and the last element to the array <code>A;</code></li>
+<li>We iterate until <code>L</code> becomes equal or greater than <code>R</code>, that is when we iterated over the whole array;</li>
+<li>We initialize <code>m</code> to be the floor or <code>(L+R)/2</code>, namely the index of the element at the middle of the array;</li>
+<li>Then we compare the element at the index <code>m</code> to the desired element <code>T</code>:
+
+<ul>
+<li>if <code>A[m]</code> is lower than <code>T</code> we should search <code>T</code> in the greater half of the array: the one in <em>[m+1, R]</em>;</li>
+<li>if <code>A[m]</code> is greater than <code>T</code> we should search <code>T</code> in the lower half of the array: the one in <em>[L,m-1]</em>;</li>
+<li>otherwise <code>A[m]</code> is equal to <code>T</code> and we can return <code>m</code> because we found the element.</li>
+</ul></li>
+</ul>
+
+<h3 id="python">Python</h3>
+
+<p>Let&rsquo;s have a look at the BSA using Python.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> floor
+    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bsa</span>(l, n, t):
+        L <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+        R <span style="color:#f92672">=</span> n <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+        <span style="color:#66d9ef">while</span> L <span style="color:#f92672">&lt;=</span> R:
+            m <span style="color:#f92672">=</span> floor((L <span style="color:#f92672">+</span> R) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>)
+            <span style="color:#66d9ef">if</span> A[m] <span style="color:#f92672">&lt;</span> T:
+                L <span style="color:#f92672">=</span> m<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
+            <span style="color:#66d9ef">elif</span> A[m] <span style="color:#f92672">&gt;</span> T:
+                R <span style="color:#f92672">=</span> m<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+            <span style="color:#66d9ef">else</span>:
+                <span style="color:#66d9ef">return</span> m
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span></code></pre></div>
+<p>As you may see, the <em>BSA</em> written in Python is very similar to the pseudocode. We return <code>-1</code> when we cannot find the desired element.</p>
+
+<h3 id="go">Go</h3>
+
+<p>The <em>Go</em> version of the <em>BSA</em> is the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">bsa</span>(<span style="color:#a6e22e">A</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+        <span style="color:#a6e22e">L</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+        <span style="color:#a6e22e">R</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">L</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">R</span> {
+            <span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> int(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Floor</span>(float64((<span style="color:#a6e22e">L</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">R</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>)))
+            <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">m</span>] &lt; <span style="color:#a6e22e">T</span> {
+                <span style="color:#a6e22e">L</span> = <span style="color:#a6e22e">m</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+            } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">m</span>] &gt; <span style="color:#a6e22e">T</span> {
+                <span style="color:#a6e22e">R</span> = <span style="color:#a6e22e">m</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+            } <span style="color:#66d9ef">else</span> {
+                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">m</span>
+            }
+        }
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+    }</code></pre></div>
+<p>Unlike the <em>Python</em> version, this code does not look similar to the pseudocode because of Go&rsquo;s strong typing, which forces us to do 2 casts (<em>line 5</em>). Also in the <em>Go</em> implementation we return <code>-1</code> if we cannot find the element <code>T</code>. Due to the simplicity of the algorithm itself, no other consideration has to be made.</p>
+
+<h3 id="c">C</h3>
+
+<p>The <em>C</em> version of the <em>BSA</em> could be the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">bsa</span>(<span style="color:#66d9ef">int</span> A[], <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> T) {
+        <span style="color:#66d9ef">int</span> L <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, R <span style="color:#f92672">=</span> n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+        <span style="color:#66d9ef">while</span> (L <span style="color:#f92672">&lt;=</span> R) {
+            <span style="color:#66d9ef">int</span> m <span style="color:#f92672">=</span> (L <span style="color:#f92672">+</span> R) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
+            <span style="color:#66d9ef">if</span> (A[m] <span style="color:#f92672">&lt;</span> T) {
+                L <span style="color:#f92672">=</span> m <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
+            } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (A[m] <span style="color:#f92672">&gt;</span> T) {
+                R <span style="color:#f92672">=</span> m <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
+            } <span style="color:#66d9ef">else</span> {
+                <span style="color:#66d9ef">return</span> m;
+            }
+        }
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
+    }</code></pre></div>
+<p>The <em>C</em> implementation looks quite similar to the <em>Go</em> implementation but does not have casts because <em>C</em> has weak typing.</p>
+
+<hr />
+
+<p>This is my first blog post.</p>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>
