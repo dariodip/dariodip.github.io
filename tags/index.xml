@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 01 Dec 2019 17:05:35 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jan 2020 17:05:35 +0000</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,54 @@
     <item>
       <title>algorithms</title>
       <link>/tags/algorithms/</link>
-      <pubDate>Sun, 01 Dec 2019 17:05:35 +0000</pubDate>
+      <pubDate>Fri, 03 Jan 2020 17:05:35 +0000</pubDate>
       
       <guid>/tags/algorithms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>basic</title>
+      <link>/tags/basic/</link>
+      <pubDate>Fri, 03 Jan 2020 17:05:35 +0000</pubDate>
+      
+      <guid>/tags/basic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>beginner</title>
+      <link>/tags/beginner/</link>
+      <pubDate>Fri, 03 Jan 2020 17:05:35 +0000</pubDate>
+      
+      <guid>/tags/beginner/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>data structures</title>
+      <link>/tags/data-structures/</link>
+      <pubDate>Fri, 03 Jan 2020 17:05:35 +0000</pubDate>
+      
+      <guid>/tags/data-structures/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>go</title>
+      <link>/tags/go/</link>
+      <pubDate>Fri, 03 Jan 2020 17:05:35 +0000</pubDate>
+      
+      <guid>/tags/go/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>/tags/golang/</link>
+      <pubDate>Fri, 03 Jan 2020 17:05:35 +0000</pubDate>
+      
+      <guid>/tags/golang/</guid>
       <description></description>
     </item>
     
@@ -27,15 +72,6 @@
       <pubDate>Sun, 01 Dec 2019 17:05:35 +0000</pubDate>
       
       <guid>/tags/c/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>go</title>
-      <link>/tags/go/</link>
-      <pubDate>Sun, 01 Dec 2019 17:05:35 +0000</pubDate>
-      
-      <guid>/tags/go/</guid>
       <description></description>
     </item>
     

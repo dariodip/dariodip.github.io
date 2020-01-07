@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 01 Dec 2019 17:05:35 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jan 2020 17:05:35 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Data structures with Go - Part I</title>
+      <link>/posts/2020/01/data-structures-with-go-part-i/</link>
+      <pubDate>Fri, 03 Jan 2020 17:05:35 +0000</pubDate>
+      
+      <guid>/posts/2020/01/data-structures-with-go-part-i/</guid>
+      <description>Data Structures With Go - Part I Data structures are everywhere. Every developer should know them, starting from the most common ones.
+The data structure priorly describes how the data is organised, accessed, associated and processed.
+Using data structures you can keep your data in memory and access them in an efficient fashion.
+You should pick the data structure that is the most suitable for your purposes in order to minimize space in memory and access time.</description>
+    </item>
     
     <item>
       <title>Binary Search with Go, Python and C</title>
