@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 03 Jan 2020 17:05:35 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Jan 2020 17:05:35 +0000</lastBuildDate>
     
 	<atom:link href="/tags/beginner/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Data structures with Go - Part II</title>
+      <link>/posts/2020/01/data-structures-with-go-part-ii/</link>
+      <pubDate>Fri, 10 Jan 2020 17:05:35 +0000</pubDate>
+      
+      <guid>/posts/2020/01/data-structures-with-go-part-ii/</guid>
+      <description>Data Structures With Go - Part II In the previous post we discussed how to implement linear data structures with Go.
+Now we will explore two more complex data structures: tree and graph.
+Those structures are not Linear and can represent unstructured information. Both graphs and trees are the foundation of the graph theory and both can be used, essentially, to describe a kind of relation.
+In the domain of mathematics and computer science, graph theory is the study of graphs that concerns with the relationship among edges and vertices.</description>
+    </item>
     
     <item>
       <title>Data structures with Go - Part I</title>

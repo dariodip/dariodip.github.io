@@ -6,8 +6,292 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>en-us</language>
         <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-        <lastBuildDate>Fri, 03 Jan 2020 17:05:35 +0000</lastBuildDate>
+        <lastBuildDate>Fri, 10 Jan 2020 17:05:35 +0000</lastBuildDate>
         <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Data structures with Go - Part II</title>
+            <link>/posts/2020/01/data-structures-with-go-part-ii/</link>
+            <pubDate>Fri, 10 Jan 2020 17:05:35 +0000</pubDate>
+            
+            <guid>/posts/2020/01/data-structures-with-go-part-ii/</guid>
+            <description>Data Structures With Go - Part II In the previous post we discussed how to implement linear data structures with Go.
+Now we will explore two more complex data structures: tree and graph.
+Those structures are not Linear and can represent unstructured information. Both graphs and trees are the foundation of the graph theory and both can be used, essentially, to describe a kind of relation.
+In the domain of mathematics and computer science, graph theory is the study of graphs that concerns with the relationship among edges and vertices.</description>
+            <content type="html"><![CDATA[<h2 id="data-structures-with-go--part-ii">Data Structures With Go - Part II</h2>
+
+<p>In the <a href="/posts/2020/01/data-structures-with-go-part-i">previous post</a> we discussed how to implement linear data structures with Go.</p>
+
+<p>Now we will explore two more complex data structures: <em>tree</em> and <em>graph</em>.</p>
+
+<p>Those structures are not <em>Linear</em> and can represent unstructured information. Both <em>graph</em>s and <em>tree</em>s are the foundation of the <em>graph theory</em> and both can be used, essentially, to describe a kind of relation.</p>
+
+<p>In the domain of <em>mathematics</em> and <em>computer science</em>, <strong>graph theory</strong> is the study of graphs that concerns with the relationship among edges and vertices. It is a popular subject having its applications in computer science, information technology, biosciences and mathematics to name a few.</p>
+
+<p>The structures we will develop are only for educational purpose, you should not use them in production, also because some of them are already implemented in the <em>Go</em>'s standard library.</p>
+
+<p>None of those structures is thread-safe. We will make them <em>thread-safe</em> in future posts (I wish).</p>
+
+<p>Let's start by describing the most general one: the <strong>graph</strong>.</p>
+
+<h3 id="graph">Graph</h3>
+
+<p><figure><img src="/media/alvaro-pinot-czDvRp5V2b0-unsplash-min.jpg" alt="Graph" title="Photo by Alvaro Pinot on Unsplash"><figcaption>Photo by Alvaro Pinot on Unsplash</figcaption></figure></p>
+
+<p>According to <a href="https://en.wikipedia.org/wiki/Graph_(abstract_data_type)">Wikipedia</a>:</p>
+
+<blockquote>
+<p>A graph data structure consists of a finite (and possibly mutable) set of vertices (also called nodes or points), together with a set of unordered pairs of these vertices for an undirected graph or a set of ordered pairs for a directed graph. These pairs are known as edges (also called links or lines), and for a directed graph are also known as arrows. The vertices may be part of the graph structure or may be external entities represented by integer indices or references.</p>
+</blockquote>
+
+<p>So a <em>graph</em> is be a set <span  class="math">\(G = (V,E)\)</span>, where <span  class="math">\(V\)</span> is a set of <em>vertex</em> (or <em>nodes</em>) and <span  class="math">\(E\)</span> is a set of <em>edges</em>. We will focus on the undirected graph, but creating a directed graph from an undirected one is quite easy.</p>
+
+<p><figure><img src="/media/blog/p2/graph.png" alt="Graph" title="A graph"><figcaption>A graph</figcaption></figure></p>
+
+<p>In the above graph, <span  class="math">\(V = (a, b, c, d, e)\)</span> and <span  class="math">\(E = ((a,b), (a,c), (c,d), (d,e), (e,a))\)</span>.</p>
+
+<p>For a more detailed (and theoretical) description of graphs and their application, you could read the book <a href="https://www.pearson.com/us/higher-education/program/Kleinberg-Algorithm-Design/PGM319216.html">Algorithm Design</a>.</p>
+
+<p>Now it's the coding time!</p>
+
+<p>As usual, let's start with defining our structures:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">graph</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;strings&#34;</span>
+)
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Node</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">value</span> <span style="color:#66d9ef">interface</span>{}
+}
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Graph</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">nodes</span> []<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
+	<span style="color:#a6e22e">edges</span> <span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">Node</span>][]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NewGraph</span>() <span style="color:#f92672">*</span><span style="color:#a6e22e">Graph</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Graph</span>{
+		<span style="color:#a6e22e">nodes</span>: make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>, <span style="color:#ae81ff">0</span>),
+		<span style="color:#a6e22e">edges</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">Node</span>][]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>),
+	}
+}</code></pre></div>
+<p>As you can see from the code above, a <code>Node</code> is just a container for a value which is an <code>interface{}</code> so that we can use whatever type we want.</p>
+
+<p>A <code>Graph</code>, instead, contains both an array of pointers to <code>Node</code>s and a <code>map</code> which has <code>Node</code>s as <em>key</em> and an array of pointers to <code>Node</code>s as value.</p>
+
+<p>This definition follows naturally the formal definition, so we defined a <code>Graph</code> as a pair of <code>nodes</code> and <code>edges</code>.</p>
+
+<p>The <code>NewGraph</code> function only initializes <code>nodes</code> and <code>edges</code>.</p>
+
+<p>Let's see how to add <em>nodes</em> and <em>edges</em>:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">g</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Graph</span>) <span style="color:#a6e22e">AddNode</span>(<span style="color:#a6e22e">el</span> <span style="color:#66d9ef">interface</span>{}) <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span> {
+	<span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{<span style="color:#a6e22e">el</span>}
+	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">nodes</span> = append(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">nodes</span>, <span style="color:#a6e22e">n</span>)
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">n</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">g</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Graph</span>) <span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">n1</span>, <span style="color:#a6e22e">n2</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) {
+	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">n1</span>] = append(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">n1</span>], <span style="color:#a6e22e">n2</span>)
+	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">n2</span>] = append(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">n2</span>], <span style="color:#a6e22e">n1</span>)
+}</code></pre></div>
+<p>Both the <code>AddNode</code> and <code>AddEdge</code> methods are easy to understand.</p>
+
+<p><code>AddNode</code> creates a <code>Node</code> which wraps the element, appends it to the <code>node</code> array and returns a pointer to that <code>Node</code>. This pointer can be useful next.</p>
+
+<p><code>AddEdge</code> takes two pointers to <code>Node</code>s and appends them to the <code>edge</code> list in the <code>map</code> of each node.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">n</span> <span style="color:#a6e22e">Node</span>) <span style="color:#a6e22e">String</span>() <span style="color:#66d9ef">string</span> {
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;%v&#34;</span>, <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">value</span>)
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">g</span> <span style="color:#a6e22e">Graph</span>) <span style="color:#a6e22e">String</span>() <span style="color:#66d9ef">string</span> {
+	<span style="color:#a6e22e">sb</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Builder</span>{}
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">nodes</span> {
+		<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">WriteString</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">String</span>())
+		<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">WriteString</span>(<span style="color:#e6db74">&#34; -&gt; [ &#34;</span>)
+		<span style="color:#a6e22e">neighbors</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>]
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">u</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">neighbors</span> {
+			<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">WriteString</span>(<span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">String</span>())
+			<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">WriteString</span>(<span style="color:#e6db74">&#34; &#34;</span>)
+		}
+		<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">WriteString</span>(<span style="color:#e6db74">&#34;]\n&#34;</span>)
+	}
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">String</span>()
+}</code></pre></div>
+<p>The <code>String</code> method for the <code>Node</code> is trivial, while the <code>String</code> method for a <code>Graph</code> needs a explanation. We first create a <code>strings.Builder</code> which is the most efficient way to store a string incrementally. We then iterate over each <code>Node</code> and over each <em>edge</em> of that node. Let's take the graph represented above: to create it in our code we could run the following snipped of code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#a6e22e">g</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">NewGraph</span>()
+	<span style="color:#a6e22e">nA</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddNode</span>(<span style="color:#e6db74">&#34;a&#34;</span>)
+	<span style="color:#a6e22e">nB</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddNode</span>(<span style="color:#e6db74">&#34;b&#34;</span>)
+	<span style="color:#a6e22e">nC</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddNode</span>(<span style="color:#e6db74">&#34;c&#34;</span>)
+	<span style="color:#a6e22e">nD</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddNode</span>(<span style="color:#e6db74">&#34;d&#34;</span>)
+	<span style="color:#a6e22e">nE</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddNode</span>(<span style="color:#e6db74">&#34;e&#34;</span>)
+
+	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">nA</span>, <span style="color:#a6e22e">nB</span>)
+	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">nA</span>, <span style="color:#a6e22e">nC</span>)
+	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">nA</span>, <span style="color:#a6e22e">nE</span>)
+	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">nC</span>, <span style="color:#a6e22e">nD</span>)
+	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">nD</span>, <span style="color:#a6e22e">nE</span>)
+
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">String</span>())</code></pre></div>
+<p>Eventually, the <code>Print</code> statement will print the following:</p>
+
+<pre><code>a -&gt; [ b c e ]
+b -&gt; [ a ]
+c -&gt; [ a d ]
+d -&gt; [ c e ]
+e -&gt; [ a d ]
+</code></pre>
+
+<h3 id="tree">Tree</h3>
+
+<p><figure><img src="/media/blog/p2/tree-min.jpg" alt="Tree" title="Photo by Aaron Burden on Unsplash"><figcaption>Photo by Aaron Burden on Unsplash</figcaption></figure></p>
+
+<p>According to <a href="https://en.wikipedia.org/wiki/Tree_(graph_theory)">Wikipedia</a>:</p>
+
+<blockquote>
+<p>In graph theory, a tree is an undirected graph in which any two vertices are connected by exactly one path, or equivalently a connected acyclic undirected graph. A forest is an undirected graph in which any two vertices are connected by at most one path, or equivalently an acyclic undirected graph, or equivalently a disjoint union of trees.</p>
+</blockquote>
+
+<p>Generally speaking, a <em>tree</em> is a <em>graph</em> without cycles on which we could define a <em>parent-children</em> relationship.</p>
+
+<p>The recursive definition of a <em>tree</em> is:</p>
+
+<blockquote>
+<p>A tree is <span  class="math">\(empty\)</span> or a vertex <span  class="math">\(r\)</span> (the root of the tree) and a set of trees (the subtrees of <span  class="math">\(T\)</span>) whose roots are the children of <span  class="math">\(r\)</span>.</p>
+</blockquote>
+
+<p>This definition helps us to understand the basic structure of a <em>tree</em>. So we could decompose a <em>tree</em> in many <em>subtrees</em>.</p>
+
+<p>A <em>tree</em> is a collection of nodes connected by directed edges. It is a nonlinear data structure, compared to arrays, linked lists, stacks and queues which are <a href="/posts/2020/01/data-structures-with-go-part-i">linear data structures</a>. A tree can be empty with no nodes or a tree is a structure consisting of one node called the root and zero or one or more subtrees. A tree has the following general properties:</p>
+
+<ul>
+<li>one node is distinguished as a root;</li>
+<li>every node but the root is connected by a directed edge from exactly one other node;</li>
+<li>a direction is: <span  class="math">\(parent \rightarrow children\)</span></li>
+</ul>
+
+<p><figure><img src="/media/blog/p2/tree-repr.png" alt="Tree" title="A tree"><figcaption>A tree</figcaption></figure></p>
+
+<p>In the above <em>tree</em> we have a <strong>root</strong> <span  class="math">\(r\)</span> having <span  class="math">\(a\)</span>, <span  class="math">\(b\)</span> and <span  class="math">\(c\)</span> as child.
+<em>Subtrees</em> of this <em>tree</em> are:</p>
+
+<ul>
+<li>(<span  class="math">\(a\)</span>, <span  class="math">\(d\)</span>), having <span  class="math">\(a\)</span> as the root and <span  class="math">\(d\)</span> as child of <span  class="math">\(a\)</span>;</li>
+<li><span  class="math">\(b\)</span>, having <span  class="math">\(b\)</span> as the root and the empty tree as child of <span  class="math">\(b\)</span>;</li>
+<li><span  class="math">\(c\)</span>, having <span  class="math">\(c\)</span> as the root and the empty tree as child of <span  class="math">\(c\)</span>;</li>
+<li><span  class="math">\(d\)</span>, having <span  class="math">\(d\)</span> as the root and the empty tree as child of <span  class="math">\(d\)</span>.</li>
+</ul>
+
+<p>For a more detailed (and theoretical) description of trees and their application, you could read the book <a href="https://www.pearson.com/us/higher-education/program/Kleinberg-Algorithm-Design/PGM319216.html">Algorithm Design</a>.</p>
+
+<p>Now let's translate this formal definition into code:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">tree</span>
+
+<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Tree</span> <span style="color:#66d9ef">struct</span> {
+	<span style="color:#a6e22e">el</span> 		<span style="color:#66d9ef">interface</span>{}
+	<span style="color:#a6e22e">child</span> 	[]<span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>
+}
+
+<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>) <span style="color:#a6e22e">AddChild</span>(<span style="color:#a6e22e">el</span> <span style="color:#66d9ef">interface</span>{}) <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span> {
+	<span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Tree</span>{<span style="color:#a6e22e">el</span>: <span style="color:#a6e22e">el</span>}
+	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">child</span> = append(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">child</span>, <span style="color:#a6e22e">c</span>)
+	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">c</span>
+}</code></pre></div>
+<p>Code for <code>Tree</code> is quite easy, isn't it?</p>
+
+<p>Just think about the formal definition and see how we translate it in code:</p>
+
+<p>A <code>Tree</code> struct contains an element <code>el</code> and a set (an array) of other <code>Tree</code>s (<code>child</code>). When we add a child to a <code>Tree</code> using the <code>AddChild</code> method we create a new <code>Tree</code> with <code>el</code> as the element and no child, then we append this <em>tree</em> to the root.</p>
+
+<p>To represent the above tree, we could run the following snippet:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Tree</span>{<span style="color:#a6e22e">el</span>: <span style="color:#e6db74">&#34;r&#34;</span>}
+	<span style="color:#a6e22e">a</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">AddChild</span>(<span style="color:#e6db74">&#34;a&#34;</span>)
+	<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">AddChild</span>(<span style="color:#e6db74">&#34;d&#34;</span>)
+	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">AddChild</span>(<span style="color:#e6db74">&#34;b&#34;</span>)
+	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">AddChild</span>(<span style="color:#e6db74">&#34;c&#34;</span>)</code></pre></div>
+<p>Since this implementation is too easy, we'll see how to implement the search using both <em>BFS</em> (breadth-first search) and <em>DFS</em> (depth-first search).</p>
+
+<h4 id="bfs">BFS</h4>
+
+<p>The <em>BFS</em> algorithm visits our tree level by level. A possible visit to our tree could be the following:</p>
+
+<p><figure><img src="/media/blog/p2/bfs.png" alt="BFS" title="A BFS visit"><figcaption>A BFS visit</figcaption></figure></p>
+
+<p>Labels on the edges represent the order of visit.</p>
+
+<p>The code for a <em>BFS</em> visit is the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>) <span style="color:#a6e22e">BFS</span>(<span style="color:#a6e22e">f</span> <span style="color:#66d9ef">func</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>)) {
+	<span style="color:#a6e22e">q</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Queue</span>{}
+	<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Enqueue</span>(<span style="color:#a6e22e">t</span>)
+	<span style="color:#66d9ef">for</span> !<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Empty</span>() {
+		<span style="color:#a6e22e">next</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Dequeue</span>()
+		<span style="color:#a6e22e">nextNode</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">next</span>.(<span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>)
+		<span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">nextNode</span>)
+		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">nextNode</span>.<span style="color:#a6e22e">child</span>) &gt; <span style="color:#ae81ff">0</span> {
+			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">child</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nextNode</span>.<span style="color:#a6e22e">child</span> {
+				<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Enqueue</span>(<span style="color:#a6e22e">child</span>)
+			}
+		}
+	}
+}</code></pre></div>
+<p>We create a <em>queue</em> containing all the nodes to be visited. The first node added is obviously <em>t</em> (the root). A <em>for</em> iterates over the queue and applies the function <em>f</em> passing the dequeued element <em>next</em>. After visiting the element <em>next</em>, its child will be added to the queue.</p>
+
+<p>To print our <em>tree</em> using <em>BFS</em> we can run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">BFS</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>) {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">el</span>)
+	})</code></pre></div>
+<p>This will print:</p>
+
+<pre><code>r
+a
+b
+c
+d
+</code></pre>
+
+<h4 id="dfs">DFS</h4>
+
+<p>The <em>DFS</em> algorithm visits each node of the tree trying to Go as deep as he can, then <em>backtracking</em> when encounters a node with no children (a <em>leaf</em>). A possible visit to our tree could be the following:</p>
+
+<p><figure><img src="/media/blog/p2/dfs.png" alt="DFS" title="A DFS visit"><figcaption>A DFS visit</figcaption></figure></p>
+
+<p>Code for <em>DFS</em> is far more elegant that the one for <em>BFS</em> since it uses recursion:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>) <span style="color:#a6e22e">DFS</span>(<span style="color:#a6e22e">f</span> <span style="color:#66d9ef">func</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>)) {
+	<span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">t</span>)
+	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">child</span>) &gt; <span style="color:#ae81ff">0</span> {
+		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">child</span> {
+			<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">DFS</span>(<span style="color:#a6e22e">f</span>)
+		}
+	}
+}</code></pre></div>
+<p>It first calls <code>f</code> passing <code>t</code>, then visits each child of <code>t</code> and calls <code>DFS</code> on each one.</p>
+
+<p>To print our <em>tree</em> using <em>BFS</em> we can run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">DFS</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>) {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">el</span>)
+	})</code></pre></div>
+<p>This will print</p>
+
+<pre><code>r
+a
+d
+b
+c
+</code></pre>
+
+<h3 id="conclusion">Conclusion</h3>
+
+<p>Graphs and trees are powerful data structures since they allow you to store efficiently your data and their relationships. In literature, you can find so many different kinds of graphs and trees. A dept known of those structures makes you a better developer.</p>
+
+<blockquote>
+<p>&quot;The question of whether a computer can think is no more interesting than the question of whether a submarine can swim.&quot;</p>
+
+<p><em>Edsger W. Dijkstra</em></p>
+</blockquote>
+]]></content>
+        </item>
         
         <item>
             <title>Data structures with Go - Part I</title>
@@ -19,9 +303,7 @@
 The data structure priorly describes how the data is organised, accessed, associated and processed.
 Using data structures you can keep your data in memory and efficiently access them.
 You should pick the data structure that is the most suitable for your purposes to minimize space in memory and access time.</description>
-            <content type="html"><![CDATA[
-
-<h2 id="data-structures-with-go-part-i">Data Structures With Go - Part I</h2>
+            <content type="html"><![CDATA[<h2 id="data-structures-with-go--part-i">Data Structures With Go - Part I</h2>
 
 <p><strong>Data structures</strong> are everywhere. Every developer should know them, starting from the most common ones.</p>
 
@@ -35,13 +317,13 @@ You should pick the data structure that is the most suitable for your purposes t
 
 <p>The critical part of developing such data structures in <strong>Go</strong> is the lack of generics. While other programming languages such as Java, C# etc. allow us to work with generics, <strong>Go</strong> has no way to do that, so we have to use the empty interface: <code>interface{}</code>.</p>
 
-<p>Let&rsquo;s start with the most popular class of data structures: <strong>linear data structures</strong>.</p>
+<p>Let's start with the most popular class of data structures: <strong>linear data structures</strong>.</p>
 
 <p><strong>A Linear Data Structure</strong> arranges the data into a sequence and follows some sort of order.</p>
 
 <p>The linear data structure is a single level data structure while non-linear data structures are the multilevel data structure.</p>
 
-<p><img src="/media/blog/linear_ds.jpg" alt="Linear Data Structure" /></p>
+<p><figure><img src="/media/blog/linear_ds.jpg" alt="Linear Data Structure"></figure></p>
 
 <p>The most popular <strong>Linear Data Structures</strong> are:</p>
 
@@ -54,13 +336,13 @@ You should pick the data structure that is the most suitable for your purposes t
 
 <p>In this post, we will learn those Linear Data Structures and we will develop them using <em>Go</em>.</p>
 
-<p>The structures we will develop are only for educational purpose, you should not use them in production, also because some of them are already implemented in the <em>Go</em>&rsquo;s standard library.</p>
+<p>The structures we will develop are only for educational purpose, you should not use them in production, also because some of them are already implemented in the <em>Go</em>'s standard library.</p>
 
 <p>None of those structures is thread-safe. We will make them <em>thread-safe</em> in future posts (I wish).</p>
 
 <h3 id="stack">Stack</h3>
 
-<p><img src="/media/blog/stack_fun.jpg" alt="Photo by Whitney Wright on Unsplash" title="Photo by Whitney Wright on Unsplash" /></p>
+<p><figure><img src="/media/blog/stack_fun.jpg" alt="Photo by Whitney Wright on Unsplash" title="Photo by Whitney Wright on Unsplash"><figcaption>Photo by Whitney Wright on Unsplash</figcaption></figure></p>
 
 <p>Beyond cookies, a <strong>stack</strong> or <em>LIFO</em> (last in, first out) is an abstract data type that serves as a collection of elements, with two principal operations:</p>
 
@@ -72,13 +354,13 @@ You should pick the data structure that is the most suitable for your purposes t
 
 <p>In a stack both the operations of <strong>push</strong> and <strong>pop</strong> takes place at the same end that is top of the stack. It can be implemented by using both array and linked list.</p>
 
-<p>You can think a <strong>stack</strong> as a&hellip; stack. Yeah! Maybe the stack of plates is the best metaphor when thinking about this data structure.</p>
+<p>You can think a <strong>stack</strong> as a... stack. Yeah! Maybe the stack of plates is the best metaphor when thinking about this data structure.</p>
 
-<p>In a stack of plates you can (and should at least if you don&rsquo;t want to break all your plates) access only the plate on the top. So you can put a plate on the top of the stack (<strong>push</strong>), you can take a plate on the top of the stack and get rid of it (<strong>pop</strong>) or you can observe the plate on the top of the stack without removing it (<strong>top</strong>).</p>
+<p>In a stack of plates you can (and should at least if you don't want to break all your plates) access only the plate on the top. So you can put a plate on the top of the stack (<strong>push</strong>), you can take a plate on the top of the stack and get rid of it (<strong>pop</strong>) or you can observe the plate on the top of the stack without removing it (<strong>top</strong>).</p>
 
-<p>Now let&rsquo;s develop our stack using <strong>Go</strong>!</p>
+<p>Now let's develop our stack using <strong>Go</strong>!</p>
 
-<p>Let&rsquo;s start defining our structure:</p>
+<p>Let's start defining our structure:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">stack</span>
 
 <span style="color:#75715e">// Stack is the structure which contains our elements
@@ -87,13 +369,13 @@ You should pick the data structure that is the most suitable for your purposes t
 	<span style="color:#a6e22e">curInd</span> 	<span style="color:#66d9ef">int</span>
 }</code></pre></div>
 <p>The best way to implement a stack is by using an <strong>array</strong> and an <code>int</code> which indexes the top of the stack.
-To simplify stack&rsquo;s operations we assume that when the index is <code>-1</code> the stack is empty and when the stack is full we cannot insert other elements.</p>
+To simplify stack's operations we assume that when the index is <code>-1</code> the stack is empty and when the stack is full we cannot insert other elements.</p>
 
 <p>If you want to avoid the latter limitation, you should either control the size of the array dynamically or you should use another structure such as a linked list.</p>
 
 <p>The following image shows the empty stack, i.e. the one with no elements and <code>curInt</code> equals to <code>-1</code>.</p>
 
-<p><img src="/media/blog/empty_stack.png" alt="Empty stack" title="Empty stack" /></p>
+<p><figure><img src="/media/blog/empty_stack.png" alt="Empty stack" title="Empty stack"><figcaption>Empty stack</figcaption></figure></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// NewStack returns a pointer to a new stack having:
 </span><span style="color:#75715e">// - the array initialized with the provided size
 </span><span style="color:#75715e">// - the current index initialized with -1 (empty stack)
@@ -108,11 +390,11 @@ To simplify stack&rsquo;s operations we assume that when the index is <code>-1</
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Stack</span>) <span style="color:#a6e22e">IsEmpty</span>() <span style="color:#66d9ef">bool</span> {
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">curInd</span> &lt; <span style="color:#ae81ff">0</span>
 }</code></pre></div>
-<p>The function <code>NewStack</code> takes an <code>int</code> as argument and returns a pointer to a stack having both array and top&rsquo;s index initialized.</p>
+<p>The function <code>NewStack</code> takes an <code>int</code> as argument and returns a pointer to a stack having both array and top's index initialized.</p>
 
 <p>The method <code>IsEmpty</code> is quite simplistic: it returns <code>true</code> if <code>curInd</code> is less than <code>0</code>, otherwise it returns false.</p>
 
-<p>Now let&rsquo;s dive into the core methods of the <strong>stack</strong>:</p>
+<p>Now let's dive into the core methods of the <strong>stack</strong>:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#75715e">// Top returns the element at the top of the stack without removing it. 
 </span><span style="color:#75715e">// This method panics if the stack is empty
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Stack</span>) <span style="color:#a6e22e">Top</span>() <span style="color:#66d9ef">interface</span>{} {
@@ -142,21 +424,21 @@ To simplify stack&rsquo;s operations we assume that when the index is <code>-1</
 }</code></pre></div>
 <p>The method <code>Top</code> returns an interface but does not alter the stack. It first checks if the stack is empty, if so it panics, otherwise returns the element of the underlying array at the index specified by <code>curInd</code>.</p>
 
-<p>The method <code>Pop</code> is similar to its relative <code>Top</code> but &ldquo;<em>deletes</em>&rdquo; the element at the top. Actually, this method stores the element at <code>curInd</code> in a temporary variable <code>el</code>, sets the location at <code>curInd</code> to <code>nil</code> (<em>garbage collector</em> will do the tough job) and decrements <code>curInd</code>, finally returns <code>el</code>.</p>
+<p>The method <code>Pop</code> is similar to its relative <code>Top</code> but &quot;<em>deletes</em>&quot; the element at the top. Actually, this method stores the element at <code>curInd</code> in a temporary variable <code>el</code>, sets the location at <code>curInd</code> to <code>nil</code> (<em>garbage collector</em> will do the tough job) and decrements <code>curInd</code>, finally returns <code>el</code>.</p>
 
 <p>The method <code>Push</code> does the opposite: it increments <code>curInd</code> and sets the element at location <code>curInd</code> of the <code>stack</code> array to be the element taken as the argument.</p>
 
 <p>The following image shows a stack with a single element, so <code>curInd</code> is <code>0</code> (namely, the first location of the array):</p>
 
-<p><img src="/media/blog/one_elem_stack.png" alt="One element stack" title="One element stack" /></p>
+<p><figure><img src="/media/blog/one_elem_stack.png" alt="One element stack" title="One element stack"><figcaption>One element stack</figcaption></figure></p>
 
 <p>The following image shows a stack with two elements, so <code>curInd</code> is <code>1</code>:</p>
 
-<p><img src="/media/blog/two_elem_stack.png" alt="Two element stack" title="Two element stack" /></p>
+<p><figure><img src="/media/blog/two_elem_stack.png" alt="Two element stack" title="Two element stack"><figcaption>Two element stack</figcaption></figure></p>
 
 <h3 id="array">Array</h3>
 
-<p><img src="/media/blog/array_fun.jpg" alt="Photo by A. L. on Unsplash" title="Photo by A. L. on Unsplash" /></p>
+<p><figure><img src="/media/blog/array_fun.jpg" alt="Photo by A. L. on Unsplash" title="Photo by A. L. on Unsplash"><figcaption>Photo by A. L. on Unsplash</figcaption></figure></p>
 
 <p><strong>Array</strong> is a data structure used to store homogeneous elements at contiguous locations. Size of an array can be provided before storing data or the array can dynamically adapt its size to keep all the elements.</p>
 
@@ -169,7 +451,7 @@ To simplify stack&rsquo;s operations we assume that when the index is <code>-1</
 <li><strong>deletion</strong>: deletes an element in the array at a given index <em>i</em>. This method requires <em>O(n)</em> in the worst case, namely when deletion happens at the beginning of the array and requires shifting of all the elements.</li>
 </ul>
 
-<p>Since Go already has the <code>array</code> data structure, it does not make any sense to develop our array. However, the <code>array</code> of Go does not have the <code>search</code> method, so we&rsquo;ll develop it!</p>
+<p>Since Go already has the <code>array</code> data structure, it does not make any sense to develop our array. However, the <code>array</code> of Go does not have the <code>search</code> method, so we'll develop it!</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">array</span>
 
 <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">SearchArray</span> []<span style="color:#66d9ef">interface</span>{}
@@ -186,7 +468,7 @@ To simplify stack&rsquo;s operations we assume that when the index is <code>-1</
 
 <h3 id="linked-list">Linked List</h3>
 
-<p><img src="/media/blog/linked_list_fun.jpg" alt="Photo by JJ Ying on Unsplash" title="Photo by JJ Ying on Unsplash" /></p>
+<p><figure><img src="/media/blog/linked_list_fun.jpg" alt="Photo by JJ Ying on Unsplash" title="Photo by JJ Ying on Unsplash"><figcaption>Photo by JJ Ying on Unsplash</figcaption></figure></p>
 
 <p>A <strong>Linked List</strong> is a linear data structure (like arrays) where each element is a separate object. Each element, called <strong>node</strong>, of a list is comprising of two items: the data and a reference to the next node.</p>
 
@@ -198,8 +480,8 @@ To simplify stack&rsquo;s operations we assume that when the index is <code>-1</
 <li><strong>access</strong>: accessing elements in a linked list requires <em>O(n)</em> in the worst case. Actually, to access element <em>i</em> of a linked list requires <em>O(i)</em>;</li>
 <li><strong>search</strong>: searching elements in a linked list requires <em>O(n)</em> in the worst case, namely when the element we are looking for is the latter element of the linked list;</li>
 <li><strong>insertion</strong>: insertion of an element at the position <em>i</em> requires <em>O(i)</em>;</li>
-
-<li><p><strong>deletion</strong>: deletion of an element at the position <em>i</em> requires <em>O(i)</em>.</p>
+<li><strong>deletion</strong>: deletion of an element at the position <em>i</em> requires <em>O(i)</em>.</li>
+</ul>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">linked_list</span>
 
 <span style="color:#f92672">import</span> (
@@ -214,18 +496,16 @@ To simplify stack&rsquo;s operations we assume that when the index is <code>-1</
 
 <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">LinkedList</span> <span style="color:#66d9ef">struct</span> {
 	<span style="color:#a6e22e">head</span> 	<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
-}</code></pre></div></li>
-</ul>
-
-<p>The building blocks of our <strong>Linked List</strong> are *Node*s. A node contains an element (<code>el</code>) and a reference to the next node (<code>next</code>) in the list. In that way we could iterate over our list starting from a node.</p>
+}</code></pre></div>
+<p>The building blocks of our <strong>Linked List</strong> are <em>Node</em>s. A node contains an element (<code>el</code>) and a reference to the next node (<code>next</code>) in the list. In that way we could iterate over our list starting from a node.</p>
 
 <p>The <code>LinkedList</code> itself only contains a reference to a node which is the first of the list (<code>head</code>).</p>
 
 <p>The following image explains the structure of a linked list:</p>
 
-<p><img src="/media/blog/linked_list_memory.png" alt="Linked List" title="Linked List" /></p>
+<p><figure><img src="/media/blog/linked_list_memory.png" alt="Linked List" title="Linked List"><figcaption>Linked List</figcaption></figure></p>
 
-<p>Now let&rsquo;s dive into its methods:</p>
+<p>Now let's dive into its methods:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">l</span> <span style="color:#a6e22e">LinkedList</span>) <span style="color:#a6e22e">Get</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">interface</span>{} {
 	<span style="color:#a6e22e">cur</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">l</span>.<span style="color:#a6e22e">head</span>
 	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">pos</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>; <span style="color:#a6e22e">pos</span> &lt; <span style="color:#a6e22e">i</span>; <span style="color:#a6e22e">pos</span><span style="color:#f92672">++</span> {
@@ -246,7 +526,7 @@ To simplify stack&rsquo;s operations we assume that when the index is <code>-1</
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">pos</span>
 }</code></pre></div>
-<p><code>Get</code> and <code>Search</code> are quite similar: we start from the <em>head</em> and move to the next node until we reach the right position or find the element we are looking for. A temporary variable called <code>cur</code> (<em>by convention</em>) initially points to <code>head</code>, then to its <code>next</code>, then to the <code>next</code>&rsquo;s <code>next</code> and so on.</p>
+<p><code>Get</code> and <code>Search</code> are quite similar: we start from the <em>head</em> and move to the next node until we reach the right position or find the element we are looking for. A temporary variable called <code>cur</code> (<em>by convention</em>) initially points to <code>head</code>, then to its <code>next</code>, then to the <code>next</code>'s <code>next</code> and so on.</p>
 
 <h4 id="add">Add</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">LinkedList</span>) <span style="color:#a6e22e">Add</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">e</span> <span style="color:#66d9ef">interface</span>{}) {
@@ -271,18 +551,18 @@ To simplify stack&rsquo;s operations we assume that when the index is <code>-1</
 
 <ul>
 <li>if <code>i == 0</code> we have to change the head of the list, so <code>n</code> points to the old head and <code>l.head</code> points to <code>n</code>;</li>
-<li>if <code>i &gt; 0</code> have to keep two variables: <code>prev</code> which is the head initially and <code>cur</code> which is the <code>prev</code>&rsquo;s next. We must keep both <code>prev</code> and <code>cur</code> because the insertion of a node requires to change both. <code>pos</code> is the current position and starts to <code>1</code> (yes, because we know that <code>i &gt; 0</code>). Until <code>pos &lt; i</code>, we advance both <code>prev</code> and <code>cur</code> making them pointing to their <code>next</code>s and incrementing <code>pos</code>. When <code>pos</code> is equal to <code>i</code> we update <code>prev</code>&rsquo;s <code>next</code> to point to <code>n</code> and <code>n</code>&rsquo;s <code>next</code> to point to <code>cur</code>.</li>
+<li>if <code>i &gt; 0</code> have to keep two variables: <code>prev</code> which is the head initially and <code>cur</code> which is the <code>prev</code>'s next. We must keep both <code>prev</code> and <code>cur</code> because the insertion of a node requires to change both. <code>pos</code> is the current position and starts to <code>1</code> (yes, because we know that <code>i &gt; 0</code>). Until <code>pos &lt; i</code>, we advance both <code>prev</code> and <code>cur</code> making them pointing to their <code>next</code>s and incrementing <code>pos</code>. When <code>pos</code> is equal to <code>i</code> we update <code>prev</code>'s <code>next</code> to point to <code>n</code> and <code>n</code>'s <code>next</code> to point to <code>cur</code>.</li>
 </ul>
 
 <p>The following images may clarify this concept:</p>
 
 <p>Our Linked List before <code>Add</code>:</p>
 
-<p><img src="/media/blog/linked_list.png" alt="Add Linked List" title="Linked List" /></p>
+<p><figure><img src="/media/blog/linked_list.png" alt="Add Linked List" title="Linked List"><figcaption>Linked List</figcaption></figure></p>
 
 <p>Our Linked List after <code>Add</code> an element in position <code>1</code>:</p>
 
-<p><img src="/media/blog/linked_list_add.png" alt="Add Linked List" title="Linked List after Add" /></p>
+<p><figure><img src="/media/blog/linked_list_add.png" alt="Add Linked List" title="Linked List after Add"><figcaption>Linked List after Add</figcaption></figure></p>
 
 <h3 id="delete">Delete</h3>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">l</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">LinkedList</span>) <span style="color:#a6e22e">Delete</span>(<span style="color:#a6e22e">i</span> <span style="color:#66d9ef">int</span>) {
@@ -311,11 +591,11 @@ To simplify stack&rsquo;s operations we assume that when the index is <code>-1</
 
 <p>Our Linked List before <code>Delete</code>:</p>
 
-<p><img src="/media/blog/linked_list.png" alt="Add Linked List" title="Linked List" /></p>
+<p><figure><img src="/media/blog/linked_list.png" alt="Add Linked List" title="Linked List"><figcaption>Linked List</figcaption></figure></p>
 
 <p>Our Linked List after <code>Delete</code> an element in position <code>1</code>:</p>
 
-<p><img src="/media/blog/linked_list_remove.png" alt="Add Linked List" title="Linked List after Delete" /></p>
+<p><figure><img src="/media/blog/linked_list_remove.png" alt="Add Linked List" title="Linked List after Delete"><figcaption>Linked List after Delete</figcaption></figure></p>
 
 <h4 id="bonus-string">Bonus: String</h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">l</span> <span style="color:#a6e22e">LinkedList</span>) <span style="color:#a6e22e">String</span>() <span style="color:#66d9ef">string</span> {
@@ -331,7 +611,7 @@ To simplify stack&rsquo;s operations we assume that when the index is <code>-1</
 
 <h3 id="queue">Queue</h3>
 
-<p><img src="/media/blog/queue_fun.jpg" alt="Photo by Mael BALLAND on Unsplash" title="Photo by Mael BALLAND on Unsplash" /></p>
+<p><figure><img src="/media/blog/queue_fun.jpg" alt="Photo by Mael BALLAND on Unsplash" title="Photo by Mael BALLAND on Unsplash"><figcaption>Photo by Mael BALLAND on Unsplash</figcaption></figure></p>
 
 <p>A queue or <em>FIFO</em> (first in, first out) is an abstract data type that serves as a collection of elements, with two principal operations:</p>
 
@@ -398,7 +678,7 @@ To simplify stack&rsquo;s operations we assume that when the index is <code>-1</
 <p>I wish this post would help beginner developers using the correct data structure for their algorithms.</p>
 
 <blockquote>
-<p>&ldquo;It is easier to change the specification to fit the program than vice versa.&rdquo;</p>
+<p>&quot;It is easier to change the specification to fit the program than vice versa.&quot;</p>
 
 <p><em>Alan Perlis</em></p>
 </blockquote>
@@ -414,9 +694,7 @@ To simplify stack&rsquo;s operations we assume that when the index is <code>-1</
             <description>The Binary Search Algorithm The Binary Search Algorithm is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).
 This algorithm is as efficient as easy to learn due to its simplicity.
 This algorithm does only O(log n) comparisons.</description>
-            <content type="html"><![CDATA[
-
-<h2 id="the-binary-search-algorithm">The Binary Search Algorithm</h2>
+            <content type="html"><![CDATA[<h2 id="the-binary-search-algorithm">The Binary Search Algorithm</h2>
 
 <p>The <em>Binary Search Algorithm</em> is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).</p>
 
@@ -444,7 +722,7 @@ This algorithm does only O(log n) comparisons.</description>
         return unsuccessful
 </code></pre>
 
-<p>Let&rsquo;s explain this pseudocode:</p>
+<p>Let's explain this pseudocode:</p>
 
 <ul>
 <li>The algorithm takes as input an array <code>A</code>, the length of the array <code>n</code> and the element to search <code>T</code>;</li>
@@ -462,7 +740,7 @@ This algorithm does only O(log n) comparisons.</description>
 
 <h3 id="python">Python</h3>
 
-<p>Let&rsquo;s have a look at the BSA using Python.</p>
+<p>Let's have a look at the BSA using Python.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> floor
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bsa</span>(l, n, t):
         L <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
@@ -496,7 +774,7 @@ This algorithm does only O(log n) comparisons.</description>
         }
         <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
     }</code></pre></div>
-<p>Unlike the <em>Python</em> version, this code does not look similar to the pseudocode because of Go&rsquo;s strong typing, which forces us to do 2 casts (<em>line 5</em>). Also in the <em>Go</em> implementation we return <code>-1</code> if we cannot find the element <code>T</code>. Due to the simplicity of the algorithm itself, no other consideration has to be made.</p>
+<p>Unlike the <em>Python</em> version, this code does not look similar to the pseudocode because of Go's strong typing, which forces us to do 2 casts (<em>line 5</em>). Also in the <em>Go</em> implementation we return <code>-1</code> if we cannot find the element <code>T</code>. Due to the simplicity of the algorithm itself, no other consideration has to be made.</p>
 
 <h3 id="c">C</h3>
 
@@ -517,7 +795,7 @@ This algorithm does only O(log n) comparisons.</description>
     }</code></pre></div>
 <p>The <em>C</em> implementation looks quite similar to the <em>Go</em> implementation but does not have casts because <em>C</em> has weak typing.</p>
 
-<hr />
+<hr>
 
 <p>This is my first blog post.</p>
 ]]></content>

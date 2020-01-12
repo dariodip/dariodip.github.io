@@ -139,9 +139,7 @@ This algorithm does only O(log n) comparisons."/>
             
 
             <div class="post-content">
-                
-
-<h2 id="the-binary-search-algorithm">The Binary Search Algorithm</h2>
+                <h2 id="the-binary-search-algorithm">The Binary Search Algorithm</h2>
 
 <p>The <em>Binary Search Algorithm</em> is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).</p>
 
@@ -169,7 +167,7 @@ This algorithm does only O(log n) comparisons."/>
         return unsuccessful
 </code></pre>
 
-<p>Let&rsquo;s explain this pseudocode:</p>
+<p>Let's explain this pseudocode:</p>
 
 <ul>
 <li>The algorithm takes as input an array <code>A</code>, the length of the array <code>n</code> and the element to search <code>T</code>;</li>
@@ -187,7 +185,7 @@ This algorithm does only O(log n) comparisons."/>
 
 <h3 id="python">Python</h3>
 
-<p>Let&rsquo;s have a look at the BSA using Python.</p>
+<p>Let's have a look at the BSA using Python.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> floor
     <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bsa</span>(l, n, t):
         L <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
@@ -221,7 +219,7 @@ This algorithm does only O(log n) comparisons."/>
         }
         <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
     }</code></pre></div>
-<p>Unlike the <em>Python</em> version, this code does not look similar to the pseudocode because of Go&rsquo;s strong typing, which forces us to do 2 casts (<em>line 5</em>). Also in the <em>Go</em> implementation we return <code>-1</code> if we cannot find the element <code>T</code>. Due to the simplicity of the algorithm itself, no other consideration has to be made.</p>
+<p>Unlike the <em>Python</em> version, this code does not look similar to the pseudocode because of Go's strong typing, which forces us to do 2 casts (<em>line 5</em>). Also in the <em>Go</em> implementation we return <code>-1</code> if we cannot find the element <code>T</code>. Due to the simplicity of the algorithm itself, no other consideration has to be made.</p>
 
 <h3 id="c">C</h3>
 
@@ -242,7 +240,7 @@ This algorithm does only O(log n) comparisons."/>
     }</code></pre></div>
 <p>The <em>C</em> implementation looks quite similar to the <em>Go</em> implementation but does not have casts because <em>C</em> has weak typing.</p>
 
-<hr />
+<hr>
 
 <p>This is my first blog post.</p>
 
