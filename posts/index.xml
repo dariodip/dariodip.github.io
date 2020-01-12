@@ -17,8 +17,8 @@
             <guid>/posts/2020/01/data-structures-with-go-part-i/</guid>
             <description>Data Structures With Go - Part I Data structures are everywhere. Every developer should know them, starting from the most common ones.
 The data structure priorly describes how the data is organised, accessed, associated and processed.
-Using data structures you can keep your data in memory and access them in an efficient fashion.
-You should pick the data structure that is the most suitable for your purposes in order to minimize space in memory and access time.</description>
+Using data structures you can keep your data in memory and efficiently access them.
+You should pick the data structure that is the most suitable for your purposes to minimize space in memory and access time.</description>
             <content type="html"><![CDATA[
 
 <h2 id="data-structures-with-go-part-i">Data Structures With Go - Part I</h2>
@@ -27,13 +27,13 @@ You should pick the data structure that is the most suitable for your purposes i
 
 <p>The data structure priorly describes how the data is organised, accessed, associated and processed.</p>
 
-<p>Using data structures you can keep your data in memory and access them in an efficient fashion.</p>
+<p>Using data structures you can keep your data in memory and efficiently access them.</p>
 
-<p>You should pick the data structure that is the most suitable for your purposes in order to minimize space in memory and access time.</p>
+<p>You should pick the data structure that is the most suitable for your purposes to minimize space in memory and access time.</p>
 
 <p>Some algorithms are designed upon certain data structures.</p>
 
-<p>The critical part of developing such data structures in <strong>Go</strong> is the lack of generics. While other programming languages such as Java, C# etc. give us the opportunity to work with generics, <strong>Go</strong> has no way to do that, so we have to use the empty interface: <code>interface{}</code>.</p>
+<p>The critical part of developing such data structures in <strong>Go</strong> is the lack of generics. While other programming languages such as Java, C# etc. allow us to work with generics, <strong>Go</strong> has no way to do that, so we have to use the empty interface: <code>interface{}</code>.</p>
 
 <p>Let&rsquo;s start with the most popular class of data structures: <strong>linear data structures</strong>.</p>
 
@@ -158,7 +158,7 @@ To simplify stack&rsquo;s operations we assume that when the index is <code>-1</
 
 <p><img src="/media/blog/array_fun.jpg" alt="Photo by A. L. on Unsplash" title="Photo by A. L. on Unsplash" /></p>
 
-<p><strong>Array</strong> is a data structure used to store homogeneous elements at contiguous locations. Size of an array can be provided before storing data or the array can dynamically adapt its size in order to keep all the elements.</p>
+<p><strong>Array</strong> is a data structure used to store homogeneous elements at contiguous locations. Size of an array can be provided before storing data or the array can dynamically adapt its size to keep all the elements.</p>
 
 <p>Operations on the array are:</p>
 

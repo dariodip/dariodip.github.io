@@ -7,8 +7,8 @@
 <meta name="author" content="Dario Di Pasquale ">
 <meta name="description" content="Data Structures With Go - Part I Data structures are everywhere. Every developer should know them, starting from the most common ones.
 The data structure priorly describes how the data is organised, accessed, associated and processed.
-Using data structures you can keep your data in memory and access them in an efficient fashion.
-You should pick the data structure that is the most suitable for your purposes in order to minimize space in memory and access time." />
+Using data structures you can keep your data in memory and efficiently access them.
+You should pick the data structure that is the most suitable for your purposes to minimize space in memory and access time." />
 <meta name="keywords" content="" />
 <meta name="robots" content="noodp" />
 <meta name="theme-color" content="" />
@@ -48,7 +48,7 @@ You should pick the data structure that is the most suitable for your purposes i
 
 <meta itemprop="datePublished" content="2020-01-03T17:05:35&#43;00:00" />
 <meta itemprop="dateModified" content="2020-01-03T17:05:35&#43;00:00" />
-<meta itemprop="wordCount" content="2468">
+<meta itemprop="wordCount" content="2459">
 
 
 
@@ -144,13 +144,13 @@ You should pick the data structure that is the most suitable for your purposes i
 
 <p>The data structure priorly describes how the data is organised, accessed, associated and processed.</p>
 
-<p>Using data structures you can keep your data in memory and access them in an efficient fashion.</p>
+<p>Using data structures you can keep your data in memory and efficiently access them.</p>
 
-<p>You should pick the data structure that is the most suitable for your purposes in order to minimize space in memory and access time.</p>
+<p>You should pick the data structure that is the most suitable for your purposes to minimize space in memory and access time.</p>
 
 <p>Some algorithms are designed upon certain data structures.</p>
 
-<p>The critical part of developing such data structures in <strong>Go</strong> is the lack of generics. While other programming languages such as Java, C# etc. give us the opportunity to work with generics, <strong>Go</strong> has no way to do that, so we have to use the empty interface: <code>interface{}</code>.</p>
+<p>The critical part of developing such data structures in <strong>Go</strong> is the lack of generics. While other programming languages such as Java, C# etc. allow us to work with generics, <strong>Go</strong> has no way to do that, so we have to use the empty interface: <code>interface{}</code>.</p>
 
 <p>Let&rsquo;s start with the most popular class of data structures: <strong>linear data structures</strong>.</p>
 
@@ -275,7 +275,7 @@ To simplify stack&rsquo;s operations we assume that when the index is <code>-1</
 
 <p><img src="/media/blog/array_fun.jpg" alt="Photo by A. L. on Unsplash" title="Photo by A. L. on Unsplash" /></p>
 
-<p><strong>Array</strong> is a data structure used to store homogeneous elements at contiguous locations. Size of an array can be provided before storing data or the array can dynamically adapt its size in order to keep all the elements.</p>
+<p><strong>Array</strong> is a data structure used to store homogeneous elements at contiguous locations. Size of an array can be provided before storing data or the array can dynamically adapt its size to keep all the elements.</p>
 
 <p>Operations on the array are:</p>
 
@@ -530,7 +530,7 @@ To simplify stack&rsquo;s operations we assume that when the index is <code>-1</
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="/tags/algorithms">algorithms</a></span><span class="tag"><a href="/tags/go">go</a></span><span class="tag"><a href="/tags/golang">golang</a></span><span class="tag"><a href="/tags/data-structures">data structures</a></span><span class="tag"><a href="/tags/basic">basic</a></span><span class="tag"><a href="/tags/beginner">beginner</a></span>
                 </p>
 
-            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>2468 Words</p>
+            <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>2459 Words</p>
 
             <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-01-03 18:05 &#43;0100</p>
         </div>
@@ -559,6 +559,7 @@ To simplify stack&rsquo;s operations we assume that when the index is <code>-1</
         </div>
     </div>
 </footer>
+
 
             
         </div>

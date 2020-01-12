@@ -20,8 +20,8 @@
       <guid>/posts/2020/01/data-structures-with-go-part-i/</guid>
       <description>Data Structures With Go - Part I Data structures are everywhere. Every developer should know them, starting from the most common ones.
 The data structure priorly describes how the data is organised, accessed, associated and processed.
-Using data structures you can keep your data in memory and access them in an efficient fashion.
-You should pick the data structure that is the most suitable for your purposes in order to minimize space in memory and access time.</description>
+Using data structures you can keep your data in memory and efficiently access them.
+You should pick the data structure that is the most suitable for your purposes to minimize space in memory and access time.</description>
     </item>
     
     <item>
