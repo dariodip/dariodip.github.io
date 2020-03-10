@@ -53,9 +53,8 @@ This algorithm does only O(log n) comparisons.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>About me I am a passionate freelance software developer from Salerno currently living in Rome.
-I have worked as a back-end developer for two years, using both Javascript (Node.js) and Python as languages, and both NoSQL (e.g. MongoDB) and SQL databases. I have occasionally worked as a front-end or mobile developer, even though I prefer back-end and systems developing.
-I have also worked as a blockchain engineer since early 2019.</description>
+      <description>About me I am curious and passionate! I love my job and I love to learn and to solve new problems. I spend much time learning new things such as new technologies and new architectures to be up to date with current trends, but my main passion is Computer Science.
+I have worked as a Back-End Developer for two years, using both Javascript (Node.js) and Python as languages, and both NoSQL (e.</description>
     </item>
     
     <item>
@@ -73,10 +72,10 @@ I have also worked as a blockchain engineer since early 2019.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/portfolio/</guid>
-      <description>Junior Solutions Architect @ Immobiliare.it Apr 2019 - Present Currently I am working as a Junior Solutions Architect for the R&amp;amp;D department of Immobiliare.it, helping Infrastructure Team in designing and developing systems spaning several fields.
+      <description>Junior Solutions Architect @ Immobiliare.it Rome (Italy) Apr 2019 - Present Currently I am working as a Junior Solutions Architect for the R&amp;amp;D department of Immobiliare.it, helping the Infrastructure Team in designing and developing systems spaning several fields.
 I am mainly using the following programming languages:
- Golang C/C++ Python   Currently I am focusing on high-performance image processing, specialized backpressure routing algorithms and parallel/distributed computing.
-BlockID Authentication Service over Blockchain May 2018 - Mar 2019 Designing Ethereum-based blockchain solutions aiming to address both privacy and scalability concerns.</description>
+ Golang; C/C++; Python.  and the following technologies:
+ Docker; Kubernetes; HAProxy; MongoDB; Apache Traffic Server.   Currently I am focusing on high-performance image processing, specialized backpressure routing algorithms and parallel/distributed computing.</description>
     </item>
     
   </channel>
