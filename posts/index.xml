@@ -218,7 +218,7 @@ handlers:
 
 <h2 id="conclusions">Conclusions</h2>
 
-<p>Having those concepts, you could start playing with Ansible. I will also talk about <strong>Ansible Roles</strong> in other posts.</p>
+<p>Having those concepts, you could start playing with Ansible. I will also talk about most advanced features such as <strong>Ansible Roles</strong>, loops and so on in other posts.</p>
 ]]></content>
         </item>
         
