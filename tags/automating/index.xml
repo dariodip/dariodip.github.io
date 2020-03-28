@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 27 Mar 2020 09:11:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2020 15:11:00 +0000</lastBuildDate>
     
 	<atom:link href="/tags/automating/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Ansible for developers 102</title>
+      <link>/posts/2020/03/ansible-for-developers-102/</link>
+      <pubDate>Fri, 27 Mar 2020 15:11:00 +0000</pubDate>
+      
+      <guid>/posts/2020/03/ansible-for-developers-102/</guid>
+      <description>Introduction In the previous post we introduced basic aspects of Ansible. Now we&#39;ll talk about some advanced features.
+Loops Another way to describe the tools of the Ansible family can be Infrastructure as code. This is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.
+The word code brings an important aspect with it: loops.
+In Ansible Playbooks you can use loops to reuse some tasks.</description>
+    </item>
     
     <item>
       <title>Ansible for developers 101</title>
@@ -21,18 +33,6 @@
       <description>Introduction When I started as a developer and I started to feel frustrating when I had to repeat something twice or more.
 Being a developer does not mean you only have to write code. Hopefully, your code should be executed in different environments and often it is up to you managing part of those environments.
 Nowadays automation brings a lot of improvements to the life-quality of developers. You can, therefore, exploit tools that help you repeating boring stuff, keeping you well focused on your work.</description>
-    </item>
-    
-    <item>
-      <title>Ansible for developers 102</title>
-      <link>/posts/2020/03/ansible-for-developers-102/</link>
-      <pubDate>Fri, 27 Mar 2020 09:11:00 +0000</pubDate>
-      
-      <guid>/posts/2020/03/ansible-for-developers-102/</guid>
-      <description>Introduction In the previous post we introduced basic aspects of Ansible. Now we&#39;ll talk about some advanced features.
-Loops Another way to describe the tools of the Ansible family can be Infrastructure as code. This is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.
-The word code brings an important aspect with it: loops.
-In Ansible Playbooks you can use loops to reuse some tasks.</description>
     </item>
     
   </channel>
