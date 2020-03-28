@@ -15,12 +15,12 @@
             <pubDate>Fri, 27 Mar 2020 09:11:00 +0000</pubDate>
             
             <guid>/posts/2020/03/ansible-for-developers-101/</guid>
-            <description>Introduction I started as a developer and I started to feel frustrating when I had to repeat something twice or more.
+            <description>Introduction When I started as a developer and I started to feel frustrating when I had to repeat something twice or more.
 Being a developer does not mean you only have to write code. Hopefully, your code should be executed in different environments and often it is up to you managing part of those environments.
 Nowadays automation brings a lot of improvements to the life-quality of developers. You can, therefore, exploit tools that help you repeating boring stuff, keeping you well focused on your work.</description>
             <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
 
-<p>I started as a developer and I started to feel frustrating when I had to repeat something twice or more.</p>
+<p>When I started as a developer and I started to feel frustrating when I had to repeat something twice or more.</p>
 
 <p>Being a developer does not mean you only have to write code. Hopefully, your code should be executed in different environments and often it is up to you managing part of those environments.</p>
 
@@ -135,6 +135,8 @@ Ansible can work with metadata from various sources and manage their context in 
 
 <p>As we said, <strong>Ansible Playbooks</strong> contains an ordered list of <strong>Ansible Tasks</strong> to be executed against hosts on your inventory. Let's see how a playbook works.</p>
 
+<p>To run a playbook you will run <code>ansible-playbook</code> instead of <code>ansible</code>, passing the path to the playbook file. For example <code>ansible-playbook -i hosts my_playbook.yml</code> will run the playbook <code>my_playbook.yml</code> on the inventory <code>hosts</code>.</p>
+
 <p>Let's construct a playbook step-by-step. First of all, we have to include the list of tasks:</p>
 
 <h6 id="tasks">Tasks</h6>
@@ -153,12 +155,12 @@ Ansible can work with metadata from various sources and manage their context in 
       service:
         name: nginx
         state: restarted</code></pre></div>
-<p>In the preceding playbook we</p>
+<p>Using this playbook, we</p>
 
 <ul>
-<li>added a cache directory under <code>/opt/cache</code> using the <a href="https://docs.ansible.com/ansible/latest/modules/file_module.html"><code>file</code> module</a> giving the desired path as <code>path</code> variable and the desired state <code>directory</code> as variable <code>state</code>;</li>
-<li>installed <code>nginx</code> using <code>yum</code> and the <a href="https://docs.ansible.com/ansible/latest/modules/yum_module.html">module of the same name</a>, setting the <code>state</code> variable to <code>nginx</code> and the <code>state</code> variable to <code>latest</code>, meaning that we want the latest version of <em>nginx</em> installed on the machine using <em>yum</em>;</li>
-<li>restarted the <em>nginx</em> service using the <code>service</code> module and setting the variable <code>name</code> to be <code>nginx</code> and the variable <code>state</code> to be <code>restarted</code>. So we are saying we want the <code>nginx</code> service to be restarted on the machine.</li>
+<li>add a cache directory under <code>/opt/cache</code> using the <a href="https://docs.ansible.com/ansible/latest/modules/file_module.html"><code>file</code> module</a> giving the desired path as <code>path</code> variable and the desired state <code>directory</code> as variable <code>state</code>;</li>
+<li>install <code>nginx</code> using <code>yum</code> and the <a href="https://docs.ansible.com/ansible/latest/modules/yum_module.html">module of the same name</a>, setting the <code>state</code> variable to <code>nginx</code> and the <code>state</code> variable to <code>latest</code>, meaning that we want the latest version of <em>nginx</em> installed on the machine using <em>yum</em>;</li>
+<li>restart the <em>nginx</em> service using the <code>service</code> module and setting the variable <code>name</code> to be <code>nginx</code> and the variable <code>state</code> to be <code>restarted</code>. So we are saying we want the <code>nginx</code> service to be restarted on the machine.</li>
 </ul>
 
 <p>This example gives you a vision of the semantic of modules: you specify the desired state in a declarative way. It's up to the module to run the correct steps to bring the machine to the desired state. Furthermore, if we run the same playbook twice, nothing changes.
@@ -219,6 +221,123 @@ handlers:
 <h2 id="conclusions">Conclusions</h2>
 
 <p>Having those concepts, you could start playing with Ansible. I will also talk about most advanced features such as <strong>Ansible Roles</strong>, loops and so on in other posts.</p>
+]]></content>
+        </item>
+        
+        <item>
+            <title>Ansible for developers 102</title>
+            <link>/posts/2020/03/ansible-for-developers-102/</link>
+            <pubDate>Fri, 27 Mar 2020 09:11:00 +0000</pubDate>
+            
+            <guid>/posts/2020/03/ansible-for-developers-102/</guid>
+            <description>Introduction In the previous post we introduced basic aspects of Ansible. Now we&#39;ll talk about some advanced features.
+Loops Another way to describe the tools of the Ansible family can be Infrastructure as code. This is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.
+The word code brings an important aspect with it: loops.
+In Ansible Playbooks you can use loops to reuse some tasks.</description>
+            <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
+
+<p>In <a href="/posts/2020/03/ansible-for-developers-101">the previous post</a> we introduced basic aspects of <strong>Ansible</strong>. Now we'll talk about some advanced features.</p>
+
+<h2 id="loops">Loops</h2>
+
+<p>Another way to describe the tools of the Ansible family can be <a href="https://en.wikipedia.org/wiki/Infrastructure_as_code"><strong>Infrastructure as code</strong></a>. This is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.</p>
+
+<p>The word <em>code</em> brings an important aspect with it: <strong>loops</strong>.</p>
+
+<p>In Ansible Playbooks you can use <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html"><strong>loops</strong></a> to reuse some tasks. An example can be the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- name: add several users
+  user:
+    name: <span style="color:#e6db74">&#34;{{ item }}&#34;</span>
+    state: present
+    groups: <span style="color:#e6db74">&#34;wheel&#34;</span>
+  loop:
+     - testuser1
+     - testuser2</code></pre></div>
+<p>This task adds several users and in order to do that, iterates over a loop. So you don't have to write the same task twice.</p>
+
+<p>You can iterate both on simple lists and on lists of maps. This can clarify this:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- name: add several users
+  user:
+    name: <span style="color:#e6db74">&#34;{{ item.name }}&#34;</span>
+    state: present
+    groups: <span style="color:#e6db74">&#34;{{ item.groups }}&#34;</span>
+  loop:
+    - { name: <span style="color:#e6db74">&#39;testuser1&#39;</span>, groups: <span style="color:#e6db74">&#39;wheel&#39;</span> }
+    - { name: <span style="color:#e6db74">&#39;testuser2&#39;</span>, groups: <span style="color:#e6db74">&#39;root&#39;</span> }</code></pre></div>
+<p>Using loops reduces the repetition in your playbooks, keeping them compact and clear.</p>
+
+<h2 id="roles">Roles</h2>
+
+<p><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html"><strong>Ansible Roles</strong></a> are ways of automatically loading certain vars_files, tasks, and handlers based on a known file structure. Grouping content by roles also allows easy sharing of roles with other users.</p>
+
+<p>Roles are essentially a predefined directory structure that we're utilizing to put individual pieces of our playbook into, to make it easier to reuse and share among groups.</p>
+
+<p>An example directory structure can be the following:</p>
+
+<pre><code>webservers.yml
+fooservers.yml
+roles/
+    common/
+        tasks/
+        handlers/
+        files/
+        templates/
+        vars/
+        defaults/
+        meta/
+    webservers/
+        tasks/
+        defaults/
+        meta/
+</code></pre>
+
+<p>In this structure, we have the playbooks <code>webserver.yaml</code> and <code>fooservers.yml</code> and the roles <code>common</code> and <code>webservers</code>.</p>
+
+<p>When in use, each directory must contain a <code>main.yml</code> file, which contains the relevant content:</p>
+
+<ul>
+<li><code>tasks</code>: contains the main list of tasks to be executed by the role;</li>
+<li><code>handlers</code>: contains handlers, which may be used by this role or even anywhere outside this role;</li>
+<li><code>defaults</code>: default variables for the role;</li>
+<li><code>vars</code>: other variables for the role;</li>
+<li><code>files</code>: contains files which can be deployed via this role;</li>
+<li><code>templates</code>: contains templates which can be deployed via this role;</li>
+<li><code>meta</code>: defines some metadata for this role. See below for more details.</li>
+</ul>
+
+<p>Conventionally, the <code>common</code> role contains a role that has to be run against all of your machines.</p>
+
+<p>We can suppose that inside our <code>roles/common/tasks/httpd.yml</code> we have the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- yum:
+    name: <span style="color:#e6db74">&#34;httpd&#34;</span>
+    state: present</code></pre></div>
+<p>and that inside our <code>roles/webservers/tasks/apache.yml</code> we have the following:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- apt:
+    name: <span style="color:#e6db74">&#34;apache2&#34;</span>
+    state: present</code></pre></div>
+<p>Inside our playbook we will put:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+- hosts: webservers
+  roles:
+    - common
+    - webservers</code></pre></div>
+<p>In that way, we included both <code>common</code> and <code>webservers</code> roles so that they can be executed when running the playbook.</p>
+
+<p>With this small example, it's hard to understand the benefits brought by roles, but as long as your playbook starts growing, you will find this structure a life-saving because you can reuse as much as you can, still keeping everything both clear and compact.</p>
+
+<h2 id="ansible-galaxy">Ansible Galaxy</h2>
+
+<p><a href="https://galaxy.ansible.com/"><strong>Ansible Galaxy</strong></a>  is Ansible's official hub for sharing Ansible content. Galaxy provides pre-packaged roles that can be dropped into Ansible PlayBooks and immediately put to work.</p>
+
+<p>You may find roles for provisioning infrastructure, deploying applications, and all of the tasks you do every day.</p>
+
+<p>Using the <code>ansible-galaxy</code> command you can also create the <code>role</code> structure. Once inside the <code>roles</code> directory, you can run</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ansible-galaxy role init my_role</code></pre></div>
+<p>to create the full structure for the role <code>my_role</code>.</p>
+
+<h2 id="conclusions">Conclusions</h2>
+
+<p>Now that you know those concepts you can be very productive using Ansible. So... good automation!</p>
 ]]></content>
         </item>
         
