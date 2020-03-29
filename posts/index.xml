@@ -280,6 +280,14 @@ Ansible can work with metadata from various sources and manage their context in 
 <li>restart the <em>nginx</em> service using the <code>service</code> module and setting the variable <code>name</code> to be <code>nginx</code> and the variable <code>state</code> to be <code>restarted</code>. So we are saying we want the <code>nginx</code> service to be restarted on the machine.</li>
 </ul>
 
+<p>The outcome of a task can be one of the following:</p>
+
+<ul>
+<li><code>ok</code>: status is as desired;</li>
+<li><code>changed</code>: task modified something to apply the status as desired;</li>
+<li><code>failed</code>: final state is not as desired because something went wrong.</li>
+</ul>
+
 <p>This example gives you a vision of the semantic of modules: you specify the desired state in a declarative way. It's up to the module to run the correct steps to bring the machine to the desired state. Furthermore, if we run the same playbook twice, nothing changes.
 This outlines an important aspect of Ansible Tasks: they should be <a href="https://docs.ansible.com/ansible/latest/reference_appendices/glossary.html"><strong>idempotent</strong></a>.</p>
 
@@ -305,7 +313,7 @@ handlers:
       service:
         name: nginx
         state: restarted</code></pre></div>
-<p>Doing that, we ensure that the task <code>restart nginx</code> will be run only after the <code>install nginx</code> task has returned <code>changed</code> as its state.</p>
+<p>Doing that, we ensure that the task <code>restart nginx</code> will be run only after the <code>install nginx</code> task has returned <code>changed</code> as its status.</p>
 
 <h6 id="plays">Plays</h6>
 
