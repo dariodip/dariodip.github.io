@@ -76,8 +76,8 @@ This algorithm does only O(log n) comparisons.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/about/</guid>
-      <description>About me I am curious and passionate! I love my job and I love to learn and to solve new problems. I spend much time learning new things such as new technologies and new architectures to be up to date with current trends, but my main passion is Computer Science.
-I have worked as a Back-End Developer for two years, using both Javascript (Node.js) and Python as languages, and both NoSQL (e.</description>
+      <description>About me I am curious and passionate! I love my job and I love to learn and to solve new problems. I spend much time learning new things such as new technologies and new patterns to be up to date with current trends, but my main passion is Computer Science. I read tons of books and articles about software engineering.
+Besides work, I love travelling, reading books, playing tennis, running, listening to music and watching movies and TV series.</description>
     </item>
     
     <item>
@@ -95,10 +95,9 @@ I have worked as a Back-End Developer for two years, using both Javascript (Node
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/portfolio/</guid>
-      <description>Junior Solutions Architect @ Immobiliare.it Rome (Italy) Apr 2019 - Present Currently, I am working as a Junior Solutions Architect for the R&amp;amp;D department of Immobiliare.it, helping the Infrastructure Team in designing and developing systems spanning several fields.
-I am mainly using the following programming languages:
- Golang; C/C++; Python.  and the following technologies:
- Docker; Kubernetes; HAProxy; MongoDB; Apache Traffic Server.   I am focusing on high-performance image processing, specialized backpressure routing algorithms and parallel/distributed computing.</description>
+      <description>Technical Advisor DevOps @ Ericsson Naples (Italy) Jun 2020 - Present I am working as a Technical Advisor DevOps for Ericsson, designing and improving infrastructures and CI/CD for migration from a monolith system to microservices architecture for several projects;
+I am responsible for the DevOps Team, helping to find the solution that follows the state-of-art best practices for Agile and DevOps methodologies on a microservices architecture.
+I am using the following programming languages:</description>
     </item>
     
   </channel>
