@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>journey on Dario Di Pasquale</title>
+    <link>/tags/journey/</link>
+    <description>Recent content in journey on Dario Di Pasquale</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 13 Mar 2021 16:10:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/journey/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Books on my journey</title>
+      <link>/posts/2021/03/books-on-my-journey/</link>
+      <pubDate>Sat, 13 Mar 2021 16:10:00 +0000</pubDate>
+      
+      <guid>/posts/2021/03/books-on-my-journey/</guid>
+      <description>In this post I will write down a list of technical books, articles and podcast that I find interesting. I hope that someone will find it interesting as for me.
+Not all the books I&#39;ve read are listed here, only the ones I would like to suggest.
+Technical Books I&#39;ve read Designing Data-Intensive Applications This book is the one you MUST read if work with data. Since data is everywhere in modern software engineer, everyone must read it.</description>
+    </item>
+    
+  </channel>
+</rss>
