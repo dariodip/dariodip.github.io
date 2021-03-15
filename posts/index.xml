@@ -26,6 +26,8 @@ Technical Books I&#39;ve read Designing Data-Intensive Applications This book is
 
 <h4 id="designing-dataintensive-applicationshttpsdataintensivenet"><a href="https://dataintensive.net/">Designing Data-Intensive Applications</a></h4>
 
+<p><img src="/media/blog/ddia.jpeg" width="200"></p>
+
 <p>This book is <strong>the one you MUST read</strong> if work with data. Since data is everywhere in modern software engineer, everyone must read it.</p>
 
 <p>It is not too detailed about some advanced aspects, but a rich bibliografy and a good style of writing compensate it. Martin Kleppman is a researcher and you can find it reading the book.</p>
@@ -34,11 +36,15 @@ Technical Books I&#39;ve read Designing Data-Intensive Applications This book is
 
 <h4 id="designing-distributed-systemshttpsazuremicrosoftcomenusresourcesdesigningdistributedsystems"><a href="https://azure.microsoft.com/en-us/resources/designing-distributed-systems/">Designing Distributed Systems</a></h4>
 
+<p><img src="/media/blog/dds.jpeg" width="200"></p>
+
 <p>This book provides repeatable, generic patterns, and reusable components to make developing reliable systems easier and more efficient—so you can free your time to focus on core development of your app.</p>
 
 <p>I've learnt so much from this book and it is a great reference for me during my work.</p>
 
 <h4 id="elixir-in-actionhttpswwwmanningcombookselixirinactionsecondedition"><a href="https://www.manning.com/books/elixir-in-action-second-edition">Elixir in action</a></h4>
+
+<p><img src="/media/blog/elixir_in_action.jpg" width="200"></p>
 
 <p>Leaning a new programming language is always a new challenge.</p>
 
@@ -52,6 +58,8 @@ Technical Books I&#39;ve read Designing Data-Intensive Applications This book is
 
 <h4 id="the-art-of-multiprocess-programminghttpsdlacmorgdoibook1055552385452"><a href="https://dl.acm.org/doi/book/10.5555/2385452">The art of multiprocess programming</a></h4>
 
+<p><img src="/media/blog/tamp.jpeg" width="200"></p>
+
 <p>I like the part <em>&quot;The art of...&quot;</em> in the title of this book and I think it is the best way to express this concept.</p>
 
 <p>This book is a detailed guide to multicore programming and provides comprehensive coverage of the  principles, algorithms, and tools necessary for effective multiprocessor programming.</p>
@@ -60,15 +68,21 @@ Technical Books I&#39;ve read Designing Data-Intensive Applications This book is
 
 <h4 id="microsoft-application-architecture-guidehttpsdlacmorgdoi1055551822629"><a href="https://dl.acm.org/doi/10.5555/1822629">Microsoft Application Architecture Guide</a></h4>
 
+<p><img src="/media/blog/maag.jpg" width="200"></p>
+
 <p>This was the first book about architecture I have read and, you know, truly first love is not forgotten.</p>
 
 <p>Some of those patterns are now deprecated but the book is still a good guide to learn how to read and analyze architectures.</p>
 
 <h4 id="artificial-intelligence--a-modern-approachhttpaimacsberkeleyedu"><a href="http://aima.cs.berkeley.edu/">Artificial Intelligence - A modern approach</a></h4>
 
+<p><img src="/media/blog/aiama.jpg" width="200"></p>
+
 <p>At the end Artificial Intelligence didn't hit me, but this book is very good to start and to go deep in the Artificial Intelligence.</p>
 
 <h4 id="unix-network-programminghttpwwwunpbookcom"><a href="http://www.unpbook.com/">UNIX Network Programming</a></h4>
+
+<p><img src="/media/blog/unp.jpg" width="200"></p>
 
 <p>This is like the bible for programmers.</p>
 
@@ -76,15 +90,21 @@ Technical Books I&#39;ve read Designing Data-Intensive Applications This book is
 
 <h4 id="programming-with-distributed-objects--java-rmihttpsilmiolibrokatawebitlibroinformaticaeinternet36104programmazioneconoggettidistribuitijavarmi2"><a href="https://ilmiolibro.kataweb.it/libro/informatica-e-internet/36104/programmazione-con-oggetti-distribuiti-java-rmi-2/">Programming with distributed objects - Java RMI</a></h4>
 
+<p><img src="/media/blog/pod.jpeg" width="200"></p>
+
 <p>This books teaches you the foundation of Remote Procedure Call, starting from the explanation of the problem, developing a custom solution, then will explain you how to master Java RMI.</p>
 
 <p>Technologies used in this book are quite old and deprecated, but the theory behind them is still used in modern RPC (i.e. gRPC)</p>
 
 <h4 id="functional-programming-in-pythonhttpswwworeillycomlibraryviewfunctionalprogrammingin9781492048633"><a href="https://www.oreilly.com/library/view/functional-programming-in/9781492048633/">Functional Programming in Python</a></h4>
 
+<p><img src="/media/blog/fpp.jpeg" width="200"></p>
+
 <p>It was fun to read this book but... please, don't do this. Python is not a functional programming language. If you like functional programming, use a functional programming language.</p>
 
 <h4 id="the-go-programming-languagehttpswwwgoplio"><a href="https://www.gopl.io/">The Go Programming Language</a></h4>
+
+<p><img src="/media/blog/gpl.jpg" width="200"></p>
 
 <p>Even though Go is one of my favorite programming languages, this book is not one of my favorite books.</p>
 
@@ -498,8 +518,6 @@ In the domain of mathematics and computer science, graph theory is the study of 
 
 <h3 id="graph">Graph</h3>
 
-<p><figure><img src="/media/alvaro-pinot-czDvRp5V2b0-unsplash-min.jpg" alt="Graph" title="Photo by Alvaro Pinot on Unsplash"><figcaption>Photo by Alvaro Pinot on Unsplash</figcaption></figure></p>
-
 <p>According to <a href="https://en.wikipedia.org/wiki/Graph_(abstract_data_type)">Wikipedia</a>:</p>
 
 <blockquote>
@@ -606,8 +624,6 @@ e -&gt; [ a d ]
 </code></pre>
 
 <h3 id="tree">Tree</h3>
-
-<p><figure><img src="/media/blog/p2/tree-min.jpg" alt="Tree" title="Photo by Aaron Burden on Unsplash"><figcaption>Photo by Aaron Burden on Unsplash</figcaption></figure></p>
 
 <p>According to <a href="https://en.wikipedia.org/wiki/Tree_(graph_theory)">Wikipedia</a>:</p>
 
@@ -784,8 +800,6 @@ You should pick the data structure that is the most suitable for your purposes t
 
 <p>The linear data structure is a single level data structure while non-linear data structures are the multilevel data structure.</p>
 
-<p><figure><img src="/media/blog/linear_ds.jpg" alt="Linear Data Structure"></figure></p>
-
 <p>The most popular <strong>Linear Data Structures</strong> are:</p>
 
 <ul>
@@ -802,8 +816,6 @@ You should pick the data structure that is the most suitable for your purposes t
 <p>None of those structures is thread-safe. We will make them <em>thread-safe</em> in future posts (I wish).</p>
 
 <h3 id="stack">Stack</h3>
-
-<p><figure><img src="/media/blog/stack_fun.jpg" alt="Photo by Whitney Wright on Unsplash" title="Photo by Whitney Wright on Unsplash"><figcaption>Photo by Whitney Wright on Unsplash</figcaption></figure></p>
 
 <p>Beyond cookies, a <strong>stack</strong> or <em>LIFO</em> (last in, first out) is an abstract data type that serves as a collection of elements, with two principal operations:</p>
 
@@ -899,8 +911,6 @@ To simplify stack's operations we assume that when the index is <code>-1</code> 
 
 <h3 id="array">Array</h3>
 
-<p><figure><img src="/media/blog/array_fun.jpg" alt="Photo by A. L. on Unsplash" title="Photo by A. L. on Unsplash"><figcaption>Photo by A. L. on Unsplash</figcaption></figure></p>
-
 <p><strong>Array</strong> is a data structure used to store homogeneous elements at contiguous locations. Size of an array can be provided before storing data or the array can dynamically adapt its size to keep all the elements.</p>
 
 <p>Operations on the array are:</p>
@@ -928,8 +938,6 @@ To simplify stack's operations we assume that when the index is <code>-1</code> 
 <p>The method <code>Search</code> is very simplistic: it iterates over the elements of the array and, if this element is equal to the element <code>el</code> passed as the argument, returns its index. If the method does not find the element <code>el</code> returns <code>-1</code>.</p>
 
 <h3 id="linked-list">Linked List</h3>
-
-<p><figure><img src="/media/blog/linked_list_fun.jpg" alt="Photo by JJ Ying on Unsplash" title="Photo by JJ Ying on Unsplash"><figcaption>Photo by JJ Ying on Unsplash</figcaption></figure></p>
 
 <p>A <strong>Linked List</strong> is a linear data structure (like arrays) where each element is a separate object. Each element, called <strong>node</strong>, of a list is comprising of two items: the data and a reference to the next node.</p>
 
@@ -1071,8 +1079,6 @@ To simplify stack's operations we assume that when the index is <code>-1</code> 
 <p>The <code>String</code> method shows how to iterate over a list using a <code>for</code> loop.</p>
 
 <h3 id="queue">Queue</h3>
-
-<p><figure><img src="/media/blog/queue_fun.jpg" alt="Photo by Mael BALLAND on Unsplash" title="Photo by Mael BALLAND on Unsplash"><figcaption>Photo by Mael BALLAND on Unsplash</figcaption></figure></p>
 
 <p>A queue or <em>FIFO</em> (first in, first out) is an abstract data type that serves as a collection of elements, with two principal operations:</p>
 
