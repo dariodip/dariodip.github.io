@@ -18,10 +18,9 @@
       <pubDate>Fri, 10 Jan 2020 17:05:35 +0000</pubDate>
       
       <guid>/posts/2020/01/data-structures-with-go-part-ii/</guid>
-      <description>Data Structures With Go - Part II In the previous post we discussed how to implement linear data structures with Go.
+      <description>Data Structures With Go - Part II This page has been migrated to Medium In the previous post we discussed how to implement linear data structures with Go.
 Now we will explore two more complex data structures: tree and graph.
-Those structures are not Linear and can represent unstructured information. Both graphs and trees are the foundation of the graph theory and both can be used, essentially, to describe a kind of relation.
-In the domain of mathematics and computer science, graph theory is the study of graphs that concerns with the relationship among edges and vertices.</description>
+Those structures are not Linear and can represent unstructured information. Both graphs and trees are the foundation of the graph theory and both can be used, essentially, to describe a kind of relation.</description>
     </item>
     
     <item>
@@ -30,7 +29,7 @@ In the domain of mathematics and computer science, graph theory is the study of 
       <pubDate>Fri, 03 Jan 2020 17:05:35 +0000</pubDate>
       
       <guid>/posts/2020/01/data-structures-with-go-part-i/</guid>
-      <description>Data Structures With Go - Part I Data structures are everywhere. Every developer should know them, starting from the most common ones.
+      <description>Data Structures With Go - Part I This page has been migrated to Medium Data structures are everywhere. Every developer should know them, starting from the most common ones.
 The data structure priorly describes how the data is organised, accessed, associated and processed.
 Using data structures you can keep your data in memory and efficiently access them.
 You should pick the data structure that is the most suitable for your purposes to minimize space in memory and access time.</description>
@@ -42,9 +41,8 @@ You should pick the data structure that is the most suitable for your purposes t
       <pubDate>Sun, 01 Dec 2019 17:05:35 +0000</pubDate>
       
       <guid>/posts/2019/12/binary-search-with-go-python-and-c/</guid>
-      <description>The Binary Search Algorithm The Binary Search Algorithm is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).
-This algorithm is as efficient as easy to learn due to its simplicity.
-This algorithm does only O(log n) comparisons.</description>
+      <description>The Binary Search Algorithm This page has been migrated to Medium The Binary Search Algorithm is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).
+This algorithm is as efficient as easy to learn due to its simplicity.</description>
     </item>
     
   </channel>

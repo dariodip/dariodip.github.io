@@ -15,10 +15,14 @@
             <pubDate>Sat, 13 Mar 2021 16:10:00 +0000</pubDate>
             
             <guid>/posts/2021/03/books-on-my-journey/</guid>
-            <description>In this post I will write down a list of technical books, articles and podcast that I find interesting. I hope that someone will find it interesting as for me.
+            <description>Books on my journey This page has been migrated to Medium In this post I will write down a list of technical books, articles and podcast that I find interesting. I hope that someone will find it interesting as for me.
 Not all the books I&#39;ve read are listed here, only the ones I would like to suggest.
-Technical Books I&#39;ve read Designing Data-Intensive Applications This book is the one you MUST read if work with data. Since data is everywhere in modern software engineer, everyone must read it.</description>
-            <content type="html"><![CDATA[<p>In this post I will write down a list of technical books, articles and podcast that I find interesting. I hope that someone will find it interesting as for me.</p>
+Technical Books I&#39;ve read Designing Data-Intensive Applications This book is the one you MUST read if work with data.</description>
+            <content type="html"><![CDATA[<h1 id="books-on-my-journey">Books on my journey</h1>
+
+<h6 id="this-page-has-been-migrated-to-mediumhttpsdariodipmediumcombooksonmyjourney6e26cc60926dsk36dcfe48d488e9ee390dddd7e0caa31b">This page has been migrated to <a href="https://dariodip.medium.com/books-on-my-journey-6e26cc60926d?sk=36dcfe48d488e9ee390dddd7e0caa31b">Medium</a></h6>
+
+<p>In this post I will write down a list of technical books, articles and podcast that I find interesting. I hope that someone will find it interesting as for me.</p>
 
 <p>Not all the books I've read are listed here, only the ones I would like to suggest.</p>
 
@@ -156,11 +160,12 @@ Technical Books I&#39;ve read Designing Data-Intensive Applications This book is
             <pubDate>Fri, 27 Mar 2020 15:11:00 +0000</pubDate>
             
             <guid>/posts/2020/03/ansible-for-developers-102/</guid>
-            <description>Introduction In the previous post we introduced basic aspects of Ansible. Now we&#39;ll talk about some advanced features.
+            <description>Introduction This page has been migrated to Medium In the previous post we introduced basic aspects of Ansible. Now we&#39;ll talk about some advanced features.
 Loops Another way to describe the tools of the Ansible family can be Infrastructure as code. This is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.
-The word code brings an important aspect with it: loops.
-In Ansible Playbooks you can use loops to reuse some tasks.</description>
+The word code brings an important aspect with it: loops.</description>
             <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
+
+<h6 id="this-page-has-been-migrated-to-mediumhttpsdariodipmediumcomansiblefordevelopers102e816e2b99f05">This page has been migrated to <a href="https://dariodip.medium.com/ansible-for-developers-102-e816e2b99f05">Medium</a></h6>
 
 <p>In <a href="/posts/2020/03/ansible-for-developers-101">the previous post</a> we introduced basic aspects of <strong>Ansible</strong>. Now we'll talk about some advanced features.</p>
 
@@ -273,10 +278,12 @@ roles/
             <pubDate>Fri, 27 Mar 2020 09:11:00 +0000</pubDate>
             
             <guid>/posts/2020/03/ansible-for-developers-101/</guid>
-            <description>Introduction When I started as a developer and I started to feel frustrating when I had to repeat something twice or more.
+            <description>Introduction This page has been migrated to Medium When I started as a developer and I started to feel frustrating when I had to repeat something twice or more.
 Being a developer does not mean you only have to write code. Hopefully, your code should be executed in different environments and often it is up to you managing part of those environments.
-Nowadays automation brings a lot of improvements to the life-quality of developers. You can, therefore, exploit tools that help you repeating boring stuff, keeping you well focused on your work.</description>
+Nowadays automation brings a lot of improvements to the life-quality of developers.</description>
             <content type="html"><![CDATA[<h2 id="introduction">Introduction</h2>
+
+<h6 id="this-page-has-been-migrated-to-mediumhttpsdariodipmediumcomansiblefordevelopers101b8f8de33ea7b">This page has been migrated to <a href="https://dariodip.medium.com/ansible-for-developers-101-b8f8de33ea7b">Medium</a></h6>
 
 <p>When I started as a developer and I started to feel frustrating when I had to repeat something twice or more.</p>
 
@@ -496,11 +503,12 @@ handlers:
             <pubDate>Fri, 10 Jan 2020 17:05:35 +0000</pubDate>
             
             <guid>/posts/2020/01/data-structures-with-go-part-ii/</guid>
-            <description>Data Structures With Go - Part II In the previous post we discussed how to implement linear data structures with Go.
+            <description>Data Structures With Go - Part II This page has been migrated to Medium In the previous post we discussed how to implement linear data structures with Go.
 Now we will explore two more complex data structures: tree and graph.
-Those structures are not Linear and can represent unstructured information. Both graphs and trees are the foundation of the graph theory and both can be used, essentially, to describe a kind of relation.
-In the domain of mathematics and computer science, graph theory is the study of graphs that concerns with the relationship among edges and vertices.</description>
+Those structures are not Linear and can represent unstructured information. Both graphs and trees are the foundation of the graph theory and both can be used, essentially, to describe a kind of relation.</description>
             <content type="html"><![CDATA[<h2 id="data-structures-with-go--part-ii">Data Structures With Go - Part II</h2>
+
+<h6 id="this-page-has-been-migrated-to-mediumhttpsdariodipmediumcomdatastructureswithgopartii11f94e6adc46">This page has been migrated to <a href="https://dariodip.medium.com/data-structures-with-go-part-ii-11f94e6adc46">Medium</a></h6>
 
 <p>In the <a href="/posts/2020/01/data-structures-with-go-part-i">previous post</a> we discussed how to implement linear data structures with Go.</p>
 
@@ -776,11 +784,13 @@ c
             <pubDate>Fri, 03 Jan 2020 17:05:35 +0000</pubDate>
             
             <guid>/posts/2020/01/data-structures-with-go-part-i/</guid>
-            <description>Data Structures With Go - Part I Data structures are everywhere. Every developer should know them, starting from the most common ones.
+            <description>Data Structures With Go - Part I This page has been migrated to Medium Data structures are everywhere. Every developer should know them, starting from the most common ones.
 The data structure priorly describes how the data is organised, accessed, associated and processed.
 Using data structures you can keep your data in memory and efficiently access them.
 You should pick the data structure that is the most suitable for your purposes to minimize space in memory and access time.</description>
             <content type="html"><![CDATA[<h2 id="data-structures-with-go--part-i">Data Structures With Go - Part I</h2>
+
+<h6 id="this-page-has-been-migrated-to-mediumhttpsdariodipmediumcomdatastructureswithgoparti3e2c3d950cd4">This page has been migrated to <a href="https://dariodip.medium.com/data-structures-with-go-part-i-3e2c3d950cd4">Medium</a></h6>
 
 <p><strong>Data structures</strong> are everywhere. Every developer should know them, starting from the most common ones.</p>
 
@@ -1158,10 +1168,11 @@ To simplify stack's operations we assume that when the index is <code>-1</code> 
             <pubDate>Sun, 01 Dec 2019 17:05:35 +0000</pubDate>
             
             <guid>/posts/2019/12/binary-search-with-go-python-and-c/</guid>
-            <description>The Binary Search Algorithm The Binary Search Algorithm is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).
-This algorithm is as efficient as easy to learn due to its simplicity.
-This algorithm does only O(log n) comparisons.</description>
+            <description>The Binary Search Algorithm This page has been migrated to Medium The Binary Search Algorithm is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).
+This algorithm is as efficient as easy to learn due to its simplicity.</description>
             <content type="html"><![CDATA[<h2 id="the-binary-search-algorithm">The Binary Search Algorithm</h2>
+
+<h6 id="this-page-has-been-migrated-to-mediumhttpsdariodipmediumcombinarysearchwithgopythonandc3eaf3ed5f761">This page has been migrated to <a href="https://dariodip.medium.com/binary-search-with-go-python-and-c-3eaf3ed5f761">Medium</a></h6>
 
 <p>The <em>Binary Search Algorithm</em> is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).</p>
 
@@ -1208,58 +1219,25 @@ This algorithm does only O(log n) comparisons.</description>
 <h3 id="python">Python</h3>
 
 <p>Let's have a look at the BSA using Python.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">    <span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> floor
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">bsa</span>(l, n, t):
-        L <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-        R <span style="color:#f92672">=</span> n <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-        <span style="color:#66d9ef">while</span> L <span style="color:#f92672">&lt;=</span> R:
-            m <span style="color:#f92672">=</span> floor((L <span style="color:#f92672">+</span> R) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>)
-            <span style="color:#66d9ef">if</span> A[m] <span style="color:#f92672">&lt;</span> T:
-                L <span style="color:#f92672">=</span> m<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
-            <span style="color:#66d9ef">elif</span> A[m] <span style="color:#f92672">&gt;</span> T:
-                R <span style="color:#f92672">=</span> m<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-            <span style="color:#66d9ef">else</span>:
-                <span style="color:#66d9ef">return</span> m
-        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span></code></pre></div>
+
+<script src="https://gist.github.com/dariodip/d54976e361fec510afe68a64cfa90e82.js?file=binary-search.py"></script>
+
 <p>As you may see, the <em>BSA</em> written in Python is very similar to the pseudocode. We return <code>-1</code> when we cannot find the desired element.</p>
 
 <h3 id="go">Go</h3>
 
 <p>The <em>Go</em> version of the <em>BSA</em> is the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">    <span style="color:#66d9ef">func</span> <span style="color:#a6e22e">bsa</span>(<span style="color:#a6e22e">A</span> []<span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">n</span> <span style="color:#66d9ef">int</span>, <span style="color:#a6e22e">T</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
-        <span style="color:#a6e22e">L</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
-        <span style="color:#a6e22e">R</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">n</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
-        <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">L</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">R</span> {
-            <span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> int(<span style="color:#a6e22e">math</span>.<span style="color:#a6e22e">Floor</span>(float64((<span style="color:#a6e22e">L</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">R</span>) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>)))
-            <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">m</span>] &lt; <span style="color:#a6e22e">T</span> {
-                <span style="color:#a6e22e">L</span> = <span style="color:#a6e22e">m</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
-            } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">A</span>[<span style="color:#a6e22e">m</span>] &gt; <span style="color:#a6e22e">T</span> {
-                <span style="color:#a6e22e">R</span> = <span style="color:#a6e22e">m</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
-            } <span style="color:#66d9ef">else</span> {
-                <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">m</span>
-            }
-        }
-        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-    }</code></pre></div>
+
+<script src="https://gist.github.com/dariodip/d54976e361fec510afe68a64cfa90e82.js?file=binary-search.go"></script>
+
 <p>Unlike the <em>Python</em> version, this code does not look similar to the pseudocode because of Go's strong typing, which forces us to do 2 casts (<em>line 5</em>). Also in the <em>Go</em> implementation we return <code>-1</code> if we cannot find the element <code>T</code>. Due to the simplicity of the algorithm itself, no other consideration has to be made.</p>
 
 <h3 id="c">C</h3>
 
 <p>The <em>C</em> version of the <em>BSA</em> could be the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C">    <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">bsa</span>(<span style="color:#66d9ef">int</span> A[], <span style="color:#66d9ef">int</span> n, <span style="color:#66d9ef">int</span> T) {
-        <span style="color:#66d9ef">int</span> L <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, R <span style="color:#f92672">=</span> n <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
-        <span style="color:#66d9ef">while</span> (L <span style="color:#f92672">&lt;=</span> R) {
-            <span style="color:#66d9ef">int</span> m <span style="color:#f92672">=</span> (L <span style="color:#f92672">+</span> R) <span style="color:#f92672">/</span> <span style="color:#ae81ff">2</span>;
-            <span style="color:#66d9ef">if</span> (A[m] <span style="color:#f92672">&lt;</span> T) {
-                L <span style="color:#f92672">=</span> m <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>;
-            } <span style="color:#66d9ef">else</span> <span style="color:#66d9ef">if</span> (A[m] <span style="color:#f92672">&gt;</span> T) {
-                R <span style="color:#f92672">=</span> m <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>;
-            } <span style="color:#66d9ef">else</span> {
-                <span style="color:#66d9ef">return</span> m;
-            }
-        }
-        <span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>;
-    }</code></pre></div>
+
+<script src="https://gist.github.com/dariodip/d54976e361fec510afe68a64cfa90e82.js?file=binary-search.c"></script>
+
 <p>The <em>C</em> implementation looks quite similar to the <em>Go</em> implementation but does not have casts because <em>C</em> has weak typing.</p>
 
 <hr>
