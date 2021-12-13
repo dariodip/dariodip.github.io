@@ -27,7 +27,7 @@ The word code brings an important aspect with it: loops." />
 
 
 
-<link rel="stylesheet" href="/main.min.a354d45c276eb9a425e801df7c2d3dfd4dea1e3a134795f274e5eb4d540f56d5.css">
+<link rel="stylesheet" href="/main.min.9fa4bdd9b68bece33f5e7d867beffcb2ce2400492d63f454a92e5f61f0248bec.css">
 
 
 
@@ -42,17 +42,10 @@ The word code brings an important aspect with it: loops." />
     <meta name="theme-color" content="#252627">
 
 <meta itemprop="name" content="Ansible for developers 102">
-<meta itemprop="description" content="Ansible 102: an introduction to Ansible from a developer point of view">
-
-
-<meta itemprop="datePublished" content="2020-03-27T15:11:00&#43;00:00" />
+<meta itemprop="description" content="Ansible 102: an introduction to Ansible from a developer point of view"><meta itemprop="datePublished" content="2020-03-27T15:11:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-03-27T15:11:00&#43;00:00" />
-<meta itemprop="wordCount" content="607">
-
-
-
-<meta itemprop="keywords" content="ansible,devops,automating," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="wordCount" content="607"><meta itemprop="image" content="/"/>
+<meta itemprop="keywords" content="ansible,devops,automating," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/"/>
 
 <meta name="twitter:title" content="Ansible for developers 102"/>
@@ -156,25 +149,25 @@ The word code brings an important aspect with it: loops." />
 <p>The word <em>code</em> brings an important aspect with it: <strong>loops</strong>.</p>
 
 <p>In Ansible Playbooks you can use <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html"><strong>loops</strong></a> to reuse some tasks. An example can be the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- name: add several users
-  user:
-    name: <span style="color:#e6db74">&#34;{{ item }}&#34;</span>
-    state: present
-    groups: <span style="color:#e6db74">&#34;wheel&#34;</span>
-  loop:
-     - testuser1
-     - testuser2</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">add several users</span>
+  <span style="color:#f92672">user</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;{{ item }}&#34;</span>
+    <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+    <span style="color:#f92672">groups</span>: <span style="color:#e6db74">&#34;wheel&#34;</span>
+  <span style="color:#f92672">loop</span>:
+     - <span style="color:#ae81ff">testuser1</span>
+     - <span style="color:#ae81ff">testuser2</span></code></pre></div>
 <p>This task adds several users and in order to do that, iterates over a loop. So you don't have to write the same task twice.</p>
 
 <p>You can iterate both on simple lists and on lists of maps. This can clarify this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- name: add several users
-  user:
-    name: <span style="color:#e6db74">&#34;{{ item.name }}&#34;</span>
-    state: present
-    groups: <span style="color:#e6db74">&#34;{{ item.groups }}&#34;</span>
-  loop:
-    - { name: <span style="color:#e6db74">&#39;testuser1&#39;</span>, groups: <span style="color:#e6db74">&#39;wheel&#39;</span> }
-    - { name: <span style="color:#e6db74">&#39;testuser2&#39;</span>, groups: <span style="color:#e6db74">&#39;root&#39;</span> }</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">add several users</span>
+  <span style="color:#f92672">user</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;{{ item.name }}&#34;</span>
+    <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+    <span style="color:#f92672">groups</span>: <span style="color:#e6db74">&#34;{{ item.groups }}&#34;</span>
+  <span style="color:#f92672">loop</span>:
+    - { <span style="color:#f92672">name: &#39;testuser1&#39;, groups</span>: <span style="color:#e6db74">&#39;wheel&#39;</span> }
+    - { <span style="color:#f92672">name: &#39;testuser2&#39;, groups</span>: <span style="color:#e6db74">&#39;root&#39;</span> }</code></pre></div>
 <p>Using loops reduces the repetition in your playbooks, keeping them compact and clear.</p>
 
 <h2 id="roles">Roles</h2>
@@ -184,7 +177,6 @@ The word code brings an important aspect with it: loops." />
 <p>Roles are essentially a predefined directory structure that we're utilizing to put individual pieces of our playbook into, to make it easier to reuse and share among groups.</p>
 
 <p>An example directory structure can be the following:</p>
-
 <pre><code>webservers.yml
 fooservers.yml
 roles/
@@ -199,9 +191,7 @@ roles/
     webservers/
         tasks/
         defaults/
-        meta/
-</code></pre>
-
+        meta/</code></pre>
 <p>In this structure, we have the playbooks <code>webserver.yaml</code> and <code>fooservers.yml</code> and the roles <code>common</code> and <code>webservers</code>.</p>
 
 <p>When in use, each directory must contain a <code>main.yml</code> file, which contains the relevant content:</p>
@@ -219,19 +209,19 @@ roles/
 <p>Conventionally, the <code>common</code> role contains a role that has to be run against all of your machines.</p>
 
 <p>We can suppose that inside our <code>roles/common/tasks/httpd.yml</code> we have the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- yum:
-    name: <span style="color:#e6db74">&#34;httpd&#34;</span>
-    state: present</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#f92672">yum</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;httpd&#34;</span>
+    <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span></code></pre></div>
 <p>and that inside our <code>roles/webservers/tasks/apache.yml</code> we have the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- apt:
-    name: <span style="color:#e6db74">&#34;apache2&#34;</span>
-    state: present</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#f92672">apt</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;apache2&#34;</span>
+    <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span></code></pre></div>
 <p>Inside our playbook we will put:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
-- hosts: webservers
-  roles:
-    - common
-    - webservers</code></pre></div>
+- <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">webservers</span>
+  <span style="color:#f92672">roles</span>:
+    - <span style="color:#ae81ff">common</span>
+    - <span style="color:#ae81ff">webservers</span></code></pre></div>
 <p>In that way, we included both <code>common</code> and <code>webservers</code> roles so that they can be executed when running the playbook.</p>
 
 <p>With this small example, it's hard to understand the benefits brought by roles, but as long as your playbook starts growing, you will find this structure a life-saving because you can reuse as much as you can, still keeping everything both clear and compact.</p>
@@ -359,7 +349,7 @@ roles/
 
 
 
-<script type="text/javascript" src="/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
+<script type="text/javascript" src="/bundle.min.2ce64ea6ea44a72b13dd812fc2eb5cca3efe878cce258a47c137c17edf46e0602a05e422b618a5b80b5939c731b7a293351c2f2222a21f6ee27e54a8448dd20e.js" integrity="sha512-LOZOpupEpysT3YEvwutcyj7&#43;h4zOJYpHwTfBft9G4GAqBeQithiluAtZOccxt6KTNRwvIiKiH27iflSoRI3SDg=="></script>
     
 <script type="application/javascript">
 var doNotTrack = false;

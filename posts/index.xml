@@ -174,25 +174,25 @@ The word code brings an important aspect with it: loops.</description>
 <p>The word <em>code</em> brings an important aspect with it: <strong>loops</strong>.</p>
 
 <p>In Ansible Playbooks you can use <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html"><strong>loops</strong></a> to reuse some tasks. An example can be the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- name: add several users
-  user:
-    name: <span style="color:#e6db74">&#34;{{ item }}&#34;</span>
-    state: present
-    groups: <span style="color:#e6db74">&#34;wheel&#34;</span>
-  loop:
-     - testuser1
-     - testuser2</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">add several users</span>
+  <span style="color:#f92672">user</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;{{ item }}&#34;</span>
+    <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+    <span style="color:#f92672">groups</span>: <span style="color:#e6db74">&#34;wheel&#34;</span>
+  <span style="color:#f92672">loop</span>:
+     - <span style="color:#ae81ff">testuser1</span>
+     - <span style="color:#ae81ff">testuser2</span></code></pre></div>
 <p>This task adds several users and in order to do that, iterates over a loop. So you don't have to write the same task twice.</p>
 
 <p>You can iterate both on simple lists and on lists of maps. This can clarify this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- name: add several users
-  user:
-    name: <span style="color:#e6db74">&#34;{{ item.name }}&#34;</span>
-    state: present
-    groups: <span style="color:#e6db74">&#34;{{ item.groups }}&#34;</span>
-  loop:
-    - { name: <span style="color:#e6db74">&#39;testuser1&#39;</span>, groups: <span style="color:#e6db74">&#39;wheel&#39;</span> }
-    - { name: <span style="color:#e6db74">&#39;testuser2&#39;</span>, groups: <span style="color:#e6db74">&#39;root&#39;</span> }</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">add several users</span>
+  <span style="color:#f92672">user</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;{{ item.name }}&#34;</span>
+    <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+    <span style="color:#f92672">groups</span>: <span style="color:#e6db74">&#34;{{ item.groups }}&#34;</span>
+  <span style="color:#f92672">loop</span>:
+    - { <span style="color:#f92672">name: &#39;testuser1&#39;, groups</span>: <span style="color:#e6db74">&#39;wheel&#39;</span> }
+    - { <span style="color:#f92672">name: &#39;testuser2&#39;, groups</span>: <span style="color:#e6db74">&#39;root&#39;</span> }</code></pre></div>
 <p>Using loops reduces the repetition in your playbooks, keeping them compact and clear.</p>
 
 <h2 id="roles">Roles</h2>
@@ -202,7 +202,6 @@ The word code brings an important aspect with it: loops.</description>
 <p>Roles are essentially a predefined directory structure that we're utilizing to put individual pieces of our playbook into, to make it easier to reuse and share among groups.</p>
 
 <p>An example directory structure can be the following:</p>
-
 <pre><code>webservers.yml
 fooservers.yml
 roles/
@@ -217,9 +216,7 @@ roles/
     webservers/
         tasks/
         defaults/
-        meta/
-</code></pre>
-
+        meta/</code></pre>
 <p>In this structure, we have the playbooks <code>webserver.yaml</code> and <code>fooservers.yml</code> and the roles <code>common</code> and <code>webservers</code>.</p>
 
 <p>When in use, each directory must contain a <code>main.yml</code> file, which contains the relevant content:</p>
@@ -237,19 +234,19 @@ roles/
 <p>Conventionally, the <code>common</code> role contains a role that has to be run against all of your machines.</p>
 
 <p>We can suppose that inside our <code>roles/common/tasks/httpd.yml</code> we have the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- yum:
-    name: <span style="color:#e6db74">&#34;httpd&#34;</span>
-    state: present</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#f92672">yum</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;httpd&#34;</span>
+    <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span></code></pre></div>
 <p>and that inside our <code>roles/webservers/tasks/apache.yml</code> we have the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- apt:
-    name: <span style="color:#e6db74">&#34;apache2&#34;</span>
-    state: present</code></pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#f92672">apt</span>:
+    <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;apache2&#34;</span>
+    <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span></code></pre></div>
 <p>Inside our playbook we will put:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
-- hosts: webservers
-  roles:
-    - common
-    - webservers</code></pre></div>
+- <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">webservers</span>
+  <span style="color:#f92672">roles</span>:
+    - <span style="color:#ae81ff">common</span>
+    - <span style="color:#ae81ff">webservers</span></code></pre></div>
 <p>In that way, we included both <code>common</code> and <code>webservers</code> roles so that they can be executed when running the playbook.</p>
 
 <p>With this small example, it's hard to understand the benefits brought by roles, but as long as your playbook starts growing, you will find this structure a life-saving because you can reuse as much as you can, still keeping everything both clear and compact.</p>
@@ -344,7 +341,6 @@ Nowadays automation brings a lot of improvements to the life-quality of develope
 <p>Those <strong>Modules</strong> are going to be used to act against an <strong>Inventory</strong>. You can also include inventory-specific data, making everything more reusable.</p>
 
 <p>An example of static Inventory can be the following:</p>
-
 <pre><code>[control]
 control ansible_host=10.45.21.2
 
@@ -362,9 +358,7 @@ ansible_user=vagrant
 ansible_ssh_private_key_file=~/.vagrant.d/private_key
 
 [web:vars]
-ansible_user=dario
-</code></pre>
-
+ansible_user=dario</code></pre>
 <p>This Inventory contains 3 groups that consist of a <code>control</code> node, four <code>web</code> nodes and an <code>HAProxy</code> node. Those nodes come with their IP address. Furthermore, you can specify a set of variables that apply to each node under the <code>all:vars</code> group and a set of variables that apply to each node in a group under the <code>web:vars</code>. Variables more specific have higher precedence.</p>
 
 <p>Hosts specified in your inventory don't need to be aware of Ansible. These hosts can be any virtual or physical machine on an on-premise or public cloud having a Python interpreter installed, an <a href="https://docs.openstack.org/openstack-ansible/latest/">OpenStack</a> or <a href="https://docs.ansible.com/ansible/latest/scenario_guides/guide_vmware.html">VMware</a> cloud and so on.</p>
@@ -403,21 +397,21 @@ Ansible can work with metadata from various sources and manage their context in 
 <p>Let's construct a playbook step-by-step. First of all, we have to include the list of tasks:</p>
 
 <h6 id="tasks">Tasks</h6>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">tasks:
-    - name: add cache dir
-      file:
-        path: /opt/cache
-        state: directory
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">tasks</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">add cache dir</span>
+      <span style="color:#f92672">file</span>:
+        <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/opt/cache</span>
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">directory</span>
     
-    - name: install nginx
-      yum:
-        name: nginx
-        state: latest
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install nginx</span>
+      <span style="color:#f92672">yum</span>:
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">latest</span>
     
-    - name: restart nginx
-      service:
-        name: nginx
-        state: restarted</code></pre></div>
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">restart nginx</span>
+      <span style="color:#f92672">service</span>:
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">restarted</span></code></pre></div>
 <p>Using this playbook, we</p>
 
 <ul>
@@ -442,23 +436,23 @@ This outlines an important aspect of Ansible Tasks: they should be <a href="http
 <p><strong>Handlers</strong> are special tasks that run at the end of a play if notified by another task. They can also be notified multiple time during the play but they will run only once at the end of the play. For example, you can ask to restart a service if the configuration gets changed.</p>
 
 <p>Let's add an example handler to our playbook refactoring the preceding playbook:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">tasks:
-    - name: add cache dir
-      file:
-        path: /opt/cache
-        state: directory
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">tasks</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">add cache dir</span>
+      <span style="color:#f92672">file</span>:
+        <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/opt/cache</span>
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">directory</span>
     
-    - name: install nginx
-      yum:
-        name: nginx
-        state: latest
-    notify: restart nginx
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install nginx</span>
+      <span style="color:#f92672">yum</span>:
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">latest</span>
+    <span style="color:#f92672">notify</span>: <span style="color:#ae81ff">restart nginx</span>
     
-handlers:
-    - name: restart nginx
-      service:
-        name: nginx
-        state: restarted</code></pre></div>
+<span style="color:#f92672">handlers</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">restart nginx</span>
+      <span style="color:#f92672">service</span>:
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">restarted</span></code></pre></div>
 <p>Doing that, we ensure that the task <code>restart nginx</code> will be run only after the <code>install nginx</code> task has returned <code>changed</code> as its status.</p>
 
 <h6 id="plays">Plays</h6>
@@ -467,20 +461,20 @@ handlers:
 
 <p>A playbook with <strong>Plays</strong> can be the following:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
-- name: install and start apache
-  hosts: web
-  vars:
-    http_port: <span style="color:#ae81ff">80</span>
-    max_clients: <span style="color:#ae81ff">200</span>
-  remote_user: root
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install and start apache</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">web</span>
+  <span style="color:#f92672">vars</span>:
+    <span style="color:#f92672">http_port</span>: <span style="color:#ae81ff">80</span>
+    <span style="color:#f92672">max_clients</span>: <span style="color:#ae81ff">200</span>
+  <span style="color:#f92672">remote_user</span>: <span style="color:#ae81ff">root</span>
 
-  tasks:
-  - name: install httpd
-    yum: pkg=httpd state=latest
-  - name: write the apache config file
-    template: src=/srv/httpd.j2 dest=/etc/httpd.conf
-  - name: start httpd
-    service: name=http state=started</code></pre></div>
+  <span style="color:#f92672">tasks</span>:
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install httpd</span>
+    <span style="color:#f92672">yum</span>: <span style="color:#ae81ff">pkg=httpd state=latest</span>
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">write the apache config file</span>
+    <span style="color:#f92672">template</span>: <span style="color:#ae81ff">src=/srv/httpd.j2 dest=/etc/httpd.conf</span>
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">start httpd</span>
+    <span style="color:#f92672">service</span>: <span style="color:#ae81ff">name=http state=started</span></code></pre></div>
 <ul>
 <li>The upper <code>name</code> field is the name of the play;</li>
 <li>The <code>hosts</code> field represents the group of the hosts in the inventory;</li>
@@ -562,7 +556,8 @@ Those structures are not Linear and can represent unstructured information. Both
 		<span style="color:#a6e22e">nodes</span>: make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>, <span style="color:#ae81ff">0</span>),
 		<span style="color:#a6e22e">edges</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">Node</span>][]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>),
 	}
-}</code></pre></div>
+}
+</code></pre></div>
 <p>As you can see from the code above, a <code>Node</code> is just a container for a value which is an <code>interface{}</code> so that we can use whatever type we want.</p>
 
 <p>A <code>Graph</code>, instead, contains both an array of pointers to <code>Node</code>s and a <code>map</code> which has <code>Node</code>s as <em>key</em> and an array of pointers to <code>Node</code>s as value.</p>
@@ -581,7 +576,8 @@ Those structures are not Linear and can represent unstructured information. Both
 <span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">g</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Graph</span>) <span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">n1</span>, <span style="color:#a6e22e">n2</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) {
 	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">n1</span>] = append(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">n1</span>], <span style="color:#a6e22e">n2</span>)
 	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">n2</span>] = append(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">n2</span>], <span style="color:#a6e22e">n1</span>)
-}</code></pre></div>
+}
+</code></pre></div>
 <p>Both the <code>AddNode</code> and <code>AddEdge</code> methods are easy to understand.</p>
 
 <p><code>AddNode</code> creates a <code>Node</code> which wraps the element, appends it to the <code>node</code> array and returns a pointer to that <code>Node</code>. This pointer can be useful next.</p>
@@ -604,7 +600,8 @@ Those structures are not Linear and can represent unstructured information. Both
 		<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">WriteString</span>(<span style="color:#e6db74">&#34;]\n&#34;</span>)
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">String</span>()
-}</code></pre></div>
+}
+</code></pre></div>
 <p>The <code>String</code> method for the <code>Node</code> is trivial, while the <code>String</code> method for a <code>Graph</code> needs a explanation. We first create a <code>strings.Builder</code> which is the most efficient way to store a string incrementally. We then iterate over each <code>Node</code> and over each <em>edge</em> of that node. Let's take the graph represented above: to create it in our code we could run the following snipped of code:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#a6e22e">g</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">NewGraph</span>()
 	<span style="color:#a6e22e">nA</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddNode</span>(<span style="color:#e6db74">&#34;a&#34;</span>)
@@ -619,16 +616,14 @@ Those structures are not Linear and can represent unstructured information. Both
 	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">nC</span>, <span style="color:#a6e22e">nD</span>)
 	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">nD</span>, <span style="color:#a6e22e">nE</span>)
 
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">String</span>())</code></pre></div>
+	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">String</span>())
+</code></pre></div>
 <p>Eventually, the <code>Print</code> statement will print the following:</p>
-
 <pre><code>a -&gt; [ b c e ]
 b -&gt; [ a ]
 c -&gt; [ a d ]
 d -&gt; [ c e ]
-e -&gt; [ a d ]
-</code></pre>
-
+e -&gt; [ a d ]</code></pre>
 <h3 id="tree">Tree</h3>
 
 <p>According to <a href="https://en.wikipedia.org/wiki/Tree_(graph_theory)">Wikipedia</a>:</p>
@@ -681,7 +676,8 @@ e -&gt; [ a d ]
 	<span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Tree</span>{<span style="color:#a6e22e">el</span>: <span style="color:#a6e22e">el</span>}
 	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">child</span> = append(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">child</span>, <span style="color:#a6e22e">c</span>)
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">c</span>
-}</code></pre></div>
+}
+</code></pre></div>
 <p>Code for <code>Tree</code> is quite easy, isn't it?</p>
 
 <p>Just think about the formal definition and see how we translate it in code:</p>
@@ -693,7 +689,8 @@ e -&gt; [ a d ]
 	<span style="color:#a6e22e">a</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">AddChild</span>(<span style="color:#e6db74">&#34;a&#34;</span>)
 	<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">AddChild</span>(<span style="color:#e6db74">&#34;d&#34;</span>)
 	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">AddChild</span>(<span style="color:#e6db74">&#34;b&#34;</span>)
-	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">AddChild</span>(<span style="color:#e6db74">&#34;c&#34;</span>)</code></pre></div>
+	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">AddChild</span>(<span style="color:#e6db74">&#34;c&#34;</span>)
+</code></pre></div>
 <p>Since this implementation is too easy, we'll see how to implement the search using both <em>BFS</em> (breadth-first search) and <em>DFS</em> (depth-first search).</p>
 
 <h4 id="bfs">BFS</h4>
@@ -718,22 +715,21 @@ e -&gt; [ a d ]
 			}
 		}
 	}
-}</code></pre></div>
+}
+</code></pre></div>
 <p>We create a <em>queue</em> containing all the nodes to be visited. The first node added is obviously <em>t</em> (the root). A <em>for</em> iterates over the queue and applies the function <em>f</em> passing the dequeued element <em>next</em>. After visiting the element <em>next</em>, its child will be added to the queue.</p>
 
 <p>To print our <em>tree</em> using <em>BFS</em> we can run:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">BFS</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>) {
 		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">el</span>)
-	})</code></pre></div>
+	})
+</code></pre></div>
 <p>This will print:</p>
-
 <pre><code>r
 a
 b
 c
-d
-</code></pre>
-
+d</code></pre>
 <h4 id="dfs">DFS</h4>
 
 <p>The <em>DFS</em> algorithm visits each node of the tree trying to Go as deep as he can, then <em>backtracking</em> when encounters a node with no children (a <em>leaf</em>). A possible visit to our tree could be the following:</p>
@@ -748,22 +744,21 @@ d
 			<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">DFS</span>(<span style="color:#a6e22e">f</span>)
 		}
 	}
-}</code></pre></div>
+}
+</code></pre></div>
 <p>It first calls <code>f</code> passing <code>t</code>, then visits each child of <code>t</code> and calls <code>DFS</code> on each one.</p>
 
 <p>To print our <em>tree</em> using <em>BFS</em> we can run:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">DFS</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>) {
 		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">el</span>)
-	})</code></pre></div>
+	})
+</code></pre></div>
 <p>This will print</p>
-
 <pre><code>r
 a
 d
 b
-c
-</code></pre>
-
+c</code></pre>
 <h3 id="conclusion">Conclusion</h3>
 
 <p>Graphs and trees are powerful data structures since they allow you to store efficiently your data and their relationships. In literature, you can find so many different kinds of graphs and trees. A dept known of those structures makes you a better developer.</p>
@@ -848,7 +843,8 @@ You should pick the data structure that is the most suitable for your purposes t
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Stack</span> <span style="color:#66d9ef">struct</span> {
 	<span style="color:#a6e22e">stack</span> 	[]<span style="color:#66d9ef">interface</span>{}
 	<span style="color:#a6e22e">curInd</span> 	<span style="color:#66d9ef">int</span>
-}</code></pre></div>
+}
+</code></pre></div>
 <p>The best way to implement a stack is by using an <strong>array</strong> and an <code>int</code> which indexes the top of the stack.
 To simplify stack's operations we assume that when the index is <code>-1</code> the stack is empty and when the stack is full we cannot insert other elements.</p>
 
@@ -870,7 +866,8 @@ To simplify stack's operations we assume that when the index is <code>-1</code> 
 <span style="color:#75715e">// IsEmpty returns true if the stack is empty
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Stack</span>) <span style="color:#a6e22e">IsEmpty</span>() <span style="color:#66d9ef">bool</span> {
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">curInd</span> &lt; <span style="color:#ae81ff">0</span>
-}</code></pre></div>
+}
+</code></pre></div>
 <p>The function <code>NewStack</code> takes an <code>int</code> as argument and returns a pointer to a stack having both array and top's index initialized.</p>
 
 <p>The method <code>IsEmpty</code> is quite simplistic: it returns <code>true</code> if <code>curInd</code> is less than <code>0</code>, otherwise it returns false.</p>
@@ -902,7 +899,8 @@ To simplify stack's operations we assume that when the index is <code>-1</code> 
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">s</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Stack</span>) <span style="color:#a6e22e">Push</span>(<span style="color:#a6e22e">el</span> <span style="color:#66d9ef">interface</span>{}) {
 	<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">curInd</span><span style="color:#f92672">++</span>
 	<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">stack</span>[<span style="color:#a6e22e">s</span>.<span style="color:#a6e22e">curInd</span>] = <span style="color:#a6e22e">el</span>
-}</code></pre></div>
+}
+</code></pre></div>
 <p>The method <code>Top</code> returns an interface but does not alter the stack. It first checks if the stack is empty, if so it panics, otherwise returns the element of the underlying array at the index specified by <code>curInd</code>.</p>
 
 <p>The method <code>Pop</code> is similar to its relative <code>Top</code> but &quot;<em>deletes</em>&quot; the element at the top. Actually, this method stores the element at <code>curInd</code> in a temporary variable <code>el</code>, sets the location at <code>curInd</code> to <code>nil</code> (<em>garbage collector</em> will do the tough job) and decrements <code>curInd</code>, finally returns <code>el</code>.</p>
@@ -942,7 +940,8 @@ To simplify stack's operations we assume that when the index is <code>-1</code> 
 		}
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-}</code></pre></div>
+}
+</code></pre></div>
 <p>The method <code>Search</code> is very simplistic: it iterates over the elements of the array and, if this element is equal to the element <code>el</code> passed as the argument, returns its index. If the method does not find the element <code>el</code> returns <code>-1</code>.</p>
 
 <h3 id="linked-list">Linked List</h3>
@@ -973,7 +972,8 @@ To simplify stack's operations we assume that when the index is <code>-1</code> 
 
 <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">LinkedList</span> <span style="color:#66d9ef">struct</span> {
 	<span style="color:#a6e22e">head</span> 	<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
-}</code></pre></div>
+}
+</code></pre></div>
 <p>The building blocks of our <strong>Linked List</strong> are <em>Node</em>s. A node contains an element (<code>el</code>) and a reference to the next node (<code>next</code>) in the list. In that way we could iterate over our list starting from a node.</p>
 
 <p>The <code>LinkedList</code> itself only contains a reference to a node which is the first of the list (<code>head</code>).</p>
@@ -1002,7 +1002,8 @@ To simplify stack's operations we assume that when the index is <code>-1</code> 
 		<span style="color:#a6e22e">pos</span><span style="color:#f92672">++</span>
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">pos</span>
-}</code></pre></div>
+}
+</code></pre></div>
 <p><code>Get</code> and <code>Search</code> are quite similar: we start from the <em>head</em> and move to the next node until we reach the right position or find the element we are looking for. A temporary variable called <code>cur</code> (<em>by convention</em>) initially points to <code>head</code>, then to its <code>next</code>, then to the <code>next</code>'s <code>next</code> and so on.</p>
 
 <h4 id="add">Add</h4>
@@ -1023,7 +1024,8 @@ To simplify stack's operations we assume that when the index is <code>-1</code> 
 	}
 	<span style="color:#a6e22e">prev</span>.<span style="color:#a6e22e">next</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">n</span>
 	<span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">next</span> = <span style="color:#a6e22e">cur</span>
-}</code></pre></div>
+}
+</code></pre></div>
 <p>The <code>Add</code> method requires a detailed explanation. We first create a new node <code>n</code> putting the element <code>e</code> into it. Then we have to discriminate between two cases:</p>
 
 <ul>
@@ -1056,7 +1058,8 @@ To simplify stack's operations we assume that when the index is <code>-1</code> 
 		<span style="color:#a6e22e">pos</span><span style="color:#f92672">++</span>
 	}
 	<span style="color:#a6e22e">prev</span>.<span style="color:#a6e22e">next</span> = <span style="color:#a6e22e">cur</span>.<span style="color:#a6e22e">next</span>
-}</code></pre></div>
+}
+</code></pre></div>
 <p>The <code>Delete</code> method is quite similar to <code>Add</code> but does the opposite. The elimination of the variable from the memory is up to the garbage collector.</p>
 
 <ul>
@@ -1083,7 +1086,8 @@ To simplify stack's operations we assume that when the index is <code>-1</code> 
 	}
 	<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">WriteByte</span>(<span style="color:#e6db74">&#39;]&#39;</span>)
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">String</span>()
-}</code></pre></div>
+}
+</code></pre></div>
 <p>The <code>String</code> method shows how to iterate over a list using a <code>for</code> loop.</p>
 
 <h3 id="queue">Queue</h3>
@@ -1111,7 +1115,8 @@ To simplify stack's operations we assume that when the index is <code>-1</code> 
 <span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Queue</span> <span style="color:#66d9ef">struct</span> {
 	<span style="color:#a6e22e">head</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
 	<span style="color:#a6e22e">tail</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
-}</code></pre></div>
+}
+</code></pre></div>
 <p>The implementation for <code>Queue</code> is obviously similar to the one for <code>LinkedList</code> but we also store another pointer to the <code>tail</code> which is the side from which we insert new elements.</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">q</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Queue</span>) <span style="color:#a6e22e">Enqueue</span>(<span style="color:#a6e22e">e</span> <span style="color:#66d9ef">interface</span>{}) {
 	<span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Node</span>{<span style="color:#a6e22e">el</span>: <span style="color:#a6e22e">e</span>}
@@ -1122,7 +1127,8 @@ To simplify stack's operations we assume that when the index is <code>-1</code> 
 	}
 	<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">tail</span>.<span style="color:#a6e22e">next</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">n</span>
 	<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">tail</span> = <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">n</span>
-}</code></pre></div>
+}
+</code></pre></div>
 <p>The <code>Enqueue</code> method first creates a new <em>Node</em> <code>n</code>, then, if <code>q.tail == nil</code> (the queue is empty) makes both <code>q.head</code> and <code>q.tail</code> to point to the new node, otherwise makes both <code>q.tail</code> and <code>q.tail.next</code> to point to the new node.</p>
 
 <p>It is worth noting that <code>q.tail</code> is the latter inserted node, so its <code>next</code> previously pointed to <code>nil</code>.</p>
@@ -1136,7 +1142,8 @@ To simplify stack's operations we assume that when the index is <code>-1</code> 
 		<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">tail</span> = <span style="color:#66d9ef">nil</span>
 	}
 	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">el</span>
-}</code></pre></div>
+}
+</code></pre></div>
 <p>The <code>Dequeue</code> method first checks if <code>q.head == nil</code>, so we have an empty queue and it must return <code>nil</code>, otherwise it stores the <code>q.head</code> value to a temporary variable <code>n</code>, checks if its <code>next</code> pointer is nil (single element queue) (if so makes <code>q.tail</code> pointing to nil to have an empty queue). Finally it returns the <code>el</code> value of <code>n</code>.</p>
 
 <h2 id="conclusions">Conclusions</h2>
@@ -1183,7 +1190,6 @@ This algorithm is as efficient as easy to learn due to its simplicity.</descript
 <h3 id="pseudocode">Pseudocode</h3>
 
 <p>The pseudocode for the algorithm is the following:</p>
-
 <pre><code>    function BSA(A, n, T):
         L := 0
         R := n − 1
@@ -1195,9 +1201,7 @@ This algorithm is as efficient as easy to learn due to its simplicity.</descript
                 R := m - 1
             else:
                 return m
-        return unsuccessful
-</code></pre>
-
+        return unsuccessful</code></pre>
 <p>Let's explain this pseudocode:</p>
 
 <ul>

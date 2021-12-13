@@ -27,7 +27,7 @@ Nowadays automation brings a lot of improvements to the life-quality of develope
 
 
 
-<link rel="stylesheet" href="/main.min.a354d45c276eb9a425e801df7c2d3dfd4dea1e3a134795f274e5eb4d540f56d5.css">
+<link rel="stylesheet" href="/main.min.9fa4bdd9b68bece33f5e7d867beffcb2ce2400492d63f454a92e5f61f0248bec.css">
 
 
 
@@ -42,17 +42,10 @@ Nowadays automation brings a lot of improvements to the life-quality of develope
     <meta name="theme-color" content="#252627">
 
 <meta itemprop="name" content="Ansible for developers 101">
-<meta itemprop="description" content="Ansible 101: an introduction to Ansible from a developer point of view">
-
-
-<meta itemprop="datePublished" content="2020-03-27T09:11:00&#43;00:00" />
+<meta itemprop="description" content="Ansible 101: an introduction to Ansible from a developer point of view"><meta itemprop="datePublished" content="2020-03-27T09:11:00&#43;00:00" />
 <meta itemprop="dateModified" content="2020-03-27T09:11:00&#43;00:00" />
-<meta itemprop="wordCount" content="1791">
-
-
-
-<meta itemprop="keywords" content="ansible,devops,automating," />
-<meta name="twitter:card" content="summary_large_image"/>
+<meta itemprop="wordCount" content="1791"><meta itemprop="image" content="/"/>
+<meta itemprop="keywords" content="ansible,devops,automating," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/"/>
 
 <meta name="twitter:title" content="Ansible for developers 101"/>
@@ -208,7 +201,6 @@ Nowadays automation brings a lot of improvements to the life-quality of develope
 <p>Those <strong>Modules</strong> are going to be used to act against an <strong>Inventory</strong>. You can also include inventory-specific data, making everything more reusable.</p>
 
 <p>An example of static Inventory can be the following:</p>
-
 <pre><code>[control]
 control ansible_host=10.45.21.2
 
@@ -226,9 +218,7 @@ ansible_user=vagrant
 ansible_ssh_private_key_file=~/.vagrant.d/private_key
 
 [web:vars]
-ansible_user=dario
-</code></pre>
-
+ansible_user=dario</code></pre>
 <p>This Inventory contains 3 groups that consist of a <code>control</code> node, four <code>web</code> nodes and an <code>HAProxy</code> node. Those nodes come with their IP address. Furthermore, you can specify a set of variables that apply to each node under the <code>all:vars</code> group and a set of variables that apply to each node in a group under the <code>web:vars</code>. Variables more specific have higher precedence.</p>
 
 <p>Hosts specified in your inventory don't need to be aware of Ansible. These hosts can be any virtual or physical machine on an on-premise or public cloud having a Python interpreter installed, an <a href="https://docs.openstack.org/openstack-ansible/latest/">OpenStack</a> or <a href="https://docs.ansible.com/ansible/latest/scenario_guides/guide_vmware.html">VMware</a> cloud and so on.</p>
@@ -267,21 +257,21 @@ Ansible can work with metadata from various sources and manage their context in 
 <p>Let's construct a playbook step-by-step. First of all, we have to include the list of tasks:</p>
 
 <h6 id="tasks">Tasks</h6>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">tasks:
-    - name: add cache dir
-      file:
-        path: /opt/cache
-        state: directory
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">tasks</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">add cache dir</span>
+      <span style="color:#f92672">file</span>:
+        <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/opt/cache</span>
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">directory</span>
     
-    - name: install nginx
-      yum:
-        name: nginx
-        state: latest
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install nginx</span>
+      <span style="color:#f92672">yum</span>:
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">latest</span>
     
-    - name: restart nginx
-      service:
-        name: nginx
-        state: restarted</code></pre></div>
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">restart nginx</span>
+      <span style="color:#f92672">service</span>:
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">restarted</span></code></pre></div>
 <p>Using this playbook, we</p>
 
 <ul>
@@ -306,23 +296,23 @@ This outlines an important aspect of Ansible Tasks: they should be <a href="http
 <p><strong>Handlers</strong> are special tasks that run at the end of a play if notified by another task. They can also be notified multiple time during the play but they will run only once at the end of the play. For example, you can ask to restart a service if the configuration gets changed.</p>
 
 <p>Let's add an example handler to our playbook refactoring the preceding playbook:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">tasks:
-    - name: add cache dir
-      file:
-        path: /opt/cache
-        state: directory
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">tasks</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">add cache dir</span>
+      <span style="color:#f92672">file</span>:
+        <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/opt/cache</span>
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">directory</span>
     
-    - name: install nginx
-      yum:
-        name: nginx
-        state: latest
-    notify: restart nginx
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install nginx</span>
+      <span style="color:#f92672">yum</span>:
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">latest</span>
+    <span style="color:#f92672">notify</span>: <span style="color:#ae81ff">restart nginx</span>
     
-handlers:
-    - name: restart nginx
-      service:
-        name: nginx
-        state: restarted</code></pre></div>
+<span style="color:#f92672">handlers</span>:
+    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">restart nginx</span>
+      <span style="color:#f92672">service</span>:
+        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">restarted</span></code></pre></div>
 <p>Doing that, we ensure that the task <code>restart nginx</code> will be run only after the <code>install nginx</code> task has returned <code>changed</code> as its status.</p>
 
 <h6 id="plays">Plays</h6>
@@ -331,20 +321,20 @@ handlers:
 
 <p>A playbook with <strong>Plays</strong> can be the following:</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
-- name: install and start apache
-  hosts: web
-  vars:
-    http_port: <span style="color:#ae81ff">80</span>
-    max_clients: <span style="color:#ae81ff">200</span>
-  remote_user: root
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install and start apache</span>
+  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">web</span>
+  <span style="color:#f92672">vars</span>:
+    <span style="color:#f92672">http_port</span>: <span style="color:#ae81ff">80</span>
+    <span style="color:#f92672">max_clients</span>: <span style="color:#ae81ff">200</span>
+  <span style="color:#f92672">remote_user</span>: <span style="color:#ae81ff">root</span>
 
-  tasks:
-  - name: install httpd
-    yum: pkg=httpd state=latest
-  - name: write the apache config file
-    template: src=/srv/httpd.j2 dest=/etc/httpd.conf
-  - name: start httpd
-    service: name=http state=started</code></pre></div>
+  <span style="color:#f92672">tasks</span>:
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install httpd</span>
+    <span style="color:#f92672">yum</span>: <span style="color:#ae81ff">pkg=httpd state=latest</span>
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">write the apache config file</span>
+    <span style="color:#f92672">template</span>: <span style="color:#ae81ff">src=/srv/httpd.j2 dest=/etc/httpd.conf</span>
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">start httpd</span>
+    <span style="color:#f92672">service</span>: <span style="color:#ae81ff">name=http state=started</span></code></pre></div>
 <ul>
 <li>The upper <code>name</code> field is the name of the play;</li>
 <li>The <code>hosts</code> field represents the group of the hosts in the inventory;</li>
@@ -466,7 +456,7 @@ handlers:
 
 
 
-<script type="text/javascript" src="/bundle.min.af435e44374f1e99a669ea8cd5bb9a2fceed80588941a451bfddb66b86a67c9f40b0f417e9543a763f809aa7e9300d7b1d69bf99615810ba02ac70396d50fad5.js" integrity="sha512-r0NeRDdPHpmmaeqM1buaL87tgFiJQaRRv922a4amfJ9AsPQX6VQ6dj&#43;AmqfpMA17HWm/mWFYELoCrHA5bVD61Q=="></script>
+<script type="text/javascript" src="/bundle.min.2ce64ea6ea44a72b13dd812fc2eb5cca3efe878cce258a47c137c17edf46e0602a05e422b618a5b80b5939c731b7a293351c2f2222a21f6ee27e54a8448dd20e.js" integrity="sha512-LOZOpupEpysT3YEvwutcyj7&#43;h4zOJYpHwTfBft9G4GAqBeQithiluAtZOccxt6KTNRwvIiKiH27iflSoRI3SDg=="></script>
     
 <script type="application/javascript">
 var doNotTrack = false;

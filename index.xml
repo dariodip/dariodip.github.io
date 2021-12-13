@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 13 Mar 2021 16:10:00 +0000</lastBuildDate>
-    
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 13 Mar 2021 16:10:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Books on my journey</title>
       <link>/posts/2021/03/books-on-my-journey/</link>
@@ -103,9 +99,9 @@ Besides work, I love travelling, reading books, playing tennis, running, listeni
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/portfolio/</guid>
-      <description>Technical Advisor DevOps @ Ericsson Naples (Italy) Jun 2020 - Present I am working as a Technical Advisor DevOps for Ericsson, designing and improving infrastructures and CI/CD for migration from a monolith system to microservices architecture for several projects;
-I am responsible for the DevOps Team, helping to find the solution that follows the state-of-art best practices for Agile and DevOps methodologies on a microservices architecture.
-I am using the following programming languages:</description>
+      <description>Software Engineer @ Prima Assicurazioni Remote (Italy) Sep 2021 - Current I am currenly working as a Software Engineer for the Claims Team of Prima Assicurazioni, developing systems and microservices for managing claims using the following programming languages:
+ Elixir; Rust; Elm;  and the following technologies and paradigms:
+ CQRS/ES; Functional Programming; Graphql; Postgres; Rabbitmq; AWS; Docker; Kubernetes.   Technical Advisor DevOps @ Ericsson Naples (Italy) Jun 2020 - Sep 2021 I have worked as a Technical Advisor DevOps for Ericsson, designing and improving infrastructures and CI/CD for migration from a monolith system to microservices architecture for several projects;</description>
     </item>
     
   </channel>
