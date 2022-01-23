@@ -14,7 +14,7 @@
       <pubDate>Fri, 27 Mar 2020 15:11:00 +0000</pubDate>
       
       <guid>/posts/2020/03/ansible-for-developers-102/</guid>
-      <description>Introduction This page has been migrated to Medium In the previous post we introduced basic aspects of Ansible. Now we&#39;ll talk about some advanced features.
+      <description>Introduction This page has been migrated to Medium In the previous post we introduced basic aspects of Ansible. Now we&amp;rsquo;ll talk about some advanced features.
 Loops Another way to describe the tools of the Ansible family can be Infrastructure as code. This is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.
 The word code brings an important aspect with it: loops.</description>
     </item>
