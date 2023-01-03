@@ -27,7 +27,7 @@ Those structures are not Linear and can represent unstructured information. Both
 
 
 
-<link rel="stylesheet" href="/main.min.9fa4bdd9b68bece33f5e7d867beffcb2ce2400492d63f454a92e5f61f0248bec.css">
+<link rel="stylesheet" href="/main.min.7bd83a09f8af49ea1d23b49c2e10ed033dfea5ac9b76d4e9facd53525fe7694f.css">
 
 
 
@@ -157,80 +157,80 @@ Those structures are not Linear and can represent unstructured information. Both
 <p>For a more detailed (and theoretical) description of graphs and their application, you could read the book <a href="https://www.pearson.com/us/higher-education/program/Kleinberg-Algorithm-Design/PGM319216.html">Algorithm Design</a>.</p>
 <p>Now it&rsquo;s the coding time!</p>
 <p>As usual, let&rsquo;s start with defining our structures:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">graph</span>
-
-<span style="color:#f92672">import</span> (
-	<span style="color:#e6db74">&#34;fmt&#34;</span>
-	<span style="color:#e6db74">&#34;strings&#34;</span>
-)
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Node</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">value</span> <span style="color:#66d9ef">interface</span>{}
-}
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Graph</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">nodes</span> []<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
-	<span style="color:#a6e22e">edges</span> <span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">Node</span>][]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
-}
-
-<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NewGraph</span>() <span style="color:#f92672">*</span><span style="color:#a6e22e">Graph</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Graph</span>{
-		<span style="color:#a6e22e">nodes</span>: make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>, <span style="color:#ae81ff">0</span>),
-		<span style="color:#a6e22e">edges</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">Node</span>][]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>),
-	}
-}
-</code></pre></div><p>As you can see from the code above, a <code>Node</code> is just a container for a value which is an <code>interface{}</code> so that we can use whatever type we want.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">graph</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">import</span> (
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;strings&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Node</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">value</span> <span style="color:#66d9ef">interface</span>{}
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Graph</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">nodes</span> []<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">edges</span> <span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">Node</span>][]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">NewGraph</span>() <span style="color:#f92672">*</span><span style="color:#a6e22e">Graph</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Graph</span>{
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">nodes</span>: make([]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>, <span style="color:#ae81ff">0</span>),
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">edges</span>: make(<span style="color:#66d9ef">map</span>[<span style="color:#a6e22e">Node</span>][]<span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>),
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>As you can see from the code above, a <code>Node</code> is just a container for a value which is an <code>interface{}</code> so that we can use whatever type we want.</p>
 <p>A <code>Graph</code>, instead, contains both an array of pointers to <code>Node</code>s and a <code>map</code> which has <code>Node</code>s as <em>key</em> and an array of pointers to <code>Node</code>s as value.</p>
 <p>This definition follows naturally the formal definition, so we defined a <code>Graph</code> as a pair of <code>nodes</code> and <code>edges</code>.</p>
 <p>The <code>NewGraph</code> function only initializes <code>nodes</code> and <code>edges</code>.</p>
 <p>Let&rsquo;s see how to add <em>nodes</em> and <em>edges</em>:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">g</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Graph</span>) <span style="color:#a6e22e">AddNode</span>(<span style="color:#a6e22e">el</span> <span style="color:#66d9ef">interface</span>{}) <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span> {
-	<span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{<span style="color:#a6e22e">el</span>}
-	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">nodes</span> = append(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">nodes</span>, <span style="color:#a6e22e">n</span>)
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">n</span>
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">g</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Graph</span>) <span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">n1</span>, <span style="color:#a6e22e">n2</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) {
-	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">n1</span>] = append(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">n1</span>], <span style="color:#a6e22e">n2</span>)
-	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">n2</span>] = append(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">n2</span>], <span style="color:#a6e22e">n1</span>)
-}
-</code></pre></div><p>Both the <code>AddNode</code> and <code>AddEdge</code> methods are easy to understand.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">g</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Graph</span>) <span style="color:#a6e22e">AddNode</span>(<span style="color:#a6e22e">el</span> <span style="color:#66d9ef">interface</span>{}) <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">n</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Node</span>{<span style="color:#a6e22e">el</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">nodes</span> = append(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">nodes</span>, <span style="color:#a6e22e">n</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">n</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">g</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Graph</span>) <span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">n1</span>, <span style="color:#a6e22e">n2</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Node</span>) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">n1</span>] = append(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">n1</span>], <span style="color:#a6e22e">n2</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">n2</span>] = append(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">n2</span>], <span style="color:#a6e22e">n1</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Both the <code>AddNode</code> and <code>AddEdge</code> methods are easy to understand.</p>
 <p><code>AddNode</code> creates a <code>Node</code> which wraps the element, appends it to the <code>node</code> array and returns a pointer to that <code>Node</code>. This pointer can be useful next.</p>
 <p><code>AddEdge</code> takes two pointers to <code>Node</code>s and appends them to the <code>edge</code> list in the <code>map</code> of each node.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">n</span> <span style="color:#a6e22e">Node</span>) <span style="color:#a6e22e">String</span>() <span style="color:#66d9ef">string</span> {
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;%v&#34;</span>, <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">value</span>)
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">g</span> <span style="color:#a6e22e">Graph</span>) <span style="color:#a6e22e">String</span>() <span style="color:#66d9ef">string</span> {
-	<span style="color:#a6e22e">sb</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Builder</span>{}
-	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">nodes</span> {
-		<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">WriteString</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">String</span>())
-		<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">WriteString</span>(<span style="color:#e6db74">&#34; -&gt; [ &#34;</span>)
-		<span style="color:#a6e22e">neighbors</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>]
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">u</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">neighbors</span> {
-			<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">WriteString</span>(<span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">String</span>())
-			<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">WriteString</span>(<span style="color:#e6db74">&#34; &#34;</span>)
-		}
-		<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">WriteString</span>(<span style="color:#e6db74">&#34;]\n&#34;</span>)
-	}
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">String</span>()
-}
-</code></pre></div><p>The <code>String</code> method for the <code>Node</code> is trivial, while the <code>String</code> method for a <code>Graph</code> needs a explanation. We first create a <code>strings.Builder</code> which is the most efficient way to store a string incrementally. We then iterate over each <code>Node</code> and over each <em>edge</em> of that node. Let&rsquo;s take the graph represented above: to create it in our code we could run the following snipped of code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#a6e22e">g</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">NewGraph</span>()
-	<span style="color:#a6e22e">nA</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddNode</span>(<span style="color:#e6db74">&#34;a&#34;</span>)
-	<span style="color:#a6e22e">nB</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddNode</span>(<span style="color:#e6db74">&#34;b&#34;</span>)
-	<span style="color:#a6e22e">nC</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddNode</span>(<span style="color:#e6db74">&#34;c&#34;</span>)
-	<span style="color:#a6e22e">nD</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddNode</span>(<span style="color:#e6db74">&#34;d&#34;</span>)
-	<span style="color:#a6e22e">nE</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddNode</span>(<span style="color:#e6db74">&#34;e&#34;</span>)
-
-	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">nA</span>, <span style="color:#a6e22e">nB</span>)
-	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">nA</span>, <span style="color:#a6e22e">nC</span>)
-	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">nA</span>, <span style="color:#a6e22e">nE</span>)
-	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">nC</span>, <span style="color:#a6e22e">nD</span>)
-	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">nD</span>, <span style="color:#a6e22e">nE</span>)
-
-	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">String</span>())
-</code></pre></div><p>Eventually, the <code>Print</code> statement will print the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">n</span> <span style="color:#a6e22e">Node</span>) <span style="color:#a6e22e">String</span>() <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Sprintf</span>(<span style="color:#e6db74">&#34;%v&#34;</span>, <span style="color:#a6e22e">n</span>.<span style="color:#a6e22e">value</span>)
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">g</span> <span style="color:#a6e22e">Graph</span>) <span style="color:#a6e22e">String</span>() <span style="color:#66d9ef">string</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">sb</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">strings</span>.<span style="color:#a6e22e">Builder</span>{}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">nodes</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">WriteString</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">String</span>())
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">WriteString</span>(<span style="color:#e6db74">&#34; -&gt; [ &#34;</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">neighbors</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">edges</span>[<span style="color:#f92672">*</span><span style="color:#a6e22e">v</span>]
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">u</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">neighbors</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">WriteString</span>(<span style="color:#a6e22e">u</span>.<span style="color:#a6e22e">String</span>())
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">WriteString</span>(<span style="color:#e6db74">&#34; &#34;</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">WriteString</span>(<span style="color:#e6db74">&#34;]\n&#34;</span>)
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sb</span>.<span style="color:#a6e22e">String</span>()
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>The <code>String</code> method for the <code>Node</code> is trivial, while the <code>String</code> method for a <code>Graph</code> needs a explanation. We first create a <code>strings.Builder</code> which is the most efficient way to store a string incrementally. We then iterate over each <code>Node</code> and over each <em>edge</em> of that node. Let&rsquo;s take the graph represented above: to create it in our code we could run the following snipped of code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>	<span style="color:#a6e22e">g</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">NewGraph</span>()
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">nA</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddNode</span>(<span style="color:#e6db74">&#34;a&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">nB</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddNode</span>(<span style="color:#e6db74">&#34;b&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">nC</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddNode</span>(<span style="color:#e6db74">&#34;c&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">nD</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddNode</span>(<span style="color:#e6db74">&#34;d&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">nE</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddNode</span>(<span style="color:#e6db74">&#34;e&#34;</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">nA</span>, <span style="color:#a6e22e">nB</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">nA</span>, <span style="color:#a6e22e">nC</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">nA</span>, <span style="color:#a6e22e">nE</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">nC</span>, <span style="color:#a6e22e">nD</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">AddEdge</span>(<span style="color:#a6e22e">nD</span>, <span style="color:#a6e22e">nE</span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Print</span>(<span style="color:#a6e22e">g</span>.<span style="color:#a6e22e">String</span>())
+</span></span></code></pre></div><p>Eventually, the <code>Print</code> statement will print the following:</p>
 <pre tabindex="0"><code>a -&gt; [ b c e ]
 b -&gt; [ a ]
 c -&gt; [ a d ]
@@ -264,53 +264,53 @@ e -&gt; [ a d ]
 </ul>
 <p>For a more detailed (and theoretical) description of trees and their application, you could read the book <a href="https://www.pearson.com/us/higher-education/program/Kleinberg-Algorithm-Design/PGM319216.html">Algorithm Design</a>.</p>
 <p>Now let&rsquo;s translate this formal definition into code:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#f92672">package</span> <span style="color:#a6e22e">tree</span>
-
-<span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Tree</span> <span style="color:#66d9ef">struct</span> {
-	<span style="color:#a6e22e">el</span> 		<span style="color:#66d9ef">interface</span>{}
-	<span style="color:#a6e22e">child</span> 	[]<span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>
-}
-
-<span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>) <span style="color:#a6e22e">AddChild</span>(<span style="color:#a6e22e">el</span> <span style="color:#66d9ef">interface</span>{}) <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span> {
-	<span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Tree</span>{<span style="color:#a6e22e">el</span>: <span style="color:#a6e22e">el</span>}
-	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">child</span> = append(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">child</span>, <span style="color:#a6e22e">c</span>)
-	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">c</span>
-}
-</code></pre></div><p>Code for <code>Tree</code> is quite easy, isn&rsquo;t it?</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#f92672">package</span> <span style="color:#a6e22e">tree</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">type</span> <span style="color:#a6e22e">Tree</span> <span style="color:#66d9ef">struct</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">el</span> 		<span style="color:#66d9ef">interface</span>{}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">child</span> 	[]<span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>) <span style="color:#a6e22e">AddChild</span>(<span style="color:#a6e22e">el</span> <span style="color:#66d9ef">interface</span>{}) <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span> {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#f92672">&amp;</span><span style="color:#a6e22e">Tree</span>{<span style="color:#a6e22e">el</span>: <span style="color:#a6e22e">el</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">child</span> = append(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">child</span>, <span style="color:#a6e22e">c</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">return</span> <span style="color:#a6e22e">c</span>
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>Code for <code>Tree</code> is quite easy, isn&rsquo;t it?</p>
 <p>Just think about the formal definition and see how we translate it in code:</p>
 <p>A <code>Tree</code> struct contains an element <code>el</code> and a set (an array) of other <code>Tree</code>s (<code>child</code>). When we add a child to a <code>Tree</code> using the <code>AddChild</code> method we create a new <code>Tree</code> with <code>el</code> as the element and no child, then we append this <em>tree</em> to the root.</p>
 <p>To represent the above tree, we could run the following snippet:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Tree</span>{<span style="color:#a6e22e">el</span>: <span style="color:#e6db74">&#34;r&#34;</span>}
-	<span style="color:#a6e22e">a</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">AddChild</span>(<span style="color:#e6db74">&#34;a&#34;</span>)
-	<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">AddChild</span>(<span style="color:#e6db74">&#34;d&#34;</span>)
-	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">AddChild</span>(<span style="color:#e6db74">&#34;b&#34;</span>)
-	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">AddChild</span>(<span style="color:#e6db74">&#34;c&#34;</span>)
-</code></pre></div><p>Since this implementation is too easy, we&rsquo;ll see how to implement the search using both <em>BFS</em> (breadth-first search) and <em>DFS</em> (depth-first search).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>	<span style="color:#a6e22e">t</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">Tree</span>{<span style="color:#a6e22e">el</span>: <span style="color:#e6db74">&#34;r&#34;</span>}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">a</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">AddChild</span>(<span style="color:#e6db74">&#34;a&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">AddChild</span>(<span style="color:#e6db74">&#34;d&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">AddChild</span>(<span style="color:#e6db74">&#34;b&#34;</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">AddChild</span>(<span style="color:#e6db74">&#34;c&#34;</span>)
+</span></span></code></pre></div><p>Since this implementation is too easy, we&rsquo;ll see how to implement the search using both <em>BFS</em> (breadth-first search) and <em>DFS</em> (depth-first search).</p>
 <h4 id="bfs">BFS</h4>
 <p>The <em>BFS</em> algorithm visits our tree level by level. A possible visit to our tree could be the following:</p>
 <p><img src="/media/blog/p2/bfs.png" alt="BFS" title="A BFS visit"></p>
 <p>Labels on the edges represent the order of visit.</p>
 <p>The code for a <em>BFS</em> visit is the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>) <span style="color:#a6e22e">BFS</span>(<span style="color:#a6e22e">f</span> <span style="color:#66d9ef">func</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>)) {
-	<span style="color:#a6e22e">q</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Queue</span>{}
-	<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Enqueue</span>(<span style="color:#a6e22e">t</span>)
-	<span style="color:#66d9ef">for</span> !<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Empty</span>() {
-		<span style="color:#a6e22e">next</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Dequeue</span>()
-		<span style="color:#a6e22e">nextNode</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">next</span>.(<span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>)
-		<span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">nextNode</span>)
-		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">nextNode</span>.<span style="color:#a6e22e">child</span>) &gt; <span style="color:#ae81ff">0</span> {
-			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">child</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nextNode</span>.<span style="color:#a6e22e">child</span> {
-				<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Enqueue</span>(<span style="color:#a6e22e">child</span>)
-			}
-		}
-	}
-}
-</code></pre></div><p>We create a <em>queue</em> containing all the nodes to be visited. The first node added is obviously <em>t</em> (the root). A <em>for</em> iterates over the queue and applies the function <em>f</em> passing the dequeued element <em>next</em>. After visiting the element <em>next</em>, its child will be added to the queue.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>) <span style="color:#a6e22e">BFS</span>(<span style="color:#a6e22e">f</span> <span style="color:#66d9ef">func</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>)) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">q</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">queue</span>.<span style="color:#a6e22e">Queue</span>{}
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Enqueue</span>(<span style="color:#a6e22e">t</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">for</span> !<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Empty</span>() {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">next</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Dequeue</span>()
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">nextNode</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">next</span>.(<span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">nextNode</span>)
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">nextNode</span>.<span style="color:#a6e22e">child</span>) &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">child</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nextNode</span>.<span style="color:#a6e22e">child</span> {
+</span></span><span style="display:flex;"><span>				<span style="color:#a6e22e">q</span>.<span style="color:#a6e22e">Enqueue</span>(<span style="color:#a6e22e">child</span>)
+</span></span><span style="display:flex;"><span>			}
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>We create a <em>queue</em> containing all the nodes to be visited. The first node added is obviously <em>t</em> (the root). A <em>for</em> iterates over the queue and applies the function <em>f</em> passing the dequeued element <em>next</em>. After visiting the element <em>next</em>, its child will be added to the queue.</p>
 <p>To print our <em>tree</em> using <em>BFS</em> we can run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">BFS</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>) {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">el</span>)
-	})
-</code></pre></div><p>This will print:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">BFS</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">el</span>)
+</span></span><span style="display:flex;"><span>	})
+</span></span></code></pre></div><p>This will print:</p>
 <pre tabindex="0"><code>r
 a
 b
@@ -320,20 +320,20 @@ d
 <p>The <em>DFS</em> algorithm visits each node of the tree trying to Go as deep as he can, then <em>backtracking</em> when encounters a node with no children (a <em>leaf</em>). A possible visit to our tree could be the following:</p>
 <p><img src="/media/blog/p2/dfs.png" alt="DFS" title="A DFS visit"></p>
 <p>Code for <em>DFS</em> is far more elegant that the one for <em>BFS</em> since it uses recursion:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>) <span style="color:#a6e22e">DFS</span>(<span style="color:#a6e22e">f</span> <span style="color:#66d9ef">func</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>)) {
-	<span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">t</span>)
-	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">child</span>) &gt; <span style="color:#ae81ff">0</span> {
-		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">child</span> {
-			<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">DFS</span>(<span style="color:#a6e22e">f</span>)
-		}
-	}
-}
-</code></pre></div><p>It first calls <code>f</code> passing <code>t</code>, then visits each child of <code>t</code> and calls <code>DFS</code> on each one.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#66d9ef">func</span> (<span style="color:#a6e22e">t</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>) <span style="color:#a6e22e">DFS</span>(<span style="color:#a6e22e">f</span> <span style="color:#66d9ef">func</span>(<span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>)) {
+</span></span><span style="display:flex;"><span>	<span style="color:#a6e22e">f</span>(<span style="color:#a6e22e">t</span>)
+</span></span><span style="display:flex;"><span>	<span style="color:#66d9ef">if</span> len(<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">child</span>) &gt; <span style="color:#ae81ff">0</span> {
+</span></span><span style="display:flex;"><span>		<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">child</span> {
+</span></span><span style="display:flex;"><span>			<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">DFS</span>(<span style="color:#a6e22e">f</span>)
+</span></span><span style="display:flex;"><span>		}
+</span></span><span style="display:flex;"><span>	}
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><p>It first calls <code>f</code> passing <code>t</code>, then visits each child of <code>t</code> and calls <code>DFS</code> on each one.</p>
 <p>To print our <em>tree</em> using <em>BFS</em> we can run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go">	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">DFS</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>) {
-		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">el</span>)
-	})
-</code></pre></div><p>This will print</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>	<span style="color:#a6e22e">t</span>.<span style="color:#a6e22e">DFS</span>(<span style="color:#66d9ef">func</span>(<span style="color:#a6e22e">c</span> <span style="color:#f92672">*</span><span style="color:#a6e22e">Tree</span>) {
+</span></span><span style="display:flex;"><span>		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">el</span>)
+</span></span><span style="display:flex;"><span>	})
+</span></span></code></pre></div><p>This will print</p>
 <pre tabindex="0"><code>r
 a
 d
@@ -436,7 +436,7 @@ c
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2022</span>
+            <span>&copy; 2023</span>
             
                 <span><a href="/">Dario Di Pasquale</a></span>
             
@@ -463,7 +463,7 @@ c
 
 
 
-<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

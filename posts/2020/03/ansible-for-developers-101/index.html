@@ -27,7 +27,7 @@ Nowadays automation brings a lot of improvements to the life-quality of develope
 
 
 
-<link rel="stylesheet" href="/main.min.9fa4bdd9b68bece33f5e7d867beffcb2ce2400492d63f454a92e5f61f0248bec.css">
+<link rel="stylesheet" href="/main.min.7bd83a09f8af49ea1d23b49c2e10ed033dfea5ac9b76d4e9facd53525fe7694f.css">
 
 
 
@@ -205,14 +205,14 @@ ansible_user=dario
 <p>Ansible is written in Python so we can extend it using plugins written in Python that use <a href="https://docs.ansible.com/ansible/latest/dev_guide/developing_api.html">Ansible API</a>.</p>
 <h5 id="installing-ansible">Installing Ansible</h5>
 <p>Before we start, we need to install Ansible. This is quite simple because you only have to run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pip install ansible
-</code></pre></div><p>Now to check if it works you have to run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ansible -v
-</code></pre></div><h5 id="ad-hoc-commands">Ad-Hoc Commands</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ pip install ansible
+</span></span></code></pre></div><p>Now to check if it works you have to run:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ansible -v
+</span></span></code></pre></div><h5 id="ad-hoc-commands">Ad-Hoc Commands</h5>
 <p>You can also execute some <a href="https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html"><strong>Ad-Hoc Commands</strong></a>. An Ansible ad-hoc command uses the <em>/usr/bin/ansible</em> command-line tool to automate a single task on one or more managed nodes. Ad-hoc commands are quick and easy, but they are not reusable.</p>
 <p>An example of ad-hoc command could be the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ansible all -i hosts -u dario -m ping
-</code></pre></div><p>This command executes the <code>ping</code> module on the hosts specified in the inventory file called <code>hosts</code> using <code>dario</code> as the user. This can be used before running the full Ansible Playbook to ensure that your hosts are up and running. You could also run the module <code>setup</code> to gather facts without any modification to the target machine.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ansible all -i hosts -u dario -m ping
+</span></span></code></pre></div><p>This command executes the <code>ping</code> module on the hosts specified in the inventory file called <code>hosts</code> using <code>dario</code> as the user. This can be used before running the full Ansible Playbook to ensure that your hosts are up and running. You could also run the module <code>setup</code> to gather facts without any modification to the target machine.</p>
 <h5 id="variables">Variables</h5>
 <p>Since Ansible was born to bring automation, automation often implies reusing. Reusing means, obviously, <strong>variables</strong>.
 Ansible can work with metadata from various sources and manage their context in the form of <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html"><strong>variables</strong></a>.</p>
@@ -223,23 +223,22 @@ Ansible can work with metadata from various sources and manage their context in 
 <p>To run a playbook you will run <code>ansible-playbook</code> instead of <code>ansible</code>, passing the path to the playbook file. For example <code>ansible-playbook -i hosts my_playbook.yml</code> will run the playbook <code>my_playbook.yml</code> on the inventory <code>hosts</code>.</p>
 <p>Let&rsquo;s construct a playbook step-by-step. First of all, we have to include the list of tasks:</p>
 <h6 id="tasks">Tasks</h6>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">tasks</span>:
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">add cache dir</span>
-      <span style="color:#f92672">file</span>:
-        <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/opt/cache</span>
-        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">directory</span>
-    
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install nginx</span>
-      <span style="color:#f92672">yum</span>:
-        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">latest</span>
-    
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">restart nginx</span>
-      <span style="color:#f92672">service</span>:
-        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">restarted</span>
-
-</code></pre></div><p>Using this playbook, we</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">tasks</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">add cache dir</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">file</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/opt/cache</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">directory</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install nginx</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">yum</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">latest</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">restart nginx</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">service</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">restarted</span>
+</span></span></code></pre></div><p>Using this playbook, we</p>
 <ul>
 <li>add a cache directory under <code>/opt/cache</code> using the <a href="https://docs.ansible.com/ansible/latest/modules/file_module.html"><code>file</code> module</a> giving the desired path as <code>path</code> variable and the desired state <code>directory</code> as variable <code>state</code>;</li>
 <li>install <code>nginx</code> using <code>yum</code> and the <a href="https://docs.ansible.com/ansible/latest/modules/yum_module.html">module of the same name</a>, setting the <code>state</code> variable to <code>nginx</code> and the <code>state</code> variable to <code>latest</code>, meaning that we want the latest version of <em>nginx</em> installed on the machine using <em>yum</em>;</li>
@@ -256,45 +255,43 @@ This outlines an important aspect of Ansible Tasks: they should be <a href="http
 <h6 id="handlers">Handlers</h6>
 <p><strong>Handlers</strong> are special tasks that run at the end of a play if notified by another task. They can also be notified multiple time during the play but they will run only once at the end of the play. For example, you can ask to restart a service if the configuration gets changed.</p>
 <p>Let&rsquo;s add an example handler to our playbook refactoring the preceding playbook:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">tasks</span>:
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">add cache dir</span>
-      <span style="color:#f92672">file</span>:
-        <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/opt/cache</span>
-        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">directory</span>
-    
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install nginx</span>
-      <span style="color:#f92672">yum</span>:
-        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">latest</span>
-    <span style="color:#f92672">notify</span>: <span style="color:#ae81ff">restart nginx</span>
-    
-<span style="color:#f92672">handlers</span>:
-    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">restart nginx</span>
-      <span style="color:#f92672">service</span>:
-        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">restarted</span>
-
-</code></pre></div><p>Doing that, we ensure that the task <code>restart nginx</code> will be run only after the <code>install nginx</code> task has returned <code>changed</code> as its status.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">tasks</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">add cache dir</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">file</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/opt/cache</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">directory</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install nginx</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">yum</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">latest</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">notify</span>: <span style="color:#ae81ff">restart nginx</span>
+</span></span><span style="display:flex;"><span>    
+</span></span><span style="display:flex;"><span><span style="color:#f92672">handlers</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">restart nginx</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#f92672">service</span>:
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">restarted</span>
+</span></span></code></pre></div><p>Doing that, we ensure that the task <code>restart nginx</code> will be run only after the <code>install nginx</code> task has returned <code>changed</code> as its status.</p>
 <h6 id="plays">Plays</h6>
 <p><strong>Plays</strong> are ordered sets of tasks to execute against host selection from your inventory. A playbook contains one or more plays.</p>
 <p>A playbook with <strong>Plays</strong> can be the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
-- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install and start apache</span>
-  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">web</span>
-  <span style="color:#f92672">vars</span>:
-    <span style="color:#f92672">http_port</span>: <span style="color:#ae81ff">80</span>
-    <span style="color:#f92672">max_clients</span>: <span style="color:#ae81ff">200</span>
-  <span style="color:#f92672">remote_user</span>: <span style="color:#ae81ff">root</span>
-
-  <span style="color:#f92672">tasks</span>:
-  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install httpd</span>
-    <span style="color:#f92672">yum</span>: <span style="color:#ae81ff">pkg=httpd state=latest</span>
-  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">write the apache config file</span>
-    <span style="color:#f92672">template</span>: <span style="color:#ae81ff">src=/srv/httpd.j2 dest=/etc/httpd.conf</span>
-  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">start httpd</span>
-    <span style="color:#f92672">service</span>: <span style="color:#ae81ff">name=http state=started</span>
-
-</code></pre></div><ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install and start apache</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">web</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">vars</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">http_port</span>: <span style="color:#ae81ff">80</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">max_clients</span>: <span style="color:#ae81ff">200</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">remote_user</span>: <span style="color:#ae81ff">root</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">tasks</span>:
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install httpd</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">yum</span>: <span style="color:#ae81ff">pkg=httpd state=latest</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">write the apache config file</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">template</span>: <span style="color:#ae81ff">src=/srv/httpd.j2 dest=/etc/httpd.conf</span>
+</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">start httpd</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">service</span>: <span style="color:#ae81ff">name=http state=started</span>
+</span></span></code></pre></div><ul>
 <li>The upper <code>name</code> field is the name of the play;</li>
 <li>The <code>hosts</code> field represents the group of the hosts in the inventory;</li>
 <li>The <code>vars</code> map includes some variables that are going to be injected into the tasks. Those variables will be used to render the template in the <code>template</code> task;</li>
@@ -391,7 +388,7 @@ This outlines an important aspect of Ansible Tasks: they should be <a href="http
                 <footer class="footer">
     <div class="footer__inner">
         <div class="footer__content">
-            <span>&copy; 2022</span>
+            <span>&copy; 2023</span>
             
                 <span><a href="/">Dario Di Pasquale</a></span>
             
@@ -413,7 +410,7 @@ This outlines an important aspect of Ansible Tasks: they should be <a href="http
 
 
 
-<script type="text/javascript" src="/bundle.min.599099f1f14b78b657d524b28e10e0c5098e7cd46e9c7aed73d577068a276c3ff1bb234cbf29cb313333e83cf411727b43157c91ce5b809e2ffc81664614608e.js" integrity="sha512-WZCZ8fFLeLZX1SSyjhDgxQmOfNRunHrtc9V3BoonbD/xuyNMvynLMTMz6Dz0EXJ7QxV8kc5bgJ4v/IFmRhRgjg=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 
