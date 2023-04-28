@@ -7,14 +7,18 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 27 Mar 2020 15:11:00 +0000</lastBuildDate><atom:link href="/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Mar 2020 15:11:00 +0000</lastBuildDate>
+    
+	<atom:link href="/tags/devops/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Ansible for developers 102</title>
       <link>/posts/2020/03/ansible-for-developers-102/</link>
       <pubDate>Fri, 27 Mar 2020 15:11:00 +0000</pubDate>
       
       <guid>/posts/2020/03/ansible-for-developers-102/</guid>
-      <description>Introduction This page has been migrated to Medium In the previous post we introduced basic aspects of Ansible. Now we&amp;rsquo;ll talk about some advanced features.
+      <description>Introduction This page has been migrated to Medium In the previous post we introduced basic aspects of Ansible. Now we&#39;ll talk about some advanced features.
 Loops Another way to describe the tools of the Ansible family can be Infrastructure as code. This is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.
 The word code brings an important aspect with it: loops.</description>
     </item>

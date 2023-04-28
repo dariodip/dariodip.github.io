@@ -1,84 +1,140 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
   <url>
     <loc>/tags/books/</loc>
     <lastmod>2021-03-13T16:10:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/posts/2021/03/books-on-my-journey/</loc>
     <lastmod>2021-03-13T16:10:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/</loc>
     <lastmod>2021-03-13T16:10:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/tags/journey/</loc>
     <lastmod>2021-03-13T16:10:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/tags/learning/</loc>
     <lastmod>2021-03-13T16:10:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/posts/</loc>
     <lastmod>2021-03-13T16:10:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/tags/</loc>
     <lastmod>2021-03-13T16:10:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/tags/ansible/</loc>
     <lastmod>2020-03-27T15:11:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/posts/2020/03/ansible-for-developers-102/</loc>
     <lastmod>2020-03-27T15:11:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/tags/automating/</loc>
     <lastmod>2020-03-27T15:11:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/tags/devops/</loc>
     <lastmod>2020-03-27T15:11:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/posts/2020/03/ansible-for-developers-101/</loc>
     <lastmod>2020-03-27T09:11:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/tags/algorithms/</loc>
     <lastmod>2020-01-10T17:05:35+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/tags/basic/</loc>
     <lastmod>2020-01-10T17:05:35+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/tags/beginner/</loc>
     <lastmod>2020-01-10T17:05:35+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/tags/data-structures/</loc>
     <lastmod>2020-01-10T17:05:35+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/posts/2020/01/data-structures-with-go-part-ii/</loc>
     <lastmod>2020-01-10T17:05:35+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/tags/go/</loc>
     <lastmod>2020-01-10T17:05:35+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/tags/golang/</loc>
     <lastmod>2020-01-10T17:05:35+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/posts/2020/01/data-structures-with-go-part-i/</loc>
     <lastmod>2020-01-03T17:05:35+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/posts/2019/12/binary-search-with-go-python-and-c/</loc>
     <lastmod>2019-12-01T17:05:35+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/tags/c/</loc>
     <lastmod>2019-12-01T17:05:35+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/tags/python/</loc>
     <lastmod>2019-12-01T17:05:35+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/about/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/categories/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/gows/goref2019/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/gows/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>/portfolio/</loc>
   </url>
+  
 </urlset>

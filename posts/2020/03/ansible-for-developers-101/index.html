@@ -27,7 +27,7 @@ Nowadays automation brings a lot of improvements to the life-quality of develope
 
 
 
-<link rel="stylesheet" href="/main.min.feca676bd2344243429c1be3db7ad89c169586b90da8dd758767ee900ec735ef.css">
+<link rel="stylesheet" href="/main.min.080ef5db824e14cf26320d99fb32cddfcbeebc453a7d6eb1df2ca7c2bd8041f4.css">
 
 
 
@@ -41,9 +41,14 @@ Nowadays automation brings a lot of improvements to the life-quality of develope
     <meta name="theme-color" content="">
 
 <meta itemprop="name" content="Ansible for developers 101">
-<meta itemprop="description" content="Ansible 101: an introduction to Ansible from a developer point of view"><meta itemprop="datePublished" content="2020-03-27T09:11:00+00:00" />
-<meta itemprop="dateModified" content="2020-03-27T09:11:00+00:00" />
-<meta itemprop="wordCount" content="1791"><meta itemprop="image" content="/"/>
+<meta itemprop="description" content="Ansible 101: an introduction to Ansible from a developer point of view">
+<meta itemprop="datePublished" content="2020-03-27T09:11:00&#43;00:00" />
+<meta itemprop="dateModified" content="2020-03-27T09:11:00&#43;00:00" />
+<meta itemprop="wordCount" content="1791">
+<meta itemprop="image" content="/"/>
+
+
+
 <meta itemprop="keywords" content="ansible,devops,automating," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/"/>
 
@@ -138,15 +143,25 @@ Nowadays automation brings a lot of improvements to the life-quality of develope
 
       <div class="post-content">
         <h2 id="introduction">Introduction</h2>
-<h6 id="this-page-has-been-migrated-to-mediumhttpsdariodipmediumcomansible-for-developers-101-b8f8de33ea7b">This page has been migrated to <a href="https://dariodip.medium.com/ansible-for-developers-101-b8f8de33ea7b">Medium</a></h6>
+
+<h6 id="this-page-has-been-migrated-to-mediumhttpsdariodipmediumcomansiblefordevelopers101b8f8de33ea7b">This page has been migrated to <a href="https://dariodip.medium.com/ansible-for-developers-101-b8f8de33ea7b">Medium</a></h6>
+
 <p>When I started as a developer and I started to feel frustrating when I had to repeat something twice or more.</p>
+
 <p>Being a developer does not mean you only have to write code. Hopefully, your code should be executed in different environments and often it is up to you managing part of those environments.</p>
+
 <p>Nowadays automation brings a lot of improvements to the life-quality of developers. You can, therefore, exploit tools that help you repeating boring stuff, keeping you well focused on your work.</p>
+
 <p>Ansible is one of my favourite tools. He comes with a <em>gentle</em> learning curve and looks still familiar to developers since its concepts are quite similar to ones you use when writing code.</p>
+
 <h2 id="ansible">Ansible</h2>
+
 <p>Ansible is an automation platform that comes with an <em>automation language</em> that can describe an IT application infrastructure in <strong>Ansible Playbooks</strong>. An automation engine runs Ansible Playbooks.</p>
+
 <p>Ansible also comes with <a href="https://www.ansible.com/products/tower"><strong>Ansible Tower</strong></a>: an enterprise framework for fully controlling, securing and managing your Ansible automation with a UI and RESTful API.</p>
+
 <h3 id="why-ansible">Why Ansible?</h3>
+
 <ul>
 <li>Ansible is <a href="https://github.com/ansible/ansible"><em>Open Source</em></a> and has a large community;</li>
 <li>Ansible has a gentle learning curve;</li>
@@ -159,9 +174,13 @@ Nowadays automation brings a lot of improvements to the life-quality of develope
 <li>It comes with over 500 included modules for the more common use cases;</li>
 <li>You can orchestrate your workflow and application lifecycle.</li>
 </ul>
-<p>Unlike some of its competitors, Ansible is <em>agentless</em>. To execute tasks on another machine it can use <a href="https://www.openssh.com/"><strong>OpenSSH</strong></a> or <a href="https://docs.microsoft.com/en-us/windows/win32/winrm/portal"><strong>WinRM</strong></a>, so you don&rsquo;t have to take care of updating and managing agents, giving you a fast start and more control. It also brings to a more efficient and secure workflow.</p>
+
+<p>Unlike some of its competitors, Ansible is <em>agentless</em>. To execute tasks on another machine it can use <a href="https://www.openssh.com/"><strong>OpenSSH</strong></a> or <a href="https://docs.microsoft.com/en-us/windows/win32/winrm/portal"><strong>WinRM</strong></a>, so you don't have to take care of updating and managing agents, giving you a fast start and more control. It also brings to a more efficient and secure workflow.</p>
+
 <p>Ansible is also <em>multiplatform</em> and supports all major OS variants.</p>
+
 <h3 id="use-cases">Use cases</h3>
+
 <ul>
 <li><strong>Configuration management</strong>: centralizing configuration file management and deployment is a common use case for Ansible, and it’s how many power users are first introduced to the Ansible automation platform;</li>
 <li><strong>Security and compliance</strong>: when you define your security policy in Ansible, scanning and remediation of site-wide security policy can be integrated into other automated processes and instead of being an afterthought, it’ll be integral in everything that is deployed;</li>
@@ -170,8 +189,11 @@ Nowadays automation brings a lot of improvements to the life-quality of develope
 <li><strong>Continuous delivery</strong>: creating a CI/CD pipeline requires buy-in from numerous teams. You can’t do it without a simple automation platform that everyone in your organization can use. Ansible Playbooks keep your applications properly deployed (and managed) throughout their entire lifecycle;</li>
 <li><strong>Provisioning</strong>: your apps have to live somewhere. If you’re PXE booting and kickstarting bare-metal servers or VMs, or creating virtual or cloud instances from templates, Ansible and Ansible Tower help streamline the process.</li>
 </ul>
+
 <h4 id="how-ansible-works">How Ansible works</h4>
+
 <p>Ansible components follow a kind of hierarchical structure:</p>
+
 <ul>
 <li><strong>Managed Nodes</strong> are the network devices (and/or the servers) you manage with Ansible. Ansible does not need to be installed on this node;</li>
 <li>The <strong>Inventory</strong> contains a structured set of managed nodes with optional attached metadata. Those hosts can be grouped together;</li>
@@ -179,10 +201,13 @@ Nowadays automation brings a lot of improvements to the life-quality of develope
 <li>Modules are going to be contained in <strong>Tasks</strong>. Tasks are units of action in Ansible. You can execute a single task once with an ad-hoc command or more tasks using Playbooks;</li>
 <li><strong>Playbooks</strong> are ordered lists of tasks, stored so you can run those tasks in that order repeatedly. Playbooks can include variables as well as tasks. Playbooks are written in YAML and are easy to read, write, share and understand.</li>
 </ul>
-<p>An important aspect of Ansible is that you don&rsquo;t have to know the underlying details behind modules. You just have to pass the correct arguments to them to be correctly executed. Some common modules are <a href="https://docs.ansible.com/ansible/latest/modules/apt_module.html"><strong>apt/yum</strong></a>, <a href="https://docs.ansible.com/ansible/latest/modules/ping_module.html"><strong>ping</strong></a>, <a href="https://docs.ansible.com/ansible/latest/modules/copy_module.html"><strong>copy</strong></a>, <a href="https://docs.ansible.com/ansible/latest/modules/uri_module.html"><strong>uri</strong></a>, <a href="https://docs.ansible.com/ansible/latest/modules/user_module.html"><strong>user</strong></a>, <a href="https://docs.ansible.com/ansible/latest/modules/assert_module.html"><strong>assert</strong></a>, <a href="https://docs.ansible.com/ansible/latest/modules/git_module.html"><strong>git</strong></a>, <a href="https://docs.ansible.com/ansible/latest/modules/template_module.html"><strong>template</strong></a> and so on. You can also check out the <a href="https://docs.ansible.com/ansible/latest/modules/modules_by_category.html">Ansible Module Index</a>.</p>
+
+<p>An important aspect of Ansible is that you don't have to know the underlying details behind modules. You just have to pass the correct arguments to them to be correctly executed. Some common modules are <a href="https://docs.ansible.com/ansible/latest/modules/apt_module.html"><strong>apt/yum</strong></a>, <a href="https://docs.ansible.com/ansible/latest/modules/ping_module.html"><strong>ping</strong></a>, <a href="https://docs.ansible.com/ansible/latest/modules/copy_module.html"><strong>copy</strong></a>, <a href="https://docs.ansible.com/ansible/latest/modules/uri_module.html"><strong>uri</strong></a>, <a href="https://docs.ansible.com/ansible/latest/modules/user_module.html"><strong>user</strong></a>, <a href="https://docs.ansible.com/ansible/latest/modules/assert_module.html"><strong>assert</strong></a>, <a href="https://docs.ansible.com/ansible/latest/modules/git_module.html"><strong>git</strong></a>, <a href="https://docs.ansible.com/ansible/latest/modules/template_module.html"><strong>template</strong></a> and so on. You can also check out the <a href="https://docs.ansible.com/ansible/latest/modules/modules_by_category.html">Ansible Module Index</a>.</p>
+
 <p>Those <strong>Modules</strong> are going to be used to act against an <strong>Inventory</strong>. You can also include inventory-specific data, making everything more reusable.</p>
+
 <p>An example of static Inventory can be the following:</p>
-<pre tabindex="0"><code>[control]
+<pre><code>[control]
 control ansible_host=10.45.21.2
 
 [web]
@@ -199,106 +224,133 @@ ansible_user=vagrant
 ansible_ssh_private_key_file=~/.vagrant.d/private_key
 
 [web:vars]
-ansible_user=dario
-</code></pre><p>This Inventory contains 3 groups that consist of a <code>control</code> node, four <code>web</code> nodes and an <code>HAProxy</code> node. Those nodes come with their IP address. Furthermore, you can specify a set of variables that apply to each node under the <code>all:vars</code> group and a set of variables that apply to each node in a group under the <code>web:vars</code>. Variables more specific have higher precedence.</p>
-<p>Hosts specified in your inventory don&rsquo;t need to be aware of Ansible. These hosts can be any virtual or physical machine on an on-premise or public cloud having a Python interpreter installed, an <a href="https://docs.openstack.org/openstack-ansible/latest/">OpenStack</a> or <a href="https://docs.ansible.com/ansible/latest/scenario_guides/guide_vmware.html">VMware</a> cloud and so on.</p>
+ansible_user=dario</code></pre>
+<p>This Inventory contains 3 groups that consist of a <code>control</code> node, four <code>web</code> nodes and an <code>HAProxy</code> node. Those nodes come with their IP address. Furthermore, you can specify a set of variables that apply to each node under the <code>all:vars</code> group and a set of variables that apply to each node in a group under the <code>web:vars</code>. Variables more specific have higher precedence.</p>
+
+<p>Hosts specified in your inventory don't need to be aware of Ansible. These hosts can be any virtual or physical machine on an on-premise or public cloud having a Python interpreter installed, an <a href="https://docs.openstack.org/openstack-ansible/latest/">OpenStack</a> or <a href="https://docs.ansible.com/ansible/latest/scenario_guides/guide_vmware.html">VMware</a> cloud and so on.</p>
+
 <p>Ansible is written in Python so we can extend it using plugins written in Python that use <a href="https://docs.ansible.com/ansible/latest/dev_guide/developing_api.html">Ansible API</a>.</p>
+
 <h5 id="installing-ansible">Installing Ansible</h5>
+
 <p>Before we start, we need to install Ansible. This is quite simple because you only have to run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ pip install ansible
-</span></span></code></pre></div><p>Now to check if it works you have to run:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ansible -v
-</span></span></code></pre></div><h5 id="ad-hoc-commands">Ad-Hoc Commands</h5>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ pip install ansible</code></pre></div>
+<p>Now to check if it works you have to run:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ansible -v</code></pre></div>
+<h5 id="adhoc-commands">Ad-Hoc Commands</h5>
+
 <p>You can also execute some <a href="https://docs.ansible.com/ansible/latest/user_guide/intro_adhoc.html"><strong>Ad-Hoc Commands</strong></a>. An Ansible ad-hoc command uses the <em>/usr/bin/ansible</em> command-line tool to automate a single task on one or more managed nodes. Ad-hoc commands are quick and easy, but they are not reusable.</p>
+
 <p>An example of ad-hoc command could be the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ansible all -i hosts -u dario -m ping
-</span></span></code></pre></div><p>This command executes the <code>ping</code> module on the hosts specified in the inventory file called <code>hosts</code> using <code>dario</code> as the user. This can be used before running the full Ansible Playbook to ensure that your hosts are up and running. You could also run the module <code>setup</code> to gather facts without any modification to the target machine.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ansible all -i hosts -u dario -m ping</code></pre></div>
+<p>This command executes the <code>ping</code> module on the hosts specified in the inventory file called <code>hosts</code> using <code>dario</code> as the user. This can be used before running the full Ansible Playbook to ensure that your hosts are up and running. You could also run the module <code>setup</code> to gather facts without any modification to the target machine.</p>
+
 <h5 id="variables">Variables</h5>
+
 <p>Since Ansible was born to bring automation, automation often implies reusing. Reusing means, obviously, <strong>variables</strong>.
 Ansible can work with metadata from various sources and manage their context in the form of <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html"><strong>variables</strong></a>.</p>
+
 <p>Using variables you can also keep another layer of abstraction in your playbooks, separating information related to the execution and information related to hosts.</p>
+
 <p>Once you defined a bunch of variables, they can be overridden by variables having higher precedence, so you could handle some special cases without having to break your reusable workflow. There are <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html#variable-precedence-where-should-i-put-a-variable">16 levels of precedence</a>. As the rule of thumb, the more specific is a variable, the higher is its precedence.</p>
+
 <h5 id="ansible-playbooks">Ansible Playbooks</h5>
-<p>As we said, <strong>Ansible Playbooks</strong> contains an ordered list of <strong>Ansible Tasks</strong> to be executed against hosts on your inventory. Let&rsquo;s see how a playbook works.</p>
+
+<p>As we said, <strong>Ansible Playbooks</strong> contains an ordered list of <strong>Ansible Tasks</strong> to be executed against hosts on your inventory. Let's see how a playbook works.</p>
+
 <p>To run a playbook you will run <code>ansible-playbook</code> instead of <code>ansible</code>, passing the path to the playbook file. For example <code>ansible-playbook -i hosts my_playbook.yml</code> will run the playbook <code>my_playbook.yml</code> on the inventory <code>hosts</code>.</p>
-<p>Let&rsquo;s construct a playbook step-by-step. First of all, we have to include the list of tasks:</p>
+
+<p>Let's construct a playbook step-by-step. First of all, we have to include the list of tasks:</p>
+
 <h6 id="tasks">Tasks</h6>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">tasks</span>:
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">add cache dir</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">file</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/opt/cache</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">directory</span>
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install nginx</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">yum</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">latest</span>
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">restart nginx</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">service</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">restarted</span>
-</span></span></code></pre></div><p>Using this playbook, we</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">tasks</span>:
+    - <span style="color:#66d9ef">name</span>: add cache dir
+      <span style="color:#66d9ef">file</span>:
+        <span style="color:#66d9ef">path</span>: /opt/cache
+        <span style="color:#66d9ef">state</span>: directory
+    
+    - <span style="color:#66d9ef">name</span>: install nginx
+      <span style="color:#66d9ef">yum</span>:
+        <span style="color:#66d9ef">name</span>: nginx
+        <span style="color:#66d9ef">state</span>: latest
+    
+    - <span style="color:#66d9ef">name</span>: restart nginx
+      <span style="color:#66d9ef">service</span>:
+        <span style="color:#66d9ef">name</span>: nginx
+        <span style="color:#66d9ef">state</span>: restarted</code></pre></div>
+<p>Using this playbook, we</p>
+
 <ul>
 <li>add a cache directory under <code>/opt/cache</code> using the <a href="https://docs.ansible.com/ansible/latest/modules/file_module.html"><code>file</code> module</a> giving the desired path as <code>path</code> variable and the desired state <code>directory</code> as variable <code>state</code>;</li>
 <li>install <code>nginx</code> using <code>yum</code> and the <a href="https://docs.ansible.com/ansible/latest/modules/yum_module.html">module of the same name</a>, setting the <code>state</code> variable to <code>nginx</code> and the <code>state</code> variable to <code>latest</code>, meaning that we want the latest version of <em>nginx</em> installed on the machine using <em>yum</em>;</li>
 <li>restart the <em>nginx</em> service using the <code>service</code> module and setting the variable <code>name</code> to be <code>nginx</code> and the variable <code>state</code> to be <code>restarted</code>. So we are saying we want the <code>nginx</code> service to be restarted on the machine.</li>
 </ul>
+
 <p>The outcome of a task can be one of the following:</p>
+
 <ul>
 <li><code>ok</code>: status is as desired;</li>
 <li><code>changed</code>: task modified something to apply the status as desired;</li>
 <li><code>failed</code>: final state is not as desired because something went wrong.</li>
 </ul>
-<p>This example gives you a vision of the semantic of modules: you specify the desired state in a declarative way. It&rsquo;s up to the module to run the correct steps to bring the machine to the desired state. Furthermore, if we run the same playbook twice, nothing changes.
+
+<p>This example gives you a vision of the semantic of modules: you specify the desired state in a declarative way. It's up to the module to run the correct steps to bring the machine to the desired state. Furthermore, if we run the same playbook twice, nothing changes.
 This outlines an important aspect of Ansible Tasks: they should be <a href="https://docs.ansible.com/ansible/latest/reference_appendices/glossary.html"><strong>idempotent</strong></a>.</p>
+
 <h6 id="handlers">Handlers</h6>
+
 <p><strong>Handlers</strong> are special tasks that run at the end of a play if notified by another task. They can also be notified multiple time during the play but they will run only once at the end of the play. For example, you can ask to restart a service if the configuration gets changed.</p>
-<p>Let&rsquo;s add an example handler to our playbook refactoring the preceding playbook:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">tasks</span>:
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">add cache dir</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">file</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/opt/cache</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">directory</span>
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install nginx</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">yum</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">latest</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">notify</span>: <span style="color:#ae81ff">restart nginx</span>
-</span></span><span style="display:flex;"><span>    
-</span></span><span style="display:flex;"><span><span style="color:#f92672">handlers</span>:
-</span></span><span style="display:flex;"><span>    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">restart nginx</span>
-</span></span><span style="display:flex;"><span>      <span style="color:#f92672">service</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">name</span>: <span style="color:#ae81ff">nginx</span>
-</span></span><span style="display:flex;"><span>        <span style="color:#f92672">state</span>: <span style="color:#ae81ff">restarted</span>
-</span></span></code></pre></div><p>Doing that, we ensure that the task <code>restart nginx</code> will be run only after the <code>install nginx</code> task has returned <code>changed</code> as its status.</p>
+
+<p>Let's add an example handler to our playbook refactoring the preceding playbook:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#66d9ef">tasks</span>:
+    - <span style="color:#66d9ef">name</span>: add cache dir
+      <span style="color:#66d9ef">file</span>:
+        <span style="color:#66d9ef">path</span>: /opt/cache
+        <span style="color:#66d9ef">state</span>: directory
+    
+    - <span style="color:#66d9ef">name</span>: install nginx
+      <span style="color:#66d9ef">yum</span>:
+        <span style="color:#66d9ef">name</span>: nginx
+        <span style="color:#66d9ef">state</span>: latest
+    <span style="color:#66d9ef">notify</span>: restart nginx
+    
+<span style="color:#66d9ef">handlers</span>:
+    - <span style="color:#66d9ef">name</span>: restart nginx
+      <span style="color:#66d9ef">service</span>:
+        <span style="color:#66d9ef">name</span>: nginx
+        <span style="color:#66d9ef">state</span>: restarted</code></pre></div>
+<p>Doing that, we ensure that the task <code>restart nginx</code> will be run only after the <code>install nginx</code> task has returned <code>changed</code> as its status.</p>
+
 <h6 id="plays">Plays</h6>
+
 <p><strong>Plays</strong> are ordered sets of tasks to execute against host selection from your inventory. A playbook contains one or more plays.</p>
+
 <p>A playbook with <strong>Plays</strong> can be the following:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
-</span></span><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install and start apache</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">web</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">vars</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">http_port</span>: <span style="color:#ae81ff">80</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">max_clients</span>: <span style="color:#ae81ff">200</span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">remote_user</span>: <span style="color:#ae81ff">root</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>  <span style="color:#f92672">tasks</span>:
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">install httpd</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">yum</span>: <span style="color:#ae81ff">pkg=httpd state=latest</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">write the apache config file</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">template</span>: <span style="color:#ae81ff">src=/srv/httpd.j2 dest=/etc/httpd.conf</span>
-</span></span><span style="display:flex;"><span>  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">start httpd</span>
-</span></span><span style="display:flex;"><span>    <span style="color:#f92672">service</span>: <span style="color:#ae81ff">name=http state=started</span>
-</span></span></code></pre></div><ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
+- <span style="color:#66d9ef">name</span>: install and start apache
+  <span style="color:#66d9ef">hosts</span>: web
+  <span style="color:#66d9ef">vars</span>:
+    <span style="color:#66d9ef">http_port</span>: <span style="color:#ae81ff">80</span>
+    <span style="color:#66d9ef">max_clients</span>: <span style="color:#ae81ff">200</span>
+  <span style="color:#66d9ef">remote_user</span>: root
+
+  <span style="color:#66d9ef">tasks</span>:
+  - <span style="color:#66d9ef">name</span>: install httpd
+    <span style="color:#66d9ef">yum</span>: pkg=httpd state=latest
+  - <span style="color:#66d9ef">name</span>: write the apache config file
+    <span style="color:#66d9ef">template</span>: src=/srv/httpd.j2 dest=/etc/httpd.conf
+  - <span style="color:#66d9ef">name</span>: start httpd
+    <span style="color:#66d9ef">service</span>: name=http state=started</code></pre></div>
+<ul>
 <li>The upper <code>name</code> field is the name of the play;</li>
 <li>The <code>hosts</code> field represents the group of the hosts in the inventory;</li>
 <li>The <code>vars</code> map includes some variables that are going to be injected into the tasks. Those variables will be used to render the template in the <code>template</code> task;</li>
 <li>We also specified the <code>remote_user</code> that has to run the tasks;</li>
 <li><code>tasks</code> section includes the list of tasks to be executed. We used a more compact form to describe our tasks.</li>
 </ul>
+
 <h2 id="conclusions">Conclusions</h2>
+
 <p>Having those concepts, you could start playing with Ansible. I will also talk about most advanced features such as <strong>Ansible Roles</strong>, loops and so on in other posts.</p>
 
       </div>
@@ -410,7 +462,7 @@ This outlines an important aspect of Ansible Tasks: they should be <a href="http
 
 
 
-<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
 
 
 

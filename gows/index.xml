@@ -6,14 +6,18 @@
     <description>Recent content in Gows on Dario Di Pasquale</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright><atom:link href="/gows/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
+    
+	<atom:link href="/gows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
     <item>
       <title>Go Workshop 2019 References</title>
       <link>/gows/goref2019/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/gows/goref2019/</guid>
-      <description>Go Language Tutorial https://golang.org (official website) https://go-tour-ita.appspot.com/welcome/1 (an interactive tour through Go) http://www.golangbootcamp.com/ (comprehensive Go tutorial) https://blog.golang.org/ (official blog) https://golangcode.com/ (a library of useful Go snippets) https://golangbot.com/ (tutorials for beginners) https://appliedgo.net/ (tutorials and explanations for advanced users) https://changelog.com/gotime (Go podcast) https://dave.cheney.net/category/golang (another blog of Go) https://golang.ch/ (Go news, libraries and tutorials) https://www.golangprograms.com/ (Go blog and tutorials for mid-advanced users) https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3 (clear explanation about Go concurrency) https://awesome-go.com/ (a list of Go frameworks and libraries) https://medium.</description>
+      <description>Go Language Tutorial  https://golang.org (official website) https://go-tour-ita.appspot.com/welcome/1 (an interactive tour through Go) http://www.golangbootcamp.com/ (comprehensive Go tutorial) https://blog.golang.org/ (official blog) https://golangcode.com/ (a library of useful Go snippets) https://golangbot.com/ (tutorials for beginners) https://appliedgo.net/ (tutorials and explanations for advanced users) https://changelog.com/gotime (Go podcast) https://dave.cheney.net/category/golang (another blog of Go) https://golang.ch/ (Go news, libraries and tutorials) https://www.golangprograms.com/ (Go blog and tutorials for mid-advanced users) https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3 (clear explanation about Go concurrency) https://awesome-go.com/ (a list of Go frameworks and libraries) https://medium.</description>
     </item>
     
   </channel>

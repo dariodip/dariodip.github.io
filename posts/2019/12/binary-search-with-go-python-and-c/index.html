@@ -26,7 +26,7 @@ This algorithm is as efficient as easy to learn due to its simplicity." />
 
 
 
-<link rel="stylesheet" href="/main.min.feca676bd2344243429c1be3db7ad89c169586b90da8dd758767ee900ec735ef.css">
+<link rel="stylesheet" href="/main.min.080ef5db824e14cf26320d99fb32cddfcbeebc453a7d6eb1df2ca7c2bd8041f4.css">
 
 
 
@@ -41,9 +41,14 @@ This algorithm is as efficient as easy to learn due to its simplicity." />
 
 <meta itemprop="name" content="Binary Search with Go, Python and C">
 <meta itemprop="description" content="The Binary Search Algorithm This page has been migrated to Medium The Binary Search Algorithm is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).
-This algorithm is as efficient as easy to learn due to its simplicity."><meta itemprop="datePublished" content="2019-12-01T17:05:35+00:00" />
-<meta itemprop="dateModified" content="2019-12-01T17:05:35+00:00" />
-<meta itemprop="wordCount" content="452"><meta itemprop="image" content="/"/>
+This algorithm is as efficient as easy to learn due to its simplicity.">
+<meta itemprop="datePublished" content="2019-12-01T17:05:35&#43;00:00" />
+<meta itemprop="dateModified" content="2019-12-01T17:05:35&#43;00:00" />
+<meta itemprop="wordCount" content="452">
+<meta itemprop="image" content="/"/>
+
+
+
 <meta itemprop="keywords" content="algorithms,go,c,python," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/"/>
 
@@ -137,12 +142,19 @@ This algorithm is as efficient as easy to learn due to its simplicity."/>
 
       <div class="post-content">
         <h2 id="the-binary-search-algorithm">The Binary Search Algorithm</h2>
-<h6 id="this-page-has-been-migrated-to-mediumhttpsdariodipmediumcombinary-search-with-go-python-and-c-3eaf3ed5f761">This page has been migrated to <a href="https://dariodip.medium.com/binary-search-with-go-python-and-c-3eaf3ed5f761">Medium</a></h6>
+
+<h6 id="this-page-has-been-migrated-to-mediumhttpsdariodipmediumcombinarysearchwithgopythonandc3eaf3ed5f761">This page has been migrated to <a href="https://dariodip.medium.com/binary-search-with-go-python-and-c-3eaf3ed5f761">Medium</a></h6>
+
 <p>The <em>Binary Search Algorithm</em> is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).</p>
+
 <p>This algorithm is as efficient as easy to learn due to its simplicity.</p>
+
 <p>This algorithm does only <em>O(log n)</em> comparisons.</p>
+
 <p>On the other hand, it only works for sorted collections, making it restricted to some specific cases.</p>
+
 <h3 id="pseudocode">Pseudocode</h3>
+
 <p>The pseudocode for the algorithm is the following:</p>
 <pre><code>    function BSA(A, n, T):
         L := 0
@@ -155,35 +167,49 @@ This algorithm is as efficient as easy to learn due to its simplicity."/>
                 R := m - 1
             else:
                 return m
-        return unsuccessful
-</code></pre>
-<p>Let&rsquo;s explain this pseudocode:</p>
+        return unsuccessful</code></pre>
+<p>Let's explain this pseudocode:</p>
+
 <ul>
 <li>The algorithm takes as input an array <code>A</code>, the length of the array <code>n</code> and the element to search <code>T</code>;</li>
 <li>We initialize two variables: <code>L</code> to <code>0</code> and <code>R</code> to <code>n-1</code>, namely the index to the first and the last element to the array <code>A;</code></li>
 <li>We iterate until <code>L</code> becomes equal or greater than <code>R</code>, that is when we iterated over the whole array;</li>
 <li>We initialize <code>m</code> to be the floor or <code>(L+R)/2</code>, namely the index of the element at the middle of the array;</li>
 <li>Then we compare the element at the index <code>m</code> to the desired element <code>T</code>:
+
 <ul>
 <li>if <code>A[m]</code> is lower than <code>T</code> we should search <code>T</code> in the greater half of the array: the one in <em>[m+1, R]</em>;</li>
 <li>if <code>A[m]</code> is greater than <code>T</code> we should search <code>T</code> in the lower half of the array: the one in <em>[L,m-1]</em>;</li>
 <li>otherwise <code>A[m]</code> is equal to <code>T</code> and we can return <code>m</code> because we found the element.</li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <h3 id="python">Python</h3>
-<p>Let&rsquo;s have a look at the BSA using Python.</p>
-<!-- raw HTML omitted -->
+
+<p>Let's have a look at the BSA using Python.</p>
+
+<script src="https://gist.github.com/dariodip/d54976e361fec510afe68a64cfa90e82.js?file=binary-search.py"></script>
+
 <p>As you may see, the <em>BSA</em> written in Python is very similar to the pseudocode. We return <code>-1</code> when we cannot find the desired element.</p>
+
 <h3 id="go">Go</h3>
+
 <p>The <em>Go</em> version of the <em>BSA</em> is the following:</p>
-<!-- raw HTML omitted -->
-<p>Unlike the <em>Python</em> version, this code does not look similar to the pseudocode because of Go&rsquo;s strong typing, which forces us to do 2 casts (<em>line 5</em>). Also in the <em>Go</em> implementation we return <code>-1</code> if we cannot find the element <code>T</code>. Due to the simplicity of the algorithm itself, no other consideration has to be made.</p>
+
+<script src="https://gist.github.com/dariodip/d54976e361fec510afe68a64cfa90e82.js?file=binary-search.go"></script>
+
+<p>Unlike the <em>Python</em> version, this code does not look similar to the pseudocode because of Go's strong typing, which forces us to do 2 casts (<em>line 5</em>). Also in the <em>Go</em> implementation we return <code>-1</code> if we cannot find the element <code>T</code>. Due to the simplicity of the algorithm itself, no other consideration has to be made.</p>
+
 <h3 id="c">C</h3>
+
 <p>The <em>C</em> version of the <em>BSA</em> could be the following:</p>
-<!-- raw HTML omitted -->
+
+<script src="https://gist.github.com/dariodip/d54976e361fec510afe68a64cfa90e82.js?file=binary-search.c"></script>
+
 <p>The <em>C</em> implementation looks quite similar to the <em>Go</em> implementation but does not have casts because <em>C</em> has weak typing.</p>
+
 <hr>
+
 <p>This is my first blog post.</p>
 
       </div>
@@ -289,7 +315,7 @@ This algorithm is as efficient as easy to learn due to its simplicity."/>
 
 
 
-<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
+<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
 
 
 
