@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="author" content="Dario Di Pasquale ">
-<meta name="description" content="Introduction This page has been migrated to Medium In the previous post we introduced basic aspects of Ansible. Now we&#39;ll talk about some advanced features.
+<meta name="description" content="Introduction This page has been migrated to Medium In the previous post we introduced basic aspects of Ansible. Now we&amp;rsquo;ll talk about some advanced features.
 Loops Another way to describe the tools of the Ansible family can be Infrastructure as code. This is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.
 The word code brings an important aspect with it: loops." />
 <meta name="keywords" content="dario di pasquale" />
@@ -27,7 +27,7 @@ The word code brings an important aspect with it: loops." />
 
 
 
-<link rel="stylesheet" href="/main.min.080ef5db824e14cf26320d99fb32cddfcbeebc453a7d6eb1df2ca7c2bd8041f4.css">
+<link rel="stylesheet" href="/main.min.feca676bd2344243429c1be3db7ad89c169586b90da8dd758767ee900ec735ef.css">
 
 
 
@@ -41,14 +41,9 @@ The word code brings an important aspect with it: loops." />
     <meta name="theme-color" content="">
 
 <meta itemprop="name" content="Ansible for developers 102">
-<meta itemprop="description" content="Ansible 102: an introduction to Ansible from a developer point of view">
-<meta itemprop="datePublished" content="2020-03-27T15:11:00&#43;00:00" />
-<meta itemprop="dateModified" content="2020-03-27T15:11:00&#43;00:00" />
-<meta itemprop="wordCount" content="607">
-<meta itemprop="image" content="/"/>
-
-
-
+<meta itemprop="description" content="Ansible 102: an introduction to Ansible from a developer point of view"><meta itemprop="datePublished" content="2020-03-27T15:11:00+00:00" />
+<meta itemprop="dateModified" content="2020-03-27T15:11:00+00:00" />
+<meta itemprop="wordCount" content="607"><meta itemprop="image" content="/"/>
 <meta itemprop="keywords" content="ansible,devops,automating," /><meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="/"/>
 
@@ -143,47 +138,36 @@ The word code brings an important aspect with it: loops." />
 
       <div class="post-content">
         <h2 id="introduction">Introduction</h2>
-
-<h6 id="this-page-has-been-migrated-to-mediumhttpsdariodipmediumcomansiblefordevelopers102e816e2b99f05">This page has been migrated to <a href="https://dariodip.medium.com/ansible-for-developers-102-e816e2b99f05">Medium</a></h6>
-
-<p>In <a href="/posts/2020/03/ansible-for-developers-101">the previous post</a> we introduced basic aspects of <strong>Ansible</strong>. Now we'll talk about some advanced features.</p>
-
+<h6 id="this-page-has-been-migrated-to-mediumhttpsdariodipmediumcomansible-for-developers-102-e816e2b99f05">This page has been migrated to <a href="https://dariodip.medium.com/ansible-for-developers-102-e816e2b99f05">Medium</a></h6>
+<p>In <a href="/posts/2020/03/ansible-for-developers-101">the previous post</a> we introduced basic aspects of <strong>Ansible</strong>. Now we&rsquo;ll talk about some advanced features.</p>
 <h2 id="loops">Loops</h2>
-
 <p>Another way to describe the tools of the Ansible family can be <a href="https://en.wikipedia.org/wiki/Infrastructure_as_code"><strong>Infrastructure as code</strong></a>. This is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.</p>
-
 <p>The word <em>code</em> brings an important aspect with it: <strong>loops</strong>.</p>
-
 <p>In Ansible Playbooks you can use <a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_loops.html"><strong>loops</strong></a> to reuse some tasks. An example can be the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#66d9ef">name</span>: add several users
-  <span style="color:#66d9ef">user</span>:
-    <span style="color:#66d9ef">name</span>: <span style="color:#e6db74">&#34;{{ item }}&#34;</span>
-    <span style="color:#66d9ef">state</span>: present
-    <span style="color:#66d9ef">groups</span>: <span style="color:#e6db74">&#34;wheel&#34;</span>
-  <span style="color:#66d9ef">loop</span>:
-     - testuser1
-     - testuser2</code></pre></div>
-<p>This task adds several users and in order to do that, iterates over a loop. So you don't have to write the same task twice.</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">add several users</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">user</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;{{ item }}&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">groups</span>: <span style="color:#e6db74">&#34;wheel&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">loop</span>:
+</span></span><span style="display:flex;"><span>     - <span style="color:#ae81ff">testuser1</span>
+</span></span><span style="display:flex;"><span>     - <span style="color:#ae81ff">testuser2</span>
+</span></span></code></pre></div><p>This task adds several users and in order to do that, iterates over a loop. So you don&rsquo;t have to write the same task twice.</p>
 <p>You can iterate both on simple lists and on lists of maps. This can clarify this:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#66d9ef">name</span>: add several users
-  <span style="color:#66d9ef">user</span>:
-    <span style="color:#66d9ef">name</span>: <span style="color:#e6db74">&#34;{{ item.name }}&#34;</span>
-    <span style="color:#66d9ef">state</span>: present
-    <span style="color:#66d9ef">groups</span>: <span style="color:#e6db74">&#34;{{ item.groups }}&#34;</span>
-  <span style="color:#66d9ef">loop</span>:
-    - { <span style="color:#66d9ef">name: &#39;testuser1&#39;, groups</span>: <span style="color:#e6db74">&#39;wheel&#39;</span> }
-    - { <span style="color:#66d9ef">name: &#39;testuser2&#39;, groups</span>: <span style="color:#e6db74">&#39;root&#39;</span> }</code></pre></div>
-<p>Using loops reduces the repetition in your playbooks, keeping them compact and clear.</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">add several users</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">user</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;{{ item.name }}&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">groups</span>: <span style="color:#e6db74">&#34;{{ item.groups }}&#34;</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">loop</span>:
+</span></span><span style="display:flex;"><span>    - { <span style="color:#f92672">name: &#39;testuser1&#39;, groups</span>: <span style="color:#e6db74">&#39;wheel&#39;</span> }
+</span></span><span style="display:flex;"><span>    - { <span style="color:#f92672">name: &#39;testuser2&#39;, groups</span>: <span style="color:#e6db74">&#39;root&#39;</span> }
+</span></span></code></pre></div><p>Using loops reduces the repetition in your playbooks, keeping them compact and clear.</p>
 <h2 id="roles">Roles</h2>
-
 <p><a href="https://docs.ansible.com/ansible/latest/user_guide/playbooks_reuse_roles.html"><strong>Ansible Roles</strong></a> are ways of automatically loading certain vars_files, tasks, and handlers based on a known file structure. Grouping content by roles also allows easy sharing of roles with other users.</p>
-
-<p>Roles are essentially a predefined directory structure that we're utilizing to put individual pieces of our playbook into, to make it easier to reuse and share among groups.</p>
-
+<p>Roles are essentially a predefined directory structure that we&rsquo;re utilizing to put individual pieces of our playbook into, to make it easier to reuse and share among groups.</p>
 <p>An example directory structure can be the following:</p>
-<pre><code>webservers.yml
+<pre tabindex="0"><code>webservers.yml
 fooservers.yml
 roles/
     common/
@@ -197,11 +181,9 @@ roles/
     webservers/
         tasks/
         defaults/
-        meta/</code></pre>
-<p>In this structure, we have the playbooks <code>webserver.yaml</code> and <code>fooservers.yml</code> and the roles <code>common</code> and <code>webservers</code>.</p>
-
+        meta/
+</code></pre><p>In this structure, we have the playbooks <code>webserver.yaml</code> and <code>fooservers.yml</code> and the roles <code>common</code> and <code>webservers</code>.</p>
 <p>When in use, each directory must contain a <code>main.yml</code> file, which contains the relevant content:</p>
-
 <ul>
 <li><code>tasks</code>: contains the main list of tasks to be executed by the role;</li>
 <li><code>handlers</code>: contains handlers, which may be used by this role or even anywhere outside this role;</li>
@@ -211,40 +193,31 @@ roles/
 <li><code>templates</code>: contains templates which can be deployed via this role;</li>
 <li><code>meta</code>: defines some metadata for this role. See below for more details.</li>
 </ul>
-
 <p>Conventionally, the <code>common</code> role contains a role that has to be run against all of your machines.</p>
-
 <p>We can suppose that inside our <code>roles/common/tasks/httpd.yml</code> we have the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#66d9ef">yum</span>:
-    <span style="color:#66d9ef">name</span>: <span style="color:#e6db74">&#34;httpd&#34;</span>
-    <span style="color:#66d9ef">state</span>: present</code></pre></div>
-<p>and that inside our <code>roles/webservers/tasks/apache.yml</code> we have the following:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">- <span style="color:#66d9ef">apt</span>:
-    <span style="color:#66d9ef">name</span>: <span style="color:#e6db74">&#34;apache2&#34;</span>
-    <span style="color:#66d9ef">state</span>: present</code></pre></div>
-<p>Inside our playbook we will put:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">---
-- <span style="color:#66d9ef">hosts</span>: webservers
-  <span style="color:#66d9ef">roles</span>:
-    - common
-    - webservers</code></pre></div>
-<p>In that way, we included both <code>common</code> and <code>webservers</code> roles so that they can be executed when running the playbook.</p>
-
-<p>With this small example, it's hard to understand the benefits brought by roles, but as long as your playbook starts growing, you will find this structure a life-saving because you can reuse as much as you can, still keeping everything both clear and compact.</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">yum</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;httpd&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+</span></span></code></pre></div><p>and that inside our <code>roles/webservers/tasks/apache.yml</code> we have the following:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>- <span style="color:#f92672">apt</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">name</span>: <span style="color:#e6db74">&#34;apache2&#34;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#f92672">state</span>: <span style="color:#ae81ff">present</span>
+</span></span></code></pre></div><p>Inside our playbook we will put:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span>---
+</span></span><span style="display:flex;"><span>- <span style="color:#f92672">hosts</span>: <span style="color:#ae81ff">webservers</span>
+</span></span><span style="display:flex;"><span>  <span style="color:#f92672">roles</span>:
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">common</span>
+</span></span><span style="display:flex;"><span>    - <span style="color:#ae81ff">webservers</span>
+</span></span></code></pre></div><p>In that way, we included both <code>common</code> and <code>webservers</code> roles so that they can be executed when running the playbook.</p>
+<p>With this small example, it&rsquo;s hard to understand the benefits brought by roles, but as long as your playbook starts growing, you will find this structure a life-saving because you can reuse as much as you can, still keeping everything both clear and compact.</p>
 <h2 id="ansible-galaxy">Ansible Galaxy</h2>
-
-<p><a href="https://galaxy.ansible.com/"><strong>Ansible Galaxy</strong></a>  is Ansible's official hub for sharing Ansible content. Galaxy provides pre-packaged roles that can be dropped into Ansible PlayBooks and immediately put to work.</p>
-
+<p><a href="https://galaxy.ansible.com/"><strong>Ansible Galaxy</strong></a>  is Ansible&rsquo;s official hub for sharing Ansible content. Galaxy provides pre-packaged roles that can be dropped into Ansible PlayBooks and immediately put to work.</p>
 <p>You may find roles for provisioning infrastructure, deploying applications, and all of the tasks you do every day.</p>
-
 <p>Using the <code>ansible-galaxy</code> command you can also create the <code>role</code> structure. Once inside the <code>roles</code> directory, you can run</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ansible-galaxy role init my_role</code></pre></div>
-<p>to create the full structure for the role <code>my_role</code>.</p>
-
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ ansible-galaxy role init my_role
+</span></span></code></pre></div><p>to create the full structure for the role <code>my_role</code>.</p>
 <h2 id="conclusions">Conclusions</h2>
-
-<p>Now that you know those concepts you can be very productive using Ansible. So... good automation!</p>
+<p>Now that you know those concepts you can be very productive using Ansible. So&hellip; good automation!</p>
 
       </div>
     </article>
@@ -355,7 +328,7 @@ roles/
 
 
 
-<script type="text/javascript" src="/bundle.min.ace63d93098bf623f7c286a9084a4c22bfc482944c734f87fe0b685c7c6c7fa0ad2edb028c3b4b60d3343720c8ab490b320ad7f8edf4f6e9a6b898fc529057a9.js" integrity="sha512-rOY9kwmL9iP3woapCEpMIr/EgpRMc0&#43;H/gtoXHxsf6CtLtsCjDtLYNM0NyDIq0kLMgrX&#43;O309ummuJj8UpBXqQ=="></script>
+<script type="text/javascript" src="/bundle.min.bb2c6bc3ed452ca4759660e4020811f248bc2320081559e8a32d8b0092773852941133639d35e8370d03d3ddaa750b1edd6b343c5bd22a55d5bdeae8f648f49b.js" integrity="sha512-uyxrw&#43;1FLKR1lmDkAggR8ki8IyAIFVnooy2LAJJ3OFKUETNjnTXoNw0D092qdQse3Ws0PFvSKlXVvero9kj0mw=="></script>
 
 
 

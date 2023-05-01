@@ -7,11 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 13 Mar 2021 16:10:00 +0000</lastBuildDate>
-    
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 13 Mar 2021 16:10:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Books on my journey</title>
       <link>/posts/2021/03/books-on-my-journey/</link>
@@ -19,8 +15,8 @@
       
       <guid>/posts/2021/03/books-on-my-journey/</guid>
       <description>This page has been migrated to Medium In this post I will write down a list of technical books, articles and podcast that I find interesting. I hope that someone will find it interesting as for me.
-Not all the books I&#39;ve read are listed here, only the ones I would like to suggest.
-Technical Books I&#39;ve read Designing Data-Intensive Applications This book is the one you MUST read if work with data.</description>
+Not all the books I&amp;rsquo;ve read are listed here, only the ones I would like to suggest.
+Technical Books I&amp;rsquo;ve read Designing Data-Intensive Applications This book is the one you MUST read if work with data.</description>
     </item>
     
     <item>
@@ -29,7 +25,7 @@ Technical Books I&#39;ve read Designing Data-Intensive Applications This book is
       <pubDate>Fri, 27 Mar 2020 15:11:00 +0000</pubDate>
       
       <guid>/posts/2020/03/ansible-for-developers-102/</guid>
-      <description>Introduction This page has been migrated to Medium In the previous post we introduced basic aspects of Ansible. Now we&#39;ll talk about some advanced features.
+      <description>Introduction This page has been migrated to Medium In the previous post we introduced basic aspects of Ansible. Now we&amp;rsquo;ll talk about some advanced features.
 Loops Another way to describe the tools of the Ansible family can be Infrastructure as code. This is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.
 The word code brings an important aspect with it: loops.</description>
     </item>
@@ -94,7 +90,7 @@ In my free time, I enjoy traveling, reading books, playing tennis, running, list
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/gows/goref2019/</guid>
-      <description>Go Language Tutorial  https://golang.org (official website) https://go-tour-ita.appspot.com/welcome/1 (an interactive tour through Go) http://www.golangbootcamp.com/ (comprehensive Go tutorial) https://blog.golang.org/ (official blog) https://golangcode.com/ (a library of useful Go snippets) https://golangbot.com/ (tutorials for beginners) https://appliedgo.net/ (tutorials and explanations for advanced users) https://changelog.com/gotime (Go podcast) https://dave.cheney.net/category/golang (another blog of Go) https://golang.ch/ (Go news, libraries and tutorials) https://www.golangprograms.com/ (Go blog and tutorials for mid-advanced users) https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3 (clear explanation about Go concurrency) https://awesome-go.com/ (a list of Go frameworks and libraries) https://medium.</description>
+      <description>Go Language Tutorial https://golang.org (official website) https://go-tour-ita.appspot.com/welcome/1 (an interactive tour through Go) http://www.golangbootcamp.com/ (comprehensive Go tutorial) https://blog.golang.org/ (official blog) https://golangcode.com/ (a library of useful Go snippets) https://golangbot.com/ (tutorials for beginners) https://appliedgo.net/ (tutorials and explanations for advanced users) https://changelog.com/gotime (Go podcast) https://dave.cheney.net/category/golang (another blog of Go) https://golang.ch/ (Go news, libraries and tutorials) https://www.golangprograms.com/ (Go blog and tutorials for mid-advanced users) https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3 (clear explanation about Go concurrency) https://awesome-go.com/ (a list of Go frameworks and libraries) https://medium.</description>
     </item>
     
     <item>
