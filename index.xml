@@ -99,9 +99,8 @@ In my free time, I enjoy traveling, reading books, playing tennis, running, list
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>/portfolio/</guid>
-      <description>Software Engineer @ Prima Assicurazioni Remote (Italy) Jan 2023 - Present I am an Engineering Manager in Training for the Claims Data Management Team at Prima Assicurazioni. My small team is responsible for implementing solutions for data analysis related to Claims Domain, following the principles of Data Mesh. We primarily use Scala, Spark, Airflow, Databricks, Redshift, and Elixir.
-Additionally, I am assisting with the migration to Domain-Driven Design.
-Sep 2021 - Jan 2023 Software Engineer for the Claims Team of Prima Assicurazioni, developing systems and microservices for managing claims using the following programming languages:</description>
+      <description>Software Engineer @ Prima Assicurazioni Remote (Italy) Jan 2023 - Present I am an Engineering Manager for the Claims Data Management and Claims Antifraud Engineering Teams at Prima Assicurazioni. My teams are responsible for implementing solutions for data management related to Claims Domain, following the principles of Data Mesh and for applying AI/ML model for fraud and anomaly detection. We primarily use Python, Spark, Neptune, Databricks, Redshift, and Elixir.
+Additionally, I am mentoring other Engineering Managers for topics related to Agile and Scrum.</description>
     </item>
     
   </channel>
