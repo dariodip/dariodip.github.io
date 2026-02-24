@@ -1,138 +1,110 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Dario Di Pasquale</title>
-    <link>/tags/</link>
+    <link>https://dariodip.com/tags/</link>
     <description>Recent content in Tags on Dario Di Pasquale</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 13 Mar 2021 16:10:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 13 Mar 2021 16:10:00 +0000</lastBuildDate>
+    <atom:link href="https://dariodip.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>books</title>
-      <link>/tags/books/</link>
+      <title>Books</title>
+      <link>https://dariodip.com/tags/books/</link>
       <pubDate>Sat, 13 Mar 2021 16:10:00 +0000</pubDate>
-      
-      <guid>/tags/books/</guid>
+      <guid>https://dariodip.com/tags/books/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>journey</title>
-      <link>/tags/journey/</link>
+      <title>Journey</title>
+      <link>https://dariodip.com/tags/journey/</link>
       <pubDate>Sat, 13 Mar 2021 16:10:00 +0000</pubDate>
-      
-      <guid>/tags/journey/</guid>
+      <guid>https://dariodip.com/tags/journey/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>learning</title>
-      <link>/tags/learning/</link>
+      <title>Learning</title>
+      <link>https://dariodip.com/tags/learning/</link>
       <pubDate>Sat, 13 Mar 2021 16:10:00 +0000</pubDate>
-      
-      <guid>/tags/learning/</guid>
+      <guid>https://dariodip.com/tags/learning/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>ansible</title>
-      <link>/tags/ansible/</link>
+      <title>Ansible</title>
+      <link>https://dariodip.com/tags/ansible/</link>
       <pubDate>Fri, 27 Mar 2020 15:11:00 +0000</pubDate>
-      
-      <guid>/tags/ansible/</guid>
+      <guid>https://dariodip.com/tags/ansible/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>automating</title>
-      <link>/tags/automating/</link>
+      <title>Automating</title>
+      <link>https://dariodip.com/tags/automating/</link>
       <pubDate>Fri, 27 Mar 2020 15:11:00 +0000</pubDate>
-      
-      <guid>/tags/automating/</guid>
+      <guid>https://dariodip.com/tags/automating/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>devops</title>
-      <link>/tags/devops/</link>
+      <title>Devops</title>
+      <link>https://dariodip.com/tags/devops/</link>
       <pubDate>Fri, 27 Mar 2020 15:11:00 +0000</pubDate>
-      
-      <guid>/tags/devops/</guid>
+      <guid>https://dariodip.com/tags/devops/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>algorithms</title>
-      <link>/tags/algorithms/</link>
+      <title>Algorithms</title>
+      <link>https://dariodip.com/tags/algorithms/</link>
       <pubDate>Fri, 10 Jan 2020 17:05:35 +0000</pubDate>
-      
-      <guid>/tags/algorithms/</guid>
+      <guid>https://dariodip.com/tags/algorithms/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>basic</title>
-      <link>/tags/basic/</link>
+      <title>Basic</title>
+      <link>https://dariodip.com/tags/basic/</link>
       <pubDate>Fri, 10 Jan 2020 17:05:35 +0000</pubDate>
-      
-      <guid>/tags/basic/</guid>
+      <guid>https://dariodip.com/tags/basic/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>beginner</title>
-      <link>/tags/beginner/</link>
+      <title>Beginner</title>
+      <link>https://dariodip.com/tags/beginner/</link>
       <pubDate>Fri, 10 Jan 2020 17:05:35 +0000</pubDate>
-      
-      <guid>/tags/beginner/</guid>
+      <guid>https://dariodip.com/tags/beginner/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>data structures</title>
-      <link>/tags/data-structures/</link>
+      <title>Data Structures</title>
+      <link>https://dariodip.com/tags/data-structures/</link>
       <pubDate>Fri, 10 Jan 2020 17:05:35 +0000</pubDate>
-      
-      <guid>/tags/data-structures/</guid>
+      <guid>https://dariodip.com/tags/data-structures/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>go</title>
-      <link>/tags/go/</link>
+      <title>Go</title>
+      <link>https://dariodip.com/tags/go/</link>
       <pubDate>Fri, 10 Jan 2020 17:05:35 +0000</pubDate>
-      
-      <guid>/tags/go/</guid>
+      <guid>https://dariodip.com/tags/go/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>golang</title>
-      <link>/tags/golang/</link>
+      <title>Golang</title>
+      <link>https://dariodip.com/tags/golang/</link>
       <pubDate>Fri, 10 Jan 2020 17:05:35 +0000</pubDate>
-      
-      <guid>/tags/golang/</guid>
+      <guid>https://dariodip.com/tags/golang/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>c</title>
-      <link>/tags/c/</link>
+      <title>C</title>
+      <link>https://dariodip.com/tags/c/</link>
       <pubDate>Sun, 01 Dec 2019 17:05:35 +0000</pubDate>
-      
-      <guid>/tags/c/</guid>
+      <guid>https://dariodip.com/tags/c/</guid>
       <description></description>
     </item>
-    
     <item>
-      <title>python</title>
-      <link>/tags/python/</link>
+      <title>Python</title>
+      <link>https://dariodip.com/tags/python/</link>
       <pubDate>Sun, 01 Dec 2019 17:05:35 +0000</pubDate>
-      
-      <guid>/tags/python/</guid>
+      <guid>https://dariodip.com/tags/python/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>

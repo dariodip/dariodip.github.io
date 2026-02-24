@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="light">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Data structures with Go - Part I | Dario Di Pasquale</title>
+<meta name="keywords" content="algorithms, go, golang, data structures, basic, beginner">
+<meta name="description" content="A brief introduction to data structures using Go">
+<meta name="author" content="Dario Di Pasquale">
+<link rel="canonical" href="https://dariodip.com/posts/algorithms/a-brief-introduction-to-data-structures-using-go/">
+<link crossorigin="anonymous" href="https://dariodip.com/assets/css/stylesheet.bb7f6478ba46d26b0f1f3447787b7e671e6444b826d19a0ca5fcd12b6444d016.css" integrity="sha256-u39keLpG0msPHzRHeHt&#43;Zx5kRLgm0ZoMpfzRK2RE0BY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://dariodip.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dariodip.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dariodip.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dariodip.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dariodip.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://dariodip.com/posts/algorithms/a-brief-introduction-to-data-structures-using-go/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRBGH8203N"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-SRBGH8203N');
+        }
+      </script><meta property="og:url" content="https://dariodip.com/posts/algorithms/a-brief-introduction-to-data-structures-using-go/">
+  <meta property="og:site_name" content="Dario Di Pasquale">
+  <meta property="og:title" content="Data structures with Go - Part I">
+  <meta property="og:description" content="A brief introduction to data structures using Go">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2020-01-03T17:05:35+00:00">
+    <meta property="article:modified_time" content="2020-01-03T17:05:35+00:00">
+    <meta property="article:tag" content="Algorithms">
+    <meta property="article:tag" content="Go">
+    <meta property="article:tag" content="Golang">
+    <meta property="article:tag" content="Data Structures">
+    <meta property="article:tag" content="Basic">
+    <meta property="article:tag" content="Beginner">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Data structures with Go - Part I">
+<meta name="twitter:description" content="A brief introduction to data structures using Go">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://dariodip.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Data structures with Go - Part I",
+      "item": "https://dariodip.com/posts/algorithms/a-brief-introduction-to-data-structures-using-go/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Data structures with Go - Part I",
+  "name": "Data structures with Go - Part I",
+  "description": "A brief introduction to data structures using Go",
+  "keywords": [
+    "algorithms", "go", "golang", "data structures", "basic", "beginner"
+  ],
+  "articleBody": "Data Structures With Go - Part I This page has been migrated to Medium Data structures are everywhere. Every developer should know them, starting from the most common ones.\nThe data structure priorly describes how the data is organised, accessed, associated and processed.\nUsing data structures you can keep your data in memory and efficiently access them.\nYou should pick the data structure that is the most suitable for your purposes to minimize space in memory and access time.\nSome algorithms are designed upon certain data structures.\nThe critical part of developing such data structures in Go is the lack of generics. While other programming languages such as Java, C# etc. allow us to work with generics, Go has no way to do that, so we have to use the empty interface: interface{}.\nLet’s start with the most popular class of data structures: linear data structures.\nA Linear Data Structure arranges the data into a sequence and follows some sort of order.\nThe linear data structure is a single level data structure while non-linear data structures are the multilevel data structure.\nThe most popular Linear Data Structures are:\nStack Array Linked List Queue In this post, we will learn those Linear Data Structures and we will develop them using Go.\nThe structures we will develop are only for educational purpose, you should not use them in production, also because some of them are already implemented in the Go’s standard library.\nNone of those structures is thread-safe. We will make them thread-safe in future posts (I wish).\nStack Beyond cookies, a stack or LIFO (last in, first out) is an abstract data type that serves as a collection of elements, with two principal operations:\npush: adds an element to the collection. This method requires O(1); top: returns the last element that was added without removing it. Requires O(1); pop: removes the last element that was added. Requires O(1); In a stack both the operations of push and pop takes place at the same end that is top of the stack. It can be implemented by using both array and linked list.\nYou can think a stack as a… stack. Yeah! Maybe the stack of plates is the best metaphor when thinking about this data structure.\nIn a stack of plates you can (and should at least if you don’t want to break all your plates) access only the plate on the top. So you can put a plate on the top of the stack (push), you can take a plate on the top of the stack and get rid of it (pop) or you can observe the plate on the top of the stack without removing it (top).\nNow let’s develop our stack using Go!\nLet’s start defining our structure:\npackage stack // Stack is the structure which contains our elements type Stack struct { stack []interface{} curInd int } The best way to implement a stack is by using an array and an int which indexes the top of the stack. To simplify stack’s operations we assume that when the index is -1 the stack is empty and when the stack is full we cannot insert other elements.\nIf you want to avoid the latter limitation, you should either control the size of the array dynamically or you should use another structure such as a linked list.\nThe following image shows the empty stack, i.e. the one with no elements and curInt equals to -1.\n// NewStack returns a pointer to a new stack having: // - the array initialized with the provided size // - the current index initialized with -1 (empty stack) func NewStack(size int) *Stack { return \u0026Stack{ stack: make([]interface{}, size), curInd: -1, } } // IsEmpty returns true if the stack is empty func (s *Stack) IsEmpty() bool { return s.curInd \u003c 0 } The function NewStack takes an int as argument and returns a pointer to a stack having both array and top’s index initialized.\nThe method IsEmpty is quite simplistic: it returns true if curInd is less than 0, otherwise it returns false.\nNow let’s dive into the core methods of the stack:\n// Top returns the element at the top of the stack without removing it. // This method panics if the stack is empty func (s *Stack) Top() interface{} { if s.IsEmpty() { panic(\"stack is empty\") } return s.stack[s.curInd] } // Pop removes and returns the element at the top of the stack. // This method panics if the stack is empty func (s *Stack) Pop() interface{} { if s.IsEmpty() { panic(\"stack is empty\") } el := s.stack[s.curInd] s.stack[s.curInd] = nil s.curInd-- return el } // Push inserts the element at the top of the stack. // This method panics if the stack is full func (s *Stack) Push(el interface{}) { s.curInd++ s.stack[s.curInd] = el } The method Top returns an interface but does not alter the stack. It first checks if the stack is empty, if so it panics, otherwise returns the element of the underlying array at the index specified by curInd.\nThe method Pop is similar to its relative Top but “deletes” the element at the top. Actually, this method stores the element at curInd in a temporary variable el, sets the location at curInd to nil (garbage collector will do the tough job) and decrements curInd, finally returns el.\nThe method Push does the opposite: it increments curInd and sets the element at location curInd of the stack array to be the element taken as the argument.\nThe following image shows a stack with a single element, so curInd is 0 (namely, the first location of the array):\nThe following image shows a stack with two elements, so curInd is 1:\nArray Array is a data structure used to store homogeneous elements at contiguous locations. Size of an array can be provided before storing data or the array can dynamically adapt its size to keep all the elements.\nOperations on the array are:\naccess: returns the element indexed by a given index i and requires O(1); search: returns the index of a given element and requires O(n) in the worst case; insertion: inserts an element in the array at a given index i. This method requires O(n) in the worst case, namely when insertion happens at the beginning of the array and requires shifting of all the elements; deletion: deletes an element in the array at a given index i. This method requires O(n) in the worst case, namely when deletion happens at the beginning of the array and requires shifting of all the elements. Since Go already has the array data structure, it does not make any sense to develop our array. However, the array of Go does not have the search method, so we’ll develop it!\npackage array type SearchArray []interface{} func (s SearchArray) Search(el interface{}) int { for i, e := range s { if e == el { return i } } return -1 } The method Search is very simplistic: it iterates over the elements of the array and, if this element is equal to the element el passed as the argument, returns its index. If the method does not find the element el returns -1.\nLinked List A Linked List is a linear data structure (like arrays) where each element is a separate object. Each element, called node, of a list is comprising of two items: the data and a reference to the next node.\nThere are different kinds of Linked List, but we will explore only the most popular one: Single Linked List.\nOperations on Linked Lists are:\naccess: accessing elements in a linked list requires O(n) in the worst case. Actually, to access element i of a linked list requires O(i); search: searching elements in a linked list requires O(n) in the worst case, namely when the element we are looking for is the latter element of the linked list; insertion: insertion of an element at the position i requires O(i); deletion: deletion of an element at the position i requires O(i). package linked_list import ( \"fmt\" \"strings\" ) type Node struct { el interface{} next *Node } type LinkedList struct { head *Node } The building blocks of our Linked List are Nodes. A node contains an element (el) and a reference to the next node (next) in the list. In that way we could iterate over our list starting from a node.\nThe LinkedList itself only contains a reference to a node which is the first of the list (head).\nThe following image explains the structure of a linked list:\nNow let’s dive into its methods:\nfunc (l LinkedList) Get(i int) interface{} { cur := l.head for pos := 0; pos \u003c i; pos++ { if cur == nil {\t// limit exceeded return nil } cur = cur.next } return cur.el } func (l LinkedList) Search(e interface{}) int { pos := 0 cur := l.head for cur.el != e { cur = cur.next pos++ } return pos } Get and Search are quite similar: we start from the head and move to the next node until we reach the right position or find the element we are looking for. A temporary variable called cur (by convention) initially points to head, then to its next, then to the next’s next and so on.\nAdd func (l *LinkedList) Add(i int, e interface{}) { n := Node{el: e} if i == 0 { n.next = l.head l.head = \u0026n return } prev := l.head cur := l.head.next pos := 1 for pos \u003c i { prev = prev.next cur = cur.next pos++ } prev.next = \u0026n n.next = cur } The Add method requires a detailed explanation. We first create a new node n putting the element e into it. Then we have to discriminate between two cases:\nif i == 0 we have to change the head of the list, so n points to the old head and l.head points to n; if i \u003e 0 have to keep two variables: prev which is the head initially and cur which is the prev’s next. We must keep both prev and cur because the insertion of a node requires to change both. pos is the current position and starts to 1 (yes, because we know that i \u003e 0). Until pos \u003c i, we advance both prev and cur making them pointing to their nexts and incrementing pos. When pos is equal to i we update prev’s next to point to n and n’s next to point to cur. The following images may clarify this concept:\nOur Linked List before Add:\nOur Linked List after Add an element in position 1:\nDelete func (l *LinkedList) Delete(i int) { if i == 0 {\t// deleting the head l.head = l.head.next return } prev := l.head cur := l.head.next pos := 1 for pos \u003c i { prev = prev.next cur = cur.next pos++ } prev.next = cur.next } The Delete method is quite similar to Add but does the opposite. The elimination of the variable from the memory is up to the garbage collector.\nif i == 0, l.head points to l.head.next; if i \u003e 0, we iterate until we reach the desired position, then we make prev.next to point to cur.next: doing that we ensure that the element to be removed will never be pointed again by our list. The following images may clarify this concept:\nOur Linked List before Delete:\nOur Linked List after Delete an element in position 1:\nBonus: String func (l LinkedList) String() string { sb := strings.Builder{} sb.WriteString(\"[ \") for cur := l.head; cur != nil; cur = cur.next { sb.WriteString(fmt.Sprintf(\"%v \", cur.el)) } sb.WriteByte(']') return sb.String() } The String method shows how to iterate over a list using a for loop.\nQueue A queue or FIFO (first in, first out) is an abstract data type that serves as a collection of elements, with two principal operations:\nenqueue: the process of adding an element to the collection. The element is added from the rear side. This method requires O(1); dequeue: the process of removing the first element that was added. The element is removed from the front side. Requires O(1). It can be implemented by using both array and linked list. Our implementation will be based on a Linked List.\npackage queue import ( \"fmt\" \"strings\" ) type Node struct { el interface{} next *Node } type Queue struct { head *Node tail *Node } The implementation for Queue is obviously similar to the one for LinkedList but we also store another pointer to the tail which is the side from which we insert new elements.\nfunc (q *Queue) Enqueue(e interface{}) { n := Node{el: e} if q.tail == nil { q.head = \u0026n q.tail = \u0026n return } q.tail.next = \u0026n q.tail = \u0026n } The Enqueue method first creates a new Node n, then, if q.tail == nil (the queue is empty) makes both q.head and q.tail to point to the new node, otherwise makes both q.tail and q.tail.next to point to the new node.\nIt is worth noting that q.tail is the latter inserted node, so its next previously pointed to nil.\nfunc (q *Queue) Dequeue() interface{}{ if q.head == nil { return nil } n := q.head q.head = q.head.next if q.head == nil { q.tail = nil } return n.el } The Dequeue method first checks if q.head == nil, so we have an empty queue and it must return nil, otherwise it stores the q.head value to a temporary variable n, checks if its next pointer is nil (single element queue) (if so makes q.tail pointing to nil to have an empty queue). Finally it returns the el value of n.\nConclusions Different data structures bring different advantages. You should know when to pick one rather than another and this knowledge comes with experience. However, it is not hard to understand the benefits that come with those simple data structures:\nStacks are great when you have to remember the steps you did. In fact, you can store (push) your steps in a stack and go back the same way (pop); Arrays are great when you need random access. In fact, they require only O(1) for retrieving an element at any desired position; LinkedLists are great when you need to insert or remove elements the front. By contrast, arrays are not suitable for those operations because they have to move most of the elements; Queues are great when you have to memorize elements and consume them later keeping the order you produced them. I wish this post would help beginner developers using the correct data structure for their algorithms.\n“It is easier to change the specification to fit the program than vice versa.”\nAlan Perlis\n",
+  "wordCount" : "2466",
+  "inLanguage": "en",
+  "datePublished": "2020-01-03T17:05:35Z",
+  "dateModified": "2020-01-03T17:05:35Z",
+  "author":{
+    "@type": "Person",
+    "name": "Dario Di Pasquale"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dariodip.com/posts/algorithms/a-brief-introduction-to-data-structures-using-go/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dario Di Pasquale",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dariodip.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://dariodip.com/" accesskey="h" title="Dario Di Pasquale (Alt + H)">Dario Di Pasquale</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://dariodip.com/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dariodip.com/portfolio/" title="Portfolio">
+                    <span>Portfolio</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dariodip.com/posts/" title="Notes">
+                    <span>Notes</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://dariodip.com/">Home</a>&nbsp;»&nbsp;<a href="https://dariodip.com/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Data structures with Go - Part I
+    </h1>
+    <div class="post-description">
+      A brief introduction to data structures using Go
+    </div>
+    <div class="post-meta"><span title='2020-01-03 17:05:35 +0000 UTC'>January 3, 2020</span>&nbsp;·&nbsp;<span>12 min</span>&nbsp;·&nbsp;<span>Dario Di Pasquale</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="data-structures-with-go---part-i">Data Structures With Go - Part I<a hidden class="anchor" aria-hidden="true" href="#data-structures-with-go---part-i">#</a></h2>
+<h6 id="this-page-has-been-migrated-to-medium">This page has been migrated to <a href="https://dariodip.medium.com/data-structures-with-go-part-i-3e2c3d950cd4">Medium</a><a hidden class="anchor" aria-hidden="true" href="#this-page-has-been-migrated-to-medium">#</a></h6>
+<p><strong>Data structures</strong> are everywhere. Every developer should know them, starting from the most common ones.</p>
+<p>The data structure priorly describes how the data is organised, accessed, associated and processed.</p>
+<p>Using data structures you can keep your data in memory and efficiently access them.</p>
+<p>You should pick the data structure that is the most suitable for your purposes to minimize space in memory and access time.</p>
+<p>Some algorithms are designed upon certain data structures.</p>
+<p>The critical part of developing such data structures in <strong>Go</strong> is the lack of generics. While other programming languages such as Java, C# etc. allow us to work with generics, <strong>Go</strong> has no way to do that, so we have to use the empty interface: <code>interface{}</code>.</p>
+<p>Let&rsquo;s start with the most popular class of data structures: <strong>linear data structures</strong>.</p>
+<p><strong>A Linear Data Structure</strong> arranges the data into a sequence and follows some sort of order.</p>
+<p>The linear data structure is a single level data structure while non-linear data structures are the multilevel data structure.</p>
+<p>The most popular <strong>Linear Data Structures</strong> are:</p>
+<ul>
+<li><a href="#stack">Stack</a></li>
+<li><a href="#array">Array</a></li>
+<li><a href="#linked-list">Linked List</a></li>
+<li><a href="#queue">Queue</a></li>
+</ul>
+<p>In this post, we will learn those Linear Data Structures and we will develop them using <em>Go</em>.</p>
+<p>The structures we will develop are only for educational purpose, you should not use them in production, also because some of them are already implemented in the <em>Go</em>&rsquo;s standard library.</p>
+<p>None of those structures is thread-safe. We will make them <em>thread-safe</em> in future posts (I wish).</p>
+<h3 id="stack">Stack<a hidden class="anchor" aria-hidden="true" href="#stack">#</a></h3>
+<p>Beyond cookies, a <strong>stack</strong> or <em>LIFO</em> (last in, first out) is an abstract data type that serves as a collection of elements, with two principal operations:</p>
+<ul>
+<li><strong>push</strong>: adds an element to the collection. This method requires <em>O(1)</em>;</li>
+<li><strong>top</strong>: returns the last element that was added without removing it. Requires <em>O(1)</em>;</li>
+<li><strong>pop</strong>: removes the last element that was added. Requires <em>O(1)</em>;</li>
+</ul>
+<p>In a stack both the operations of <strong>push</strong> and <strong>pop</strong> takes place at the same end that is top of the stack. It can be implemented by using both array and linked list.</p>
+<p>You can think a <strong>stack</strong> as a&hellip; stack. Yeah! Maybe the stack of plates is the best metaphor when thinking about this data structure.</p>
+<p>In a stack of plates you can (and should at least if you don&rsquo;t want to break all your plates) access only the plate on the top. So you can put a plate on the top of the stack (<strong>push</strong>), you can take a plate on the top of the stack and get rid of it (<strong>pop</strong>) or you can observe the plate on the top of the stack without removing it (<strong>top</strong>).</p>
+<p>Now let&rsquo;s develop our stack using <strong>Go</strong>!</p>
+<p>Let&rsquo;s start defining our structure:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#cf222e">package</span> <span style="color:#1f2328">stack</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a">// Stack is the structure which contains our elements</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">type</span> <span style="color:#1f2328">Stack</span> <span style="color:#cf222e">struct</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">stack</span> 	<span style="color:#1f2328">[]</span><span style="color:#cf222e">interface</span><span style="color:#1f2328">{}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">curInd</span> 	<span style="color:#cf222e">int</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><p>The best way to implement a stack is by using an <strong>array</strong> and an <code>int</code> which indexes the top of the stack.
+To simplify stack&rsquo;s operations we assume that when the index is <code>-1</code> the stack is empty and when the stack is full we cannot insert other elements.</p>
+<p>If you want to avoid the latter limitation, you should either control the size of the array dynamically or you should use another structure such as a linked list.</p>
+<p>The following image shows the empty stack, i.e. the one with no elements and <code>curInt</code> equals to <code>-1</code>.</p>
+<p><img alt="Empty stack" loading="lazy" src="https://dariodip.com/media/blog/empty_stack.png" title="Empty stack"></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#57606a">// NewStack returns a pointer to a new stack having:</span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a">// - the array initialized with the provided size</span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a">// - the current index initialized with -1 (empty stack)</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span> <span style="color:#6639ba">NewStack</span><span style="color:#1f2328">(</span><span style="color:#1f2328">size</span> <span style="color:#cf222e">int</span><span style="color:#1f2328">)</span> <span style="color:#0550ae">*</span><span style="color:#1f2328">Stack</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">return</span> <span style="color:#0550ae">&amp;</span><span style="color:#1f2328">Stack</span><span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">stack</span><span style="color:#1f2328">:</span> <span style="color:#6639ba">make</span><span style="color:#1f2328">([]</span><span style="color:#cf222e">interface</span><span style="color:#1f2328">{},</span> <span style="color:#1f2328">size</span><span style="color:#1f2328">),</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">curInd</span><span style="color:#1f2328">:</span> <span style="color:#0550ae">-</span><span style="color:#0550ae">1</span><span style="color:#1f2328">,</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a">// IsEmpty returns true if the stack is empty</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">s</span> <span style="color:#0550ae">*</span><span style="color:#1f2328">Stack</span><span style="color:#1f2328">)</span> <span style="color:#6639ba">IsEmpty</span><span style="color:#1f2328">()</span> <span style="color:#cf222e">bool</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">return</span> <span style="color:#1f2328">s</span><span style="color:#1f2328">.</span><span style="color:#1f2328">curInd</span> <span style="color:#1f2328">&lt;</span> <span style="color:#0550ae">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><p>The function <code>NewStack</code> takes an <code>int</code> as argument and returns a pointer to a stack having both array and top&rsquo;s index initialized.</p>
+<p>The method <code>IsEmpty</code> is quite simplistic: it returns <code>true</code> if <code>curInd</code> is less than <code>0</code>, otherwise it returns false.</p>
+<p>Now let&rsquo;s dive into the core methods of the <strong>stack</strong>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a">// Top returns the element at the top of the stack without removing it. </span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a">// This method panics if the stack is empty</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">s</span> <span style="color:#0550ae">*</span><span style="color:#1f2328">Stack</span><span style="color:#1f2328">)</span> <span style="color:#6639ba">Top</span><span style="color:#1f2328">()</span> <span style="color:#cf222e">interface</span><span style="color:#1f2328">{}</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">if</span> <span style="color:#1f2328">s</span><span style="color:#1f2328">.</span><span style="color:#6639ba">IsEmpty</span><span style="color:#1f2328">()</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#6639ba">panic</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;stack is empty&#34;</span><span style="color:#1f2328">)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">return</span> <span style="color:#1f2328">s</span><span style="color:#1f2328">.</span><span style="color:#1f2328">stack</span><span style="color:#1f2328">[</span><span style="color:#1f2328">s</span><span style="color:#1f2328">.</span><span style="color:#1f2328">curInd</span><span style="color:#1f2328">]</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a">// Pop removes and returns the element at the top of the stack. </span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a">// This method panics if the stack is empty</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">s</span> <span style="color:#0550ae">*</span><span style="color:#1f2328">Stack</span><span style="color:#1f2328">)</span> <span style="color:#6639ba">Pop</span><span style="color:#1f2328">()</span> <span style="color:#cf222e">interface</span><span style="color:#1f2328">{}</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">if</span> <span style="color:#1f2328">s</span><span style="color:#1f2328">.</span><span style="color:#6639ba">IsEmpty</span><span style="color:#1f2328">()</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#6639ba">panic</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;stack is empty&#34;</span><span style="color:#1f2328">)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">el</span> <span style="color:#0550ae">:=</span> <span style="color:#1f2328">s</span><span style="color:#1f2328">.</span><span style="color:#1f2328">stack</span><span style="color:#1f2328">[</span><span style="color:#1f2328">s</span><span style="color:#1f2328">.</span><span style="color:#1f2328">curInd</span><span style="color:#1f2328">]</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">s</span><span style="color:#1f2328">.</span><span style="color:#1f2328">stack</span><span style="color:#1f2328">[</span><span style="color:#1f2328">s</span><span style="color:#1f2328">.</span><span style="color:#1f2328">curInd</span><span style="color:#1f2328">]</span> <span style="color:#1f2328">=</span> <span style="color:#cf222e">nil</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">s</span><span style="color:#1f2328">.</span><span style="color:#1f2328">curInd</span><span style="color:#0550ae">--</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">return</span> <span style="color:#1f2328">el</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a">// Push inserts the element at the top of the stack. </span>
+</span></span><span style="display:flex;"><span><span style="color:#57606a">// This method panics if the stack is full</span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">s</span> <span style="color:#0550ae">*</span><span style="color:#1f2328">Stack</span><span style="color:#1f2328">)</span> <span style="color:#6639ba">Push</span><span style="color:#1f2328">(</span><span style="color:#1f2328">el</span> <span style="color:#cf222e">interface</span><span style="color:#1f2328">{})</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">s</span><span style="color:#1f2328">.</span><span style="color:#1f2328">curInd</span><span style="color:#0550ae">++</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">s</span><span style="color:#1f2328">.</span><span style="color:#1f2328">stack</span><span style="color:#1f2328">[</span><span style="color:#1f2328">s</span><span style="color:#1f2328">.</span><span style="color:#1f2328">curInd</span><span style="color:#1f2328">]</span> <span style="color:#1f2328">=</span> <span style="color:#1f2328">el</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><p>The method <code>Top</code> returns an interface but does not alter the stack. It first checks if the stack is empty, if so it panics, otherwise returns the element of the underlying array at the index specified by <code>curInd</code>.</p>
+<p>The method <code>Pop</code> is similar to its relative <code>Top</code> but &ldquo;<em>deletes</em>&rdquo; the element at the top. Actually, this method stores the element at <code>curInd</code> in a temporary variable <code>el</code>, sets the location at <code>curInd</code> to <code>nil</code> (<em>garbage collector</em> will do the tough job) and decrements <code>curInd</code>, finally returns <code>el</code>.</p>
+<p>The method <code>Push</code> does the opposite: it increments <code>curInd</code> and sets the element at location <code>curInd</code> of the <code>stack</code> array to be the element taken as the argument.</p>
+<p>The following image shows a stack with a single element, so <code>curInd</code> is <code>0</code> (namely, the first location of the array):</p>
+<p><img alt="One element stack" loading="lazy" src="https://dariodip.com/media/blog/one_elem_stack.png" title="One element stack"></p>
+<p>The following image shows a stack with two elements, so <code>curInd</code> is <code>1</code>:</p>
+<p><img alt="Two element stack" loading="lazy" src="https://dariodip.com/media/blog/two_elem_stack.png" title="Two element stack"></p>
+<h3 id="array">Array<a hidden class="anchor" aria-hidden="true" href="#array">#</a></h3>
+<p><strong>Array</strong> is a data structure used to store homogeneous elements at contiguous locations. Size of an array can be provided before storing data or the array can dynamically adapt its size to keep all the elements.</p>
+<p>Operations on the array are:</p>
+<ul>
+<li><strong>access</strong>: returns the element indexed by a given index <em>i</em> and requires <em>O(1)</em>;</li>
+<li><strong>search</strong>: returns the index of a given element and requires <em>O(n)</em> in the worst case;</li>
+<li><strong>insertion</strong>: inserts an element in the array at a given index <em>i</em>. This method requires <em>O(n)</em> in the worst case, namely when insertion happens at the beginning of the array and requires shifting of all the elements;</li>
+<li><strong>deletion</strong>: deletes an element in the array at a given index <em>i</em>. This method requires <em>O(n)</em> in the worst case, namely when deletion happens at the beginning of the array and requires shifting of all the elements.</li>
+</ul>
+<p>Since Go already has the <code>array</code> data structure, it does not make any sense to develop our array. However, the <code>array</code> of Go does not have the <code>search</code> method, so we&rsquo;ll develop it!</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#cf222e">package</span> <span style="color:#1f2328">array</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">type</span> <span style="color:#1f2328">SearchArray</span> <span style="color:#1f2328">[]</span><span style="color:#cf222e">interface</span><span style="color:#1f2328">{}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">s</span> <span style="color:#1f2328">SearchArray</span><span style="color:#1f2328">)</span> <span style="color:#6639ba">Search</span><span style="color:#1f2328">(</span><span style="color:#1f2328">el</span> <span style="color:#cf222e">interface</span><span style="color:#1f2328">{})</span> <span style="color:#cf222e">int</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">for</span> <span style="color:#1f2328">i</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">e</span> <span style="color:#0550ae">:=</span> <span style="color:#cf222e">range</span> <span style="color:#1f2328">s</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#cf222e">if</span> <span style="color:#1f2328">e</span> <span style="color:#0550ae">==</span> <span style="color:#1f2328">el</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#cf222e">return</span> <span style="color:#1f2328">i</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">return</span> <span style="color:#0550ae">-</span><span style="color:#0550ae">1</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><p>The method <code>Search</code> is very simplistic: it iterates over the elements of the array and, if this element is equal to the element <code>el</code> passed as the argument, returns its index. If the method does not find the element <code>el</code> returns <code>-1</code>.</p>
+<h3 id="linked-list">Linked List<a hidden class="anchor" aria-hidden="true" href="#linked-list">#</a></h3>
+<p>A <strong>Linked List</strong> is a linear data structure (like arrays) where each element is a separate object. Each element, called <strong>node</strong>, of a list is comprising of two items: the data and a reference to the next node.</p>
+<p>There are different kinds of <strong>Linked List</strong>, but we will explore only the most popular one: <strong>Single Linked List</strong>.</p>
+<p>Operations on <strong>Linked List</strong>s are:</p>
+<ul>
+<li><strong>access</strong>: accessing elements in a linked list requires <em>O(n)</em> in the worst case. Actually, to access element <em>i</em> of a linked list requires <em>O(i)</em>;</li>
+<li><strong>search</strong>: searching elements in a linked list requires <em>O(n)</em> in the worst case, namely when the element we are looking for is the latter element of the linked list;</li>
+<li><strong>insertion</strong>: insertion of an element at the position <em>i</em> requires <em>O(i)</em>;</li>
+<li><strong>deletion</strong>: deletion of an element at the position <em>i</em> requires <em>O(i)</em>.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#cf222e">package</span> <span style="color:#1f2328">linked_list</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">import</span> <span style="color:#1f2328">(</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#0a3069">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#0a3069">&#34;strings&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">type</span> <span style="color:#1f2328">Node</span> <span style="color:#cf222e">struct</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">el</span> 	 <span style="color:#cf222e">interface</span><span style="color:#1f2328">{}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">next</span> <span style="color:#0550ae">*</span><span style="color:#1f2328">Node</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">type</span> <span style="color:#1f2328">LinkedList</span> <span style="color:#cf222e">struct</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">head</span> 	<span style="color:#0550ae">*</span><span style="color:#1f2328">Node</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><p>The building blocks of our <strong>Linked List</strong> are <em>Node</em>s. A node contains an element (<code>el</code>) and a reference to the next node (<code>next</code>) in the list. In that way we could iterate over our list starting from a node.</p>
+<p>The <code>LinkedList</code> itself only contains a reference to a node which is the first of the list (<code>head</code>).</p>
+<p>The following image explains the structure of a linked list:</p>
+<p><img alt="Linked List" loading="lazy" src="https://dariodip.com/media/blog/linked_list_memory.png" title="Linked List"></p>
+<p>Now let&rsquo;s dive into its methods:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">l</span> <span style="color:#1f2328">LinkedList</span><span style="color:#1f2328">)</span> <span style="color:#6639ba">Get</span><span style="color:#1f2328">(</span><span style="color:#1f2328">i</span> <span style="color:#cf222e">int</span><span style="color:#1f2328">)</span> <span style="color:#cf222e">interface</span><span style="color:#1f2328">{}</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">cur</span> <span style="color:#0550ae">:=</span> <span style="color:#1f2328">l</span><span style="color:#1f2328">.</span><span style="color:#1f2328">head</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">for</span> <span style="color:#1f2328">pos</span> <span style="color:#0550ae">:=</span> <span style="color:#0550ae">0</span><span style="color:#1f2328">;</span> <span style="color:#1f2328">pos</span> <span style="color:#1f2328">&lt;</span> <span style="color:#1f2328">i</span><span style="color:#1f2328">;</span> <span style="color:#1f2328">pos</span><span style="color:#0550ae">++</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#cf222e">if</span> <span style="color:#1f2328">cur</span> <span style="color:#0550ae">==</span> <span style="color:#cf222e">nil</span> <span style="color:#1f2328">{</span>	<span style="color:#57606a">// limit exceeded</span>
+</span></span><span style="display:flex;"><span>			<span style="color:#cf222e">return</span> <span style="color:#cf222e">nil</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">cur</span> <span style="color:#1f2328">=</span> <span style="color:#1f2328">cur</span><span style="color:#1f2328">.</span><span style="color:#1f2328">next</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">return</span> <span style="color:#1f2328">cur</span><span style="color:#1f2328">.</span><span style="color:#1f2328">el</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">l</span> <span style="color:#1f2328">LinkedList</span><span style="color:#1f2328">)</span> <span style="color:#6639ba">Search</span><span style="color:#1f2328">(</span><span style="color:#1f2328">e</span> <span style="color:#cf222e">interface</span><span style="color:#1f2328">{})</span> <span style="color:#cf222e">int</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">pos</span> <span style="color:#0550ae">:=</span> <span style="color:#0550ae">0</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">cur</span> <span style="color:#0550ae">:=</span> <span style="color:#1f2328">l</span><span style="color:#1f2328">.</span><span style="color:#1f2328">head</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">for</span> <span style="color:#1f2328">cur</span><span style="color:#1f2328">.</span><span style="color:#1f2328">el</span> <span style="color:#0550ae">!=</span> <span style="color:#1f2328">e</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">cur</span> <span style="color:#1f2328">=</span> <span style="color:#1f2328">cur</span><span style="color:#1f2328">.</span><span style="color:#1f2328">next</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">pos</span><span style="color:#0550ae">++</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">return</span> <span style="color:#1f2328">pos</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><p><code>Get</code> and <code>Search</code> are quite similar: we start from the <em>head</em> and move to the next node until we reach the right position or find the element we are looking for. A temporary variable called <code>cur</code> (<em>by convention</em>) initially points to <code>head</code>, then to its <code>next</code>, then to the <code>next</code>&rsquo;s <code>next</code> and so on.</p>
+<h4 id="add">Add<a hidden class="anchor" aria-hidden="true" href="#add">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">l</span> <span style="color:#0550ae">*</span><span style="color:#1f2328">LinkedList</span><span style="color:#1f2328">)</span> <span style="color:#6639ba">Add</span><span style="color:#1f2328">(</span><span style="color:#1f2328">i</span> <span style="color:#cf222e">int</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">e</span> <span style="color:#cf222e">interface</span><span style="color:#1f2328">{})</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">n</span> <span style="color:#0550ae">:=</span> <span style="color:#1f2328">Node</span><span style="color:#1f2328">{</span><span style="color:#1f2328">el</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">e</span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">if</span> <span style="color:#1f2328">i</span> <span style="color:#0550ae">==</span> <span style="color:#0550ae">0</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">n</span><span style="color:#1f2328">.</span><span style="color:#1f2328">next</span> <span style="color:#1f2328">=</span> <span style="color:#1f2328">l</span><span style="color:#1f2328">.</span><span style="color:#1f2328">head</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">l</span><span style="color:#1f2328">.</span><span style="color:#1f2328">head</span> <span style="color:#1f2328">=</span> <span style="color:#0550ae">&amp;</span><span style="color:#1f2328">n</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#cf222e">return</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">prev</span> <span style="color:#0550ae">:=</span> <span style="color:#1f2328">l</span><span style="color:#1f2328">.</span><span style="color:#1f2328">head</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">cur</span> <span style="color:#0550ae">:=</span> <span style="color:#1f2328">l</span><span style="color:#1f2328">.</span><span style="color:#1f2328">head</span><span style="color:#1f2328">.</span><span style="color:#1f2328">next</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">pos</span> <span style="color:#0550ae">:=</span> <span style="color:#0550ae">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">for</span> <span style="color:#1f2328">pos</span> <span style="color:#1f2328">&lt;</span> <span style="color:#1f2328">i</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">prev</span> <span style="color:#1f2328">=</span> <span style="color:#1f2328">prev</span><span style="color:#1f2328">.</span><span style="color:#1f2328">next</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">cur</span> <span style="color:#1f2328">=</span> <span style="color:#1f2328">cur</span><span style="color:#1f2328">.</span><span style="color:#1f2328">next</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">pos</span><span style="color:#0550ae">++</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">prev</span><span style="color:#1f2328">.</span><span style="color:#1f2328">next</span> <span style="color:#1f2328">=</span> <span style="color:#0550ae">&amp;</span><span style="color:#1f2328">n</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">n</span><span style="color:#1f2328">.</span><span style="color:#1f2328">next</span> <span style="color:#1f2328">=</span> <span style="color:#1f2328">cur</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><p>The <code>Add</code> method requires a detailed explanation. We first create a new node <code>n</code> putting the element <code>e</code> into it. Then we have to discriminate between two cases:</p>
+<ul>
+<li>if <code>i == 0</code> we have to change the head of the list, so <code>n</code> points to the old head and <code>l.head</code> points to <code>n</code>;</li>
+<li>if <code>i &gt; 0</code> have to keep two variables: <code>prev</code> which is the head initially and <code>cur</code> which is the <code>prev</code>&rsquo;s next. We must keep both <code>prev</code> and <code>cur</code> because the insertion of a node requires to change both. <code>pos</code> is the current position and starts to <code>1</code> (yes, because we know that <code>i &gt; 0</code>). Until <code>pos &lt; i</code>, we advance both <code>prev</code> and <code>cur</code> making them pointing to their <code>next</code>s and incrementing <code>pos</code>. When <code>pos</code> is equal to <code>i</code> we update <code>prev</code>&rsquo;s <code>next</code> to point to <code>n</code> and <code>n</code>&rsquo;s <code>next</code> to point to <code>cur</code>.</li>
+</ul>
+<p>The following images may clarify this concept:</p>
+<p>Our Linked List before <code>Add</code>:</p>
+<p><img alt="Add Linked List" loading="lazy" src="https://dariodip.com/media/blog/linked_list.png" title="Linked List"></p>
+<p>Our Linked List after <code>Add</code> an element in position <code>1</code>:</p>
+<p><img alt="Add Linked List" loading="lazy" src="https://dariodip.com/media/blog/linked_list_add.png" title="Linked List after Add"></p>
+<h3 id="delete">Delete<a hidden class="anchor" aria-hidden="true" href="#delete">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">l</span> <span style="color:#0550ae">*</span><span style="color:#1f2328">LinkedList</span><span style="color:#1f2328">)</span> <span style="color:#6639ba">Delete</span><span style="color:#1f2328">(</span><span style="color:#1f2328">i</span> <span style="color:#cf222e">int</span><span style="color:#1f2328">)</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">if</span> <span style="color:#1f2328">i</span> <span style="color:#0550ae">==</span> <span style="color:#0550ae">0</span> <span style="color:#1f2328">{</span>	<span style="color:#57606a">// deleting the head</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">l</span><span style="color:#1f2328">.</span><span style="color:#1f2328">head</span> <span style="color:#1f2328">=</span> <span style="color:#1f2328">l</span><span style="color:#1f2328">.</span><span style="color:#1f2328">head</span><span style="color:#1f2328">.</span><span style="color:#1f2328">next</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#cf222e">return</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">prev</span> <span style="color:#0550ae">:=</span> <span style="color:#1f2328">l</span><span style="color:#1f2328">.</span><span style="color:#1f2328">head</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">cur</span> <span style="color:#0550ae">:=</span> <span style="color:#1f2328">l</span><span style="color:#1f2328">.</span><span style="color:#1f2328">head</span><span style="color:#1f2328">.</span><span style="color:#1f2328">next</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">pos</span> <span style="color:#0550ae">:=</span> <span style="color:#0550ae">1</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">for</span> <span style="color:#1f2328">pos</span> <span style="color:#1f2328">&lt;</span> <span style="color:#1f2328">i</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">prev</span> <span style="color:#1f2328">=</span> <span style="color:#1f2328">prev</span><span style="color:#1f2328">.</span><span style="color:#1f2328">next</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">cur</span> <span style="color:#1f2328">=</span> <span style="color:#1f2328">cur</span><span style="color:#1f2328">.</span><span style="color:#1f2328">next</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">pos</span><span style="color:#0550ae">++</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">prev</span><span style="color:#1f2328">.</span><span style="color:#1f2328">next</span> <span style="color:#1f2328">=</span> <span style="color:#1f2328">cur</span><span style="color:#1f2328">.</span><span style="color:#1f2328">next</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><p>The <code>Delete</code> method is quite similar to <code>Add</code> but does the opposite. The elimination of the variable from the memory is up to the garbage collector.</p>
+<ul>
+<li>if <code>i == 0</code>, <code>l.head</code> points to <code>l.head.next</code>;</li>
+<li>if <code>i &gt; 0</code>, we iterate until we reach the desired position, then we make <code>prev.next</code> to point to <code>cur.next</code>: doing that we ensure that the element to be removed will never be pointed again by our list.</li>
+</ul>
+<p>The following images may clarify this concept:</p>
+<p>Our Linked List before <code>Delete</code>:</p>
+<p><img alt="Add Linked List" loading="lazy" src="https://dariodip.com/media/blog/linked_list.png" title="Linked List"></p>
+<p>Our Linked List after <code>Delete</code> an element in position <code>1</code>:</p>
+<p><img alt="Add Linked List" loading="lazy" src="https://dariodip.com/media/blog/linked_list_remove.png" title="Linked List after Delete"></p>
+<h4 id="bonus-string">Bonus: String<a hidden class="anchor" aria-hidden="true" href="#bonus-string">#</a></h4>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">func</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">l</span> <span style="color:#1f2328">LinkedList</span><span style="color:#1f2328">)</span> <span style="color:#6639ba">String</span><span style="color:#1f2328">()</span> <span style="color:#cf222e">string</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">sb</span> <span style="color:#0550ae">:=</span> <span style="color:#1f2328">strings</span><span style="color:#1f2328">.</span><span style="color:#1f2328">Builder</span><span style="color:#1f2328">{}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">sb</span><span style="color:#1f2328">.</span><span style="color:#6639ba">WriteString</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;[ &#34;</span><span style="color:#1f2328">)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">for</span> <span style="color:#1f2328">cur</span> <span style="color:#0550ae">:=</span> <span style="color:#1f2328">l</span><span style="color:#1f2328">.</span><span style="color:#1f2328">head</span><span style="color:#1f2328">;</span> <span style="color:#1f2328">cur</span> <span style="color:#0550ae">!=</span> <span style="color:#cf222e">nil</span><span style="color:#1f2328">;</span> <span style="color:#1f2328">cur</span> <span style="color:#1f2328">=</span> <span style="color:#1f2328">cur</span><span style="color:#1f2328">.</span><span style="color:#1f2328">next</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">sb</span><span style="color:#1f2328">.</span><span style="color:#6639ba">WriteString</span><span style="color:#1f2328">(</span><span style="color:#1f2328">fmt</span><span style="color:#1f2328">.</span><span style="color:#6639ba">Sprintf</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#34;%v &#34;</span><span style="color:#1f2328">,</span> <span style="color:#1f2328">cur</span><span style="color:#1f2328">.</span><span style="color:#1f2328">el</span><span style="color:#1f2328">))</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">sb</span><span style="color:#1f2328">.</span><span style="color:#6639ba">WriteByte</span><span style="color:#1f2328">(</span><span style="color:#0a3069">&#39;]&#39;</span><span style="color:#1f2328">)</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">return</span> <span style="color:#1f2328">sb</span><span style="color:#1f2328">.</span><span style="color:#6639ba">String</span><span style="color:#1f2328">()</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><p>The <code>String</code> method shows how to iterate over a list using a <code>for</code> loop.</p>
+<h3 id="queue">Queue<a hidden class="anchor" aria-hidden="true" href="#queue">#</a></h3>
+<p>A queue or <em>FIFO</em> (first in, first out) is an abstract data type that serves as a collection of elements, with two principal operations:</p>
+<ul>
+<li><strong>enqueue</strong>: the process of adding an element to the collection. The element is added from the rear side. This method requires <em>O(1)</em>;</li>
+<li><strong>dequeue</strong>: the process of removing the first element that was added. The element is removed from the front side. Requires <em>O(1)</em>.</li>
+</ul>
+<p>It can be implemented by using both array and linked list. Our implementation will be based on a Linked List.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#cf222e">package</span> <span style="color:#1f2328">queue</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">import</span> <span style="color:#1f2328">(</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#0a3069">&#34;fmt&#34;</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#0a3069">&#34;strings&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">type</span> <span style="color:#1f2328">Node</span> <span style="color:#cf222e">struct</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">el</span> <span style="color:#cf222e">interface</span><span style="color:#1f2328">{}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">next</span> <span style="color:#0550ae">*</span><span style="color:#1f2328">Node</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#cf222e">type</span> <span style="color:#1f2328">Queue</span> <span style="color:#cf222e">struct</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">head</span> <span style="color:#0550ae">*</span><span style="color:#1f2328">Node</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">tail</span> <span style="color:#0550ae">*</span><span style="color:#1f2328">Node</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><p>The implementation for <code>Queue</code> is obviously similar to the one for <code>LinkedList</code> but we also store another pointer to the <code>tail</code> which is the side from which we insert new elements.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#cf222e">func</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">q</span> <span style="color:#0550ae">*</span><span style="color:#1f2328">Queue</span><span style="color:#1f2328">)</span> <span style="color:#6639ba">Enqueue</span><span style="color:#1f2328">(</span><span style="color:#1f2328">e</span> <span style="color:#cf222e">interface</span><span style="color:#1f2328">{})</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">n</span> <span style="color:#0550ae">:=</span> <span style="color:#1f2328">Node</span><span style="color:#1f2328">{</span><span style="color:#1f2328">el</span><span style="color:#1f2328">:</span> <span style="color:#1f2328">e</span><span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">if</span> <span style="color:#1f2328">q</span><span style="color:#1f2328">.</span><span style="color:#1f2328">tail</span> <span style="color:#0550ae">==</span> <span style="color:#cf222e">nil</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">q</span><span style="color:#1f2328">.</span><span style="color:#1f2328">head</span> <span style="color:#1f2328">=</span> <span style="color:#0550ae">&amp;</span><span style="color:#1f2328">n</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">q</span><span style="color:#1f2328">.</span><span style="color:#1f2328">tail</span> <span style="color:#1f2328">=</span> <span style="color:#0550ae">&amp;</span><span style="color:#1f2328">n</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#cf222e">return</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">q</span><span style="color:#1f2328">.</span><span style="color:#1f2328">tail</span><span style="color:#1f2328">.</span><span style="color:#1f2328">next</span> <span style="color:#1f2328">=</span> <span style="color:#0550ae">&amp;</span><span style="color:#1f2328">n</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">q</span><span style="color:#1f2328">.</span><span style="color:#1f2328">tail</span> <span style="color:#1f2328">=</span> <span style="color:#0550ae">&amp;</span><span style="color:#1f2328">n</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><p>The <code>Enqueue</code> method first creates a new <em>Node</em> <code>n</code>, then, if <code>q.tail == nil</code> (the queue is empty) makes both <code>q.head</code> and <code>q.tail</code> to point to the new node, otherwise makes both <code>q.tail</code> and <code>q.tail.next</code> to point to the new node.</p>
+<p>It is worth noting that <code>q.tail</code> is the latter inserted node, so its <code>next</code> previously pointed to <code>nil</code>.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-go" data-lang="go"><span style="display:flex;"><span><span style="color:#cf222e">func</span> <span style="color:#1f2328">(</span><span style="color:#1f2328">q</span> <span style="color:#0550ae">*</span><span style="color:#1f2328">Queue</span><span style="color:#1f2328">)</span> <span style="color:#6639ba">Dequeue</span><span style="color:#1f2328">()</span> <span style="color:#cf222e">interface</span><span style="color:#1f2328">{}{</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">if</span> <span style="color:#1f2328">q</span><span style="color:#1f2328">.</span><span style="color:#1f2328">head</span> <span style="color:#0550ae">==</span> <span style="color:#cf222e">nil</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#cf222e">return</span> <span style="color:#cf222e">nil</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">n</span> <span style="color:#0550ae">:=</span> <span style="color:#1f2328">q</span><span style="color:#1f2328">.</span><span style="color:#1f2328">head</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">q</span><span style="color:#1f2328">.</span><span style="color:#1f2328">head</span> <span style="color:#1f2328">=</span> <span style="color:#1f2328">q</span><span style="color:#1f2328">.</span><span style="color:#1f2328">head</span><span style="color:#1f2328">.</span><span style="color:#1f2328">next</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">if</span> <span style="color:#1f2328">q</span><span style="color:#1f2328">.</span><span style="color:#1f2328">head</span> <span style="color:#0550ae">==</span> <span style="color:#cf222e">nil</span> <span style="color:#1f2328">{</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#1f2328">q</span><span style="color:#1f2328">.</span><span style="color:#1f2328">tail</span> <span style="color:#1f2328">=</span> <span style="color:#cf222e">nil</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#1f2328">}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#cf222e">return</span> <span style="color:#1f2328">n</span><span style="color:#1f2328">.</span><span style="color:#1f2328">el</span>
+</span></span><span style="display:flex;"><span><span style="color:#1f2328">}</span>
+</span></span></code></pre></div><p>The <code>Dequeue</code> method first checks if <code>q.head == nil</code>, so we have an empty queue and it must return <code>nil</code>, otherwise it stores the <code>q.head</code> value to a temporary variable <code>n</code>, checks if its <code>next</code> pointer is nil (single element queue) (if so makes <code>q.tail</code> pointing to nil to have an empty queue). Finally it returns the <code>el</code> value of <code>n</code>.</p>
+<h2 id="conclusions">Conclusions<a hidden class="anchor" aria-hidden="true" href="#conclusions">#</a></h2>
+<p>Different data structures bring different advantages. You should know when to pick one rather than another and this <em>knowledge</em> comes with experience. However, it is not hard to understand the benefits that come with those simple data structures:</p>
+<ul>
+<li><strong>Stacks</strong> are great when you have to remember the steps you did. In fact, you can store (<em>push</em>) your steps in a stack and go back the same way (<em>pop</em>);</li>
+<li><strong>Arrays</strong> are great when you need random access. In fact, they require only <em>O(1)</em> for retrieving an element at any desired position;</li>
+<li><strong>LinkedLists</strong> are great when you need to insert or remove elements the front. By contrast, arrays are not suitable for those operations because they have to move most of the elements;</li>
+<li><strong>Queues</strong> are great when you have to memorize elements and consume them later keeping the order you produced them.</li>
+</ul>
+<p>I wish this post would help beginner developers using the correct data structure for their algorithms.</p>
+<blockquote>
+<p>&ldquo;It is easier to change the specification to fit the program than vice versa.&rdquo;</p>
+<p><em>Alan Perlis</em></p></blockquote>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://dariodip.com/tags/algorithms/">Algorithms</a></li>
+      <li><a href="https://dariodip.com/tags/go/">Go</a></li>
+      <li><a href="https://dariodip.com/tags/golang/">Golang</a></li>
+      <li><a href="https://dariodip.com/tags/data-structures/">Data Structures</a></li>
+      <li><a href="https://dariodip.com/tags/basic/">Basic</a></li>
+      <li><a href="https://dariodip.com/tags/beginner/">Beginner</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://dariodip.com/posts/algorithms/a-brief-introduction-to-data-structures-using-go-part-ii/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Data structures with Go - Part II</span>
+  </a>
+  <a class="next" href="https://dariodip.com/posts/algorithms/binary-search-with-go-python-and-c/">
+    <span class="title">Next »</span>
+    <br>
+    <span>Binary Search with Go, Python and C</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://dariodip.com/">Dario Di Pasquale</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

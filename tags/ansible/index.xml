@@ -1,34 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>ansible on Dario Di Pasquale</title>
-    <link>/tags/ansible/</link>
-    <description>Recent content in ansible on Dario Di Pasquale</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Ansible on Dario Di Pasquale</title>
+    <link>https://dariodip.com/tags/ansible/</link>
+    <description>Recent content in Ansible on Dario Di Pasquale</description>
+    <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 27 Mar 2020 15:11:00 +0000</lastBuildDate><atom:link href="/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 27 Mar 2020 15:11:00 +0000</lastBuildDate>
+    <atom:link href="https://dariodip.com/tags/ansible/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Ansible for developers 102</title>
-      <link>/posts/2020/03/ansible-for-developers-102/</link>
+      <link>https://dariodip.com/posts/devops/a-brief-introduction-to-ansible/</link>
       <pubDate>Fri, 27 Mar 2020 15:11:00 +0000</pubDate>
-      
-      <guid>/posts/2020/03/ansible-for-developers-102/</guid>
-      <description>Introduction This page has been migrated to Medium In the previous post we introduced basic aspects of Ansible. Now we&amp;rsquo;ll talk about some advanced features.
-Loops Another way to describe the tools of the Ansible family can be Infrastructure as code. This is the process of managing and provisioning computer data centers through machine-readable definition files, rather than physical hardware configuration or interactive configuration tools.
-The word code brings an important aspect with it: loops.</description>
+      <guid>https://dariodip.com/posts/devops/a-brief-introduction-to-ansible/</guid>
+      <description>Ansible 102: an introduction to Ansible from a developer point of view</description>
     </item>
-    
     <item>
       <title>Ansible for developers 101</title>
-      <link>/posts/2020/03/ansible-for-developers-101/</link>
+      <link>https://dariodip.com/posts/devops/a-brief-introduction-to-ansible/</link>
       <pubDate>Fri, 27 Mar 2020 09:11:00 +0000</pubDate>
-      
-      <guid>/posts/2020/03/ansible-for-developers-101/</guid>
-      <description>Introduction This page has been migrated to Medium When I started as a developer and I started to feel frustrating when I had to repeat something twice or more.
-Being a developer does not mean you only have to write code. Hopefully, your code should be executed in different environments and often it is up to you managing part of those environments.
-Nowadays automation brings a lot of improvements to the life-quality of developers.</description>
+      <guid>https://dariodip.com/posts/devops/a-brief-introduction-to-ansible/</guid>
+      <description>Ansible 101: an introduction to Ansible from a developer point of view</description>
     </item>
-    
   </channel>
 </rss>

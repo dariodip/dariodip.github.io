@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>python on Dario Di Pasquale</title>
-    <link>/tags/python/</link>
-    <description>Recent content in python on Dario Di Pasquale</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Python on Dario Di Pasquale</title>
+    <link>https://dariodip.com/tags/python/</link>
+    <description>Recent content in Python on Dario Di Pasquale</description>
+    <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Sun, 01 Dec 2019 17:05:35 +0000</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 01 Dec 2019 17:05:35 +0000</lastBuildDate>
+    <atom:link href="https://dariodip.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Binary Search with Go, Python and C</title>
-      <link>/posts/2019/12/binary-search-with-go-python-and-c/</link>
+      <link>https://dariodip.com/posts/algorithms/binary-search-with-go-python-and-c/</link>
       <pubDate>Sun, 01 Dec 2019 17:05:35 +0000</pubDate>
-      
-      <guid>/posts/2019/12/binary-search-with-go-python-and-c/</guid>
-      <description>The Binary Search Algorithm This page has been migrated to Medium The Binary Search Algorithm is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).
-This algorithm is as efficient as easy to learn due to its simplicity.</description>
+      <guid>https://dariodip.com/posts/algorithms/binary-search-with-go-python-and-c/</guid>
+      <description>&lt;h2 id=&#34;the-binary-search-algorithm&#34;&gt;The Binary Search Algorithm&lt;/h2&gt;
+&lt;h6 id=&#34;this-page-has-been-migrated-to-medium&#34;&gt;This page has been migrated to &lt;a href=&#34;https://dariodip.medium.com/binary-search-with-go-python-and-c-3eaf3ed5f761&#34;&gt;Medium&lt;/a&gt;&lt;/h6&gt;
+&lt;p&gt;The &lt;em&gt;Binary Search Algorithm&lt;/em&gt; is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).&lt;/p&gt;
+&lt;p&gt;This algorithm is as efficient as easy to learn due to its simplicity.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

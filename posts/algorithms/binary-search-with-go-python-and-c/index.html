@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto" data-theme="light">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Binary Search with Go, Python and C | Dario Di Pasquale</title>
+<meta name="keywords" content="algorithms, go, c, python">
+<meta name="description" content="The Binary Search Algorithm
+This page has been migrated to Medium
+The Binary Search Algorithm is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).
+This algorithm is as efficient as easy to learn due to its simplicity.">
+<meta name="author" content="Dario Di Pasquale">
+<link rel="canonical" href="https://dariodip.com/posts/algorithms/binary-search-with-go-python-and-c/">
+<link crossorigin="anonymous" href="https://dariodip.com/assets/css/stylesheet.bb7f6478ba46d26b0f1f3447787b7e671e6444b826d19a0ca5fcd12b6444d016.css" integrity="sha256-u39keLpG0msPHzRHeHt&#43;Zx5kRLgm0ZoMpfzRK2RE0BY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://dariodip.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dariodip.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dariodip.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dariodip.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dariodip.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://dariodip.com/posts/algorithms/binary-search-with-go-python-and-c/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRBGH8203N"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-SRBGH8203N');
+        }
+      </script><meta property="og:url" content="https://dariodip.com/posts/algorithms/binary-search-with-go-python-and-c/">
+  <meta property="og:site_name" content="Dario Di Pasquale">
+  <meta property="og:title" content="Binary Search with Go, Python and C">
+  <meta property="og:description" content="The Binary Search Algorithm This page has been migrated to Medium The Binary Search Algorithm is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).
+This algorithm is as efficient as easy to learn due to its simplicity.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2019-12-01T17:05:35+00:00">
+    <meta property="article:modified_time" content="2019-12-01T17:05:35+00:00">
+    <meta property="article:tag" content="Algorithms">
+    <meta property="article:tag" content="Go">
+    <meta property="article:tag" content="C">
+    <meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Binary Search with Go, Python and C">
+<meta name="twitter:description" content="The Binary Search Algorithm
+This page has been migrated to Medium
+The Binary Search Algorithm is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).
+This algorithm is as efficient as easy to learn due to its simplicity.">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Posts",
+      "item": "https://dariodip.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Binary Search with Go, Python and C",
+      "item": "https://dariodip.com/posts/algorithms/binary-search-with-go-python-and-c/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Binary Search with Go, Python and C",
+  "name": "Binary Search with Go, Python and C",
+  "description": "The Binary Search Algorithm This page has been migrated to Medium The Binary Search Algorithm is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).\nThis algorithm is as efficient as easy to learn due to its simplicity.\n",
+  "keywords": [
+    "algorithms", "go", "c", "python"
+  ],
+  "articleBody": "The Binary Search Algorithm This page has been migrated to Medium The Binary Search Algorithm is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).\nThis algorithm is as efficient as easy to learn due to its simplicity.\nThis algorithm does only O(log n) comparisons.\nOn the other hand, it only works for sorted collections, making it restricted to some specific cases.\nPseudocode The pseudocode for the algorithm is the following:\nfunction BSA(A, n, T): L := 0 R := n − 1 while L \u003c= R: m := floor((L + R) / 2) if A[m] \u003c T: L := m + 1 else if A[m] \u003e T: R := m - 1 else: return m return unsuccessful Let’s explain this pseudocode:\nThe algorithm takes as input an array A, the length of the array n and the element to search T; We initialize two variables: L to 0 and R to n-1, namely the index to the first and the last element to the array A; We iterate until L becomes equal or greater than R, that is when we iterated over the whole array; We initialize m to be the floor or (L+R)/2, namely the index of the element at the middle of the array; Then we compare the element at the index m to the desired element T: if A[m] is lower than T we should search T in the greater half of the array: the one in [m+1, R]; if A[m] is greater than T we should search T in the lower half of the array: the one in [L,m-1]; otherwise A[m] is equal to T and we can return m because we found the element. Python Let’s have a look at the BSA using Python.\nAs you may see, the BSA written in Python is very similar to the pseudocode. We return -1 when we cannot find the desired element.\nGo The Go version of the BSA is the following:\nUnlike the Python version, this code does not look similar to the pseudocode because of Go’s strong typing, which forces us to do 2 casts (line 5). Also in the Go implementation we return -1 if we cannot find the element T. Due to the simplicity of the algorithm itself, no other consideration has to be made.\nC The C version of the BSA could be the following:\nThe C implementation looks quite similar to the Go implementation but does not have casts because C has weak typing.\nThis is my first blog post.\n",
+  "wordCount" : "452",
+  "inLanguage": "en",
+  "datePublished": "2019-12-01T17:05:35Z",
+  "dateModified": "2019-12-01T17:05:35Z",
+  "author":{
+    "@type": "Person",
+    "name": "Dario Di Pasquale"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dariodip.com/posts/algorithms/binary-search-with-go-python-and-c/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dario Di Pasquale",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dariodip.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://dariodip.com/" accesskey="h" title="Dario Di Pasquale (Alt + H)">Dario Di Pasquale</a>
+            <div class="logo-switches">
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://dariodip.com/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dariodip.com/portfolio/" title="Portfolio">
+                    <span>Portfolio</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dariodip.com/posts/" title="Notes">
+                    <span>Notes</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://dariodip.com/">Home</a>&nbsp;»&nbsp;<a href="https://dariodip.com/posts/">Posts</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Binary Search with Go, Python and C
+    </h1>
+    <div class="post-meta"><span title='2019-12-01 17:05:35 +0000 UTC'>December 1, 2019</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Dario Di Pasquale</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="the-binary-search-algorithm">The Binary Search Algorithm<a hidden class="anchor" aria-hidden="true" href="#the-binary-search-algorithm">#</a></h2>
+<h6 id="this-page-has-been-migrated-to-medium">This page has been migrated to <a href="https://dariodip.medium.com/binary-search-with-go-python-and-c-3eaf3ed5f761">Medium</a><a hidden class="anchor" aria-hidden="true" href="#this-page-has-been-migrated-to-medium">#</a></h6>
+<p>The <em>Binary Search Algorithm</em> is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).</p>
+<p>This algorithm is as efficient as easy to learn due to its simplicity.</p>
+<p>This algorithm does only <em>O(log n)</em> comparisons.</p>
+<p>On the other hand, it only works for sorted collections, making it restricted to some specific cases.</p>
+<h3 id="pseudocode">Pseudocode<a hidden class="anchor" aria-hidden="true" href="#pseudocode">#</a></h3>
+<p>The pseudocode for the algorithm is the following:</p>
+<pre><code>    function BSA(A, n, T):
+        L := 0
+        R := n − 1
+        while L &lt;= R:
+            m := floor((L + R) / 2)
+            if A[m] &lt; T:
+                L := m + 1
+            else if A[m] &gt; T:
+                R := m - 1
+            else:
+                return m
+        return unsuccessful
+</code></pre>
+<p>Let&rsquo;s explain this pseudocode:</p>
+<ul>
+<li>The algorithm takes as input an array <code>A</code>, the length of the array <code>n</code> and the element to search <code>T</code>;</li>
+<li>We initialize two variables: <code>L</code> to <code>0</code> and <code>R</code> to <code>n-1</code>, namely the index to the first and the last element to the array <code>A;</code></li>
+<li>We iterate until <code>L</code> becomes equal or greater than <code>R</code>, that is when we iterated over the whole array;</li>
+<li>We initialize <code>m</code> to be the floor or <code>(L+R)/2</code>, namely the index of the element at the middle of the array;</li>
+<li>Then we compare the element at the index <code>m</code> to the desired element <code>T</code>:
+<ul>
+<li>if <code>A[m]</code> is lower than <code>T</code> we should search <code>T</code> in the greater half of the array: the one in <em>[m+1, R]</em>;</li>
+<li>if <code>A[m]</code> is greater than <code>T</code> we should search <code>T</code> in the lower half of the array: the one in <em>[L,m-1]</em>;</li>
+<li>otherwise <code>A[m]</code> is equal to <code>T</code> and we can return <code>m</code> because we found the element.</li>
+</ul>
+</li>
+</ul>
+<h3 id="python">Python<a hidden class="anchor" aria-hidden="true" href="#python">#</a></h3>
+<p>Let&rsquo;s have a look at the BSA using Python.</p>
+<script src="https://gist.github.com/dariodip/d54976e361fec510afe68a64cfa90e82.js?file=binary-search.py"></script>
+<p>As you may see, the <em>BSA</em> written in Python is very similar to the pseudocode. We return <code>-1</code> when we cannot find the desired element.</p>
+<h3 id="go">Go<a hidden class="anchor" aria-hidden="true" href="#go">#</a></h3>
+<p>The <em>Go</em> version of the <em>BSA</em> is the following:</p>
+<script src="https://gist.github.com/dariodip/d54976e361fec510afe68a64cfa90e82.js?file=binary-search.go"></script>
+<p>Unlike the <em>Python</em> version, this code does not look similar to the pseudocode because of Go&rsquo;s strong typing, which forces us to do 2 casts (<em>line 5</em>). Also in the <em>Go</em> implementation we return <code>-1</code> if we cannot find the element <code>T</code>. Due to the simplicity of the algorithm itself, no other consideration has to be made.</p>
+<h3 id="c">C<a hidden class="anchor" aria-hidden="true" href="#c">#</a></h3>
+<p>The <em>C</em> version of the <em>BSA</em> could be the following:</p>
+<script src="https://gist.github.com/dariodip/d54976e361fec510afe68a64cfa90e82.js?file=binary-search.c"></script>
+<p>The <em>C</em> implementation looks quite similar to the <em>Go</em> implementation but does not have casts because <em>C</em> has weak typing.</p>
+<hr>
+<p>This is my first blog post.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://dariodip.com/tags/algorithms/">Algorithms</a></li>
+      <li><a href="https://dariodip.com/tags/go/">Go</a></li>
+      <li><a href="https://dariodip.com/tags/c/">C</a></li>
+      <li><a href="https://dariodip.com/tags/python/">Python</a></li>
+    </ul>
+<nav class="paginav">
+  <a class="prev" href="https://dariodip.com/posts/algorithms/a-brief-introduction-to-data-structures-using-go/">
+    <span class="title">« Prev</span>
+    <br>
+    <span>Data structures with Go - Part I</span>
+  </a>
+</nav>
+
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://dariodip.com/">Dario Di Pasquale</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

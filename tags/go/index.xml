@@ -1,45 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>go on Dario Di Pasquale</title>
-    <link>/tags/go/</link>
-    <description>Recent content in go on Dario Di Pasquale</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <title>Go on Dario Di Pasquale</title>
+    <link>https://dariodip.com/tags/go/</link>
+    <description>Recent content in Go on Dario Di Pasquale</description>
+    <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 10 Jan 2020 17:05:35 +0000</lastBuildDate><atom:link href="/tags/go/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 10 Jan 2020 17:05:35 +0000</lastBuildDate>
+    <atom:link href="https://dariodip.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Data structures with Go - Part II</title>
-      <link>/posts/2020/01/data-structures-with-go-part-ii/</link>
+      <link>https://dariodip.com/posts/algorithms/a-brief-introduction-to-data-structures-using-go-part-ii/</link>
       <pubDate>Fri, 10 Jan 2020 17:05:35 +0000</pubDate>
-      
-      <guid>/posts/2020/01/data-structures-with-go-part-ii/</guid>
-      <description>Data Structures With Go - Part II This page has been migrated to Medium In the previous post we discussed how to implement linear data structures with Go.
-Now we will explore two more complex data structures: tree and graph.
-Those structures are not Linear and can represent unstructured information. Both graphs and trees are the foundation of the graph theory and both can be used, essentially, to describe a kind of relation.</description>
+      <guid>https://dariodip.com/posts/algorithms/a-brief-introduction-to-data-structures-using-go-part-ii/</guid>
+      <description>A brief introduction to data structures using Go - Part II</description>
     </item>
-    
     <item>
       <title>Data structures with Go - Part I</title>
-      <link>/posts/2020/01/data-structures-with-go-part-i/</link>
+      <link>https://dariodip.com/posts/algorithms/a-brief-introduction-to-data-structures-using-go/</link>
       <pubDate>Fri, 03 Jan 2020 17:05:35 +0000</pubDate>
-      
-      <guid>/posts/2020/01/data-structures-with-go-part-i/</guid>
-      <description>Data Structures With Go - Part I This page has been migrated to Medium Data structures are everywhere. Every developer should know them, starting from the most common ones.
-The data structure priorly describes how the data is organised, accessed, associated and processed.
-Using data structures you can keep your data in memory and efficiently access them.
-You should pick the data structure that is the most suitable for your purposes to minimize space in memory and access time.</description>
+      <guid>https://dariodip.com/posts/algorithms/a-brief-introduction-to-data-structures-using-go/</guid>
+      <description>A brief introduction to data structures using Go</description>
     </item>
-    
     <item>
       <title>Binary Search with Go, Python and C</title>
-      <link>/posts/2019/12/binary-search-with-go-python-and-c/</link>
+      <link>https://dariodip.com/posts/algorithms/binary-search-with-go-python-and-c/</link>
       <pubDate>Sun, 01 Dec 2019 17:05:35 +0000</pubDate>
-      
-      <guid>/posts/2019/12/binary-search-with-go-python-and-c/</guid>
-      <description>The Binary Search Algorithm This page has been migrated to Medium The Binary Search Algorithm is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).
-This algorithm is as efficient as easy to learn due to its simplicity.</description>
+      <guid>https://dariodip.com/posts/algorithms/binary-search-with-go-python-and-c/</guid>
+      <description>&lt;h2 id=&#34;the-binary-search-algorithm&#34;&gt;The Binary Search Algorithm&lt;/h2&gt;
+&lt;h6 id=&#34;this-page-has-been-migrated-to-medium&#34;&gt;This page has been migrated to &lt;a href=&#34;https://dariodip.medium.com/binary-search-with-go-python-and-c-3eaf3ed5f761&#34;&gt;Medium&lt;/a&gt;&lt;/h6&gt;
+&lt;p&gt;The &lt;em&gt;Binary Search Algorithm&lt;/em&gt; is a search algorithm that works for sorted collections (e.g. sorted arrays). It takes as input a collection, the length of that collection and an element to find, and gives as output the index of the element in the collection (if it exists).&lt;/p&gt;
+&lt;p&gt;This algorithm is as efficient as easy to learn due to its simplicity.&lt;/p&gt;</description>
     </item>
-    
   </channel>
 </rss>

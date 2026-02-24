@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on Dario Di Pasquale</title>
-    <link>/categories/</link>
+    <link>https://dariodip.com/categories/</link>
     <description>Recent content in Categories on Dario Di Pasquale</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
-    <copyright>&lt;a href=&#34;https://creativecommons.org/licenses/by-nc/4.0/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;CC BY-NC 4.0&lt;/a&gt;</copyright><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://dariodip.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,134 +1,304 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<html lang="en" dir="auto" data-theme="light">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Go Workshop 2019 References | Dario Di Pasquale</title>
+<meta name="keywords" content="">
+<meta name="description" content="Go Language Tutorial
+
+https://golang.org    (official website)
+https://go-tour-ita.appspot.com/welcome/1   (an interactive tour through Go)
+http://www.golangbootcamp.com/    (comprehensive Go tutorial)
+https://blog.golang.org/  (official blog)
+https://golangcode.com/   (a library of useful Go snippets)
+https://golangbot.com/    (tutorials for beginners)
+https://appliedgo.net/    (tutorials and explanations for advanced users)
+https://changelog.com/gotime  (Go podcast)
+https://dave.cheney.net/category/golang   (another blog of Go)
+https://golang.ch/    (Go news, libraries and tutorials)
+https://www.golangprograms.com/   (Go blog and tutorials for mid-advanced users)
+https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3   (clear explanation about Go concurrency)
+https://awesome-go.com/   (a list of Go frameworks and libraries)
+https://medium.com/a-journey-with-go  (tutorials for advanced users)
+https://hub.packtpub.com/concurrency-and-parallelism-in-golang-tutorial/ (a detailed explanation about Go parallelism)
+https://www.airs.com/blog/archives/277 (Go Internals)
+
+Go Language Popularity
+
+https://insights.stackoverflow.com/survey/2019#most-loved-dreaded-and-wanted  (Stack Overflow Developer Survey 2019)
+https://spectrum.ieee.org/computing/software/the-top-programming-languages-2019 (IEEE Rankings 2019)
+https://www.tiobe.com/tiobe-index/go/ (Tiobe index for Go)
+https://hub.packtpub.com/why-golan-is-the-fastest-growing-language-on-github/ (Packt Analysis of Go)
+https://www.gowitek.com/golang/blog/companies-using-golang  (Big Companies using Go)
+https://github.com/golang/go/wiki/GoUsers (Companies using Go)
+https://www.quora.com/Other-than-Google-what-companies-are-using-Go-in-production (Other companies using Go)
+https://github.com/golang/go/wiki/ExperienceReports (User Experience Reports)
+
+Go Language Performance
+
+https://www.toptal.com/back-end/server-side-io-performance-node-php-java-go (Go vs Node vs PHP vs Java)
+https://codeburst.io/should-i-rust-or-should-i-go-59a298e00ea9  (Go vs Rust)
+
+Type System
+
+https://en.wikipedia.org/wiki/Structural_type_system  (Structural Type System)
+https://en.wikipedia.org/wiki/Type_inference  (Type Inference)
+https://en.wikipedia.org/wiki/Strong_and_weak_typing  (Strong and Weak typing)
+https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)  (Type Variance)
+https://en.wikipedia.org/wiki/Type_system#STATIC  (Type System)
+
+Go Type System
+
+https://rakyll.org/typesystem/  (Go type system)
+https://bluxte.net/musings/2018/04/10/go-good-bad-ugly/ (Go type system pros vs cons)
+https://mycodesmells.com/post/accept-interfaces-return-struct-in-go (AIRS motivation)
+http://www.club.cc.cmu.edu/~cmccabe/blog_golang_type_system.html  (Go type system detailed)
+http://asserttrue.blogspot.com/2009/02/inheritance-as-antipattern.html  (Inheritance as Antipattern)
+https://www.javaworld.com/article/2073649/why-extends-is-evil.html#talkback (Inheritance as Antipattern for Java Developers)
+https://www.youtube.com/watch?v=5IKcPMJXkKs (Closured as Generics)
+
+Go Language Error Handling
+
+https://blog.golang.org/error-handling-and-go (Error Handling and Go)
+https://medium.com/rungo/error-handling-in-go-f0125de052f0  (Error Handling in Go)
+https://8thlight.com/blog/kyle-krull/2018/08/13/exploring-error-handling-patterns-in-go.html  (Error Handling Patters in Go)
+
+Programming languages concepts
+
+https://en.wikipedia.org/wiki/Zipf%27s_law (Zipf&rsquo;s Law)
+https://en.wikipedia.org/wiki/Single_responsibility_principle (Single Responsability Principle)
+https://medium.com/@rakyll/interface-pollution-in-go-7d58bccec275 (Interface Pollution in go)
+https://medium.com/@matryer/line-of-sight-in-code-186dd7cdea88 (Line of Sight Rule)
+https://eli.thegreenplace.net/2011/01/23/how-debuggers-work-part-1 (How debuggers work)
+https://software.intel.com/en-us/articles/avoiding-and-identifying-false-sharing-among-threads (False Sharing)
+https://medium.com/@genchilu/whats-false-sharing-and-how-to-solve-it-using-golang-as-example-ef978a305e10 (False Sharing in Go)
+
+Creators of the language
+
+https://www.google.com/ (Google)
+https://en.wikipedia.org/wiki/Ken_Thompson (Ken Thompson)
+https://en.wikipedia.org/wiki/Rob_Pike (Rob Pike)
+https://channel9.msdn.com/Events/Speakers/Robert-Griesemer (Robert Griesemer)
+">
 <meta name="author" content="map[name:Dario Di Pasquale]">
-<meta name="description" content="Go Language Tutorial https://golang.org (official website) https://go-tour-ita.appspot.com/welcome/1 (an interactive tour through Go) http://www.golangbootcamp.com/ (comprehensive Go tutorial) https://blog.golang.org/ (official blog) https://golangcode.com/ (a library of useful Go snippets) https://golangbot.com/ (tutorials for beginners) https://appliedgo.net/ (tutorials and explanations for advanced users) https://changelog.com/gotime (Go podcast) https://dave.cheney.net/category/golang (another blog of Go) https://golang.ch/ (Go news, libraries and tutorials) https://www.golangprograms.com/ (Go blog and tutorials for mid-advanced users) https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3 (clear explanation about Go concurrency) https://awesome-go.com/ (a list of Go frameworks and libraries) https://medium." />
-<meta name="keywords" content="dario di pasquale" />
-<meta name="robots" content="noodp" />
-<meta name="theme-color" content="" />
-<link rel="canonical" href="/gows/goref2019/" />
+<link rel="canonical" href="https://dariodip.com/gows/goref2019/">
+<link crossorigin="anonymous" href="https://dariodip.com/assets/css/stylesheet.bb7f6478ba46d26b0f1f3447787b7e671e6444b826d19a0ca5fcd12b6444d016.css" integrity="sha256-u39keLpG0msPHzRHeHt&#43;Zx5kRLgm0ZoMpfzRK2RE0BY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://dariodip.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://dariodip.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://dariodip.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://dariodip.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://dariodip.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://dariodip.com/gows/goref2019/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-SRBGH8203N"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-SRBGH8203N');
+        }
+      </script><meta property="og:url" content="https://dariodip.com/gows/goref2019/">
+  <meta property="og:site_name" content="Dario Di Pasquale">
+  <meta property="og:title" content="Go Workshop 2019 References">
+  <meta property="og:description" content="Go Language Tutorial https://golang.org (official website) https://go-tour-ita.appspot.com/welcome/1 (an interactive tour through Go) http://www.golangbootcamp.com/ (comprehensive Go tutorial) https://blog.golang.org/ (official blog) https://golangcode.com/ (a library of useful Go snippets) https://golangbot.com/ (tutorials for beginners) https://appliedgo.net/ (tutorials and explanations for advanced users) https://changelog.com/gotime (Go podcast) https://dave.cheney.net/category/golang (another blog of Go) https://golang.ch/ (Go news, libraries and tutorials) https://www.golangprograms.com/ (Go blog and tutorials for mid-advanced users) https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3 (clear explanation about Go concurrency) https://awesome-go.com/ (a list of Go frameworks and libraries) https://medium.com/a-journey-with-go (tutorials for advanced users) https://hub.packtpub.com/concurrency-and-parallelism-in-golang-tutorial/ (a detailed explanation about Go parallelism) https://www.airs.com/blog/archives/277 (Go Internals) Go Language Popularity https://insights.stackoverflow.com/survey/2019#most-loved-dreaded-and-wanted (Stack Overflow Developer Survey 2019) https://spectrum.ieee.org/computing/software/the-top-programming-languages-2019 (IEEE Rankings 2019) https://www.tiobe.com/tiobe-index/go/ (Tiobe index for Go) https://hub.packtpub.com/why-golan-is-the-fastest-growing-language-on-github/ (Packt Analysis of Go) https://www.gowitek.com/golang/blog/companies-using-golang (Big Companies using Go) https://github.com/golang/go/wiki/GoUsers (Companies using Go) https://www.quora.com/Other-than-Google-what-companies-are-using-Go-in-production (Other companies using Go) https://github.com/golang/go/wiki/ExperienceReports (User Experience Reports) Go Language Performance https://www.toptal.com/back-end/server-side-io-performance-node-php-java-go (Go vs Node vs PHP vs Java) https://codeburst.io/should-i-rust-or-should-i-go-59a298e00ea9 (Go vs Rust) Type System https://en.wikipedia.org/wiki/Structural_type_system (Structural Type System) https://en.wikipedia.org/wiki/Type_inference (Type Inference) https://en.wikipedia.org/wiki/Strong_and_weak_typing (Strong and Weak typing) https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science) (Type Variance) https://en.wikipedia.org/wiki/Type_system#STATIC (Type System) Go Type System https://rakyll.org/typesystem/ (Go type system) https://bluxte.net/musings/2018/04/10/go-good-bad-ugly/ (Go type system pros vs cons) https://mycodesmells.com/post/accept-interfaces-return-struct-in-go (AIRS motivation) http://www.club.cc.cmu.edu/~cmccabe/blog_golang_type_system.html (Go type system detailed) http://asserttrue.blogspot.com/2009/02/inheritance-as-antipattern.html (Inheritance as Antipattern) https://www.javaworld.com/article/2073649/why-extends-is-evil.html#talkback (Inheritance as Antipattern for Java Developers) https://www.youtube.com/watch?v=5IKcPMJXkKs (Closured as Generics) Go Language Error Handling https://blog.golang.org/error-handling-and-go (Error Handling and Go) https://medium.com/rungo/error-handling-in-go-f0125de052f0 (Error Handling in Go) https://8thlight.com/blog/kyle-krull/2018/08/13/exploring-error-handling-patterns-in-go.html (Error Handling Patters in Go) Programming languages concepts https://en.wikipedia.org/wiki/Zipf%27s_law (Zipf’s Law) https://en.wikipedia.org/wiki/Single_responsibility_principle (Single Responsability Principle) https://medium.com/@rakyll/interface-pollution-in-go-7d58bccec275 (Interface Pollution in go) https://medium.com/@matryer/line-of-sight-in-code-186dd7cdea88 (Line of Sight Rule) https://eli.thegreenplace.net/2011/01/23/how-debuggers-work-part-1 (How debuggers work) https://software.intel.com/en-us/articles/avoiding-and-identifying-false-sharing-among-threads (False Sharing) https://medium.com/@genchilu/whats-false-sharing-and-how-to-solve-it-using-golang-as-example-ef978a305e10 (False Sharing in Go) Creators of the language https://www.google.com/ (Google) https://en.wikipedia.org/wiki/Ken_Thompson (Ken Thompson) https://en.wikipedia.org/wiki/Rob_Pike (Rob Pike) https://channel9.msdn.com/Events/Speakers/Robert-Griesemer (Robert Griesemer) ">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="gows">
+    <meta property="article:published_time" content="2019-11-16T00:00:00+00:00">
+    <meta property="article:modified_time" content="2019-11-16T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Go Workshop 2019 References">
+<meta name="twitter:description" content="Go Language Tutorial
+
+https://golang.org    (official website)
+https://go-tour-ita.appspot.com/welcome/1   (an interactive tour through Go)
+http://www.golangbootcamp.com/    (comprehensive Go tutorial)
+https://blog.golang.org/  (official blog)
+https://golangcode.com/   (a library of useful Go snippets)
+https://golangbot.com/    (tutorials for beginners)
+https://appliedgo.net/    (tutorials and explanations for advanced users)
+https://changelog.com/gotime  (Go podcast)
+https://dave.cheney.net/category/golang   (another blog of Go)
+https://golang.ch/    (Go news, libraries and tutorials)
+https://www.golangprograms.com/   (Go blog and tutorials for mid-advanced users)
+https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3   (clear explanation about Go concurrency)
+https://awesome-go.com/   (a list of Go frameworks and libraries)
+https://medium.com/a-journey-with-go  (tutorials for advanced users)
+https://hub.packtpub.com/concurrency-and-parallelism-in-golang-tutorial/ (a detailed explanation about Go parallelism)
+https://www.airs.com/blog/archives/277 (Go Internals)
+
+Go Language Popularity
+
+https://insights.stackoverflow.com/survey/2019#most-loved-dreaded-and-wanted  (Stack Overflow Developer Survey 2019)
+https://spectrum.ieee.org/computing/software/the-top-programming-languages-2019 (IEEE Rankings 2019)
+https://www.tiobe.com/tiobe-index/go/ (Tiobe index for Go)
+https://hub.packtpub.com/why-golan-is-the-fastest-growing-language-on-github/ (Packt Analysis of Go)
+https://www.gowitek.com/golang/blog/companies-using-golang  (Big Companies using Go)
+https://github.com/golang/go/wiki/GoUsers (Companies using Go)
+https://www.quora.com/Other-than-Google-what-companies-are-using-Go-in-production (Other companies using Go)
+https://github.com/golang/go/wiki/ExperienceReports (User Experience Reports)
+
+Go Language Performance
+
+https://www.toptal.com/back-end/server-side-io-performance-node-php-java-go (Go vs Node vs PHP vs Java)
+https://codeburst.io/should-i-rust-or-should-i-go-59a298e00ea9  (Go vs Rust)
+
+Type System
+
+https://en.wikipedia.org/wiki/Structural_type_system  (Structural Type System)
+https://en.wikipedia.org/wiki/Type_inference  (Type Inference)
+https://en.wikipedia.org/wiki/Strong_and_weak_typing  (Strong and Weak typing)
+https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)  (Type Variance)
+https://en.wikipedia.org/wiki/Type_system#STATIC  (Type System)
+
+Go Type System
+
+https://rakyll.org/typesystem/  (Go type system)
+https://bluxte.net/musings/2018/04/10/go-good-bad-ugly/ (Go type system pros vs cons)
+https://mycodesmells.com/post/accept-interfaces-return-struct-in-go (AIRS motivation)
+http://www.club.cc.cmu.edu/~cmccabe/blog_golang_type_system.html  (Go type system detailed)
+http://asserttrue.blogspot.com/2009/02/inheritance-as-antipattern.html  (Inheritance as Antipattern)
+https://www.javaworld.com/article/2073649/why-extends-is-evil.html#talkback (Inheritance as Antipattern for Java Developers)
+https://www.youtube.com/watch?v=5IKcPMJXkKs (Closured as Generics)
+
+Go Language Error Handling
+
+https://blog.golang.org/error-handling-and-go (Error Handling and Go)
+https://medium.com/rungo/error-handling-in-go-f0125de052f0  (Error Handling in Go)
+https://8thlight.com/blog/kyle-krull/2018/08/13/exploring-error-handling-patterns-in-go.html  (Error Handling Patters in Go)
+
+Programming languages concepts
+
+https://en.wikipedia.org/wiki/Zipf%27s_law (Zipf&rsquo;s Law)
+https://en.wikipedia.org/wiki/Single_responsibility_principle (Single Responsability Principle)
+https://medium.com/@rakyll/interface-pollution-in-go-7d58bccec275 (Interface Pollution in go)
+https://medium.com/@matryer/line-of-sight-in-code-186dd7cdea88 (Line of Sight Rule)
+https://eli.thegreenplace.net/2011/01/23/how-debuggers-work-part-1 (How debuggers work)
+https://software.intel.com/en-us/articles/avoiding-and-identifying-false-sharing-among-threads (False Sharing)
+https://medium.com/@genchilu/whats-false-sharing-and-how-to-solve-it-using-golang-as-example-ef978a305e10 (False Sharing in Go)
+
+Creators of the language
+
+https://www.google.com/ (Google)
+https://en.wikipedia.org/wiki/Ken_Thompson (Ken Thompson)
+https://en.wikipedia.org/wiki/Rob_Pike (Rob Pike)
+https://channel9.msdn.com/Events/Speakers/Robert-Griesemer (Robert Griesemer)
+">
 
 
-    <title>
-        
-            Go Workshop 2019 References :: Dario Di Pasquale 
-        
-    </title>
-
-
-
-<link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.2.1/css/flag-icon.min.css" rel="stylesheet"
-    type="text/css">
-
-
-
-<link rel="stylesheet" href="/main.min.20a7d4b8ac655d149e0825f3d822cf9a9be8be44c6a4d36563f2afa40c939c59.css">
-
-
-
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <meta name="msapplication-TileColor" content="">
-<meta itemprop="name" content="Go Workshop 2019 References">
-<meta itemprop="description" content="Go Language Tutorial https://golang.org (official website) https://go-tour-ita.appspot.com/welcome/1 (an interactive tour through Go) http://www.golangbootcamp.com/ (comprehensive Go tutorial) https://blog.golang.org/ (official blog) https://golangcode.com/ (a library of useful Go snippets) https://golangbot.com/ (tutorials for beginners) https://appliedgo.net/ (tutorials and explanations for advanced users) https://changelog.com/gotime (Go podcast) https://dave.cheney.net/category/golang (another blog of Go) https://golang.ch/ (Go news, libraries and tutorials) https://www.golangprograms.com/ (Go blog and tutorials for mid-advanced users) https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3 (clear explanation about Go concurrency) https://awesome-go.com/ (a list of Go frameworks and libraries) https://medium.">
-
-<meta itemprop="wordCount" content="268"><meta itemprop="image" content="/"/>
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content="/"/>
-
-<meta name="twitter:title" content="Go Workshop 2019 References"/>
-<meta name="twitter:description" content="Go Language Tutorial https://golang.org (official website) https://go-tour-ita.appspot.com/welcome/1 (an interactive tour through Go) http://www.golangbootcamp.com/ (comprehensive Go tutorial) https://blog.golang.org/ (official blog) https://golangcode.com/ (a library of useful Go snippets) https://golangbot.com/ (tutorials for beginners) https://appliedgo.net/ (tutorials and explanations for advanced users) https://changelog.com/gotime (Go podcast) https://dave.cheney.net/category/golang (another blog of Go) https://golang.ch/ (Go news, libraries and tutorials) https://www.golangprograms.com/ (Go blog and tutorials for mid-advanced users) https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3 (clear explanation about Go concurrency) https://awesome-go.com/ (a list of Go frameworks and libraries) https://medium."/>
-
-
-
-
-
-
-
-
-
-
-
-
-<script data-ad-client="ca-pub-3635714416735636" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SRBGH8203N"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SRBGH8203N');
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Gows",
+      "item": "https://dariodip.com/gows/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Go Workshop 2019 References",
+      "item": "https://dariodip.com/gows/goref2019/"
+    }
+  ]
+}
 </script>
-    </head>
-
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Go Workshop 2019 References",
+  "name": "Go Workshop 2019 References",
+  "description": "Go Language Tutorial https://golang.org (official website) https://go-tour-ita.appspot.com/welcome/1 (an interactive tour through Go) http://www.golangbootcamp.com/ (comprehensive Go tutorial) https://blog.golang.org/ (official blog) https://golangcode.com/ (a library of useful Go snippets) https://golangbot.com/ (tutorials for beginners) https://appliedgo.net/ (tutorials and explanations for advanced users) https://changelog.com/gotime (Go podcast) https://dave.cheney.net/category/golang (another blog of Go) https://golang.ch/ (Go news, libraries and tutorials) https://www.golangprograms.com/ (Go blog and tutorials for mid-advanced users) https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3 (clear explanation about Go concurrency) https://awesome-go.com/ (a list of Go frameworks and libraries) https://medium.com/a-journey-with-go (tutorials for advanced users) https://hub.packtpub.com/concurrency-and-parallelism-in-golang-tutorial/ (a detailed explanation about Go parallelism) https://www.airs.com/blog/archives/277 (Go Internals) Go Language Popularity https://insights.stackoverflow.com/survey/2019#most-loved-dreaded-and-wanted (Stack Overflow Developer Survey 2019) https://spectrum.ieee.org/computing/software/the-top-programming-languages-2019 (IEEE Rankings 2019) https://www.tiobe.com/tiobe-index/go/ (Tiobe index for Go) https://hub.packtpub.com/why-golan-is-the-fastest-growing-language-on-github/ (Packt Analysis of Go) https://www.gowitek.com/golang/blog/companies-using-golang (Big Companies using Go) https://github.com/golang/go/wiki/GoUsers (Companies using Go) https://www.quora.com/Other-than-Google-what-companies-are-using-Go-in-production (Other companies using Go) https://github.com/golang/go/wiki/ExperienceReports (User Experience Reports) Go Language Performance https://www.toptal.com/back-end/server-side-io-performance-node-php-java-go (Go vs Node vs PHP vs Java) https://codeburst.io/should-i-rust-or-should-i-go-59a298e00ea9 (Go vs Rust) Type System https://en.wikipedia.org/wiki/Structural_type_system (Structural Type System) https://en.wikipedia.org/wiki/Type_inference (Type Inference) https://en.wikipedia.org/wiki/Strong_and_weak_typing (Strong and Weak typing) https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science) (Type Variance) https://en.wikipedia.org/wiki/Type_system#STATIC (Type System) Go Type System https://rakyll.org/typesystem/ (Go type system) https://bluxte.net/musings/2018/04/10/go-good-bad-ugly/ (Go type system pros vs cons) https://mycodesmells.com/post/accept-interfaces-return-struct-in-go (AIRS motivation) http://www.club.cc.cmu.edu/~cmccabe/blog_golang_type_system.html (Go type system detailed) http://asserttrue.blogspot.com/2009/02/inheritance-as-antipattern.html (Inheritance as Antipattern) https://www.javaworld.com/article/2073649/why-extends-is-evil.html#talkback (Inheritance as Antipattern for Java Developers) https://www.youtube.com/watch?v=5IKcPMJXkKs (Closured as Generics) Go Language Error Handling https://blog.golang.org/error-handling-and-go (Error Handling and Go) https://medium.com/rungo/error-handling-in-go-f0125de052f0 (Error Handling in Go) https://8thlight.com/blog/kyle-krull/2018/08/13/exploring-error-handling-patterns-in-go.html (Error Handling Patters in Go) Programming languages concepts https://en.wikipedia.org/wiki/Zipf%27s_law (Zipf\u0026rsquo;s Law) https://en.wikipedia.org/wiki/Single_responsibility_principle (Single Responsability Principle) https://medium.com/@rakyll/interface-pollution-in-go-7d58bccec275 (Interface Pollution in go) https://medium.com/@matryer/line-of-sight-in-code-186dd7cdea88 (Line of Sight Rule) https://eli.thegreenplace.net/2011/01/23/how-debuggers-work-part-1 (How debuggers work) https://software.intel.com/en-us/articles/avoiding-and-identifying-false-sharing-among-threads (False Sharing) https://medium.com/@genchilu/whats-false-sharing-and-how-to-solve-it-using-golang-as-example-ef978a305e10 (False Sharing in Go) Creators of the language https://www.google.com/ (Google) https://en.wikipedia.org/wiki/Ken_Thompson (Ken Thompson) https://en.wikipedia.org/wiki/Rob_Pike (Rob Pike) https://channel9.msdn.com/Events/Speakers/Robert-Griesemer (Robert Griesemer) ",
+  "keywords": [
     
-        <body>
-    
-    
-        <div class="container">
-            <header class="header">
-    <span class="header__inner">
-        <a href="/" style="text-decoration: none;">
-    <div class="logo">
-        
-            <span class="logo__mark">></span>
-            <span class="logo__text ">
-                cd /home/</span>
-            <span class="logo__cursor" style=
-                  "
-                   
-                   ">
-            </span>
-        
-    </div>
-</a>
-
-
-        <span class="header__right">
-            
-                <nav class="menu">
-    <ul class="menu__inner"><li><a href="/about/">About</a></li><li><a href="/portfolio/">Portfolio</a></li><li><a href="https://dariodip.medium.com/">Blog</a></li>
-    </ul>
-</nav>
-
-                <span class="menu-trigger">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M0 0h24v24H0z" fill="none"/>
-                        <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
-                    </svg>
-                </span>
-            
-        </span>
-    </span>
-</header>
-
-
-            <div class="content">
-                
-    <main class="post">
-
-        <div class="post-info">
-            
-            </p>
+  ],
+  "articleBody": "Go Language Tutorial https://golang.org (official website) https://go-tour-ita.appspot.com/welcome/1 (an interactive tour through Go) http://www.golangbootcamp.com/ (comprehensive Go tutorial) https://blog.golang.org/ (official blog) https://golangcode.com/ (a library of useful Go snippets) https://golangbot.com/ (tutorials for beginners) https://appliedgo.net/ (tutorials and explanations for advanced users) https://changelog.com/gotime (Go podcast) https://dave.cheney.net/category/golang (another blog of Go) https://golang.ch/ (Go news, libraries and tutorials) https://www.golangprograms.com/ (Go blog and tutorials for mid-advanced users) https://medium.com/@trevor4e/learning-gos-concurrency-through-illustrations-8c4aff603b3 (clear explanation about Go concurrency) https://awesome-go.com/ (a list of Go frameworks and libraries) https://medium.com/a-journey-with-go (tutorials for advanced users) https://hub.packtpub.com/concurrency-and-parallelism-in-golang-tutorial/ (a detailed explanation about Go parallelism) https://www.airs.com/blog/archives/277 (Go Internals) Go Language Popularity https://insights.stackoverflow.com/survey/2019#most-loved-dreaded-and-wanted (Stack Overflow Developer Survey 2019) https://spectrum.ieee.org/computing/software/the-top-programming-languages-2019 (IEEE Rankings 2019) https://www.tiobe.com/tiobe-index/go/ (Tiobe index for Go) https://hub.packtpub.com/why-golan-is-the-fastest-growing-language-on-github/ (Packt Analysis of Go) https://www.gowitek.com/golang/blog/companies-using-golang (Big Companies using Go) https://github.com/golang/go/wiki/GoUsers (Companies using Go) https://www.quora.com/Other-than-Google-what-companies-are-using-Go-in-production (Other companies using Go) https://github.com/golang/go/wiki/ExperienceReports (User Experience Reports) Go Language Performance https://www.toptal.com/back-end/server-side-io-performance-node-php-java-go (Go vs Node vs PHP vs Java) https://codeburst.io/should-i-rust-or-should-i-go-59a298e00ea9 (Go vs Rust) Type System https://en.wikipedia.org/wiki/Structural_type_system (Structural Type System) https://en.wikipedia.org/wiki/Type_inference (Type Inference) https://en.wikipedia.org/wiki/Strong_and_weak_typing (Strong and Weak typing) https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science) (Type Variance) https://en.wikipedia.org/wiki/Type_system#STATIC (Type System) Go Type System https://rakyll.org/typesystem/ (Go type system) https://bluxte.net/musings/2018/04/10/go-good-bad-ugly/ (Go type system pros vs cons) https://mycodesmells.com/post/accept-interfaces-return-struct-in-go (AIRS motivation) http://www.club.cc.cmu.edu/~cmccabe/blog_golang_type_system.html (Go type system detailed) http://asserttrue.blogspot.com/2009/02/inheritance-as-antipattern.html (Inheritance as Antipattern) https://www.javaworld.com/article/2073649/why-extends-is-evil.html#talkback (Inheritance as Antipattern for Java Developers) https://www.youtube.com/watch?v=5IKcPMJXkKs (Closured as Generics) Go Language Error Handling https://blog.golang.org/error-handling-and-go (Error Handling and Go) https://medium.com/rungo/error-handling-in-go-f0125de052f0 (Error Handling in Go) https://8thlight.com/blog/kyle-krull/2018/08/13/exploring-error-handling-patterns-in-go.html (Error Handling Patters in Go) Programming languages concepts https://en.wikipedia.org/wiki/Zipf%27s_law (Zipf’s Law) https://en.wikipedia.org/wiki/Single_responsibility_principle (Single Responsability Principle) https://medium.com/@rakyll/interface-pollution-in-go-7d58bccec275 (Interface Pollution in go) https://medium.com/@matryer/line-of-sight-in-code-186dd7cdea88 (Line of Sight Rule) https://eli.thegreenplace.net/2011/01/23/how-debuggers-work-part-1 (How debuggers work) https://software.intel.com/en-us/articles/avoiding-and-identifying-false-sharing-among-threads (False Sharing) https://medium.com/@genchilu/whats-false-sharing-and-how-to-solve-it-using-golang-as-example-ef978a305e10 (False Sharing in Go) Creators of the language https://www.google.com/ (Google) https://en.wikipedia.org/wiki/Ken_Thompson (Ken Thompson) https://en.wikipedia.org/wiki/Rob_Pike (Rob Pike) https://channel9.msdn.com/Events/Speakers/Robert-Griesemer (Robert Griesemer) ",
+  "wordCount" : "268",
+  "inLanguage": "en",
+  "datePublished": "2019-11-16T00:00:00Z",
+  "dateModified": "2019-11-16T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": {"name":"Dario Di Pasquale"}
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://dariodip.com/gows/goref2019/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Dario Di Pasquale",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://dariodip.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+<body id="top">
+    <header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://dariodip.com/" accesskey="h" title="Dario Di Pasquale (Alt + H)">Dario Di Pasquale</a>
+            <div class="logo-switches">
+            </div>
         </div>
+        <ul id="menu">
+            <li>
+                <a href="https://dariodip.com/about/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dariodip.com/portfolio/" title="Portfolio">
+                    <span>Portfolio</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://dariodip.com/posts/" title="Notes">
+                    <span>Notes</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
 
-        <article>
-            <h2 class="post-title"><a href="/gows/goref2019/">Go Workshop 2019 References</a></h2>
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://dariodip.com/">Home</a>&nbsp;»&nbsp;<a href="https://dariodip.com/gows/">Gows</a></div>
+    <h1 class="post-title entry-hint-parent">
+      Go Workshop 2019 References
+    </h1>
+    <div class="post-meta"><span title='2019-11-16 00:00:00 +0000 UTC'>November 16, 2019</span>&nbsp;·&nbsp;<span>2 min</span>&nbsp;·&nbsp;<span>map[name:Dario Di Pasquale]</span>
 
-            
-            
-            
-
-            <div class="post-content">
-                <h3 id="go-language-tutorial">Go Language Tutorial</h3>
+</div>
+  </header> 
+  <div class="post-content"><h3 id="go-language-tutorial">Go Language Tutorial<a hidden class="anchor" aria-hidden="true" href="#go-language-tutorial">#</a></h3>
 <ul>
 <li><a href="https://golang.org">https://golang.org</a>    (official website)</li>
 <li><a href="https://go-tour-ita.appspot.com/welcome/1">https://go-tour-ita.appspot.com/welcome/1</a>   (an interactive tour through Go)</li>
@@ -147,7 +317,7 @@
 <li><a href="https://hub.packtpub.com/concurrency-and-parallelism-in-golang-tutorial/">https://hub.packtpub.com/concurrency-and-parallelism-in-golang-tutorial/</a> (a detailed explanation about Go parallelism)</li>
 <li><a href="https://www.airs.com/blog/archives/277">https://www.airs.com/blog/archives/277</a> (Go Internals)</li>
 </ul>
-<h3 id="go-language-popularity">Go Language Popularity</h3>
+<h3 id="go-language-popularity">Go Language Popularity<a hidden class="anchor" aria-hidden="true" href="#go-language-popularity">#</a></h3>
 <ul>
 <li><a href="https://insights.stackoverflow.com/survey/2019#most-loved-dreaded-and-wanted">https://insights.stackoverflow.com/survey/2019#most-loved-dreaded-and-wanted</a>  (Stack Overflow Developer Survey 2019)</li>
 <li><a href="https://spectrum.ieee.org/computing/software/the-top-programming-languages-2019">https://spectrum.ieee.org/computing/software/the-top-programming-languages-2019</a> (IEEE Rankings 2019)</li>
@@ -158,12 +328,12 @@
 <li><a href="https://www.quora.com/Other-than-Google-what-companies-are-using-Go-in-production">https://www.quora.com/Other-than-Google-what-companies-are-using-Go-in-production</a> (Other companies using Go)</li>
 <li><a href="https://github.com/golang/go/wiki/ExperienceReports">https://github.com/golang/go/wiki/ExperienceReports</a> (User Experience Reports)</li>
 </ul>
-<h3 id="go-language-performance">Go Language Performance</h3>
+<h3 id="go-language-performance">Go Language Performance<a hidden class="anchor" aria-hidden="true" href="#go-language-performance">#</a></h3>
 <ul>
 <li><a href="https://www.toptal.com/back-end/server-side-io-performance-node-php-java-go">https://www.toptal.com/back-end/server-side-io-performance-node-php-java-go</a> (Go vs Node vs PHP vs Java)</li>
 <li><a href="https://codeburst.io/should-i-rust-or-should-i-go-59a298e00ea9">https://codeburst.io/should-i-rust-or-should-i-go-59a298e00ea9</a>  (Go vs Rust)</li>
 </ul>
-<h3 id="type-system">Type System</h3>
+<h3 id="type-system">Type System<a hidden class="anchor" aria-hidden="true" href="#type-system">#</a></h3>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Structural_type_system">https://en.wikipedia.org/wiki/Structural_type_system</a>  (Structural Type System)</li>
 <li><a href="https://en.wikipedia.org/wiki/Type_inference">https://en.wikipedia.org/wiki/Type_inference</a>  (Type Inference)</li>
@@ -171,7 +341,7 @@
 <li><a href="https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)">https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)</a>  (Type Variance)</li>
 <li><a href="https://en.wikipedia.org/wiki/Type_system#STATIC">https://en.wikipedia.org/wiki/Type_system#STATIC</a>  (Type System)</li>
 </ul>
-<h4 id="go-type-system">Go Type System</h4>
+<h4 id="go-type-system">Go Type System<a hidden class="anchor" aria-hidden="true" href="#go-type-system">#</a></h4>
 <ul>
 <li><a href="https://rakyll.org/typesystem/">https://rakyll.org/typesystem/</a>  (Go type system)</li>
 <li><a href="https://bluxte.net/musings/2018/04/10/go-good-bad-ugly/">https://bluxte.net/musings/2018/04/10/go-good-bad-ugly/</a> (Go type system pros vs cons)</li>
@@ -181,13 +351,13 @@
 <li><a href="https://www.javaworld.com/article/2073649/why-extends-is-evil.html#talkback">https://www.javaworld.com/article/2073649/why-extends-is-evil.html#talkback</a> (Inheritance as Antipattern for Java Developers)</li>
 <li><a href="https://www.youtube.com/watch?v=5IKcPMJXkKs">https://www.youtube.com/watch?v=5IKcPMJXkKs</a> (Closured as Generics)</li>
 </ul>
-<h3 id="go-language-error-handling">Go Language Error Handling</h3>
+<h3 id="go-language-error-handling">Go Language Error Handling<a hidden class="anchor" aria-hidden="true" href="#go-language-error-handling">#</a></h3>
 <ul>
 <li><a href="https://blog.golang.org/error-handling-and-go">https://blog.golang.org/error-handling-and-go</a> (Error Handling and Go)</li>
 <li><a href="https://medium.com/rungo/error-handling-in-go-f0125de052f0">https://medium.com/rungo/error-handling-in-go-f0125de052f0</a>  (Error Handling in Go)</li>
 <li><a href="https://8thlight.com/blog/kyle-krull/2018/08/13/exploring-error-handling-patterns-in-go.html">https://8thlight.com/blog/kyle-krull/2018/08/13/exploring-error-handling-patterns-in-go.html</a>  (Error Handling Patters in Go)</li>
 </ul>
-<h3 id="programming-languages-concepts">Programming languages concepts</h3>
+<h3 id="programming-languages-concepts">Programming languages concepts<a hidden class="anchor" aria-hidden="true" href="#programming-languages-concepts">#</a></h3>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Zipf%27s_law">https://en.wikipedia.org/wiki/Zipf%27s_law</a> (Zipf&rsquo;s Law)</li>
 <li><a href="https://en.wikipedia.org/wiki/Single_responsibility_principle">https://en.wikipedia.org/wiki/Single_responsibility_principle</a> (Single Responsability Principle)</li>
@@ -197,7 +367,7 @@
 <li><a href="https://software.intel.com/en-us/articles/avoiding-and-identifying-false-sharing-among-threads">https://software.intel.com/en-us/articles/avoiding-and-identifying-false-sharing-among-threads</a> (False Sharing)</li>
 <li><a href="https://medium.com/@genchilu/whats-false-sharing-and-how-to-solve-it-using-golang-as-example-ef978a305e10">https://medium.com/@genchilu/whats-false-sharing-and-how-to-solve-it-using-golang-as-example-ef978a305e10</a> (False Sharing in Go)</li>
 </ul>
-<h3 id="creators-of-the-language">Creators of the language</h3>
+<h3 id="creators-of-the-language">Creators of the language<a hidden class="anchor" aria-hidden="true" href="#creators-of-the-language">#</a></h3>
 <ul>
 <li><a href="https://www.google.com/">https://www.google.com/</a> (Google)</li>
 <li><a href="https://en.wikipedia.org/wiki/Ken_Thompson">https://en.wikipedia.org/wiki/Ken_Thompson</a> (Ken Thompson)</li>
@@ -205,48 +375,126 @@
 <li><a href="https://channel9.msdn.com/Events/Speakers/Robert-Griesemer">https://channel9.msdn.com/Events/Speakers/Robert-Griesemer</a> (Robert Griesemer)</li>
 </ul>
 
-            </div>
-        </article>
 
-        <hr />
+  </div>
 
-        <div class="post-info">
-            
-            
-  		</div>
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+
+  </footer>
+</article>
     </main>
+    
+<footer class="footer">
+        <span>&copy; 2026 <a href="https://dariodip.com/">Dario Di Pasquale</a></span> · 
 
-            </div>
-
-            
-                <footer class="footer">
-    <div class="footer__inner">
-        <div class="footer__content">
-            <span>&copy; 2025</span>
-            
-                <span><a href="/">Dario Di Pasquale</a></span>
-            
-            <span><a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></span>
-        </div>
-    </div>
-    <div class="footer__inner">
-        <div class="footer__content">
-            <span>Powered by <a href="http://gohugo.io">Hugo</a></span>
-        </div>
-    </div>
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
 </footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
 
-
-            
-        </div>
-
+<script>
+    let menu = document.getElementById('menu');
+    if (menu) {
         
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
 
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
 
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
 
-<script type="text/javascript" src="/bundle.min.205d491810c28f95aa953fae884e1c27abe13fdf93ec63b882d0036b248d4a6282eb2d134e4e7225c6ad6e86db87b08488a361ca4a7383d01fcff43f3d57b9c3.js" integrity="sha512-IF1JGBDCj5WqlT&#43;uiE4cJ6vhP9&#43;T7GO4gtADaySNSmKC6y0TTk5yJcatbobbh7CEiKNhykpzg9Afz/Q/PVe5ww=="></script>
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
 
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
 
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
 
-    </body>
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
 </html>
