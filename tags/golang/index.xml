@@ -6,8 +6,15 @@
     <description>Recent content in Golang on Dario Di Pasquale</description>
     <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jan 2020 17:05:35 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 27 Mar 2021 13:12:37 +0000</lastBuildDate>
     <atom:link href="https://dariodip.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>False Sharing — An example with Go</title>
+      <link>https://dariodip.com/posts/medium/false-sharing-an-example-with-go/</link>
+      <pubDate>Sat, 27 Mar 2021 13:12:37 +0000</pubDate>
+      <guid>https://dariodip.com/posts/medium/false-sharing-an-example-with-go/</guid>
+      <description>False Sharing — An example with Go Diving in multiprocessor programming</description>
+    </item>
     <item>
       <title>Data structures with Go - Part II</title>
       <link>https://dariodip.com/posts/algorithms/a-brief-introduction-to-data-structures-using-go-part-ii/</link>

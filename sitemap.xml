@@ -32,6 +32,24 @@
     <loc>https://dariodip.com/services/</loc>
     <lastmod>2026-02-24T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://dariodip.com/tags/computer-architecture/</loc>
+    <lastmod>2021-03-27T13:12:37+00:00</lastmod>
+  </url><url>
+    <loc>https://dariodip.com/tags/concurrency/</loc>
+    <lastmod>2021-03-27T13:12:37+00:00</lastmod>
+  </url><url>
+    <loc>https://dariodip.com/posts/medium/false-sharing-an-example-with-go/</loc>
+    <lastmod>2021-03-27T13:12:37+00:00</lastmod>
+  </url><url>
+    <loc>https://dariodip.com/tags/golang/</loc>
+    <lastmod>2021-03-27T13:12:37+00:00</lastmod>
+  </url><url>
+    <loc>https://dariodip.com/tags/programming/</loc>
+    <lastmod>2021-03-27T13:12:37+00:00</lastmod>
+  </url><url>
+    <loc>https://dariodip.com/tags/software-development/</loc>
+    <lastmod>2021-03-27T13:12:37+00:00</lastmod>
+  </url><url>
     <loc>https://dariodip.com/tags/books/</loc>
     <lastmod>2021-03-13T16:10:00+00:00</lastmod>
   </url><url>
@@ -75,9 +93,6 @@
     <lastmod>2020-01-10T17:05:35+00:00</lastmod>
   </url><url>
     <loc>https://dariodip.com/tags/go/</loc>
-    <lastmod>2020-01-10T17:05:35+00:00</lastmod>
-  </url><url>
-    <loc>https://dariodip.com/tags/golang/</loc>
     <lastmod>2020-01-10T17:05:35+00:00</lastmod>
   </url><url>
     <loc>https://dariodip.com/posts/algorithms/a-brief-introduction-to-data-structures-using-go/</loc>

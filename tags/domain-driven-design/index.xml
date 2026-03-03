@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Domain-Driven-Design on Dario Di Pasquale</title>
+    <link>http://localhost:1313/tags/domain-driven-design/</link>
+    <description>Recent content in Domain-Driven-Design on Dario Di Pasquale</description>
+    <generator>Hugo -- 0.147.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Oct 2023 17:37:14 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/domain-driven-design/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Entity or Value Object: that is the question</title>
+      <link>http://localhost:1313/posts/medium/entity-or-value-object-that-is-the-question/</link>
+      <pubDate>Tue, 03 Oct 2023 17:37:14 +0000</pubDate>
+      <guid>http://localhost:1313/posts/medium/entity-or-value-object-that-is-the-question/</guid>
+      <description>In Domain-Driven Design DDD, one of the key decisions you’ll encounter is whether a particular concept should be modeled as an Entity or a Value Objecthttps://www.domainl…</description>
+    </item>
+    <item>
+      <title>Introduction to Domain-Driven Design pt. 2: Understanding Complex Domains</title>
+      <link>http://localhost:1313/posts/medium/introduction-to-domain-driven-design-pt.-2-understanding-complex-domains/</link>
+      <pubDate>Thu, 02 Mar 2023 20:36:40 +0000</pubDate>
+      <guid>http://localhost:1313/posts/medium/introduction-to-domain-driven-design-pt.-2-understanding-complex-domains/</guid>
+      <description>Domain-Driven Design DDD is a software development approach that focuses on understanding and modeling the problem domain. In his book “Domain-Driven Design: Tackling Com…</description>
+    </item>
+    <item>
+      <title>Introduction to Domain-Driven Design (DDD)</title>
+      <link>http://localhost:1313/posts/medium/introduction-to-domain-driven-design-ddd/</link>
+      <pubDate>Thu, 19 Jan 2023 19:15:46 +0000</pubDate>
+      <guid>http://localhost:1313/posts/medium/introduction-to-domain-driven-design-ddd/</guid>
+      <description>Designing software nowadays can be such a tough job, we know. Software complexity has raised and it is still raising reaching summits above the havoc. All this wave of fe…</description>
+    </item>
+  </channel>
+</rss>

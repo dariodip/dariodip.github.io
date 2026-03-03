@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Certification on Dario Di Pasquale</title>
+    <link>http://localhost:1313/tags/certification/</link>
+    <description>Recent content in Certification on Dario Di Pasquale</description>
+    <generator>Hugo -- 0.147.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Oct 2023 15:40:39 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/certification/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Prepare for the PSM I using Scrum</title>
+      <link>http://localhost:1313/posts/medium/prepare-for-the-psm-i-using-scrum/</link>
+      <pubDate>Sat, 21 Oct 2023 15:40:39 +0000</pubDate>
+      <guid>http://localhost:1313/posts/medium/prepare-for-the-psm-i-using-scrum/</guid>
+      <description>Introduction In the fast-paced world of project management and software development, staying relevant and competitive requires continuous learning and adaptation. Since S…</description>
+    </item>
+  </channel>
+</rss>

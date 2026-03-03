@@ -82,6 +82,13 @@
 &lt;p&gt;Startup and scale-up teams that need better delivery reliability, stronger engineering structure, and pragmatic architecture decisions.&lt;/p&gt;</description>
     </item>
     <item>
+      <title>False Sharing — An example with Go</title>
+      <link>https://dariodip.com/posts/medium/false-sharing-an-example-with-go/</link>
+      <pubDate>Sat, 27 Mar 2021 13:12:37 +0000</pubDate>
+      <guid>https://dariodip.com/posts/medium/false-sharing-an-example-with-go/</guid>
+      <description>False Sharing — An example with Go Diving in multiprocessor programming</description>
+    </item>
+    <item>
       <title>Books on my journey</title>
       <link>https://dariodip.com/posts/books/a-list-of-books-during-my-journey/</link>
       <pubDate>Sat, 13 Mar 2021 16:10:00 +0000</pubDate>
