@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Rust on Dario Di Pasquale</title>
-    <link>http://localhost:1313/tags/rust/</link>
+    <link>https://dariodip.com/tags/rust/</link>
     <description>Recent content in Rust on Dario Di Pasquale</description>
     <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 31 Jan 2022 18:02:32 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/rust/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://dariodip.com/tags/rust/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rust: fear =&gt; love =&gt; hate =&gt; love =&gt; disillusion</title>
-      <link>http://localhost:1313/posts/medium/rust-fear-love-hate-love-disillusion/</link>
+      <link>https://dariodip.com/posts/medium/rust-fear-love-hate-love-disillusion/</link>
       <pubDate>Mon, 31 Jan 2022 18:02:32 +0000</pubDate>
-      <guid>http://localhost:1313/posts/medium/rust-fear-love-hate-love-disillusion/</guid>
-      <description>My journey through Rusthttps://www.rust-lang.org/ was very tortuous and tormented. During this article, I want to retrace my steps towards the discovery of that amazing p…</description>
+      <guid>https://dariodip.com/posts/medium/rust-fear-love-hate-love-disillusion/</guid>
+      <description>My journey through Rusthttps://www.rust-lang.org/ was very tortuous and tormented. During this article, I want to retrace my steps towards the discovery of that language</description>
     </item>
   </channel>
 </rss>

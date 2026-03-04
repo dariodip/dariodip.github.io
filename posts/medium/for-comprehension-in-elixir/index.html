@@ -7,10 +7,10 @@
 <meta name="robots" content="index, follow">
 <title>For comprehension in Elixir | Dario Di Pasquale</title>
 <meta name="keywords" content="elixir, programming, coding, functional-programming, software-development">
-<meta name="description" content="The for comprehension is a powerful language construct in Elixir that allows developers to express complex iterations and conditional logic in a declarative way. It is qu…">
+<meta name="description" content="The for comprehension is a powerful language construct in Elixir that allows developers to express complex iterations and conditional logic in a declarative way.">
 <meta name="author" content="Dario Di Pasquale">
 <link rel="canonical" href="http://localhost:1313/posts/medium/for-comprehension-in-elixir/">
-<link crossorigin="anonymous" href="http://localhost:1313/assets/css/stylesheet.bb7f6478ba46d26b0f1f3447787b7e671e6444b826d19a0ca5fcd12b6444d016.css" integrity="sha256-u39keLpG0msPHzRHeHt&#43;Zx5kRLgm0ZoMpfzRK2RE0BY=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="http://localhost:1313/assets/css/stylesheet.cf623e2df646bb0c75f001c0a36523c17e59f3e58c1fdfd2040ba49e2e101e08.css" integrity="sha256-z2I&#43;LfZGuwx18AHAo2UjwX5Z8&#43;WMH9/SBAukni4QHgg=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/favicon-32x32.png">
@@ -44,7 +44,7 @@
       </script><meta property="og:url" content="http://localhost:1313/posts/medium/for-comprehension-in-elixir/">
   <meta property="og:site_name" content="Dario Di Pasquale">
   <meta property="og:title" content="For comprehension in Elixir">
-  <meta property="og:description" content="The for comprehension is a powerful language construct in Elixir that allows developers to express complex iterations and conditional logic in a declarative way. It is qu…">
+  <meta property="og:description" content="The for comprehension is a powerful language construct in Elixir that allows developers to express complex iterations and conditional logic in a declarative way.">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -57,7 +57,7 @@
     <meta property="article:tag" content="Software-Development">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="For comprehension in Elixir">
-<meta name="twitter:description" content="The for comprehension is a powerful language construct in Elixir that allows developers to express complex iterations and conditional logic in a declarative way. It is qu…">
+<meta name="twitter:description" content="The for comprehension is a powerful language construct in Elixir that allows developers to express complex iterations and conditional logic in a declarative way.">
 
 
 <script type="application/ld+json">
@@ -86,7 +86,7 @@
   "@type": "BlogPosting",
   "headline": "For comprehension in Elixir",
   "name": "For comprehension in Elixir",
-  "description": "The for comprehension is a powerful language construct in Elixir that allows developers to express complex iterations and conditional logic in a declarative way. It is qu…",
+  "description": "The for comprehension is a powerful language construct in Elixir that allows developers to express complex iterations and conditional logic in a declarative way.",
   "keywords": [
     "elixir", "programming", "coding", "functional-programming", "software-development"
   ],
@@ -138,6 +138,11 @@
                     <span>Notes</span>
                 </a>
             </li>
+            <li>
+                <a href="http://localhost:1313/quick-thoughts/" title="Quick Thoughts">
+                    <span>Quick Thoughts</span>
+                </a>
+            </li>
         </ul>
     </nav>
 </header>
@@ -148,18 +153,25 @@
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/posts/">Posts</a></div>
     <h1 class="post-title entry-hint-parent">
       For comprehension in Elixir
+      <span class="entry-hint" title="Draft">
+        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+          <path
+            d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+        </svg>
+      </span>
     </h1>
     <div class="post-description">
-      The for comprehension is a powerful language construct in Elixir that allows developers to express complex iterations and conditional logic in a declarative way. It is qu…
+      The for comprehension is a powerful language construct in Elixir that allows developers to express complex iterations and conditional logic in a declarative way.
     </div>
     <div class="post-meta"><span title='2022-12-21 19:11:24 +0000 UTC'>December 21, 2022</span>&nbsp;·&nbsp;<span>3 min</span>&nbsp;·&nbsp;<span>Dario Di Pasquale</span>
 
 </div>
   </header> 
   <div class="post-content"><p><em>Originally published on Medium: <a href="https://dariodip.medium.com/for-comprehension-in-elixir-e376e94bd29c">https://dariodip.medium.com/for-comprehension-in-elixir-e376e94bd29c</a></em></p>
-<p>The for comprehension is a powerful language construct in Elixir that allows developers to express complex iterations and conditional logic in a declarative way. It is quite similar to the for loop of other programming languages, but with more functionality and more concise syntax. It is used to filter and transform collections of data and can be used as an alternative to recursive functions or nested Enum functions. Personally, I find it very interesting and readable given its declarative nature.</p>
-<p>At a high level, a for comprehension consists of a sequence of generators, filters, and collectors. Each generator represents a sequence of values, and the comprehension iterates over these sequences in a nested way. Filters allow you to specify conditions that must be met for a value to be included in the final result. If the condition of the filter evaluates to true, the value is passed to the collector. Lastly, collectors specify how the values should be combined and transformed.</p>
+<p>The <strong>for comprehension</strong> is a powerful language construct in Elixir that allows developers to express complex iterations and conditional logic in a declarative way. It is quite similar to the for loop of other programming languages, but with more functionality and more concise syntax. It is used to filter and transform collections of data and can be used as an alternative to recursive functions or nested Enum functions. Personally, I find it very interesting and readable given its declarative nature.</p>
+<p>At a high level, a <strong>for comprehension</strong> consists of a sequence of generators, filters, and collectors. Each generator represents a sequence of values, and the comprehension iterates over these sequences in a nested way. Filters allow you to specify conditions that must be met for a value to be included in the final result. If the condition of the filter evaluates to true, the value is passed to the collector. Lastly, collectors specify how the values should be combined and transformed.</p>
 <p>Here is the basic pipeline that shows that a value gets generated from the generator, filtered by the filter and, eventually, collected by the collector.</p>
+<p><img alt="For comprehension pipeline" loading="lazy" src="https://cdn.jsdelivr.net/gh/dariodip/dariodip.github.io-source@main/assets/images/for-comprehension-pipeline.png"></p>
 <p>Here is a basic example of a for comprehension that filters a list of numbers to only include even numbers:</p>
 <p>In this example, the generator is n &lt;- numbers, which specifies that the for comprehension will iterate over the numbers list. The filter is n rem 2 == 0, which specifies that the comprehension will only include elements n for which the remainder when n is divided by 2 is equal to 0. The do: keyword specifies the transformation that should be applied to each element that satisfies the filter. In this case, the transformation is the <a href="https://en.wikipedia.org/wiki/Identity_function">identity function</a>, so the element is returned unchanged.</p>
 <p>It’s also possible to specify multiple generators in a single for comprehension. In this case, the comprehension will iterate over the <a href="https://en.wikipedia.org/wiki/Cartesian_product">Cartesian product</a> of the generators. In the following example we use two generators:</p>

@@ -2,24 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Software-Design on Dario Di Pasquale</title>
-    <link>http://localhost:1313/tags/software-design/</link>
+    <link>https://dariodip.com/tags/software-design/</link>
     <description>Recent content in Software-Design on Dario Di Pasquale</description>
     <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 03 Oct 2023 17:37:14 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/software-design/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Entity or Value Object: that is the question</title>
-      <link>http://localhost:1313/posts/medium/entity-or-value-object-that-is-the-question/</link>
-      <pubDate>Tue, 03 Oct 2023 17:37:14 +0000</pubDate>
-      <guid>http://localhost:1313/posts/medium/entity-or-value-object-that-is-the-question/</guid>
-      <description>In Domain-Driven Design DDD, one of the key decisions you’ll encounter is whether a particular concept should be modeled as an Entity or a Value Objecthttps://www.domainl…</description>
-    </item>
+    <lastBuildDate>Thu, 19 Jan 2023 19:15:46 +0000</lastBuildDate>
+    <atom:link href="https://dariodip.com/tags/software-design/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introduction to Domain-Driven Design (DDD)</title>
-      <link>http://localhost:1313/posts/medium/introduction-to-domain-driven-design-ddd/</link>
+      <link>https://dariodip.com/posts/medium/introduction-to-domain-driven-design-ddd/</link>
       <pubDate>Thu, 19 Jan 2023 19:15:46 +0000</pubDate>
-      <guid>http://localhost:1313/posts/medium/introduction-to-domain-driven-design-ddd/</guid>
+      <guid>https://dariodip.com/posts/medium/introduction-to-domain-driven-design-ddd/</guid>
       <description>Designing software nowadays can be such a tough job, we know. Software complexity has raised and it is still raising reaching summits above the havoc. All this wave of fe…</description>
     </item>
   </channel>

@@ -16,6 +16,48 @@
       <description>Stop Building Everything, Start Building This: The Power of the MVP</description>
     </item>
     <item>
+      <title>Prepare for the PSM I using Scrum</title>
+      <link>https://dariodip.com/posts/medium/prepare-for-the-psm-i-using-scrum/</link>
+      <pubDate>Sat, 21 Oct 2023 15:40:39 +0000</pubDate>
+      <guid>https://dariodip.com/posts/medium/prepare-for-the-psm-i-using-scrum/</guid>
+      <description>Introduction In the fast-paced world of project management and software development, staying relevant and competitive requires continuous learning and adaptation.</description>
+    </item>
+    <item>
+      <title>Introduction to Domain-Driven Design (DDD)</title>
+      <link>https://dariodip.com/posts/medium/introduction-to-domain-driven-design-ddd/</link>
+      <pubDate>Thu, 19 Jan 2023 19:15:46 +0000</pubDate>
+      <guid>https://dariodip.com/posts/medium/introduction-to-domain-driven-design-ddd/</guid>
+      <description>Designing software nowadays can be such a tough job, we know. Software complexity has raised and it is still raising reaching summits above the havoc. All this wave of fe…</description>
+    </item>
+    <item>
+      <title>Rust: fear =&gt; love =&gt; hate =&gt; love =&gt; disillusion</title>
+      <link>https://dariodip.com/posts/medium/rust-fear-love-hate-love-disillusion/</link>
+      <pubDate>Mon, 31 Jan 2022 18:02:32 +0000</pubDate>
+      <guid>https://dariodip.com/posts/medium/rust-fear-love-hate-love-disillusion/</guid>
+      <description>My journey through Rusthttps://www.rust-lang.org/ was very tortuous and tormented. During this article, I want to retrace my steps towards the discovery of that language</description>
+    </item>
+    <item>
+      <title>Find duplicates using Python</title>
+      <link>https://dariodip.com/posts/medium/find-duplicates-using-python/</link>
+      <pubDate>Wed, 19 Jan 2022 17:01:13 +0000</pubDate>
+      <guid>https://dariodip.com/posts/medium/find-duplicates-using-python/</guid>
+      <description>The exercise of finding duplicates in a list is a classical example of a didactic problem that you may find during your journey through learning algorithms.</description>
+    </item>
+    <item>
+      <title>Understanding Linux Containers: explore User Space, cgroups and Namespaces</title>
+      <link>https://dariodip.com/posts/medium/understanding-linux-containers-explore-user-space-cgroups-and-namespaces/</link>
+      <pubDate>Sat, 10 Apr 2021 09:57:49 +0000</pubDate>
+      <guid>https://dariodip.com/posts/medium/understanding-linux-containers-explore-user-space-cgroups-and-namespaces/</guid>
+      <description>What is a container? Actually, it is not a real thing. In this post, I will try to explain what containers are and how they work, decomposing them and understanding their…</description>
+    </item>
+    <item>
+      <title>//go:embed unleashed</title>
+      <link>https://dariodip.com/posts/medium/goembed-unleashed/</link>
+      <pubDate>Sat, 03 Apr 2021 08:38:00 +0000</pubDate>
+      <guid>https://dariodip.com/posts/medium/goembed-unleashed/</guid>
+      <description>One of the reasons why I love Go is that Go compiler creates static binaries by default.</description>
+    </item>
+    <item>
       <title>False Sharing — An example with Go</title>
       <link>https://dariodip.com/posts/medium/false-sharing-an-example-with-go/</link>
       <pubDate>Sat, 27 Mar 2021 13:12:37 +0000</pubDate>

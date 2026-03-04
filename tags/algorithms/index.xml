@@ -6,8 +6,15 @@
     <description>Recent content in Algorithms on Dario Di Pasquale</description>
     <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 10 Jan 2020 17:05:35 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 19 Jan 2022 17:01:13 +0000</lastBuildDate>
     <atom:link href="https://dariodip.com/tags/algorithms/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Find duplicates using Python</title>
+      <link>https://dariodip.com/posts/medium/find-duplicates-using-python/</link>
+      <pubDate>Wed, 19 Jan 2022 17:01:13 +0000</pubDate>
+      <guid>https://dariodip.com/posts/medium/find-duplicates-using-python/</guid>
+      <description>The exercise of finding duplicates in a list is a classical example of a didactic problem that you may find during your journey through learning algorithms.</description>
+    </item>
     <item>
       <title>Data structures with Go - Part II</title>
       <link>https://dariodip.com/posts/algorithms/a-brief-introduction-to-data-structures-using-go-part-ii/</link>

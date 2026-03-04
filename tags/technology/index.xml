@@ -2,39 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Technology on Dario Di Pasquale</title>
-    <link>http://localhost:1313/tags/technology/</link>
+    <link>https://dariodip.com/tags/technology/</link>
     <description>Recent content in Technology on Dario Di Pasquale</description>
     <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 31 Jan 2022 18:02:32 +0000</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/technology/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://dariodip.com/tags/technology/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Rust: fear =&gt; love =&gt; hate =&gt; love =&gt; disillusion</title>
-      <link>http://localhost:1313/posts/medium/rust-fear-love-hate-love-disillusion/</link>
+      <link>https://dariodip.com/posts/medium/rust-fear-love-hate-love-disillusion/</link>
       <pubDate>Mon, 31 Jan 2022 18:02:32 +0000</pubDate>
-      <guid>http://localhost:1313/posts/medium/rust-fear-love-hate-love-disillusion/</guid>
-      <description>My journey through Rusthttps://www.rust-lang.org/ was very tortuous and tormented. During this article, I want to retrace my steps towards the discovery of that amazing p…</description>
+      <guid>https://dariodip.com/posts/medium/rust-fear-love-hate-love-disillusion/</guid>
+      <description>My journey through Rusthttps://www.rust-lang.org/ was very tortuous and tormented. During this article, I want to retrace my steps towards the discovery of that language</description>
     </item>
     <item>
       <title>Find duplicates using Python</title>
-      <link>http://localhost:1313/posts/medium/find-duplicates-using-python/</link>
+      <link>https://dariodip.com/posts/medium/find-duplicates-using-python/</link>
       <pubDate>Wed, 19 Jan 2022 17:01:13 +0000</pubDate>
-      <guid>http://localhost:1313/posts/medium/find-duplicates-using-python/</guid>
-      <description>The exercise of finding duplicates in a list is a classical example of a didactic problem that you may find during your journey through learning algorithms. During this p…</description>
+      <guid>https://dariodip.com/posts/medium/find-duplicates-using-python/</guid>
+      <description>The exercise of finding duplicates in a list is a classical example of a didactic problem that you may find during your journey through learning algorithms.</description>
     </item>
     <item>
       <title>Understanding Linux Containers: explore User Space, cgroups and Namespaces</title>
-      <link>http://localhost:1313/posts/medium/understanding-linux-containers-explore-user-space-cgroups-and-namespaces/</link>
+      <link>https://dariodip.com/posts/medium/understanding-linux-containers-explore-user-space-cgroups-and-namespaces/</link>
       <pubDate>Sat, 10 Apr 2021 09:57:49 +0000</pubDate>
-      <guid>http://localhost:1313/posts/medium/understanding-linux-containers-explore-user-space-cgroups-and-namespaces/</guid>
+      <guid>https://dariodip.com/posts/medium/understanding-linux-containers-explore-user-space-cgroups-and-namespaces/</guid>
       <description>What is a container? Actually, it is not a real thing. In this post, I will try to explain what containers are and how they work, decomposing them and understanding their…</description>
     </item>
     <item>
       <title>//go:embed unleashed</title>
-      <link>http://localhost:1313/posts/medium/goembed-unleashed/</link>
+      <link>https://dariodip.com/posts/medium/goembed-unleashed/</link>
       <pubDate>Sat, 03 Apr 2021 08:38:00 +0000</pubDate>
-      <guid>http://localhost:1313/posts/medium/goembed-unleashed/</guid>
-      <description>One of the reasons why I love Go is that Go compiler creates static binaries by default unless you use cgohttps://golang.org/pkg/cmd/cgo/ to call C code, in which case it…</description>
+      <guid>https://dariodip.com/posts/medium/goembed-unleashed/</guid>
+      <description>One of the reasons why I love Go is that Go compiler creates static binaries by default.</description>
     </item>
   </channel>
 </rss>

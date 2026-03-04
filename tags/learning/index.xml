@@ -6,8 +6,15 @@
     <description>Recent content in Learning on Dario Di Pasquale</description>
     <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 13 Mar 2021 16:10:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 03 Apr 2021 08:38:00 +0000</lastBuildDate>
     <atom:link href="https://dariodip.com/tags/learning/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>//go:embed unleashed</title>
+      <link>https://dariodip.com/posts/medium/goembed-unleashed/</link>
+      <pubDate>Sat, 03 Apr 2021 08:38:00 +0000</pubDate>
+      <guid>https://dariodip.com/posts/medium/goembed-unleashed/</guid>
+      <description>One of the reasons why I love Go is that Go compiler creates static binaries by default.</description>
+    </item>
     <item>
       <title>Books on my journey</title>
       <link>https://dariodip.com/posts/books/a-list-of-books-during-my-journey/</link>
