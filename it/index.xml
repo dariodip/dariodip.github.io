@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Home on Dario Di Pasquale</title>
+    <link>https://dariodip.com/it/</link>
+    <description>Recent content in Home on Dario Di Pasquale</description>
+    <generator>Hugo -- 0.147.2</generator>
+    <language>it-it</language>
+    <lastBuildDate>Tue, 24 Feb 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://dariodip.com/it/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chi sono</title>
+      <link>https://dariodip.com/it/about/</link>
+      <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://dariodip.com/it/about/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Dario Di Pasquale&#34; loading=&#34;lazy&#34; src=&#34;https://dariodip.com/media/profile/dario-main-portrait.jpg&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Sono un Engineering Manager con una forte base di software engineering su sistemi distribuiti, execution della delivery e architetture.&lt;/p&gt;
+&lt;p&gt;Oggi guido un team nell’area Claims in Prima, dove ho costruito e scalato team su iniziative di Data Management e Machine Learning. Il mio lavoro è all’incrocio tra leadership tecnica, delivery di prodotto e qualità di esecuzione.&lt;/p&gt;
+&lt;h2 id=&#34;su-cosa-mi-concentro&#34;&gt;Su cosa mi concentro&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Costruire team di engineering che consegnano in modo prevedibile&lt;/li&gt;
+&lt;li&gt;Trasformare le decisioni architetturali in outcome misurabili&lt;/li&gt;
+&lt;li&gt;Disegnare sistemi manutenibili, scalabili e stabili operativamente&lt;/li&gt;
+&lt;li&gt;Far crescere ingegneri e nuovi leader tecnici&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;stile-operativo&#34;&gt;Stile operativo&lt;/h2&gt;
+&lt;p&gt;Punto ai &lt;strong&gt;risultati&lt;/strong&gt;, non all’&lt;strong&gt;hype&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Portfolio</title>
+      <link>https://dariodip.com/it/portfolio/</link>
+      <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://dariodip.com/it/portfolio/</guid>
+      <description>&lt;h2 id=&#34;esperienze-selezionate&#34;&gt;Esperienze selezionate&lt;/h2&gt;
+&lt;h3 id=&#34;prima-assicurazioni--engineering-manager-2023oggi&#34;&gt;Prima Assicurazioni — Engineering Manager (2023–oggi)&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Contesto:&lt;/strong&gt; dominio claims, ambiente data-intensive, alta criticità operativa.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Ho costruito e guidato il team Claims Data Management in setup greenfield&lt;/li&gt;
+&lt;li&gt;Ho introdotto e scalato un approccio Data Mesh per i data product di dominio&lt;/li&gt;
+&lt;li&gt;Ho collaborato con Data Governance sulla strategia dati aziendale&lt;/li&gt;
+&lt;li&gt;Ho evoluto l’iniziativa Claims Antifraud in uno scope più ampio di Claims Machine Learning&lt;/li&gt;
+&lt;li&gt;Ho fatto mentoring e sviluppo leadership interna, inclusi percorsi verso ruoli da Engineering Manager&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Focus:&lt;/strong&gt; design dei team, execution della delivery, decisioni architetturali, modello Agile/Scrum.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Servizi</title>
+      <link>https://dariodip.com/it/services/</link>
+      <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
+      <guid>https://dariodip.com/it/services/</guid>
+      <description>&lt;p&gt;Aiuto team engineering B2B SaaS a migliorare la prevedibilità della delivery, senza hype architetturale.&lt;/p&gt;
+&lt;h2 id=&#34;focus-principale&#34;&gt;Focus principale&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Riduzione dell’instabilità in produzione e dei bug critici ricorrenti&lt;/li&gt;
+&lt;li&gt;Miglioramento della prevedibilità sprint e disciplina di execution&lt;/li&gt;
+&lt;li&gt;Rafforzamento della leadership tecnica e dell’ownership ingegneristica&lt;/li&gt;
+&lt;li&gt;Processi di rilascio espliciti, ripetibili e misurabili&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;modello-di-collaborazione&#34;&gt;Modello di collaborazione&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Fractional Technical Lead + Senior Implementation Partner&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Audit tecnico iniziale&lt;/li&gt;
+&lt;li&gt;Roadmap ingegneristica a 90 giorni&lt;/li&gt;
+&lt;li&gt;Setup processo delivery (review/release discipline, pratiche CI/CD)&lt;/li&gt;
+&lt;li&gt;Implementazione hands-on su componenti core (Python/Elixir)&lt;/li&gt;
+&lt;li&gt;Mentoring per ingegneri interni e nuovi leader tecnici&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;outcome-tipici-in-90-giorni&#34;&gt;Outcome tipici in 90 giorni&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Meno difetti critici in produzione&lt;/li&gt;
+&lt;li&gt;Throughput sprint più stabile e meno sorprese in delivery&lt;/li&gt;
+&lt;li&gt;Ownership più chiara e decisioni tecniche più solide&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;per-chi-è&#34;&gt;Per chi è&lt;/h2&gt;
+&lt;p&gt;Team startup/scale-up che vogliono maggiore affidabilità in delivery, struttura engineering più forte e decisioni architetturali pragmatiche.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -121,6 +121,12 @@
         <div class="logo">
             <a href="https://dariodip.com/" accesskey="h" title="Dario Di Pasquale (Alt + H)">Dario Di Pasquale</a>
             <div class="logo-switches">
+                    <ul class="lang-switch"><li>|</li>
+                        <li>
+                            <a href="https://dariodip.com/it/" title="Italiano"
+                                aria-label="Italiano">It</a>
+                        </li>
+                    </ul>
             </div>
         </div>
         <ul id="menu">
@@ -172,7 +178,7 @@
 <p>None of those structures is thread-safe. We will make them <em>thread-safe</em> in future posts (I wish).</p>
 <p>Let&rsquo;s start by describing the most general one: the <strong>graph</strong>.</p>
 <h3 id="graph">Graph<a hidden class="anchor" aria-hidden="true" href="#graph">#</a></h3>
-<p>According to <a href="https://en.wikipedia.org/wiki/Graph_(abstract_data_type)">Wikipedia</a>:</p>
+<p>According to <a href="https://en.wikipedia.org/wiki/Graph_%28abstract_data_type%29">Wikipedia</a>:</p>
 <blockquote>
 <p>A graph data structure consists of a finite (and possibly mutable) set of vertices (also called nodes or points), together with a set of unordered pairs of these vertices for an undirected graph or a set of ordered pairs for a directed graph. These pairs are known as edges (also called links or lines), and for a directed graph are also known as arrows. The vertices may be part of the graph structure or may be external entities represented by integer indices or references.</p></blockquote>
 <p>So a <em>graph</em> is be a set $$G = (V,E)$$, where $$V$$ is a set of <em>vertex</em> (or <em>nodes</em>) and $$E$$ is a set of <em>edges</em>. We will focus on the undirected graph, but creating a directed graph from an undirected one is quite easy.</p>
@@ -261,7 +267,7 @@ c -&gt; [ a d ]
 d -&gt; [ c e ]
 e -&gt; [ a d ]
 </code></pre><h3 id="tree">Tree<a hidden class="anchor" aria-hidden="true" href="#tree">#</a></h3>
-<p>According to <a href="https://en.wikipedia.org/wiki/Tree_(graph_theory)">Wikipedia</a>:</p>
+<p>According to <a href="https://en.wikipedia.org/wiki/Tree_%28graph_theory%29">Wikipedia</a>:</p>
 <blockquote>
 <p>In graph theory, a tree is an undirected graph in which any two vertices are connected by exactly one path, or equivalently a connected acyclic undirected graph. A forest is an undirected graph in which any two vertices are connected by at most one path, or equivalently an acyclic undirected graph, or equivalently a disjoint union of trees.</p></blockquote>
 <p>Generally speaking, a <em>tree</em> is a <em>graph</em> without cycles on which we could define a <em>parent-children</em> relationship.</p>
