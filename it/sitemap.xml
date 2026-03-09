@@ -66,6 +66,18 @@
                 href="https://dariodip.com/it/categories/"
                 />
   </url><url>
+    <loc>https://dariodip.com/it/posts/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://dariodip.com/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="it-it"
+                href="https://dariodip.com/it/posts/"
+                />
+  </url><url>
     <loc>https://dariodip.com/it/quick-thoughts/</loc>
     <xhtml:link
                 rel="alternate"

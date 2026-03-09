@@ -42,6 +42,16 @@
   </url><url>
     <loc>https://dariodip.com/posts/</loc>
     <lastmod>2026-03-02T16:10:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it-it"
+                href="https://dariodip.com/it/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://dariodip.com/posts/"
+                />
   </url><url>
     <loc>https://dariodip.com/tags/product/</loc>
     <lastmod>2026-03-02T16:10:00+00:00</lastmod>
