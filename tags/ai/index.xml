@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Ai on Dario Di Pasquale</title>
+    <link>http://localhost:1313/tags/ai/</link>
+    <description>Recent content in Ai on Dario Di Pasquale</description>
+    <generator>Hugo -- 0.147.2</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 12 Mar 2026 07:10:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/ai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How I Work With My AI Team (Roles, Models, Process, and a Real Example)</title>
+      <link>http://localhost:1313/posts/product/how-i-work-with-my-ai-team/</link>
+      <pubDate>Thu, 12 Mar 2026 07:10:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/product/how-i-work-with-my-ai-team/</guid>
+      <description>A practical breakdown of how I work with my AI team, which models each role uses, and how we solve real problems together.</description>
+    </item>
+  </channel>
+</rss>

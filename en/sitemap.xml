@@ -2,11 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://dariodip.com/quick-thoughts/2-thought/</loc>
-    <lastmod>2026-03-04T16:56:41+01:00</lastmod>
-  </url><url>
     <loc>https://dariodip.com/</loc>
-    <lastmod>2026-03-04T16:56:41+01:00</lastmod>
+    <lastmod>2026-03-12T07:10:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
@@ -17,6 +14,22 @@
                 hreflang="en-us"
                 href="https://dariodip.com/"
                 />
+  </url><url>
+    <loc>https://dariodip.com/posts/</loc>
+    <lastmod>2026-03-12T07:10:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it-it"
+                href="https://dariodip.com/it/posts/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="https://dariodip.com/posts/"
+                />
+  </url><url>
+    <loc>https://dariodip.com/quick-thoughts/2-thought/</loc>
+    <lastmod>2026-03-04T16:56:41+01:00</lastmod>
   </url><url>
     <loc>https://dariodip.com/quick-thoughts/</loc>
     <lastmod>2026-03-04T16:56:41+01:00</lastmod>
@@ -39,19 +52,6 @@
   </url><url>
     <loc>https://dariodip.com/tags/mvp/</loc>
     <lastmod>2026-03-02T16:10:00+00:00</lastmod>
-  </url><url>
-    <loc>https://dariodip.com/posts/</loc>
-    <lastmod>2026-03-02T16:10:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it-it"
-                href="https://dariodip.com/it/posts/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://dariodip.com/posts/"
-                />
   </url><url>
     <loc>https://dariodip.com/tags/product/</loc>
     <lastmod>2026-03-02T16:10:00+00:00</lastmod>
