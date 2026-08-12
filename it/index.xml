@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Home on Dario Di Pasquale</title>
-    <link>https://dariodip.com/it/</link>
+    <link>http://localhost:1313/it/</link>
     <description>Recent content in Home on Dario Di Pasquale</description>
     <generator>Hugo -- 0.147.2</generator>
     <language>it-it</language>
     <lastBuildDate>Tue, 24 Feb 2026 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://dariodip.com/it/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/it/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Chi sono</title>
-      <link>https://dariodip.com/it/about/</link>
+      <link>http://localhost:1313/it/about/</link>
       <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://dariodip.com/it/about/</guid>
-      <description>&lt;p&gt;&lt;img alt=&#34;Dario Di Pasquale&#34; loading=&#34;lazy&#34; src=&#34;https://dariodip.com/media/profile/dario-main-portrait.jpg&#34;&gt;&lt;/p&gt;
+      <guid>http://localhost:1313/it/about/</guid>
+      <description>&lt;p&gt;&lt;img alt=&#34;Dario Di Pasquale&#34; loading=&#34;lazy&#34; src=&#34;http://localhost:1313/media/profile/dario-main-portrait.jpg&#34;&gt;&lt;/p&gt;
 &lt;p&gt;Sono un Engineering Manager con una forte base di software engineering su sistemi distribuiti, execution della delivery e architetture.&lt;/p&gt;
 &lt;p&gt;Oggi guido un team nell’area Claims in Prima, dove ho costruito e scalato team su iniziative di Data Management e Machine Learning. Il mio lavoro è all’incrocio tra leadership tecnica, delivery di prodotto e qualità di esecuzione.&lt;/p&gt;
 &lt;h2 id=&#34;su-cosa-mi-concentro&#34;&gt;Su cosa mi concentro&lt;/h2&gt;
@@ -28,9 +28,9 @@
     </item>
     <item>
       <title>Portfolio</title>
-      <link>https://dariodip.com/it/portfolio/</link>
+      <link>http://localhost:1313/it/portfolio/</link>
       <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://dariodip.com/it/portfolio/</guid>
+      <guid>http://localhost:1313/it/portfolio/</guid>
       <description>&lt;h2 id=&#34;esperienze-selezionate&#34;&gt;Esperienze selezionate&lt;/h2&gt;
 &lt;h3 id=&#34;prima-assicurazioni--engineering-manager-2023oggi&#34;&gt;Prima Assicurazioni — Engineering Manager (2023–oggi)&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Contesto:&lt;/strong&gt; dominio claims, ambiente data-intensive, alta criticità operativa.&lt;/p&gt;
@@ -45,9 +45,9 @@
     </item>
     <item>
       <title>Servizi</title>
-      <link>https://dariodip.com/it/services/</link>
+      <link>http://localhost:1313/it/services/</link>
       <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
-      <guid>https://dariodip.com/it/services/</guid>
+      <guid>http://localhost:1313/it/services/</guid>
       <description>&lt;p&gt;Aiuto team engineering B2B SaaS a migliorare la prevedibilità della delivery, senza hype architetturale.&lt;/p&gt;
 &lt;h2 id=&#34;focus-principale&#34;&gt;Focus principale&lt;/h2&gt;
 &lt;ul&gt;

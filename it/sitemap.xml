@@ -2,104 +2,104 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://dariodip.com/it/about/</loc>
+    <loc>http://localhost:1313/it/about/</loc>
     <lastmod>2026-02-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://dariodip.com/about/"
+                href="http://localhost:1313/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="https://dariodip.com/it/about/"
+                href="http://localhost:1313/it/about/"
                 />
   </url><url>
-    <loc>https://dariodip.com/it/</loc>
+    <loc>http://localhost:1313/it/</loc>
     <lastmod>2026-02-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://dariodip.com/"
+                href="http://localhost:1313/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="https://dariodip.com/it/"
+                href="http://localhost:1313/it/"
                 />
   </url><url>
-    <loc>https://dariodip.com/it/portfolio/</loc>
+    <loc>http://localhost:1313/it/portfolio/</loc>
     <lastmod>2026-02-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://dariodip.com/portfolio/"
+                href="http://localhost:1313/portfolio/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="https://dariodip.com/it/portfolio/"
+                href="http://localhost:1313/it/portfolio/"
                 />
   </url><url>
-    <loc>https://dariodip.com/it/services/</loc>
+    <loc>http://localhost:1313/it/services/</loc>
     <lastmod>2026-02-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://dariodip.com/services/"
+                href="http://localhost:1313/services/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="https://dariodip.com/it/services/"
+                href="http://localhost:1313/it/services/"
                 />
   </url><url>
-    <loc>https://dariodip.com/it/categories/</loc>
+    <loc>http://localhost:1313/it/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://dariodip.com/categories/"
+                href="http://localhost:1313/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="https://dariodip.com/it/categories/"
+                href="http://localhost:1313/it/categories/"
                 />
   </url><url>
-    <loc>https://dariodip.com/it/posts/</loc>
+    <loc>http://localhost:1313/it/posts/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://dariodip.com/posts/"
+                href="http://localhost:1313/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="https://dariodip.com/it/posts/"
+                href="http://localhost:1313/it/posts/"
                 />
   </url><url>
-    <loc>https://dariodip.com/it/quick-thoughts/</loc>
+    <loc>http://localhost:1313/it/quick-thoughts/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://dariodip.com/quick-thoughts/"
+                href="http://localhost:1313/quick-thoughts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="https://dariodip.com/it/quick-thoughts/"
+                href="http://localhost:1313/it/quick-thoughts/"
                 />
   </url><url>
-    <loc>https://dariodip.com/it/tags/</loc>
+    <loc>http://localhost:1313/it/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://dariodip.com/tags/"
+                href="http://localhost:1313/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="https://dariodip.com/it/tags/"
+                href="http://localhost:1313/it/tags/"
                 />
   </url>
 </urlset>

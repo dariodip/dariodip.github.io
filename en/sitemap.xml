@@ -2,269 +2,305 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://dariodip.com/</loc>
+    <loc>http://localhost:1313/tags/ai/</loc>
+    <lastmod>2026-03-12T07:10:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/decision-making/</loc>
+    <lastmod>2026-03-12T07:10:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/engineering-leadership/</loc>
+    <lastmod>2026-03-12T07:10:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2026-03-12T07:10:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="https://dariodip.com/it/"
+                href="http://localhost:1313/it/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://dariodip.com/"
+                href="http://localhost:1313/"
                 />
   </url><url>
-    <loc>https://dariodip.com/posts/</loc>
+    <loc>http://localhost:1313/posts/product/how-i-work-with-my-ai-team/</loc>
+    <lastmod>2026-03-12T07:10:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2026-03-12T07:10:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="https://dariodip.com/it/posts/"
+                href="http://localhost:1313/it/posts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://dariodip.com/posts/"
+                href="http://localhost:1313/posts/"
                 />
   </url><url>
-    <loc>https://dariodip.com/quick-thoughts/2-thought/</loc>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2026-03-12T07:10:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="it-it"
+                href="http://localhost:1313/it/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en-us"
+                href="http://localhost:1313/tags/"
+                />
+  </url><url>
+    <loc>http://localhost:1313/tags/team/</loc>
+    <lastmod>2026-03-12T07:10:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/workflow/</loc>
+    <lastmod>2026-03-12T07:10:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/cto/</loc>
+    <lastmod>2026-03-10T12:20:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/execution/</loc>
+    <lastmod>2026-03-10T12:20:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/product/fractional-cto-vs-internal-cto/</loc>
+    <lastmod>2026-03-10T12:20:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/fractional-cto/</loc>
+    <lastmod>2026-03-10T12:20:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/leadership/</loc>
+    <lastmod>2026-03-10T12:20:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/startup/</loc>
+    <lastmod>2026-03-10T12:20:00+00:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/quick-thoughts/2-thought/</loc>
     <lastmod>2026-03-04T16:56:41+01:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/quick-thoughts/</loc>
+    <loc>http://localhost:1313/quick-thoughts/</loc>
     <lastmod>2026-03-04T16:56:41+01:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="https://dariodip.com/it/quick-thoughts/"
+                href="http://localhost:1313/it/quick-thoughts/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://dariodip.com/quick-thoughts/"
+                href="http://localhost:1313/quick-thoughts/"
                 />
   </url><url>
-    <loc>https://dariodip.com/quick-thoughts/1-thought/</loc>
+    <loc>http://localhost:1313/quick-thoughts/1-thought/</loc>
     <lastmod>2026-03-04T16:54:40+01:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/lean-startup/</loc>
+    <loc>http://localhost:1313/tags/lean-startup/</loc>
     <lastmod>2026-03-02T16:10:00+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/mvp/</loc>
+    <loc>http://localhost:1313/tags/mvp/</loc>
     <lastmod>2026-03-02T16:10:00+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/product/</loc>
+    <loc>http://localhost:1313/tags/product/</loc>
     <lastmod>2026-03-02T16:10:00+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/posts/product/stop-building-everything-start-building-this-the-power-of-the-mvp/</loc>
+    <loc>http://localhost:1313/posts/product/stop-building-everything-start-building-this-the-power-of-the-mvp/</loc>
     <lastmod>2026-03-02T16:10:00+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/</loc>
-    <lastmod>2026-03-02T16:10:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="it-it"
-                href="https://dariodip.com/it/tags/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en-us"
-                href="https://dariodip.com/tags/"
-                />
-  </url><url>
-    <loc>https://dariodip.com/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2026-02-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="https://dariodip.com/it/about/"
+                href="http://localhost:1313/it/about/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://dariodip.com/about/"
+                href="http://localhost:1313/about/"
                 />
   </url><url>
-    <loc>https://dariodip.com/portfolio/</loc>
+    <loc>http://localhost:1313/portfolio/</loc>
     <lastmod>2026-02-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="https://dariodip.com/it/portfolio/"
+                href="http://localhost:1313/it/portfolio/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://dariodip.com/portfolio/"
+                href="http://localhost:1313/portfolio/"
                 />
   </url><url>
-    <loc>https://dariodip.com/services/</loc>
+    <loc>http://localhost:1313/services/</loc>
     <lastmod>2026-02-24T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="https://dariodip.com/it/services/"
+                href="http://localhost:1313/it/services/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://dariodip.com/services/"
+                href="http://localhost:1313/services/"
                 />
   </url><url>
-    <loc>https://dariodip.com/tags/agile/</loc>
+    <loc>http://localhost:1313/tags/agile/</loc>
     <lastmod>2023-10-21T15:40:39+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/certification/</loc>
+    <loc>http://localhost:1313/tags/certification/</loc>
     <lastmod>2023-10-21T15:40:39+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/engineering-mangement/</loc>
+    <loc>http://localhost:1313/tags/engineering-mangement/</loc>
     <lastmod>2023-10-21T15:40:39+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/posts/medium/prepare-for-the-psm-i-using-scrum/</loc>
+    <loc>http://localhost:1313/posts/medium/prepare-for-the-psm-i-using-scrum/</loc>
     <lastmod>2023-10-21T15:40:39+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/scrum/</loc>
+    <loc>http://localhost:1313/tags/scrum/</loc>
     <lastmod>2023-10-21T15:40:39+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/scrum-master/</loc>
+    <loc>http://localhost:1313/tags/scrum-master/</loc>
     <lastmod>2023-10-21T15:40:39+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/domain-driven-design/</loc>
+    <loc>http://localhost:1313/tags/domain-driven-design/</loc>
     <lastmod>2023-01-19T19:15:46+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/posts/medium/introduction-to-domain-driven-design-ddd/</loc>
+    <loc>http://localhost:1313/posts/medium/introduction-to-domain-driven-design-ddd/</loc>
     <lastmod>2023-01-19T19:15:46+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/software-architecture/</loc>
+    <loc>http://localhost:1313/tags/software-architecture/</loc>
     <lastmod>2023-01-19T19:15:46+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/software-design/</loc>
+    <loc>http://localhost:1313/tags/software-design/</loc>
     <lastmod>2023-01-19T19:15:46+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/software-development/</loc>
+    <loc>http://localhost:1313/tags/software-development/</loc>
     <lastmod>2023-01-19T19:15:46+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/software-engineering/</loc>
+    <loc>http://localhost:1313/tags/software-engineering/</loc>
     <lastmod>2023-01-19T19:15:46+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/programming/</loc>
+    <loc>http://localhost:1313/tags/programming/</loc>
     <lastmod>2022-01-31T18:02:32+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/programming-languages/</loc>
+    <loc>http://localhost:1313/tags/programming-languages/</loc>
     <lastmod>2022-01-31T18:02:32+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/rust/</loc>
+    <loc>http://localhost:1313/tags/rust/</loc>
     <lastmod>2022-01-31T18:02:32+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/posts/medium/rust-fear-love-hate-love-disillusion/</loc>
+    <loc>http://localhost:1313/posts/medium/rust-fear-love-hate-love-disillusion/</loc>
     <lastmod>2022-01-31T18:02:32+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/technology/</loc>
+    <loc>http://localhost:1313/tags/technology/</loc>
     <lastmod>2022-01-31T18:02:32+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/algorithms/</loc>
+    <loc>http://localhost:1313/tags/algorithms/</loc>
     <lastmod>2022-01-19T17:01:13+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/posts/medium/find-duplicates-using-python/</loc>
+    <loc>http://localhost:1313/posts/medium/find-duplicates-using-python/</loc>
     <lastmod>2022-01-19T17:01:13+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/python/</loc>
+    <loc>http://localhost:1313/tags/python/</loc>
     <lastmod>2022-01-19T17:01:13+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/containers/</loc>
+    <loc>http://localhost:1313/tags/containers/</loc>
     <lastmod>2021-04-10T09:57:49+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/docker/</loc>
+    <loc>http://localhost:1313/tags/docker/</loc>
     <lastmod>2021-04-10T09:57:49+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/linux/</loc>
+    <loc>http://localhost:1313/tags/linux/</loc>
     <lastmod>2021-04-10T09:57:49+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/posts/medium/understanding-linux-containers-explore-user-space-cgroups-and-namespaces/</loc>
+    <loc>http://localhost:1313/posts/medium/understanding-linux-containers-explore-user-space-cgroups-and-namespaces/</loc>
     <lastmod>2021-04-10T09:57:49+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/posts/medium/goembed-unleashed/</loc>
+    <loc>http://localhost:1313/posts/medium/goembed-unleashed/</loc>
     <lastmod>2021-04-03T08:38:00+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/golang/</loc>
+    <loc>http://localhost:1313/tags/golang/</loc>
     <lastmod>2021-04-03T08:38:00+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/learning/</loc>
+    <loc>http://localhost:1313/tags/learning/</loc>
     <lastmod>2021-04-03T08:38:00+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/computer-architecture/</loc>
+    <loc>http://localhost:1313/tags/computer-architecture/</loc>
     <lastmod>2021-03-27T13:12:37+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/concurrency/</loc>
+    <loc>http://localhost:1313/tags/concurrency/</loc>
     <lastmod>2021-03-27T13:12:37+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/posts/medium/false-sharing-an-example-with-go/</loc>
+    <loc>http://localhost:1313/posts/medium/false-sharing-an-example-with-go/</loc>
     <lastmod>2021-03-27T13:12:37+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/books/</loc>
+    <loc>http://localhost:1313/tags/books/</loc>
     <lastmod>2021-03-13T16:10:00+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/posts/books/a-list-of-books-during-my-journey/</loc>
+    <loc>http://localhost:1313/posts/books/a-list-of-books-during-my-journey/</loc>
     <lastmod>2021-03-13T16:10:00+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/journey/</loc>
+    <loc>http://localhost:1313/tags/journey/</loc>
     <lastmod>2021-03-13T16:10:00+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/ansible/</loc>
+    <loc>http://localhost:1313/tags/ansible/</loc>
     <lastmod>2020-03-27T15:11:00+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/posts/devops/a-brief-introduction-to-ansible/</loc>
+    <loc>http://localhost:1313/posts/devops/a-brief-introduction-to-ansible/</loc>
     <lastmod>2020-03-27T15:11:00+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/automating/</loc>
+    <loc>http://localhost:1313/tags/automating/</loc>
     <lastmod>2020-03-27T15:11:00+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/devops/</loc>
+    <loc>http://localhost:1313/tags/devops/</loc>
     <lastmod>2020-03-27T15:11:00+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/posts/devops/a-brief-introduction-to-ansible/</loc>
+    <loc>http://localhost:1313/posts/devops/a-brief-introduction-to-ansible/</loc>
     <lastmod>2020-03-27T09:11:00+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/basic/</loc>
+    <loc>http://localhost:1313/tags/basic/</loc>
     <lastmod>2020-01-10T17:05:35+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/beginner/</loc>
+    <loc>http://localhost:1313/tags/beginner/</loc>
     <lastmod>2020-01-10T17:05:35+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/data-structures/</loc>
+    <loc>http://localhost:1313/tags/data-structures/</loc>
     <lastmod>2020-01-10T17:05:35+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/posts/algorithms/a-brief-introduction-to-data-structures-using-go-part-ii/</loc>
+    <loc>http://localhost:1313/posts/algorithms/a-brief-introduction-to-data-structures-using-go-part-ii/</loc>
     <lastmod>2020-01-10T17:05:35+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/go/</loc>
+    <loc>http://localhost:1313/tags/go/</loc>
     <lastmod>2020-01-10T17:05:35+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/posts/algorithms/a-brief-introduction-to-data-structures-using-go/</loc>
+    <loc>http://localhost:1313/posts/algorithms/a-brief-introduction-to-data-structures-using-go/</loc>
     <lastmod>2020-01-03T17:05:35+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/posts/algorithms/binary-search-with-go-python-and-c/</loc>
+    <loc>http://localhost:1313/posts/algorithms/binary-search-with-go-python-and-c/</loc>
     <lastmod>2019-12-01T17:05:35+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/tags/c/</loc>
+    <loc>http://localhost:1313/tags/c/</loc>
     <lastmod>2019-12-01T17:05:35+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/gows/goref2019/</loc>
+    <loc>http://localhost:1313/gows/goref2019/</loc>
     <lastmod>2019-11-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/gows/</loc>
+    <loc>http://localhost:1313/gows/</loc>
     <lastmod>2019-11-16T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://dariodip.com/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="it-it"
-                href="https://dariodip.com/it/categories/"
+                href="http://localhost:1313/it/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en-us"
-                href="https://dariodip.com/categories/"
+                href="http://localhost:1313/categories/"
                 />
   </url>
 </urlset>

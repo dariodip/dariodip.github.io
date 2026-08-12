@@ -6,8 +6,15 @@
     <description>Recent content in Home on Dario Di Pasquale</description>
     <generator>Hugo -- 0.147.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Mar 2026 16:56:41 +0100</lastBuildDate>
+    <lastBuildDate>Wed, 12 Aug 2026 16:56:41 +0100</lastBuildDate>
     <atom:link href="https://dariodip.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://dariodip.com/quick-thoughts/3-thought/</link>
+      <pubDate>Wed, 12 Aug 2026 16:56:41 +0100</pubDate>
+      <guid>https://dariodip.com/quick-thoughts/3-thought/</guid>
+      <description>&lt;p&gt;Technology should be used to solve problems, not to create new ones.&lt;/p&gt;</description>
+    </item>
     <item>
       <title></title>
       <link>https://dariodip.com/quick-thoughts/2-thought/</link>
@@ -35,17 +42,8 @@
       <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
       <guid>https://dariodip.com/about/</guid>
       <description>&lt;p&gt;&lt;img alt=&#34;Dario Di Pasquale&#34; loading=&#34;lazy&#34; src=&#34;https://dariodip.com/media/profile/dario-main-portrait.jpg&#34;&gt;&lt;/p&gt;
-&lt;p&gt;I am an Engineering Manager with a strong software engineering background in distributed systems, delivery execution, and pragmatic architecture.&lt;/p&gt;
-&lt;p&gt;Today I lead engineering in the Claims area at Prima, where I built and scaled teams around Data Management and Machine Learning initiatives. My work sits at the intersection of technical leadership, product delivery, and execution quality.&lt;/p&gt;
-&lt;h2 id=&#34;what-i-focus-on&#34;&gt;What I focus on&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Building engineering teams that deliver predictably&lt;/li&gt;
-&lt;li&gt;Turning architecture decisions into measurable delivery outcomes&lt;/li&gt;
-&lt;li&gt;Designing systems that are maintainable, scalable, and operationally stable&lt;/li&gt;
-&lt;li&gt;Coaching engineers and growing new technical leaders&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;operating-style&#34;&gt;Operating style&lt;/h2&gt;
-&lt;p&gt;I care about outcomes over hype.&lt;/p&gt;</description>
+&lt;p&gt;I am a technical leader with a strong software engineering background in distributed systems, data platforms, and pragmatic architecture.&lt;/p&gt;
+&lt;p&gt;Today I work as a Domain Tech Lead at Prima, where I oversee the technical strategy and architecture of the Claims ADA domain — spanning Antifraud, Data, and AI. My work sits at the intersection of architecture, technical strategy, and business needs: helping teams make sound technical decisions while keeping systems evolvable, reliable, and useful.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Portfolio</title>
@@ -53,16 +51,20 @@
       <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
       <guid>https://dariodip.com/portfolio/</guid>
       <description>&lt;h2 id=&#34;selected-experience&#34;&gt;Selected Experience&lt;/h2&gt;
-&lt;h3 id=&#34;prima-assicurazioni--engineering-manager-2023present&#34;&gt;Prima Assicurazioni — Engineering Manager (2023–Present)&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt;Context:&lt;/strong&gt; claims domain, data-intensive environment, high operational criticality.&lt;/p&gt;
+&lt;h3 id=&#34;prima-assicurazioni--domain-tech-lead-2026present&#34;&gt;Prima Assicurazioni — Domain Tech Lead (2026–Present)&lt;/h3&gt;
+&lt;p&gt;I currently provide technical and architectural leadership for the Claims ADA domain, spanning Antifraud, Data, and AI.&lt;/p&gt;
+&lt;p&gt;My focus is on defining the technical direction of the domain and helping teams make architectural decisions that remain sustainable as the systems, data products, and AI capabilities evolve.&lt;/p&gt;
+&lt;p&gt;Areas of focus:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Built and led the Claims Data Management team in a greenfield setup&lt;/li&gt;
-&lt;li&gt;Introduced and scaled a Data Mesh-oriented approach for domain data products&lt;/li&gt;
-&lt;li&gt;Partnered with Data Governance on company-wide data strategy&lt;/li&gt;
-&lt;li&gt;Built and evolved the Claims Antifraud initiative into a broader Claims Machine Learning scope&lt;/li&gt;
-&lt;li&gt;Mentored and developed internal leadership, including growth paths toward Engineering Manager responsibilities&lt;/li&gt;
+&lt;li&gt;Domain and system architecture;&lt;/li&gt;
+&lt;li&gt;Technical strategy and architectural evolution;&lt;/li&gt;
+&lt;li&gt;Data platform and data product design;&lt;/li&gt;
+&lt;li&gt;Integration between Data, AI, and operational systems;&lt;/li&gt;
+&lt;li&gt;Technical standards and engineering practices;&lt;/li&gt;
+&lt;li&gt;Cross-team architectural alignment;&lt;/li&gt;
+&lt;li&gt;Balancing business needs, technical complexity, and long-term maintainability.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;strong&gt;Focus areas:&lt;/strong&gt; team design, delivery execution, architecture decisions, Agile/Scrum operating model.&lt;/p&gt;</description>
+&lt;p&gt;This role builds on several years of experience across software engineering, platform architecture, and engineering management.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Services</title>
@@ -234,7 +236,7 @@
 &lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Structural_type_system&#34;&gt;https://en.wikipedia.org/wiki/Structural_type_system&lt;/a&gt;  (Structural Type System)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Type_inference&#34;&gt;https://en.wikipedia.org/wiki/Type_inference&lt;/a&gt;  (Type Inference)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Strong_and_weak_typing&#34;&gt;https://en.wikipedia.org/wiki/Strong_and_weak_typing&lt;/a&gt;  (Strong and Weak typing)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Covariance_and_contravariance_%28computer_science%29&#34;&gt;https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)&lt;/a&gt;  (Type Variance)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)&#34;&gt;https://en.wikipedia.org/wiki/Covariance_and_contravariance_(computer_science)&lt;/a&gt;  (Type Variance)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Type_system#STATIC&#34;&gt;https://en.wikipedia.org/wiki/Type_system#STATIC&lt;/a&gt;  (Type System)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h4 id=&#34;go-type-system&#34;&gt;Go Type System&lt;/h4&gt;
