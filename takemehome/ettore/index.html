@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="it">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,7 +19,9 @@
       --soft: #dce9d9;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
     body {
       margin: 0;
@@ -28,7 +30,7 @@
       background: var(--bg);
       color: var(--ink);
       font: 16px/1.6 system-ui, -apple-system,
-            BlinkMacSystemFont, "Segoe UI", sans-serif;
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
     }
 
     main {
@@ -76,7 +78,9 @@
       color: #52654e;
     }
 
-    section { padding: 24px; }
+    section {
+      padding: 24px;
+    }
 
     h2 {
       margin: 0 0 16px;
@@ -118,7 +122,9 @@
       outline-offset: 3px;
     }
 
-    .call:hover { background: #3f6239; }
+    .call:hover {
+      background: #3f6239;
+    }
 
     .empty {
       padding: 16px;
@@ -144,18 +150,62 @@
     }
 
     @media (max-width: 360px) {
-      body { padding: 12px 8px; }
-      header, section { padding: 20px 16px; }
-      .divider { margin-inline: 16px; }
+      body {
+        padding: 12px 8px;
+      }
+
+      header,
+      section {
+        padding: 20px 16px;
+      }
+
+      .divider {
+        margin-inline: 16px;
+      }
+    }
+
+
+    .dog-banner {
+      position: relative;
+      margin: 20px 0;
+      overflow: hidden;
+      border-radius: 16px;
+      height: 150px;
+      background: #f1eee8;
+    }
+
+    .dog-banner img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+
+    .dog-banner figcaption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 24px 14px 12px;
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      background: linear-gradient(transparent, rgba(0, 0, 0, 0.55));
     }
   </style>
 </head>
+
 <body>
   <main>
     <article class="card">
       <header>
         <p class="eyebrow">Scheda identificativa</p>
         <h1>Ciao, sono Ettore! 🐾</h1>
+        <figure class="dog-banner">
+          <img src="/media/tmh/ettore.png" alt="Mela, Jack Russell Terrier a pelo lungo" fetchpriority="high">
+          <figcaption>Relax dopo aver abbaiato al vento per un'ora</figcaption>
+        </figure>
         <p class="breed">Bulldog Francese bianco</p>
         <p class="intro">
           Se mi hai trovato da solo, qui trovi le informazioni
@@ -194,7 +244,7 @@
       <section aria-labelledby="other-title">
         <h2 id="other-title">Altre informazioni</h2>
         <div class="empty">
-          Sono vaccinato e microchippato. <br/>
+          Sono vaccinato e microchippato. <br />
           Non sono castrato.
         </div>
       </section>
@@ -205,4 +255,5 @@
     </article>
   </main>
 </body>
+
 </html>
